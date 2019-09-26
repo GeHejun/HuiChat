@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/HuiChat.iml" filepath="$PROJECT_DIR$/.idea/HuiChat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" filepath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" filepath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" />
+    </modules>
+  </component>
+</project>
