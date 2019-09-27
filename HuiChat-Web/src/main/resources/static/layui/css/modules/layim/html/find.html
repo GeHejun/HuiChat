@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../../layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        .itemList li {
+            text-align: left;
+            display: inline-block;
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+        }
+        .search {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+
+<form class="layui-form search" action="">
+    <div class="layui-inline">
+        <label class="layui-form-label">搜索选择框</label>
+        <div class="layui-input-inline" style="width: 100px">
+            <select id="type">
+                <option value="">请选择添加类型</option>
+                <option value="0" selected>好友</option>
+                <option value="1">群组</option>
+            </select>
+        </div>
+        <div class="layui-input-inline" style="width: 250px">
+            <input type="text" name="name" id="name" required lay-verify="required" placeholder="用户名"
+                   autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <input type="button" class="layui-btn" lay-submit lay-filter="searchSubmit" value="搜索">
+        </div>
+        <div class="layui-input-inline">
+            <input type="button" class="layui-btn" onclick="toCreateGroup()" value="创建群聊">
+        </div>
+        <ul class="itemList" id="itemList"></ul>
+    </div>
+
+</form>
+
+
+<script src="../../../../layui.js" charset="utf-8"></script>
+<script src="../../../../../js/jquery-3.4.1.js" charset="utf-8"></script>
+<script src="../../../../../js/BigInteger.js"></script>
+<script src="../../../../../js/snowflake.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'jquery', 'layer', 'layim'], function () {
+        layer = layui.layer
+            , form = layui.form
+            , layim = layui.layim
+            , $ = layui.jquery;
+
+        //监听提交
+        form.on('submit(searchSubmit)', function () {
+            if ($("#type").val() == 1) {
+                url = "/security/findGroup";
+            } else {
+                url = '/security/findUser';
+            }
+            $.ajax({
+                url: url,
+                data: {name: $("#name").val()},
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    $("#itemList").empty();
+                    $.each(data.data, function (index, item) {
+                        let html = null;
+                        var type = $("#type").val();
+                        if (type == 1) {
+                            html = "<li>" +
+                                "<div>" +
+                                "<img style='border-radius: 50%' width='80px' height='80px' src='" + item.avatar + "'/>" +
+                                "<div style='text-align: center'>群名称:" + item.groupname + "</div>" +
+                                "<div style='text-align: center'><input type='button' value='+' class='layui-btn' onclick='addGroup(" + item.adminId + ", " + item.id + ", \"" + item.groupname + "\")'></div>" +
+                                "</div>" +
+                                "</li>";
+                        } else {
+                            html = "<li>" +
+                                "<div>" +
+                                "<img style='border-radius: 50%' width='80px' height='80px' src='" + item.avatar + "'/>" +
+                                "<div style='text-align: center'>昵称:" + item.nickName + "</div>" +
+                                "<div style='text-align: center'>姓名:" + item.username + "</div>" +
+                                "<div style='text-align: center'><input type='button' value='+' class='layui-btn' onclick='addFriend(\""+ item.avatar + "\", " + item.id + ", \"" + item.nickName + "\")'></div>" +
+                                "</div>" +
+                                "</li>";
+                        }
+                        $("#itemList").append(html);
+                    });
+                },
+                error: function (data) {}
+            });
+            return false;
+        });
+
+
+    });
+    function toCreateGroup() {
+        parent.layer.open({
+            type: 2
+            ,title: '创建群组'
+            ,shade: false
+            ,maxmin: true
+            ,area: ['1000px', '520px']
+            ,skin: 'layui-box layui-layer-border'
+            ,resize: false
+            ,content: '/layui/css/modules/layim/html/creategroup.html'
+        });
+        return false;
+    };
+
+    function addFriend(avatar, toUserId, nickName) {
+        var validationToUserId = toUserId;
+        var user = JSON.parse(localStorage.getItem('user'));
+        parent.layui.layim.add({
+            type: 'friend'
+            , username: nickName
+            , avatar: avatar
+            , submit: function (group, remark, index, newFriendGroupName) {
+                if (newFriendGroupName != null) {
+                    //新建好友群组
+                    $.ajax({
+                        url: "/security/createNewFriendGroup",
+                        data: {userId: user.id, newFriendGroupName:newFriendGroupName},
+                        type: "POST",
+                        dataType: "json",
+                        async: false,
+                        success: function (data) {
+                            group = data.data;
+                        },
+                        error: function (data) {}
+                    });
+                }
+                if (group == null) {
+                    parent.layer.msg("请先选择好友分组或创建新的分组");
+                    return;
+                }
+                parent.layer.msg('好友申请已发送，请等待对方确认', {
+                    icon: 1
+                    , shade: 0.5
+                }, function () {
+                    parent.layer.close(index);
+                });
+                var messageDirect = 1;
+                var fromUserId = parent.layui.layim.cache().mine.id; //包含我发送的消息及我的信息
+                var toUserId = validationToUserId; //对方的信息
+                var id = new Snowflake().nextId();
+                var messageTypeId = 1;
+                var messageBehavior = 11;
+                var deviceId = parent.deviceId;
+                var username = parent.layui.layim.cache().mine.username;
+                var avatar = parent.layui.layim.cache().mine.avatar;
+                var message = {
+                    "fromUserId": fromUserId,
+                    "id": id,
+                    "messageTypeId": messageTypeId,
+                    "messageBehavior": messageBehavior,
+                    "messageDirect": messageDirect,
+                    "deviceId": deviceId,
+                    "name": username,
+                    "headPortrait": avatar,
+                    "toUserId": toUserId,
+                    "content": parent.layui.layim.cache().mine.username + "申请加你为好友",
+                    "fromFriendGroupId": group,
+                };
+                parent.sendMessage(message);
+            }
+        });
+    }
+    function addGroup(toUserId, groupId, groupName) {
+        var validationToUserId = toUserId;
+        parent.layui.layim.add({
+            type: 'group'
+            , username: groupName
+            , avatar: ""
+            , submit: function (group, remark, index) {
+                parent.layer.msg('申请已发送，请等待管理员确认', {
+                    icon: 1
+                    , shade: 0.5
+                }, function () {
+                    parent.layer.close(index);
+                });
+                var messageDirect = 2;
+                var fromUserId = parent.layui.layim.cache().mine.id; //包含我发送的消息及我的信息
+                var toUserId = validationToUserId; //对方的信息
+                var id = new Snowflake().nextId();
+                var messageTypeId = 1;
+                var messageBehavior = 11;
+                var deviceId = parent.deviceId;
+                var username = parent.layui.layim.cache().mine.username;
+                var avatar = parent.layui.layim.cache().mine.avatar;
+                var toGroupId = groupId;
+                var message = {
+                    "fromUserId": fromUserId,
+                    "id": id,
+                    "messageTypeId": messageTypeId,
+                    "messageBehavior": messageBehavior,
+                    "messageDirect": messageDirect,
+                    "deviceId": deviceId,
+                    "name": username,
+                    "headPortrait": avatar,
+                    "toUserId": toUserId,
+                    "toGroupId": toGroupId,
+                    "content": parent.layui.layim.cache().mine.username + "申请加入群" + groupName
+                };
+                parent.sendMessage(message);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

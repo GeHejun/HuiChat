@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>聊天记录</title>
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <style>
+        body .layim-chat-main {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="layim-chat-main">
+    <ul id="LAY_view"></ul>
+</div>
+
+<div id="LAY_page" style="margin: 0 10px;"></div>
+
+
+<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+{{# layui.each(d.data, function(index, item){
+  if(item.id == parent.layui.layim.cache().mine.id){ }}
+    <li class="layim-chat-mine"><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite><i>{{ layui.data.date(item.timestamp) }}</i>{{ item.username }}</cite></div><div
+            class="layim-chat-text">{{ layui.layim.content(item.content) }}</div></li>
+  {{# } else { }}
+    <li><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite>{{ item.username }}<i>{{ layui.data.date(item.timestamp) }}</i></cite></div><div
+            class="layim-chat-text">{{ layui.layim.content(item.content) }}</div></li>
+  {{# }
+}); }}
+</textarea>
+
+<!-- 
+上述模版采用了 laytpl 语法，不了解的同学可以去看下文档：http://www.layui.com/doc/modules/laytpl.html
+
+-->
+
+
+<script src="/layui/layui.js"></script>
+<script>
+
+    layui.use(['layim', 'laypage', 'jquery'], function () {
+        var layim = layui.layim
+            , layer = layui.layer
+            , laytpl = layui.laytpl
+            , $ = layui.jquery
+            , laypage = layui.laypage;
+        var user = JSON.parse(localStorage.getItem('user'));
+        //聊天记录的分页此处不做演示，你可以采用laypage，不了解的同学见文档：http://www.layui.com/doc/modules/laypage.html
+        //执行一个laypage实例
+
+        //开始请求聊天记录
+        var param = location.search //获得URL参数。该窗口url会携带会话id和type，他们是你请求聊天记录的重要凭据
+
+
+        $.ajax({
+            url: "/index/initHistoryMessage",
+            data: {
+                fromUserId: param.split('&')[0].split('=')[1],
+                toUserId: user.id,
+                type: param.split('&')[1].split('=')[1],
+                pageIndex: 1,
+                pageSize: 10
+            },
+            type: "Post",
+            dataType: "json",
+            success: function (data) {
+                var res = data;
+                if (res.code != 0) {
+                    return layer.msg(res.msg);
+                }
+                laypage.render({
+                    elem: 'LAY_page'
+                    , count: res.data.total
+                    , jump: function (obj, first) {
+                        //obj包含了当前分页的所有参数，比如：
+                        if (first) {
+                            var page = res.data.pageNum;
+                        } else {
+                            var page = obj.curr;
+                        }
+                        $.ajax({
+                            url: "/index/initHistoryMessage",
+                            data: {
+                                fromUserId: param.split('&')[0].split('=')[1],
+                                toUserId: user.id,
+                                type: param.split('&')[1].split('=')[1],
+                                pageIndex: page,
+                                pageSize: 10
+                            },
+                            type: "Post",
+                            dataType: "json",
+                            success: function (data) {
+                                var res = eval(data);
+                                var html = laytpl(LAY_tpl.value).render({
+                                    data: res.data.data
+                                });
+                                $('#LAY_view').html(html);
+                            }
+                        });
+                    }
+                });
+            },
+            error: function (data) {
+            }
+
+        });
+    });
+</script>
+</body>
+</html>

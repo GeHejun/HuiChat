@@ -12,6 +12,10 @@
     <modules>
         <module>HuiChat-Common</module>
         <module>HuiChat-Chat</module>
+        <module>HuiChat-Rest</module>
+        <module>HuiChat-Web</module>
+        <module>HuiChat-Protocol</module>
+        <module>HuiChat-Eureka</module>
     </modules>
 
 

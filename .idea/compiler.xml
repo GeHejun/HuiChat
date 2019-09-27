@@ -8,18 +8,30 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HuiChat-Chat" />
         <module name="HuiChat-Common" />
+        <module name="HuiChat-Eureka" />
+        <module name="HuiChat-Protocol" />
+        <module name="HuiChat-Rest" />
+        <module name="HuiChat-Web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HuiChat" target="1.8" />
       <module name="HuiChat-Chat" target="1.8" />
       <module name="HuiChat-Common" target="1.8" />
+      <module name="HuiChat-Eureka" target="1.8" />
+      <module name="HuiChat-Protocol" target="1.8" />
+      <module name="HuiChat-Rest" target="1.8" />
+      <module name="HuiChat-Web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="HuiChat-Chat" options="-parameters" />
       <module name="HuiChat-Common" options="-parameters" />
+      <module name="HuiChat-Eureka" options="-parameters" />
+      <module name="HuiChat-Protocol" options="-parameters" />
+      <module name="HuiChat-Rest" options="-parameters" />
+      <module name="HuiChat-Web" options="-parameters" />
     </option>
   </component>
 </project>

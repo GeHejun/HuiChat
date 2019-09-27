@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../../layui.css" media="all">
+    <style>
+        .search {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form search" action="">
+    <div class="layui-inline">
+        <div class="layui-form-item" pane="">
+            <div class="layui-input-inline">
+                <input type="text" name="name" id="name" required lay-verify="required" placeholder="请输入创建的群名称"
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline" id="friendList"></div>
+            <div class="layui-input-inline">
+                <input type="button" class="layui-btn" lay-submit lay-filter="createGroupSubmit" value="创建">
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../../../layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'jquery'], function () {
+        form = layui.form, $ = layui.jquery;
+        var user = JSON.parse(localStorage.getItem('user'));
+        $.ajax({
+            url: "/index/initFriend",
+            data: {id: user.id},
+            type: "POST",
+            dataType: "json",
+            success: function (data) {
+                $("#friendList").empty();
+                $.each(data.data, function (index, item) {
+                    var html = "<input type='checkbox'  lay-skin='primary' name='friend' data-id='" + item.id + "' title='" + item.nickName + "'>"
+                    $("#friendList").append(html);
+                });
+                form.render();
+            },
+            error: function (data) {
+            }
+        });
+        form.on('submit(createGroupSubmit)', function () {
+            var ids = [];
+            $("input:checkbox[name='friend']:checked").each(function () {
+                ids.push($(this).data('id'));
+            });
+            $.ajax({
+                url: "/security/createGroup",
+                data: JSON.stringify({name: $("#name").val(), adminId: user.id, friendIds: ids}),
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json;charset-UTF-8",
+                success: function (data) {
+                    if (data.code != 0) {
+                        parent.layer.warn(data.data);
+                        return;
+                    } else {
+                        //TODO 刷新群组
+                        parent.layer.success(data.data);
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                    }
+
+                },
+                error: function (data) {
+                }
+            });
+        });
+        form.render();
+    });
+</script>
+</body>
+</html>

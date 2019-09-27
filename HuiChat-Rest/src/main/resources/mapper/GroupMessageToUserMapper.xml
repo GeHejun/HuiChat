@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghj.com.ghj.rest.dao.GroupMessageToUserMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.GroupMessageToUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="group_message_id" jdbcType="BIGINT" property="groupMessageId" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, group_message_id, status, send_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from group_message_to_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectMessageByToUserIdAndStatus" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from group_message_to_user
+    where user_id = #{toUserId,jdbcType=INTEGER} and status = #{status, jdbcType=BIT}
+  </select>
+  <select id="selectMessageByGroupMessageIdAndToUserIdWithStatus" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from group_message_to_user
+    where user_id = #{toUserId,jdbcType=INTEGER}  and group_message_id = #{groupMessageId, jdbcType=BIGINT} and status = #{status, jdbcType=BIT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from group_message_to_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.GroupMessageToUser">
+    insert into group_message_to_user (id, user_id, group_message_id, 
+      status, send_time)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=INTEGER}, #{groupMessageId,jdbcType=BIGINT},
+      #{status,jdbcType=BIT}, #{sendTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.GroupMessageToUser">
+    insert into group_message_to_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="groupMessageId != null">
+        group_message_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sendTime != null">
+        send_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="groupMessageId != null">
+        #{groupMessageId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="sendTime != null">
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.GroupMessageToUser">
+    update group_message_to_user
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="groupMessageId != null">
+        group_message_id = #{groupMessageId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="sendTime != null">
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.GroupMessageToUser">
+    update group_message_to_user
+    set user_id = #{userId,jdbcType=INTEGER},
+      group_message_id = #{groupMessageId,jdbcType=BIGINT},
+      status = #{status,jdbcType=BIT},
+      send_time = #{sendTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

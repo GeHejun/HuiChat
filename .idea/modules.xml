@@ -5,6 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/HuiChat.iml" filepath="$PROJECT_DIR$/.idea/HuiChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" filepath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" filepath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" filepath="$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" filepath="$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" filepath="$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Web/HuiChat-Web.iml" filepath="$PROJECT_DIR$/HuiChat-Web/HuiChat-Web.iml" />
     </modules>
   </component>
 </project>
