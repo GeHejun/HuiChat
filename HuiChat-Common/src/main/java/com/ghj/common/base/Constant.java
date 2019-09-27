@@ -40,6 +40,8 @@ public class Constant {
 
     public static final String OFF_LINE = "OFF_LINE";
 
+    public static final String SERVER_NODE = "/server";
+
     public static final String SUCCESS = "成功";
 
     public static final String LOGIN_SUCCESS = "登录成功";
@@ -141,5 +143,8 @@ public class Constant {
     public static final String REGISTRY_PORT = "registry.port";
 
     public static final String PUBLIC_NETWORK_IP = "public.network.ip";
+
+    public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
+
 
 }
