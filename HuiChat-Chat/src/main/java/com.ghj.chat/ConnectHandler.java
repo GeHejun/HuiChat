@@ -11,6 +11,8 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
+import org.apache.curator.retry.RetryNTimes;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -97,14 +99,17 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
 
     }
 
-    public synchronized void incrementOnLineUser(Channel channel, MessageProto.Message message) {
+    public synchronized void incrementOnLineUser(Channel channel, MessageProto.Message message) throws Exception {
         InetSocketAddress socketAddress = (InetSocketAddress)channel.localAddress();
         RedisPoolUtil.lpush(Constant.ON_LINE_USER_LIST, String.valueOf(message.getFromUserId()));
         RedisPoolUtil.increment(Constant.ON_LINE_USER_COUNT+"_"+socketAddress.getAddress()+"_"+socketAddress.getPort());
         String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "127.0.0.1:2181");
         CuratorFramework client = ZookeeperUtil.getInstance(connect);
-//        InetSocketAddress inetAddress = (InetSocketAddress) channel.localAddress();
-//        ZookeeperUtil.updateNode(client, Constant.SERVER_NODE + inetAddress.getAddress() + ":" + inetAddress.getPort(), )
+        InetSocketAddress inetAddress = (InetSocketAddress) channel.localAddress();
+        String path = Constant.SERVER_NODE + inetAddress.getAddress() + ":" + inetAddress.getPort();
+        DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
+        atomicInteger.add(1);
+        ZookeeperUtil.updateNode(client, path,  atomicInteger.get().postValue().toString());
     }
 
     public MessageProto.Message buildAckMessage(Code code, MessageProto.Message message) {
