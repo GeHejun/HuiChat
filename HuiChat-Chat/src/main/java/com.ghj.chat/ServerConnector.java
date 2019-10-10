@@ -1,10 +1,8 @@
 package com.ghj.chat;
 
 
-import com.alibaba.fastjson.JSON;
 import com.ghj.common.base.Constant;
 import com.ghj.common.util.PropertiesUtil;
-import com.ghj.common.util.ServerNode;
 import com.ghj.common.util.ZookeeperUtil;
 import com.ghj.protocol.MessageProto;
 import io.netty.bootstrap.ServerBootstrap;
@@ -18,9 +16,9 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import org.apache.curator.framework.CuratorFramework;
 
 import java.net.InetSocketAddress;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author GeHejun
@@ -30,7 +28,7 @@ public class ServerConnector {
 
     private NioEventLoopGroup bossGroup = new NioEventLoopGroup();
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
-    private static final int SESSION_TIMEOUT = 5000;
+
 
     public void start(int port) {
         try {
@@ -69,18 +67,10 @@ public class ServerConnector {
     }
 
     private void register(ChannelFuture future) {
-        AtomicInteger retryCount = new AtomicInteger(3);
-        String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "");
+        String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "127.0.0.1:2181");
         InetSocketAddress inetSocketAddress = (InetSocketAddress) future.channel().localAddress();
-        ServerNode serverNode = new ServerNode(inetSocketAddress.getHostString(), inetSocketAddress.getPort());
-        while (!reRegister(connect, JSON.toJSONString(serverNode)) && retryCount.intValue() > 0) {
-            retryCount.getAndDecrement();
-        }
-    }
-
-    private boolean reRegister(String connect, String serverNodeString) {
-        return new ZookeeperUtil(watchedEvent -> {
-        }, connect, SESSION_TIMEOUT).addZEnode(Constant.SERVER_NODE, serverNodeString);
+        CuratorFramework client = ZookeeperUtil.getInstance(connect);
+        ZookeeperUtil.createNode(client, Constant.SERVER_NODE + inetSocketAddress.getAddress() + ":" + inetSocketAddress.getPort(), Constant.DEFAULT_CONNECT_NUMBER);
     }
 
 }

@@ -1,10 +1,18 @@
 package com.ghj.common.util;
 
-import org.apache.zookeeper.*;
+import io.netty.util.internal.StringUtil;
+import org.apache.commons.io.Charsets;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.api.*;
+import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.utils.ZKPaths;
+import org.apache.zookeeper.WatchedEvent;
+import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.data.Stat;
+import org.springframework.util.CollectionUtils;
 
-import java.io.IOException;
-import java.util.List;
+import java.util.*;
 
 /**
  * zookeeper util
@@ -12,131 +20,218 @@ import java.util.List;
  * @author GeHejun
  */
 public class ZookeeperUtil {
-    private ZooKeeper zookeeper;
 
-    public ZookeeperUtil(Watcher watcher, String connectString, Integer sessionTimeout) {
+
+    private static final Integer SESSION_TIMEOUT = 50000;
+    private volatile static CuratorFramework client;
+
+
+    public static CuratorFramework getInstance(String zkAddress) {
+        if (client == null) {
+            synchronized (CuratorFramework.class) {
+                if (client == null) {
+                    client = CuratorFrameworkFactory.builder().connectString(zkAddress).sessionTimeoutMs(SESSION_TIMEOUT)
+                            .connectionTimeoutMs(SESSION_TIMEOUT).canBeReadOnly(true)
+                            .retryPolicy(new ExponentialBackoffRetry(10000, 3)).build();
+                    client.start();
+                }
+            }
+        }
+        return client;
+    }
+
+
+    /**
+     * 创建节点
+     *
+     * @param nodeName
+     * @param value
+     * @return
+     */
+    public static boolean createNode(CuratorFramework client, String nodeName, String value) {
+        boolean isSuccessFlag = false;
         try {
-            zookeeper = new ZooKeeper(connectString, sessionTimeout, watcher);
-        } catch (IOException e) {
+            Stat stat = client.checkExists().forPath(nodeName);
+            if (stat == null) {
+                String opResult;
+                if (StringUtils.isEmpty(value)) {
+                    opResult = client.create().creatingParentsIfNeeded().forPath(nodeName);
+                } else {
+                    // 不为空就设置节点的数据值
+                    opResult = client.create().creatingParentsIfNeeded().forPath(nodeName, value.getBytes(Charsets.UTF_8));
+                }
+                isSuccessFlag = Objects.equals(nodeName, opResult);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return isSuccessFlag;
+
+    }
+
+
+    /**
+     * 更新节点
+     *
+     * @param path
+     * @param value
+     * @return
+     */
+    public static boolean updateNode(CuratorFramework client, String path, String value) {
+        boolean isSuccessFlag = false;
+        try {
+            Stat stat = client.checkExists().forPath(path);
+            if (!Objects.isNull(stat)) {
+                Stat returnResult = client.setData().forPath(path, value.getBytes(Charsets.UTF_8));
+                if (!Objects.isNull(returnResult)) {
+                    isSuccessFlag = true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return isSuccessFlag;
+    }
+
+
+    /**
+     * 删除节点
+     *
+     * @param path
+     */
+
+    public static void delNode(CuratorFramework client, String path) {
+        try {
+            client.delete().deletingChildrenIfNeeded().forPath(path);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ZooKeeper getZK() {
-        return zookeeper;
-    }
-
 
     /**
-     * 创建znode结点
+     * 获取指定节点下的所有子节点的名称与值
      *
-     * @param path 结点路径
-     * @param data 结点数据
-     * @return true 创建结点成功 false表示结点存在
-     * @throws Exception
+     * @param path
+     * @return
      */
-    public boolean addZnodeData(String path, String data, CreateMode mode) {
+
+    public static Map<String, String> showChildrenDetail(CuratorFramework client, String path) {
+        Map<String, String> nodeMap = new HashMap<>(16);
         try {
-            if (zookeeper.exists(path, true) == null) {
-                zookeeper.create(path, data.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, mode);
-                return true;
+            GetChildrenBuilder childrenBuilder = client.getChildren();
+            List<String> childrenList = childrenBuilder.forPath(path);
+            GetDataBuilder dataBuilder = client.getData();
+            if (!CollectionUtils.isEmpty(childrenList)) {
+                childrenList.forEach(item -> {
+                    String propPath = ZKPaths.makePath(path, item);
+                    try {
+                        nodeMap.put(item, new String(dataBuilder.forPath(propPath), Charsets.UTF_8));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
             }
-        } catch (KeeperException | InterruptedException e) {
-            throw new RuntimeException("创建znode：" + path + "出现问题！！", e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println("znode" + path + "结点已存在");
-        return false;
+        return nodeMap;
     }
 
+
     /**
-     * 创建永久znode结点
+     * 列出节点下所有的子节点，但是不带子节点的数据
      *
-     * @param path 结点路径
-     * @param data 结点数据
-     * @return true 创建结点成功 false表示结点存在
+     * @param path
+     * @return
+     */
+    public static List<String> showChildren(CuratorFramework client, String path) {
+        List<String> children = new ArrayList<>();
+        try {
+            GetChildrenBuilder childrenBuilder = client.getChildren();
+            children = childrenBuilder.forPath(path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return children;
+    }
+
+
+    /**
+     * 对节点则增加监听，flag如果是true，就对节点本身监听，false是该节点的子节点增加监听
+     *
+     * @param path
+     * @param flag
      * @throws Exception
      */
-    public boolean addPZnode(String path, String data) {
-        return addZnodeData(path, data, CreateMode.PERSISTENT);
+    public static void addWatch(CuratorFramework client, String path, boolean flag) throws Exception {
+        if (flag) {
+            client.getData().watched().forPath(path);
+        } else {
+            client.getChildren().watched().forPath(path);
+        }
     }
 
+
     /**
-     * 创建临时znode结点
+     * 销毁资源
+     */
+
+    public static void destory() {
+        if (client != null) {
+            client.close();
+        }
+    }
+
+
+    /**
+     * 对节点则增加监听，flag如果是true，就对节点本身监听，false是该节点的子节点增加监听
      *
-     * @param path 结点路径
-     * @param data 结点数据
-     * @return true 创建结点成功 false表示结点存在
+     * @param path
+     * @param flag
+     * @param watcher 监视节点
      * @throws Exception
      */
-    public boolean addZEnode(String path, String data) {
-        return addZnodeData(path, data, CreateMode.EPHEMERAL);
-    }
 
-    /**
-     * 修改znode
-     *
-     * @param path 结点路径
-     * @param data 结点数据
-     * @return 修改结点成功   false表示结点不存在
-     */
-    public boolean updateZnode(String path, String data) {
-        try {
-            Stat stat = null;
-            if ((stat = zookeeper.exists(path, true)) != null) {
-                zookeeper.setData(path, data.getBytes(), stat.getVersion());
-                return true;
-            }
-        } catch (KeeperException | InterruptedException e) {
-            throw new RuntimeException("修改znode：" + path + "出现问题！！", e);
+    public static void addWatch(CuratorFramework client, String path, boolean flag, CuratorWatcher watcher) throws Exception {
+        if (flag) {
+            client.getData().usingWatcher(watcher).forPath(path);
+        } else {
+            client.getChildren().usingWatcher(watcher).forPath(path);
         }
-        return false;
+
     }
 
-    /**
-     * 删除结点
-     *
-     * @param path 结点
-     * @return true 删除键结点成功  false表示结点不存在
-     */
-    public boolean deleteZnode(String path) {
-        try {
-            Stat stat = null;
-            if ((stat = zookeeper.exists(path, true)) != null) {
-                List<String> subPaths = zookeeper.getChildren(path, false);
-                if (subPaths.isEmpty()) {
-                    zookeeper.delete(path, stat.getVersion());
-                    return true;
-                } else {
-                    for (String subPath : subPaths) {
-                        deleteZnode(path + "/" + subPath);
+
+    final class ZKNodeEventListener implements CuratorListener {
+        @Override
+        public void eventReceived(CuratorFramework client, CuratorEvent event) {
+            System.out.println(event.toString() + "............");
+            final WatchedEvent watchEvent = event.getWatchedEvent();
+            if (!Objects.isNull(watchEvent)) {
+                System.out.println(watchEvent.getState() + "----------" + watchEvent.getType());
+                if (watchEvent.getState() == Watcher.Event.KeeperState.SyncConnected) {
+                    switch (watchEvent.getType()) {
+                        case NodeChildrenChanged:
+                            break;
+                        case NodeDataChanged:
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
-        } catch (InterruptedException | KeeperException e) {
-            throw new RuntimeException("删除znode：" + path + "出现问题！！", e);
         }
-        return false;
     }
 
-    /**
-     * 取到结点数据
-     *
-     * @param path 结点路径
-     * @return null表示结点不存在 否则返回结点数据
-     */
-    public String getZnodeData(String path) {
-        String data = null;
-        try {
-            Stat stat = null;
-            if ((stat = zookeeper.exists(path, true)) != null) {
-                data = new String(zookeeper.getData(path, true, stat));
-            } else {
-                System.out.println("znode:" + path + ",不存在");
+
+
+     class ZKNodeWather implements CuratorWatcher {
+        @Override
+        public void process(WatchedEvent event)  {
+            if (event.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+                System.out.println("监视节点");
             }
-        } catch (KeeperException | InterruptedException e) {
-            throw new RuntimeException("取到znode：" + path + "出现问题！！", e);
         }
-        return data;
     }
-
 }

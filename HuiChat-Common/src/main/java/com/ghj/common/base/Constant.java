@@ -42,6 +42,8 @@ public class Constant {
 
     public static final String SERVER_NODE = "/server";
 
+    public static final String DEFAULT_CONNECT_NUMBER = "0";
+
     public static final String SUCCESS = "成功";
 
     public static final String LOGIN_SUCCESS = "登录成功";
@@ -125,6 +127,7 @@ public class Constant {
     public static final int AGREE_VALIDATION_MESSAGE = 2;
 
     public static final int REFUSE_VALIDATION_MESSAGE = 3;
+
 
     public static final String CODE_KEY = "code";
 
