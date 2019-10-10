@@ -17,6 +17,8 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
+import org.apache.curator.retry.RetryNTimes;
 
 import java.net.InetSocketAddress;
 
@@ -66,11 +68,13 @@ public class ServerConnector {
         workerGroup.shutdownGracefully();
     }
 
-    private void register(ChannelFuture future) {
+    private void register(ChannelFuture future) throws Exception {
         String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "127.0.0.1:2181");
         InetSocketAddress inetSocketAddress = (InetSocketAddress) future.channel().localAddress();
+        String path = Constant.SERVER_NODE + inetSocketAddress.getAddress() + ":" + inetSocketAddress.getPort();
         CuratorFramework client = ZookeeperUtil.getInstance(connect);
-        ZookeeperUtil.createNode(client, Constant.SERVER_NODE + inetSocketAddress.getAddress() + ":" + inetSocketAddress.getPort(), Constant.DEFAULT_CONNECT_NUMBER);
+        DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
+        ZookeeperUtil.createNode(client, path, atomicInteger.get().preValue().toString());
     }
 
 }
