@@ -109,7 +109,6 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
         String path = Constant.SERVER_NODE + inetAddress.getAddress() + ":" + inetAddress.getPort();
         DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
         atomicInteger.add(1);
-        ZookeeperUtil.updateNode(client, path,  atomicInteger.get().postValue().toString());
     }
 
     public MessageProto.Message buildAckMessage(Code code, MessageProto.Message message) {

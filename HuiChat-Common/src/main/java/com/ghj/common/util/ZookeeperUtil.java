@@ -69,6 +69,27 @@ public class ZookeeperUtil {
 
     }
 
+    /**
+     * 创建节点
+     *
+     * @param nodeName
+     * @return
+     */
+    public static boolean createNode(CuratorFramework client, String nodeName) {
+        boolean isSuccessFlag = false;
+        try {
+            Stat stat = client.checkExists().forPath(nodeName);
+            if (stat == null) {
+                String opResult = client.create().creatingParentsIfNeeded().forPath(nodeName);
+                isSuccessFlag = Objects.equals(nodeName, opResult);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return isSuccessFlag;
+
+    }
+
 
     /**
      * 更新节点

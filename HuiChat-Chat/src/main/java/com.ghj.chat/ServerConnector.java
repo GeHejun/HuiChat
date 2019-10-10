@@ -68,13 +68,12 @@ public class ServerConnector {
         workerGroup.shutdownGracefully();
     }
 
-    private void register(ChannelFuture future) throws Exception {
+    private void register(ChannelFuture future) {
         String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "127.0.0.1:2181");
         InetSocketAddress inetSocketAddress = (InetSocketAddress) future.channel().localAddress();
         String path = Constant.SERVER_NODE + inetSocketAddress.getAddress() + ":" + inetSocketAddress.getPort();
         CuratorFramework client = ZookeeperUtil.getInstance(connect);
-        DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
-        ZookeeperUtil.createNode(client, path, atomicInteger.get().preValue().toString());
+        ZookeeperUtil.createNode(client, path);
     }
 
 }
