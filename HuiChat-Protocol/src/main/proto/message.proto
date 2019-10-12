@@ -44,6 +44,7 @@ message Logout {
 
 message Ack {
     int64 msgId = 1;
+    int32 to = 2;
 }
 
 message Ping {

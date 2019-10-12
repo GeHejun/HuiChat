@@ -43,7 +43,7 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                             .build();
                     SessionManager.putSession(login.getForm(), session);
                     incrementOnLineUser(channel);
-                    ackMessage = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(login.getId()).build()).build();
+                    ackMessage = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).build()).build();
                 } catch (Exception e) {
 
                 }
@@ -52,34 +52,16 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
             case Ping:
                 try {
                     NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
-                    MessageManager.getInstance().putMessage(message);
-                    ackMessage = buildAckMessage(Code.PING_SUCCESS, message);
                 } catch (Exception e) {
-                    ackMessage = buildAckMessage(Code.PING_FAILURE, message);
                 }
-                MessageManager.getInstance().putMessage(ackMessage);
                 break;
             case Chat:
-            case VALIDATION_MESSAGE:
-            case REPLY_VALIDATION_MESSAGE:
-                try {
-                    MessageManager.getInstance().putMessage(message);
-                    ackMessage = buildAckMessage(Code.MESSAGE_SEND_SUCCESS, message);
-                } catch (Exception e) {
-                    ackMessage = buildAckMessage(Code.MESSAGE_SEND_FAILURE, message);
-                }
-                MessageManager.getInstance().putMessage(ackMessage);
-                break;
-            case LOGIN_OUT:
+            case Logout:
                 try {
                     SessionManager.removeSession(message.getFromUserId());
-                    ackMessage = buildAckMessage(Code.LOGIN_OUT_SUCCESS, message);
                 } catch (Exception e) {
-                    ackMessage = buildAckMessage(Code.LOGIN_OUT_FAILURE, message);
                 }
                 MessageManager.getInstance().putMessage(ackMessage);
-                break;
-            case ACK:
                 break;
             case UNRECOGNIZED:
                 default:
