@@ -8,10 +8,11 @@ option java_outer_classname = "Message";
 message Data {
 
     enum DataType {
-        Message = 0;
+        Chat = 0;
         Login = 1;
         Logout = 2;
         Ack = 3;
+        Ping = 4;
     }
 
     DataType dataType = 1;
@@ -33,17 +34,18 @@ message Chat{
 }
 
 message Login{
-    int64 id = 1;
     int32 form = 2;
     string token = 3;
 }
 
 message Logout {
-    int64 id = 1;
     int32 form = 2;
 }
 
 message Ack {
     int64 msgId = 1;
+}
+
+message Ping {
 }
 

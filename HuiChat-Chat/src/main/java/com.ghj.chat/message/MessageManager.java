@@ -2,6 +2,7 @@ package com.ghj.chat.message;
 
 import com.ghj.common.exception.MessageException;
 import com.ghj.common.util.ThreadPoolManager;
+import com.ghj.protocol.Message;
 import com.ghj.protocol.MessageProto;
 
 import java.util.Objects;
@@ -34,7 +35,7 @@ public class MessageManager {
     private ConcurrentLinkedQueue waitSendMessageQueue = new ConcurrentLinkedQueue();
 
 
-    public void putMessage(MessageProto.Message message) {
+    public void putMessage(Message message) {
         if (Objects.isNull(message)) {
             throw new MessageException();
         }
@@ -47,7 +48,7 @@ public class MessageManager {
             if (waitSendMessageQueue.isEmpty()) {
                 continue;
             }
-            ThreadPoolManager.getsInstance().execute(new MessageSender((MessageProto.Message) waitSendMessageQueue.poll()));
+            ThreadPoolManager.getsInstance().execute(new MessageSender((Message) waitSendMessageQueue.poll()));
         }
     }
 

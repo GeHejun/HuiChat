@@ -54,7 +54,7 @@
 
         <dependency>
             <groupId>com.ghj</groupId>
-            <artifactId>NowChat-Protocol</artifactId>
+            <artifactId>HuiChat-Protocol</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
