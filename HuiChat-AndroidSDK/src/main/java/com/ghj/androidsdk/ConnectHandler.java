@@ -23,10 +23,8 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                 Message.Chat chat = data.getChat();
                 Message.Data ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
                 channel.writeAndFlush(ack);
-
                 break;
             case Ack:
-
             case UNRECOGNIZED:
             default:
         }

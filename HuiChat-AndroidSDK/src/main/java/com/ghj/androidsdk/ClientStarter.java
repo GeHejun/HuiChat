@@ -1,5 +1,6 @@
 package com.ghj.androidsdk;
 
+import com.ghj.common.util.ThreadPoolManager;
 import io.netty.channel.Channel;
 
 /**
@@ -16,6 +17,7 @@ public class ClientStarter {
         ClientConnector clientConnector = new ClientConnector();
         try {
             channel = clientConnector.start();
+            ThreadPoolManager.getsInstance().execute(() -> MessageManager.getInstance().invalidMessage());
         } catch (Exception e) {
             e.printStackTrace();
             clientConnector.stop();
