@@ -1,12 +1,10 @@
 package com.ghj.chat;
 
 import com.ghj.chat.message.MessageManager;
-import com.ghj.common.base.Code;
 import com.ghj.common.base.Constant;
 import com.ghj.common.exception.UserException;
 import com.ghj.common.util.*;
 import com.ghj.protocol.Message;
-import com.ghj.protocol.MessageProto;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -15,9 +13,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
 import org.apache.curator.retry.RetryNTimes;
 
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.util.Objects;
 
 /**
  * @author GeHejun
@@ -31,60 +27,59 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
         System.out.println(o);
         Message.Data data = (Message.Data) o;
         Channel channel = channelHandlerContext.channel();
-        Message.Data ackMessage;
         switch (data.getDataType()) {
             case Login:
-                try {
-                    Message.Login login = data.getLogin();
-                    validateUser(login);
-                    NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
-                    Session session = Session.builder().channel(channel)
-                            .userId(login.getForm())
-                            .build();
-                    SessionManager.putSession(login.getForm(), session);
-                    incrementOnLineUser(channel);
-                    ackMessage = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).build()).build();
-                } catch (Exception e) {
-
-                }
-                MessageManager.getInstance().putMessage(ackMessage);
+                Message.Login login = data.getLogin();
+                validateUser(login);
+                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
+                Session session = Session.builder().channel(channel)
+                        .userId(login.getForm())
+                        .build();
+                SessionManager.putSession(login.getForm(), session);
+                incrementOnLineUser(channel);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
             case Ping:
-                try {
-                    NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
-                } catch (Exception e) {
-                }
+                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
                 break;
             case Chat:
+                MessageManager.getInstance().putMessage(data);
+                Message.Chat chat = data.getChat();
+                Message.Data ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).build()).build();
+                MessageManager.getInstance().putMessage(ack);
             case Logout:
-                try {
-                    SessionManager.removeSession(message.getFromUserId());
-                } catch (Exception e) {
-                }
-                MessageManager.getInstance().putMessage(ackMessage);
+                Message.Logout logout = data.getLogout();
+                SessionManager.removeSession(logout.getForm());
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                break;
+            case Ack:
+                MessageManager.getInstance().putMessage(data);
                 break;
             case UNRECOGNIZED:
-                default:
+            default:
         }
     }
 
     public void validateUser(Message.Login login) {
-        String token = RedisPoolUtil.get(Constant.SYSTEM_PREFIX  + Constant.USER_TOKEN_KEY + login.getForm());
+        String token = RedisPoolUtil.get(Constant.SYSTEM_PREFIX + Constant.USER_TOKEN_KEY + login.getForm());
         if (StringUtils.isEmpty(token)) {
             throw new UserException();
         }
     }
 
-    public synchronized void incrementOnLineUser(Channel channel) throws Exception {
-        String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT, "127.0.0.1:2181");
-        CuratorFramework client = ZookeeperUtil.getInstance(connect);
-        InetSocketAddress inetAddress = (InetSocketAddress) channel.localAddress();
-        String path = Constant.SERVER_NODE + inetAddress.getAddress() + ":" + inetAddress.getPort();
-        DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
-        atomicInteger.add(1);
+    public synchronized void incrementOnLineUser(Channel channel) {
+        try {
+            String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT);
+            CuratorFramework client = ZookeeperUtil.getInstance(connect);
+            InetSocketAddress address = (InetSocketAddress) channel.localAddress();
+            String path = Constant.SERVER_NODE + address.getAddress() + ":" + address.getPort();
+            DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
+            atomicInteger.add(1);
+        } catch (Exception e) {
+
+        }
+
     }
-
-
 
 
 }

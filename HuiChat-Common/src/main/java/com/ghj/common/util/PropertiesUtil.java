@@ -19,9 +19,11 @@ public class PropertiesUtil {
     private static PropertiesUtil instance = new PropertiesUtil();
 
 
-    public static PropertiesUtil getInstance()
-    {
+    public static PropertiesUtil getInstance() {
         return instance;
+    }
+    public String getValue(String key) {
+        return getValue("application.properties", key, null);
     }
 
     public String getValue(String key, String defaultValue) {
