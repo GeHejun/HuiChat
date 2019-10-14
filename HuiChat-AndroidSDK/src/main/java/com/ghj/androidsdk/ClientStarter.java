@@ -1,5 +1,7 @@
 package com.ghj.androidsdk;
 
+import io.netty.channel.Channel;
+
 /**
  * @author gehj
  * @version 1.0
@@ -7,13 +9,20 @@ package com.ghj.androidsdk;
  * @date 2019/10/14 13:14
  */
 public class ClientStarter {
-    public static void main(String[] args) {
+
+    private static Channel channel;
+
+    public static void start() {
         ClientConnector clientConnector = new ClientConnector();
         try {
-            clientConnector.start();
+            channel = clientConnector.start();
         } catch (Exception e) {
             e.printStackTrace();
             clientConnector.stop();
         }
+    }
+
+    public static Channel getChannel() {
+        return channel;
     }
 }

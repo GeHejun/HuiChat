@@ -2,6 +2,7 @@ package com.ghj.androidsdk;
 
 import com.ghj.protocol.Message;
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -23,7 +24,7 @@ public class ClientConnector {
 
     private NioEventLoopGroup group = new NioEventLoopGroup();
 
-    public void start() {
+    public Channel start() {
         try {
             Bootstrap bootstrap = new Bootstrap()
                     .group(group)
@@ -42,14 +43,16 @@ public class ClientConnector {
             String[] node = RoutingStrategy.findBestServer();
             ChannelFuture future = bootstrap.connect(node[0], Integer.parseInt(node[1])).sync();
             if (future.isSuccess()) {
+                return future.channel();
             } else {
                 future.cause().printStackTrace();
+                future.channel().closeFuture().sync();
                 throw new RuntimeException(future.cause());
             }
-            future.channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
             stop();
+            throw new RuntimeException();
         }
     }
 
