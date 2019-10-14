@@ -90,6 +90,10 @@ public class Constant {
 
     public static final Long PING_ADD_TIME = 1000L;
 
+    public static final Long MESSAGE_TIMEOUT = 10000L;
+
+    public static final Long MESSAGE_TIMEOUT_ADD = 2000L;
+
     public static final String CODE_KEY = "code";
 
     public static final String DATA_KEY = "data";
@@ -107,6 +111,7 @@ public class Constant {
     public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
 
     public static final String REST_CONNECT = "rest.connect";
+
 
 
 }

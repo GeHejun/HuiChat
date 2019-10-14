@@ -1,5 +1,7 @@
 package com.ghj.androidsdk;
 
+import com.ghj.common.base.Constant;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -25,6 +27,10 @@ public class MessageManager {
 
     private  ConcurrentHashMap<Long, Message> messageMap = new ConcurrentHashMap<>();
 
+    public void putMessage(Message message) {
+        messageMap.put(message.getChat().getId(), message);
+    }
+
     private  CallBack callBack;
 
 
@@ -46,7 +52,7 @@ public class MessageManager {
                 messageMap.remove(ack.getMsgId());
             } else {
                 Message message = messageMap.get(ack.getMsgId());
-                message.setInvalidTime(message.getInvalidTime() + 10000);
+                message.setInvalidTime(message.getInvalidTime() + Constant.MESSAGE_TIMEOUT_ADD);
             }
         }
     }
@@ -58,6 +64,10 @@ public class MessageManager {
          */
        void dealInvalidateMessage(com.ghj.protocol.Message.Chat chat);
 
+        /**
+         * 处理已读的ack消息
+         * @param ack
+         */
        void dealReadMessage(com.ghj.protocol.Message.Ack ack);
     }
 }

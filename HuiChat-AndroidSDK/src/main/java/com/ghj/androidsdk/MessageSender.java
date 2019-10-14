@@ -1,5 +1,6 @@
 package com.ghj.androidsdk;
 
+import com.ghj.common.base.Constant;
 import com.ghj.protocol.Message;
 
 /**
@@ -10,7 +11,11 @@ import com.ghj.protocol.Message;
  */
 public class MessageSender {
 
-    public void sendMessage(Message.Chat message) {
-        ClientStarter.getChannel().writeAndFlush(message);
+    public void sendMessage(Message.Chat chat) {
+        ClientStarter.getChannel().writeAndFlush(chat);
+        com.ghj.androidsdk.Message message = new com.ghj.androidsdk.Message();
+        message.setChat(chat);
+        message.setInvalidTime(System.currentTimeMillis() + Constant.MESSAGE_TIMEOUT);
+        MessageManager.getInstance().putMessage(message);
     }
 }
