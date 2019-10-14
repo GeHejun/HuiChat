@@ -16,33 +16,11 @@ public class Constant {
 
     public static final String ROUTING_KEY_A = "ROUTING_KEY_SAVE_MESSAGE";
 
-    public static final String ON_LINE_USER_COUNT = "ON_LINE_USER_COUNT";
-
-    public static final String ON_LINE_USER_LIST = "ON_LINE_USER_LIST";
-
     public static final String SYSTEM_PREFIX = "NOW-CHAT_USER_";
 
     public static final String DISTRIBUTED_SESSION = "DISTRIBUTED_SESSION_";
 
-    public static final String FRIEND_VALIDATION_MESSAGE = "FRIEND_VALIDATION_MESSAGE";
-
-    public static final String GROUP_VALIDATION_MESSAGE = "GROUP_VALIDATION_MESSAGE";
-
-    public static final String REPLAY_FRIEND_VALIDATION_MESSAGE = "REPLAY_FRIEND_VALIDATION_MESSAGE";
-
-    public static final String REPLAY_GROUP_VALIDATION_MESSAGE = "REPLAY_GROUP_VALIDATION_MESSAGE";
-
-    public static final String SYSTEM_MESSAGE = "SYSTEM_MESSAGE";
-
-    public static final String MESSAGE = "MESSAGE";
-
-    public static final String ON_LINE = "ON_LINE";
-
-    public static final String OFF_LINE = "OFF_LINE";
-
     public static final String SERVER_NODE = "/server";
-
-    public static final String DEFAULT_CONNECT_NUMBER = "0";
 
     public static final String SUCCESS = "成功";
 
@@ -76,10 +54,6 @@ public class Constant {
 
     public static final String REGISTER_FAILURE = "服务端注册失败";
 
-    public static final String USER_NO_EXISTS = "用户不存在";
-
-    public static final String GROUP_NO_EXISTS = "群组不存在";
-
     public static final int SUCCESS_CODE = 2000;
 
     public static final int LOGIN_SUCCESS_CODE = 2001;
@@ -112,30 +86,13 @@ public class Constant {
 
     public static final int REGISTER_FAILURE_CODE = 4007;
 
-    public static final int USER_NO_EXISTS_CODE = 4008;
-
-    public static final int GROUP_NO_EXISTS_CODE = 4009;
-
     public static final int MAX_AGGREGATED_CONTENT_LENGTH = 64 * 1024;
 
     public static final Long PING_ADD_TIME = 1000L;
 
-    public static final int MAX_CONNECT_NUM = 10000;
-
-    public static final int PENDING_VALIDATION_MESSAGE = 1;
-
-    public static final int AGREE_VALIDATION_MESSAGE = 2;
-
-    public static final int REFUSE_VALIDATION_MESSAGE = 3;
-
-
     public static final String CODE_KEY = "code";
 
     public static final String DATA_KEY = "data";
-
-    public static final String MESSAGE_TO_GROUP = "group";
-
-    public static final String MESSAGE_TO_PERSONAL = "friend";
 
     public static final String REDIS_IP = "redis.ip";
 
@@ -148,6 +105,8 @@ public class Constant {
     public static final String PUBLIC_NETWORK_IP = "public.network.ip";
 
     public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
+
+    public static final String REST_CONNECT = "rest.connect";
 
 
 }

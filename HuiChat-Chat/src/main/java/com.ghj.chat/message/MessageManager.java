@@ -15,7 +15,7 @@ public class MessageManager {
 
     private MessageManager() {}
 
-    private static Object MESSAGE_MANAGER_LOCK = new Object();
+    private final static Object MESSAGE_MANAGER_LOCK = new Object();
 
     private static volatile MessageManager messageManager;
 
@@ -42,7 +42,7 @@ public class MessageManager {
         waitSendMessageQueue.add(data);
     }
 
-    public void takeMessage() {
+    private void takeMessage() {
         for (;;) {
             if (waitSendMessageQueue.isEmpty()) {
                 continue;

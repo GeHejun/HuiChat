@@ -27,6 +27,7 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
         System.out.println(o);
         Message.Data data = (Message.Data) o;
         Channel channel = channelHandlerContext.channel();
+        Message.Data ack = null;
         switch (data.getDataType()) {
             case Login:
                 Message.Login login = data.getLogin();
@@ -37,7 +38,9 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                         .build();
                 SessionManager.putSession(login.getForm(), session);
                 incrementOnLineUser(channel);
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                ack = Message.Data.newBuilder()
+                        .setDataType(Message.Data.DataType.Ack)
+                        .setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
                 break;
             case Ping:
                 NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
@@ -45,40 +48,40 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
             case Chat:
                 MessageManager.getInstance().putMessage(data);
                 Message.Chat chat = data.getChat();
-                Message.Data ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).build()).build();
-                MessageManager.getInstance().putMessage(ack);
+                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
+                break;
             case Logout:
                 Message.Logout logout = data.getLogout();
                 SessionManager.removeSession(logout.getForm());
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
                 break;
             case Ack:
                 MessageManager.getInstance().putMessage(data);
+                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(data.getAck().getMsgId()).setTo(data.getAck().getFrom()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
                 break;
             case UNRECOGNIZED:
             default:
         }
+        MessageManager.getInstance().putMessage(ack);
     }
 
-    public void validateUser(Message.Login login) {
+    private void validateUser(Message.Login login) {
         String token = RedisPoolUtil.get(Constant.SYSTEM_PREFIX + Constant.USER_TOKEN_KEY + login.getForm());
         if (StringUtils.isEmpty(token)) {
             throw new UserException();
         }
     }
 
-    public synchronized void incrementOnLineUser(Channel channel) {
+    private synchronized void incrementOnLineUser(Channel channel) {
         try {
             String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT);
             CuratorFramework client = ZookeeperUtil.getInstance(connect);
             InetSocketAddress address = (InetSocketAddress) channel.localAddress();
             String path = Constant.SERVER_NODE + address.getAddress() + ":" + address.getPort();
             DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
-            atomicInteger.add(1);
+            atomicInteger.increment();
         } catch (Exception e) {
-
         }
-
     }
 
 

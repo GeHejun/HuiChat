@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HuiChat.iml" filepath="$PROJECT_DIR$/.idea/HuiChat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-AndroidSDK/HuiChat-AndroidSDK.iml" filepath="$PROJECT_DIR$/HuiChat-AndroidSDK/HuiChat-AndroidSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" filepath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" filepath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" filepath="$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" />

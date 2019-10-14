@@ -1,16 +1,23 @@
 package com.ghj.common.util;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Predicate;
+
+import static com.ghj.common.base.Constant.DATA_KEY;
 
 /**
  * @author GeHejun
  * @date 2019/6/25 17:15
  */
-public class OKHttpUtil {
+public class OkHttpUtil {
 
     private static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
     private static final MediaType MEDIA_TYPE_TEXT = MediaType.parse("application/x-www-form-urlencoded; charset=utf-8");
@@ -30,6 +37,21 @@ public class OKHttpUtil {
                 .url(url)
                 .build();
         deal(request, callback);
+    }
+
+    /**
+     * @param url getUrl
+     * @return java.lang.String
+     * @author xiaobu
+     * @date 2019/3/4 11:20
+     * @descprition
+     * @version 1.0
+     */
+    public static JSONObject get(String url) throws IOException {
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        return deal(request);
     }
 
 
@@ -78,5 +100,11 @@ public class OKHttpUtil {
 
     private static void deal(Request request, Callback callback) {
         client.newCall(request).enqueue(callback);
+    }
+
+    private static JSONObject deal(Request request) throws IOException {
+        Response response = client.newCall(request).execute();
+        String body = response.body().string();
+        return (JSONObject) JSON.parse(body);
     }
 }

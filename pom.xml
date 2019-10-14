@@ -15,6 +15,7 @@
         <module>HuiChat-Rest</module>
         <module>HuiChat-Protocol</module>
         <module>HuiChat-Eureka</module>
+        <module>HuiChat-AndroidSDK</module>
     </modules>
 
 

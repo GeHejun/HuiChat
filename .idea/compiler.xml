@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="HuiChat-AndroidSDK" />
         <module name="HuiChat-Chat" />
         <module name="HuiChat-Common" />
         <module name="HuiChat-Eureka" />
@@ -15,6 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HuiChat" target="1.8" />
+      <module name="HuiChat-AndroidSDK" target="1.8" />
       <module name="HuiChat-Chat" target="1.8" />
       <module name="HuiChat-Common" target="1.8" />
       <module name="HuiChat-Eureka" target="1.8" />
@@ -25,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="HuiChat-AndroidSDK" options="-parameters" />
       <module name="HuiChat-Chat" options="-parameters" />
       <module name="HuiChat-Common" options="-parameters" />
       <module name="HuiChat-Eureka" options="-parameters" />

@@ -4,6 +4,7 @@ package com.ghj.common.base;
  * @date 2019-06-24
  */
 public enum  Code {
+
     SUCCESS(Constant.SUCCESS_CODE, Constant.SUCCESS),
 
     LOGIN_SUCCESS(Constant.LOGIN_SUCCESS_CODE, Constant.LOGIN_SUCCESS),

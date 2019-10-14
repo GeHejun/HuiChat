@@ -1,11 +1,7 @@
-package com.ghj.chat;
+package com.ghj.androidsdk;
 
-
-import com.ghj.common.base.Constant;
-import com.ghj.common.util.PropertiesUtil;
-import com.ghj.common.util.ZookeeperUtil;
 import com.ghj.protocol.Message;
-import io.netty.bootstrap.ServerBootstrap;
+import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -16,29 +12,25 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import org.apache.curator.framework.CuratorFramework;
-
-import java.net.InetSocketAddress;
 
 /**
- * @author GeHejun
- * @date 2019-06-24
+ * @author gehj
+ * @version 1.0
+ * @description TODO
+ * @date 2019/10/14 13:15
  */
-public class ServerConnector {
+public class ClientConnector {
 
-    private NioEventLoopGroup bossGroup = new NioEventLoopGroup();
-    private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
+    private NioEventLoopGroup group = new NioEventLoopGroup();
 
-
-    public void start(int port) {
+    public void start() {
         try {
-            ServerBootstrap serverBootstrap = new ServerBootstrap()
-                    .group(bossGroup, workerGroup)
+            Bootstrap bootstrap = new Bootstrap()
+                    .group(group)
                     .channel(NioServerSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG, 128)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true)
                     .handler(new LoggingHandler(LogLevel.INFO))
-                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                    .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) {
                             socketChannel.pipeline()
@@ -47,9 +39,9 @@ public class ServerConnector {
                                     .addLast(new ConnectHandler());
                         }
                     });
-            ChannelFuture future = serverBootstrap.bind(port).sync();
+            String[] node = RoutingStrategy.findBestServer();
+            ChannelFuture future = bootstrap.connect(node[0], Integer.parseInt(node[1])).sync();
             if (future.isSuccess()) {
-                register(future);
             } else {
                 future.cause().printStackTrace();
                 throw new RuntimeException(future.cause());
@@ -62,18 +54,7 @@ public class ServerConnector {
     }
 
     public void stop() {
-        bossGroup.shutdownGracefully();
-        workerGroup.shutdownGracefully();
-    }
-
-    private void register(ChannelFuture future) {
-        String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT);
-        InetSocketAddress inetSocketAddress = (InetSocketAddress) future.channel().localAddress();
-        String path = Constant.SERVER_NODE + inetSocketAddress.getAddress() + ":" + inetSocketAddress.getPort();
-        CuratorFramework client = ZookeeperUtil.getInstance(connect);
-        ZookeeperUtil.createNode(client, path);
+        group.shutdownGracefully();
     }
 
 }
-
-
