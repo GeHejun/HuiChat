@@ -33,7 +33,7 @@ public class MessageManager {
             messageMap.forEach((k,v) -> {
                 if (System.currentTimeMillis() - v.getInvalidTime() > 0) {
                     callBack.dealInvalidateMessage(v.getChat());
-                    messageMap.remove(v);
+                    messageMap.remove(k);
                 }
             });
         }
@@ -43,6 +43,10 @@ public class MessageManager {
         if (messageMap.containsKey(ack.getMsgId())) {
             if (com.ghj.protocol.Message.Ack.AckStatus.Read == ack.getAckStatus()) {
                 callBack.dealReadMessage(ack);
+                messageMap.remove(ack.getMsgId());
+            } else {
+                Message message = messageMap.get(ack.getMsgId());
+                message.setInvalidTime(message.getInvalidTime() + 10000);
             }
         }
     }
