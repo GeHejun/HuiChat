@@ -1,6 +1,5 @@
 package com.ghj.common.mq;
 
-import com.alibaba.fastjson.JSON;
 import com.ghj.common.base.Constant;
 import com.ghj.common.util.PropertiesUtil;
 import com.rabbitmq.client.Channel;

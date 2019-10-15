@@ -38,7 +38,6 @@ public class MessageManager {
         if (Objects.isNull(data)) {
             throw new MessageException();
         }
-
         waitSendMessageQueue.add(data);
     }
 

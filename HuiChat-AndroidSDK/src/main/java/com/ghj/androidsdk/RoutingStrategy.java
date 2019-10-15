@@ -35,6 +35,6 @@ public class RoutingStrategy {
                 e.printStackTrace();
             }
         });
-        return nodeTreeMap.firstEntry().getValue().split(":");
+        return new String[] {nodeTreeMap.firstEntry().getValue().substring(0,nodeTreeMap.firstEntry().getValue().lastIndexOf(":")), nodeTreeMap.firstEntry().getValue().substring(nodeTreeMap.firstEntry().getValue().lastIndexOf(":") + 1)};
     }
 }
