@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  */
 @EnableEurekaServer
 @SpringBootApplication
-public class NowChatEurekaApplication {
+public class HuiChatEurekaApplication {
     public static void main(String[] args) {
-        SpringApplication.run(NowChatEurekaApplication.class, args);
+        SpringApplication.run(HuiChatEurekaApplication.class, args);
     }
 }

@@ -15,9 +15,9 @@ import javax.annotation.PostConstruct;
 //@Import(FdfsClientConfig.class)
 @MapperScan(basePackages = {"com.ghj.rest.dao"})
 @SpringBootApplication
-public class NowChatRestApplication {
+public class HuiChatRestApplication {
     public static void main(String[] args) {
-        SpringApplication.run(NowChatRestApplication.class, args);
+        SpringApplication.run(HuiChatRestApplication.class, args);
     }
 
 }

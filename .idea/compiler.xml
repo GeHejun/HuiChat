@@ -12,6 +12,7 @@
         <module name="HuiChat-Eureka" />
         <module name="HuiChat-Protocol" />
         <module name="HuiChat-Rest" />
+        <module name="HuiChat-Web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
