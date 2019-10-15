@@ -42,8 +42,11 @@ public class MessageManager {
         for (;;) {
             messageMap.forEach((k,v) -> {
                 if (System.currentTimeMillis() - v.getInvalidTime() > 0) {
-                    invalidMessageCallBacks.stream().forEach(callBack -> callBack.dealInvalidateMessage(v.getChat()));
-                    messageMap.remove(k);
+                    invalidMessageCallBacks.forEach(callBack -> {
+                        callBack.dealInvalidateMessage(v.getChat());
+                        messageMap.remove(k);
+                    });
+
                 }
             });
         }
@@ -52,8 +55,11 @@ public class MessageManager {
     public  void dealAckMessage(com.ghj.protocol.Message.Ack ack) {
         if (messageMap.containsKey(ack.getMsgId())) {
             if (com.ghj.protocol.Message.Ack.AckStatus.Read == ack.getAckStatus()) {
-                readMessageCallBacks.stream().forEach(callBack -> callBack.dealReadMessage(ack));
-                messageMap.remove(ack.getMsgId());
+                readMessageCallBacks.forEach(callBack -> {
+                    callBack.dealReadMessage(ack);
+                    messageMap.remove(ack.getMsgId());
+                });
+
             } else {
                 Message message = messageMap.get(ack.getMsgId());
                 message.setInvalidTime(message.getInvalidTime() + Constant.MESSAGE_TIMEOUT_ADD);
