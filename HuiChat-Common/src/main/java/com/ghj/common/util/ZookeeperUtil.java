@@ -1,6 +1,5 @@
 package com.ghj.common.util;
 
-import io.netty.util.internal.StringUtil;
 import org.apache.commons.io.Charsets;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;

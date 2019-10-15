@@ -1,17 +1,12 @@
 package com.ghj.common.util;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Optional;
-import java.util.function.Predicate;
-
-import static com.ghj.common.base.Constant.DATA_KEY;
 
 /**
  * @author GeHejun

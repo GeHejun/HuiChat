@@ -1,6 +1,5 @@
 package com.ghj.androidsdk;
 
-import com.ghj.common.util.ThreadPoolManager;
 import io.netty.channel.Channel;
 
 /**
