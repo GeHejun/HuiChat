@@ -26,10 +26,10 @@ public class MessageManager {
         return messageManager;
     }
 
-    private  ConcurrentHashMap<Long, Message> messageMap = new ConcurrentHashMap<>();
+    private  ConcurrentHashMap<Long, ChatMessage> messageMap = new ConcurrentHashMap<>();
 
-    public void putMessage(Message message) {
-        messageMap.put(message.getChat().getId(), message);
+    public void putMessage(ChatMessage chatMessage) {
+        messageMap.put(chatMessage.getChat().getId(), chatMessage);
     }
 
     private List<CallBack> invalidMessageCallBacks;
@@ -61,8 +61,8 @@ public class MessageManager {
                 });
 
             } else {
-                Message message = messageMap.get(ack.getMsgId());
-                message.setInvalidTime(message.getInvalidTime() + Constant.MESSAGE_TIMEOUT_ADD);
+                ChatMessage chatMessage = messageMap.get(ack.getMsgId());
+                chatMessage.setInvalidTime(chatMessage.getInvalidTime() + Constant.MESSAGE_TIMEOUT_ADD);
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.ghj.androidsdk;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -9,7 +10,8 @@ import lombok.Data;
  * @date 2019/10/14 16:07
  */
 @Data
-public class Message {
+@Builder
+public class ChatMessage {
 
     com.ghj.protocol.Message.Chat chat;
 
