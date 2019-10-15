@@ -2,6 +2,7 @@ package com.ghj.androidsdk;
 
 import com.ghj.common.base.Constant;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -31,14 +32,17 @@ public class MessageManager {
         messageMap.put(message.getChat().getId(), message);
     }
 
-    private  CallBack callBack;
+    private List<CallBack> invalidMessageCallBacks;
+
+
+    private List<CallBack> readMessageCallBacks;
 
 
     public  void invalidMessage() {
         for (;;) {
             messageMap.forEach((k,v) -> {
                 if (System.currentTimeMillis() - v.getInvalidTime() > 0) {
-                    callBack.dealInvalidateMessage(v.getChat());
+                    invalidMessageCallBacks.stream().forEach(callBack -> callBack.dealInvalidateMessage(v.getChat()));
                     messageMap.remove(k);
                 }
             });
@@ -48,7 +52,7 @@ public class MessageManager {
     public  void dealAckMessage(com.ghj.protocol.Message.Ack ack) {
         if (messageMap.containsKey(ack.getMsgId())) {
             if (com.ghj.protocol.Message.Ack.AckStatus.Read == ack.getAckStatus()) {
-                callBack.dealReadMessage(ack);
+                readMessageCallBacks.stream().forEach(callBack -> callBack.dealReadMessage(ack));
                 messageMap.remove(ack.getMsgId());
             } else {
                 Message message = messageMap.get(ack.getMsgId());
