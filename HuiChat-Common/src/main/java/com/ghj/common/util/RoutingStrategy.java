@@ -1,8 +1,6 @@
-package com.ghj.androidsdk;
+package com.ghj.common.util;
 
 import com.ghj.common.base.Constant;
-import com.ghj.common.util.PropertiesUtil;
-import com.ghj.common.util.ZookeeperUtil;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
 import org.apache.curator.retry.RetryNTimes;
@@ -17,7 +15,6 @@ import java.util.TreeMap;
  * @date 2019/10/14 13:30
  */
 public class RoutingStrategy {
-
 
     public static String[] findBestServer() {
         String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT);
@@ -35,6 +32,7 @@ public class RoutingStrategy {
                 e.printStackTrace();
             }
         });
-        return new String[] {nodeTreeMap.firstEntry().getValue().substring(0,nodeTreeMap.firstEntry().getValue().lastIndexOf(":")), nodeTreeMap.firstEntry().getValue().substring(nodeTreeMap.firstEntry().getValue().lastIndexOf(":") + 1)};
+        String value = nodeTreeMap.firstEntry().getValue();
+        return new String[] {value.substring(0,value.lastIndexOf(":")), value.substring(value.lastIndexOf(":") + 1)};
     }
 }
