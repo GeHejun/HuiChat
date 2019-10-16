@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="static/css/menu.css">
         <link href="favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon"/>        
     </head>
-    <body data-token="<?php echo $uinfo['id']; ?>" data-rykey="<?php echo $uinfo['easemob_token']; ?>">
+    <body>
     <pre style="padding-top: 50px;padding-left: 50px">
     已实现功能:
         1.好友/群内的文字、表情、图片、文件 在线/离线消息发送和接收。
@@ -45,7 +45,6 @@
                 var $ = layui.jquery;
                 var socket = layui.socket;
                 var token = $('body').data('token');
-                var rykey = $('body').data('rykey');           
                 socket.config({
                     user: token,
                     pwd: rykey ,
