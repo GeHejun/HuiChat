@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.SystemMessageMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.SystemMessage">
+<mapper namespace="com.ghj.rest.dao.SystemMessageMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.SystemMessage">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="from_user_id" jdbcType="INTEGER" property="fromUserId" />
     <result column="to_user_id" jdbcType="INTEGER" property="toUserId" />
@@ -44,7 +44,7 @@
     delete from system_message
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.SystemMessage">
+  <insert id="insert" parameterType="com.ghj.rest.model.SystemMessage">
     insert into system_message (id, from_user_id, to_user_id, 
       send_time, `status`, content, 
       to_group_id, from_friend_group_id, remark, handle_result)
@@ -53,7 +53,7 @@
       #{toGroupId,jdbcType=INTEGER}, #{fromFriendGroupId,jdbcType=INTEGER}, #{remark, jdbcType=VARCHAR},
       #{handleResult,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.SystemMessage">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.SystemMessage">
     insert into system_message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.SystemMessage">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.SystemMessage">
     update system_message
     <set>
       <if test="fromUserId != null">
@@ -153,7 +153,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.SystemMessage">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.SystemMessage">
     update system_message
     set from_user_id = #{fromUserId,jdbcType=BIGINT},
       to_user_id = #{toUserId,jdbcType=INTEGER},

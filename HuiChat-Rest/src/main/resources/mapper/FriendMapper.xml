@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.FriendMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.Friend">
+<mapper namespace="com.ghj.rest.dao.FriendMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.Friend">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="friend_id" jdbcType="INTEGER" property="friendId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -28,7 +28,7 @@
     delete from friend
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.Friend">
+  <insert id="insert" parameterType="com.ghj.rest.model.Friend">
     insert into friend (id, friend_id, user_id, 
       `name`, friend_type_id, friend_group_id
       )
@@ -36,7 +36,7 @@
       #{name,jdbcType=VARCHAR}, #{friendTypeId,jdbcType=INTEGER}, #{friendGroupId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.Friend">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.Friend">
     insert into friend
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -79,7 +79,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.Friend">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.Friend">
     update friend
     <set>
       <if test="friendId != null">
@@ -100,7 +100,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.Friend">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.Friend">
     update friend
     set friend_id = #{friendId,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},

@@ -1,7 +1,6 @@
 package com.ghj.web.service.impl;
 
-import com.ghj.common.base.Constant;
-import com.ghj.common.exception.MessageException;
+import com.ghj.common.dto.response.*;
 import com.ghj.web.service.MainFrameService;
 import com.ghj.web.service.RestService;
 import com.ghj.web.vo.*;
@@ -96,42 +95,42 @@ public class MainFrameServiceImpl implements MainFrameService {
         return messageVOList;
     }
 
-    @Override
-    public HistoryMessageVO initHistoryMessage(Integer fromUserId, Integer toUserId, String type, Integer pageIndex, Integer pageSize) {
-        if (Constant.MESSAGE_TO_PERSONAL.equals(type)) {
-            HistoryMessage<MessageResponse> historyMessage = restService.queryHistoryMessageListForPage(fromUserId, toUserId, pageIndex, pageSize).getData();
-            List<MessageVO> messageVOList = new ArrayList<>(historyMessage.getData().size());
-            historyMessage.getData().forEach(messageResponse -> {
-                messageVOList.add(buildMessageVO(messageResponse));
-            });
-            return HistoryMessageVO.builder().data(messageVOList)
-                    .pageNum(historyMessage.getPageNum()).pageSize(historyMessage.getPageSize()).total(historyMessage.getTotal()).build();
-        } else {
-            HistoryMessage<GroupMessageResponse> historyMessage = restService.queryHistoryGroupMessageListForPage(fromUserId, pageIndex, pageSize).getData();
-            List<MessageVO> messageVOList = new ArrayList<>(historyMessage.getData().size());
-            historyMessage.getData().forEach(groupMessageResponse -> messageVOList.add(buildGroupMessageVO(groupMessageResponse)));
-            return HistoryMessageVO.builder().data(messageVOList)
-                    .pageNum(historyMessage.getPageNum()).pageSize(historyMessage.getPageSize()).total(historyMessage.getTotal()).build();
-        }
-    }
+//    @Override
+//    public HistoryMessageVO initHistoryMessage(Integer fromUserId, Integer toUserId, String type, Integer pageIndex, Integer pageSize) {
+//        if (Constant.MESSAGE_TO_PERSONAL.equals(type)) {
+//            HistoryMessage<MessageResponse> historyMessage = restService.queryHistoryMessageListForPage(fromUserId, toUserId, pageIndex, pageSize).getData();
+//            List<MessageVO> messageVOList = new ArrayList<>(historyMessage.getData().size());
+//            historyMessage.getData().forEach(messageResponse -> {
+//                messageVOList.add(buildMessageVO(messageResponse));
+//            });
+//            return HistoryMessageVO.builder().data(messageVOList)
+//                    .pageNum(historyMessage.getPageNum()).pageSize(historyMessage.getPageSize()).total(historyMessage.getTotal()).build();
+//        } else {
+//            HistoryMessage<GroupMessageResponse> historyMessage = restService.queryHistoryGroupMessageListForPage(fromUserId, pageIndex, pageSize).getData();
+//            List<MessageVO> messageVOList = new ArrayList<>(historyMessage.getData().size());
+//            historyMessage.getData().forEach(groupMessageResponse -> messageVOList.add(buildGroupMessageVO(groupMessageResponse)));
+//            return HistoryMessageVO.builder().data(messageVOList)
+//                    .pageNum(historyMessage.getPageNum()).pageSize(historyMessage.getPageSize()).total(historyMessage.getTotal()).build();
+//        }
+//    }
 
     @Override
     public Boolean initFriendState(Integer userId) {
         return restService.queryUserState(userId).getData();
     }
 
-    @Override
-    public void readMessage(Integer fromUserId, Integer toUserId, String type) {
-        if (Constant.MESSAGE_TO_PERSONAL.equals(type)) {
-            if (!restService.readFriendMessage(fromUserId, toUserId).getData()) {
-                throw new MessageException();
-            }
-        } else {
-            if (!restService.readGroupMessage(fromUserId, toUserId).getData()) {
-                throw new MessageException();
-            }
-        }
-    }
+//    @Override
+//    public void readMessage(Integer fromUserId, Integer toUserId, String type) {
+//        if (Constant.MESSAGE_TO_PERSONAL.equals(type)) {
+//            if (!restService.readFriendMessage(fromUserId, toUserId).getData()) {
+//                throw new MessageException();
+//            }
+//        } else {
+//            if (!restService.readGroupMessage(fromUserId, toUserId).getData()) {
+//                throw new MessageException();
+//            }
+//        }
+//    }
 
     @Override
     public List<MessageBoxVO> initMessageBoxVO(Integer toUserId) {
@@ -229,7 +228,7 @@ public class MainFrameServiceImpl implements MainFrameService {
                 .id(messageResponse.getFromUserId().toString())
                 .timestamp(messageResponse.getSendTime())
                 .username(userResponse.getNickName())
-                .type(Constant.MESSAGE_TO_PERSONAL)
+                //.type(Constant.MESSAGE_TO_PERSONAL)
                 .build();
     }
 
@@ -244,7 +243,7 @@ public class MainFrameServiceImpl implements MainFrameService {
                 .fromid(groupMessageResponse.getFromUserId().toString())
                 .timestamp(groupMessageResponse.getSendTime())
                 .username(userResponse.getNickName())
-                .type(Constant.MESSAGE_TO_GROUP)
+                //.type(Constant.MESSAGE_TO_GROUP)
                 .build();
     }
 
@@ -259,7 +258,7 @@ public class MainFrameServiceImpl implements MainFrameService {
                 .fromid(groupMessageToUserResponse.getFromUserId().toString())
                 .timestamp(groupMessageToUserResponse.getSendTime())
                 .username(userResponse.getNickName())
-                .type(Constant.MESSAGE_TO_GROUP)
+                //.type(Constant.MESSAGE_TO_GROUP)
                 .build();
     }
 

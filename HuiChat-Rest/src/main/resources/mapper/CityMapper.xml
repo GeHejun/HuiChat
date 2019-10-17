@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.CityMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.City">
+<mapper namespace="com.ghj.rest.dao.CityMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.City">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="code" jdbcType="VARCHAR" property="code" />
@@ -20,13 +20,13 @@
     delete from city
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.City">
+  <insert id="insert" parameterType="com.ghj.rest.model.City">
     insert into city (id, `name`, code, 
       province_id)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
       #{provinceId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.City">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.City">
     insert into city
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.City">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.City">
     update city
     <set>
       <if test="name != null">
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.City">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.City">
     update city
     set `name` = #{name,jdbcType=VARCHAR},
       code = #{code,jdbcType=VARCHAR},

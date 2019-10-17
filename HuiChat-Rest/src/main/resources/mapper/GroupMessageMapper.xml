@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.GroupMessageMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.GroupMessage">
+<mapper namespace="com.ghj.rest.dao.GroupMessageMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.GroupMessage">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="from_user_id" jdbcType="INTEGER" property="fromUserId" />
     <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
     <result column="to_group_id" jdbcType="INTEGER" property="toGroupId" />
     <result column="message_type_id" jdbcType="INTEGER" property="messageTypeId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ghj.com.ghj.rest.model.GroupMessage">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ghj.rest.model.GroupMessage">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -37,13 +37,13 @@
     delete from group_message
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.GroupMessage">
+  <insert id="insert" parameterType="com.ghj.rest.model.GroupMessage">
     insert into group_message (id, from_user_id, send_time,
       content, to_group_id, message_type_id)
     values (#{id,jdbcType=BIGINT}, #{fromUserId,jdbcType=INTEGER}, #{sendTime,jdbcType=TIMESTAMP},
       #{content,jdbcType=LONGVARCHAR}, #{toGroupId,jdbcType=INTEGER}, #{messageTypeId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.GroupMessage">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.GroupMessage">
     insert into group_message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -86,7 +86,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.GroupMessage">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.GroupMessage">
     update group_message
     <set>
       <if test="fromUserId != null">
@@ -107,7 +107,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ghj.com.ghj.rest.model.GroupMessage">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ghj.rest.model.GroupMessage">
     update group_message
     set from_user_id = #{fromUserId,jdbcType=INTEGER},
       send_time = #{sendTime,jdbcType=TIMESTAMP},
@@ -116,7 +116,7 @@
       message_type_id = #{messageTypeId,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.GroupMessage">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.GroupMessage">
     update group_message
     set from_user_id = #{fromUserId,jdbcType=INTEGER},
       to_group_id = #{toGroupId,jdbcType=INTEGER},

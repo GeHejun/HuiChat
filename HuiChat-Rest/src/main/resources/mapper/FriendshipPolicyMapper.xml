@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.FriendshipPolicyMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.FriendshipPolicy">
+<mapper namespace="com.ghj.rest.dao.FriendshipPolicyMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.FriendshipPolicy">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="friendship_policy" jdbcType="VARCHAR" property="friendshipPolicy" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from friendship_policy
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.FriendshipPolicy">
+  <insert id="insert" parameterType="com.ghj.rest.model.FriendshipPolicy">
     insert into friendship_policy (id, friendship_policy)
     values (#{id,jdbcType=INTEGER}, #{friendshipPolicy,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.FriendshipPolicy">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.FriendshipPolicy">
     insert into friendship_policy
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.FriendshipPolicy">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.FriendshipPolicy">
     update friendship_policy
     <set>
       <if test="friendshipPolicy != null">
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.FriendshipPolicy">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.FriendshipPolicy">
     update friendship_policy
     set friendship_policy = #{friendshipPolicy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

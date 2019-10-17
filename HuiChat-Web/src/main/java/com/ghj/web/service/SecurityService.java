@@ -34,7 +34,7 @@ public interface SecurityService {
      * @param userRequest
      * @return
      */
-    UserResponse register(UserRequest userRequest);
+//    UserResponse register(UserRequest userRequest);
 
     /**
      * 通过用户名查找用户

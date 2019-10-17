@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.GroupToUserMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.GroupToUser">
+<mapper namespace="com.ghj.rest.dao.GroupToUserMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.GroupToUser">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="to_user_id" jdbcType="INTEGER" property="toUserId" />
     <result column="group_id" jdbcType="INTEGER" property="groupId" />
@@ -33,13 +33,13 @@
     delete from group_to_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.GroupToUser">
+  <insert id="insert" parameterType="com.ghj.rest.model.GroupToUser">
     insert into group_to_user (id, to_user_id, group_id, 
       send_time, group_user_nick)
     values (#{id,jdbcType=INTEGER}, #{toUserId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, 
       #{sendTime,jdbcType=TIMESTAMP}, #{groupUserNick,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.GroupToUser">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.GroupToUser">
     insert into group_to_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -76,7 +76,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.GroupToUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.GroupToUser">
     update group_to_user
     <set>
       <if test="toUserId != null">
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.GroupToUser">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.GroupToUser">
     update group_to_user
     set to_user_id = #{toUserId,jdbcType=INTEGER},
       group_id = #{groupId,jdbcType=INTEGER},

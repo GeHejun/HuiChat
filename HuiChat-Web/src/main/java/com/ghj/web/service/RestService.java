@@ -4,6 +4,7 @@ import com.ghj.common.base.Result;
 import com.ghj.common.dto.request.FriendRequest;
 import com.ghj.common.dto.request.GroupRequest;
 import com.ghj.common.dto.request.UserRequest;
+import com.ghj.common.dto.response.*;
 import com.ghj.web.vo.ResultVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

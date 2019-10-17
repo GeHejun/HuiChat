@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ghj.com.ghj.rest.dao.FriendGroupMapper">
-  <resultMap id="BaseResultMap" type="com.ghj.com.ghj.rest.model.FriendGroup">
+<mapper namespace="com.ghj.rest.dao.FriendGroupMapper">
+  <resultMap id="BaseResultMap" type="com.ghj.rest.model.FriendGroup">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -19,19 +19,19 @@
     delete from friend_group
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ghj.com.ghj.rest.model.FriendGroup">
+  <insert id="insert" parameterType="com.ghj.rest.model.FriendGroup">
     insert into friend_group (id, `name`, user_id
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.ghj.com.ghj.rest.model.FriendGroup" >
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.ghj.rest.model.FriendGroup" >
        insert into friend_group (id, `name`, user_id
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ghj.com.ghj.rest.model.FriendGroup">
+  <insert id="insertSelective" parameterType="com.ghj.rest.model.FriendGroup">
     insert into friend_group
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -56,7 +56,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.com.ghj.rest.model.FriendGroup">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.FriendGroup">
     update friend_group
     <set>
       <if test="name != null">
@@ -68,7 +68,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ghj.com.ghj.rest.model.FriendGroup">
+  <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.FriendGroup">
     update friend_group
     set `name` = #{name,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=INTEGER}

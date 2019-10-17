@@ -45,7 +45,7 @@ public interface MainFrameService {
      * @param pageSize
      * @return
      */
-    HistoryMessageVO initHistoryMessage(Integer fromUserId, Integer toUserId, String type, Integer pageIndex, Integer pageSize);
+//    HistoryMessageVO initHistoryMessage(Integer fromUserId, Integer toUserId, String type, Integer pageIndex, Integer pageSize);
 
     /**
      * 查询好友状态
@@ -61,7 +61,7 @@ public interface MainFrameService {
      * @param type
      * @return
      */
-    void readMessage(Integer fromUserId, Integer toUserId, String type);
+//    void readMessage(Integer fromUserId, Integer toUserId, String type);
 
     /**
      * 初始化消息盒子

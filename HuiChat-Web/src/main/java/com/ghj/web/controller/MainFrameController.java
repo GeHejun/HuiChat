@@ -76,8 +76,8 @@ public class MainFrameController {
                                                          @NotNull @RequestParam("type") String type,
                                                          @NotNull @RequestParam(defaultValue = "1") Integer pageIndex,
                                                          @NotNull @RequestParam(defaultValue = "10") Integer pageSize) {
-        HistoryMessageVO historyMessageVO = mainFrameService.initHistoryMessage(fromUserId, toUserId, type, pageIndex, pageSize);
-        return ResultVO.defaultSuccess(historyMessageVO);
+//        HistoryMessageVO historyMessageVO = mainFrameService.initHistoryMessage(fromUserId, toUserId, type, pageIndex, pageSize);
+        return ResultVO.defaultSuccess(null);
     }
 
     /**
@@ -103,7 +103,7 @@ public class MainFrameController {
     public void readMessage(@NotNull @RequestParam("fromUserId") Integer fromUserId,
                                                  @NotNull @RequestParam("toUserId") Integer toUserId,
                                                  @NotNull @RequestParam("type") String type) {
-        mainFrameService.readMessage(fromUserId, toUserId, type);
+//        mainFrameService.readMessage(fromUserId, toUserId, type);
     }
 
     /**

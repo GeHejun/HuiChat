@@ -46,35 +46,35 @@ public class SecurityController {
         }
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResultVO<UserResponse> register(@RequestBody UserRequest userRequest) {
-        try {
-            UserResponse userResponse = securityService.register(userRequest);
-            return ResultVO.defaultSuccess(userResponse);
-        } catch (UserException e) {
-            return ResultVO.failure(Constant.REGISTER_FAILURE_CODE, Constant.REGISTER_FAILURE);
-        }
-    }
+//    @RequestMapping(value = "/register", method = RequestMethod.POST)
+//    public ResultVO<UserResponse> register(@RequestBody UserRequest userRequest) {
+//        try {
+//            UserResponse userResponse = securityService.register(userRequest);
+//            return ResultVO.defaultSuccess(userResponse);
+//        } catch (UserException e) {
+//            return ResultVO.failure(Constant.REGISTER_FAILURE_CODE, Constant.REGISTER_FAILURE);
+//        }
+//    }
 
-    @RequestMapping("/findUser")
-    public ResultVO<List<UserVO>> findUser(@NotNull @RequestParam("name") String nickName) {
-        try {
-            List<UserVO> userVOList = securityService.findUser(nickName);
-            return ResultVO.defaultSuccess(userVOList);
-        } catch (UserException e) {
-            return ResultVO.failure(USER_NO_EXISTS_CODE,USER_NO_EXISTS);
-        }
-    }
+//    @RequestMapping("/findUser")
+//    public ResultVO<List<UserVO>> findUser(@NotNull @RequestParam("name") String nickName) {
+//        try {
+//            List<UserVO> userVOList = securityService.findUser(nickName);
+//            return ResultVO.defaultSuccess(userVOList);
+//        } catch (UserException e) {
+//            return ResultVO.failure(USER_NO_EXISTS_CODE,USER_NO_EXISTS);
+//        }
+//    }
 
-    @RequestMapping("/findGroup")
-    public ResultVO<List<GroupVO>> findGroup(@NotNull @RequestParam("name") String name) {
-        try {
-            List<GroupVO> groupVOList = securityService.findGroup(name);
-            return ResultVO.defaultSuccess(groupVOList);
-        } catch (UserException e) {
-            return ResultVO.failure(GROUP_NO_EXISTS_CODE,GROUP_NO_EXISTS);
-        }
-    }
+//    @RequestMapping("/findGroup")
+//    public ResultVO<List<GroupVO>> findGroup(@NotNull @RequestParam("name") String name) {
+//        try {
+//            List<GroupVO> groupVOList = securityService.findGroup(name);
+//            return ResultVO.defaultSuccess(groupVOList);
+//        } catch (UserException e) {
+//            return ResultVO.failure(GROUP_NO_EXISTS_CODE,GROUP_NO_EXISTS);
+//        }
+//    }
 
     @RequestMapping("/agreeFriend")
     public ResultVO<Boolean> agreeFriend(@RequestBody FriendRequest friendRequest) {
