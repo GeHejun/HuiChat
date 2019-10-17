@@ -16,10 +16,9 @@ import java.util.TreeMap;
  */
 public class RoutingStrategy {
 
-    public static String[] findBestServer() {
-        String connect = PropertiesUtil.getInstance().getValue(Constant.ZOOKEEPER_CONNECT);
+    public static String[] findBestServer(String path) {
+        String connect = PropertiesUtil.getInstance().getValue(path, Constant.ZOOKEEPER_CONNECT);
         CuratorFramework client = ZookeeperUtil.getInstance(connect);
-        String path = Constant.SERVER_NODE;
         List<String> children = ZookeeperUtil.showChildren(client, path);
         TreeMap<Integer, String> nodeTreeMap = new TreeMap<>();
         children.forEach(node -> {
