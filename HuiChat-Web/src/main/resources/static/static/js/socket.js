@@ -219,7 +219,7 @@
 
 
         },
-        initListener: function (user, pwd) { //初始化监听
+        initListener: function () { //初始化监听
             // console.log('注册服务连接监听事件');
             // var layim = conf.layim;
             var webSocket = new WebSocket("");

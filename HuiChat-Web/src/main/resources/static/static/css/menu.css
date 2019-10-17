@@ -1,5 +1,4 @@
 ﻿@charset "utf-8";
-/* smartMenu.css	by zhangxinxu */
 .smart_menu_box{display:none; width:140px; position:absolute; z-index:1000000000000000;}
 .smart_menu_body{padding:1px; border:1px solid #B8CBCB; background-color:#fff; -moz-box-shadow:2px 2px 5px #666; -webkit-box-shadow:2px 2px 5px #666; box-shadow:2px 2px 5px #666;}
 .smart_menu_ul{margin:0; padding:0; list-style-type:none;}
