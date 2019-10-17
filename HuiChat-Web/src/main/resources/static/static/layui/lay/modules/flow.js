@@ -118,10 +118,10 @@ layui.define('jquery', function(exports){
       /* 始终只加载在当前屏范围内的图片 */
       if(elemTop >= start && elemTop <= end){
         if(!item.attr('src')){
-          var src = item.attr('lay-src');
+          var src = item.attr('lay-layui');
           layui.img(src, function(){
             var next = that.lazyimg.elem.eq(index);
-            item.attr('src', src).removeAttr('lay-src');
+            item.attr('src', src).removeAttr('lay-layui');
             
             /* 当前图片加载就绪后，检测下一个图片是否在当前屏 */
             next[0] && render(next);

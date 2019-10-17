@@ -542,7 +542,7 @@ layui.define(['layer', 'form'], function(exports){
     return face.index = layer.tips(function(){
       var content = [];
       layui.each(faces, function(key, item){
-        content.push('<li title="'+ key +'"><img src="'+ item +'" alt="'+ key +'"></li>');
+        content.push('<li title="'+ key +'"><img layui="'+ item +'" alt="'+ key +'"></li>');
       });
       return '<ul class="layui-clear">' + content.join('') + '</ul>';
     }(), this, {
