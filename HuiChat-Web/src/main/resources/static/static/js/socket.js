@@ -5,23 +5,6 @@
     var form = layui.form;
     var cachedata = layui.layim.cache();
 
-    var conf = {
-        uid: 0, //
-        key: '', //
-        layim: null,
-        token: null,
-    };
-
-    var conn = new WebIM.connection({
-        isMultiLoginSessions: WebIM.config.isMultiLoginSessions,
-        https: typeof WebIM.config.https === 'boolean' ? WebIM.config.https : location.protocol === 'https:',
-        url: WebIM.config.xmppURL,
-        heartBeatWait: WebIM.config.heartBeatWait,
-        autoReconnectNumMax: WebIM.config.autoReconnectNumMax,
-        autoReconnectInterval: WebIM.config.autoReconnectInterval,
-        apiUrl: WebIM.config.apiURL,
-        isAutoLogin: true
-    });
     var socket = {
         config: function (options) {
             conf = $.extend(conf, options); //把layim继承出去，方便在register中使用
@@ -239,39 +222,26 @@
         initListener: function (user, pwd) { //初始化监听
             // console.log('注册服务连接监听事件');
             // var layim = conf.layim;
-            var options = {
-                apiUrl: WebIM.config.apiURL,
-                user: user,
-                pwd: pwd,
-                appKey: WebIM.config.appkey
+            var webSocket = new WebSocket("");
+            webSocket.onopen = function() {
+
             };
-            conn.open(options);
-            conn.listen({
-                onOpened: function (message) {
-                    //连接成功回调
-                    // 如果isAutoLogin设置为false，那么必须手动设置上线，否则无法收消息
-                    // 手动上线指的是调用conn.setPresence(); 如果conn初始化时已将isAutoLogin设置为true
-                    // 则无需调用conn.setPresence();             
-                },
-                onClosed: function (message) {
-                    layer.alert('该账号已在别处登陆，是否重新登陆？', {
-                        skin: 'layui-layer-molv' //样式类名
-                        , closeBtn: 0
-                    }, function () {
-                        window.location.href = 'login.html';
-                    });
-                },         //连接关闭回调
-                onTextMessage: function (message) {
+            webSocket.onclose = function() {
+                layer.alert('该账号已在别处登陆，是否重新登陆？', {
+                    skin: 'layui-layer-molv' //样式类名
+                    , closeBtn: 0
+                }, function () {
+                    window.location.href = 'login.html';
+                });
+            };
+            webSocket.onmessage = function(message) {
+                if () {
                     im.defineMessage(message, 'Text');
-                },    //收到文本消息
-                onEmojiMessage: function (message) {
-                },   //收到表情消息
-                onPictureMessage: function (message) {
+                }
+                if () {
                     im.defineMessage(message, 'Picture');
-                }, //收到图片消息
-                onCmdMessage: function (message) {
-                },     //收到命令消息
-                onAudioMessage: function (message) {
+                }
+                if () {
                     var options = {url: message.url};
                     options.onFileDownloadComplete = function (response) {
                         //音频下载成功，需要将response转换成blob，使用objectURL作为audio标签的src即可播放。
@@ -287,15 +257,12 @@
                     options.headers = {
                         'Accept': 'audio/mp3'
                     };
-                    WebIM.utils.download.call(conn, options);
-
-                },     //收到音频消息
-                onLocationMessage: function (message) {
-                },//收到位置消息
-                onFileMessage: function (message) {
+                    //下载
+                }
+                if () {
                     im.defineMessage(message, 'File');
-                },    //收到文件消息
-                onVideoMessage: function (message) {
+                }
+                if () {
                     var options = {url: message.url};
                     options.onFileDownloadComplete = function (response) {
                         //音频下载成功，需要将response转换成blob，使用objectURL作为audio标签的src即可播放。
@@ -310,9 +277,9 @@
                     options.headers = {
                         'Accept': 'audio/mp4'
                     };
-                    WebIM.utils.download.call(conn, options);
-                },   //收到视频消息
-                onPresence: function (message) {//监听对方的添加或者删除好友请求，并做相应的处理。
+                    //下载
+                }
+                if () {
                     if (message.type == 'unsubscribe') {
 
                         conf.layim.removeList({//从我的列表删除
@@ -357,7 +324,7 @@
                             to: message.gid
                         }, function (res) {
                             // var data = eval('(' + res + ')');
-                            // if (data.code == 0) {                             
+                            // if (data.code == 0) {
                             //     layer.msg('你申请加入'+message.toNick+'的消息已发送。请等待管理员确认');
                             // }else{
                             //     layer.msg('你申请加入'+message.toNick+'的消息发送失败。请刷新浏览器后重试');
@@ -374,7 +341,7 @@
                         //     ,id: message.from //群组id
                         // });
                         //     im.contextMenu();//更新右键点击事件
-                        // })                         
+                        // })
                     } else if (message.type == 'joinPublicGroupSuccess') {
                         im.audio('新');
                         var default_avatar = './uploads/person/empty1.jpg';
@@ -389,7 +356,7 @@
                                     , groupname: resp.data[0].name || [] //群名称
                                     , id: resp.data[0].id  //群组id
                                 });
-                                im.contextMenu();//更新右键点击事件                                
+                                im.contextMenu();//更新右键点击事件
                             },
                             error: function () {
                             }
@@ -440,8 +407,9 @@
                             });
                         });
                     }
-                },//处理“广播”或“发布-订阅”消息，如联系人订阅请求、处理群组、聊天室被踢解散等消息
-                onRoster: function (message) {
+                }
+                //处理“广播”或“发布-订阅”消息，如联系人订阅请求、处理群组、聊天室被踢解散等消息
+                if () {
                     console.log('处理“广播”');
                     if (message[0].subscription == 'to' && message[0].ask == 'subscribe') {
                         $.get('class/doAction.php?action=get_one_user_data', {memberIdx: message[0].name}, function (res) {
@@ -450,38 +418,19 @@
 
                         });
                     }
-                },         //处理好友申请
-                onInviteMessage: function (message) {
+                }
+                if () {
                     console.log('处理群组邀请');
-                },  //处理群组邀请
-                onOnline: function () {
-                },                  //本机网络连接成功
-                onOffline: function () {
+                }
+                if () {
                     layer.alert('网络不稳定，点击确认刷新页面？', {
                         skin: 'layui-layer-molv' //样式类名
                         , closeBtn: 0
                     }, function () {
                         window.location.href = 'index.html';
                     });
-                },                 //本机网络掉线
-                onError: function (message) {
-                },          //失败回调
-                onBlacklistUpdate: function (list) {       //黑名单变动
-                    // 查询黑名单，将好友拉黑，将好友从黑名单移除都会回调这个函数，list则是黑名单现有的所有好友信息
-                    console.log(list);
-                },
-                onReceivedMessage: function (message) {
-                },    //收到消息送达服务器回执
-                onDeliveredMessage: function (message) {
-                },   //收到消息送达客户端回执
-                onReadMessage: function (message) {
-                },        //收到消息已读回执
-                onCreateGroup: function (message) {
-                },        //创建群组成功回执（需调用createGroupNew）
-                onMutedMessage: function (message) {
-                }        //如果用户在A群组被禁言，在A群发消息会走这个回调并且消息不会传递给群其它成员
-            });
-
+                }
+            };
         },
         //自定义消息，把消息格式定义为layim的消息类型
         defineMessage: function (message, msgType) {

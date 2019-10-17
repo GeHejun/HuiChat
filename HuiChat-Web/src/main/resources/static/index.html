@@ -8,31 +8,8 @@
         <link href="favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon"/>        
     </head>
     <body>
-    <pre style="padding-top: 50px;padding-left: 50px">
-    已实现功能:
-        1.好友/群内的文字、表情、图片、文件 在线/离线消息发送和接收。
-        2.查看群员列表。
-        3.面板内快速查找。
-        4.面板右键自定义事件
-        5.修改签名
-        6.自定义上传背景皮肤
-        7.搜索好友/群
-        8.添加好友/群
-        9.新建群
-        10.消息盒子展示
-        11.查看/修改个人信息
-        12.实时获取好友在线状态
-        13.挤下线提醒
-        14.文件储存在七牛云
-        15.增删改 好友/好友分组
-        16.群管理（增删管理员/修改群名片/单个群员禁言解除禁言/踢人）
-        体验完整功能请移步<a href="https://github.com/shmilylbelva/webim" style="color: red">这里</a>
-        如果登陆一段时间后接收不到消息，可能是有别的小伙伴登陆了这个账号^_^,点击这里<a href="http://test.guoshanchina.com/login.php" style="color: red">重新登陆</a>即可(还没做退出登陆00……)
-    </pre>
-    </body>
-        <script type='text/javascript' src='static/js/webim.config.js'></script>
+
         <script type='text/javascript' src='static/js/strophe-1.2.8.min.js'></script>
-        <script type='text/javascript' src='static/js/websdk-1.4.13.js'></script> 
         <script src="static/layui/layui.js"></script>
         <script>
             //layui绑定扩展
@@ -41,7 +18,7 @@
             }).extend({
                 socket: 'socket',
             });
-            layui.use(['layim', 'jquery', 'socket'], function (layim, socket) {
+            layui.use(['layim', 'jquery', 'socket'], function (layim) {
                 var $ = layui.jquery;
                 var socket = layui.socket;
                 var token = $('body').data('token');
@@ -139,5 +116,6 @@
                     , Information: layui.cache.dir + 'css/modules/layim/html/getInformation.html' //好友群资料页面
                 });  
             });
-        </script>  
+        </script>
+    </body>
 </html>

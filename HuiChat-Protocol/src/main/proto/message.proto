@@ -33,7 +33,7 @@ message Chat{
     int32 type = 4;
     ChatType chatType = 5;
     string content = 6;
-
+    string ext = 7;
     enum ChatType {
         Single = 0;
         Group = 1;
