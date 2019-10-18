@@ -32,11 +32,9 @@
                     ;
                     im.contextMenu();
                 });
-
                 //监听查看群员
                 layim.on('members', function (data) {
                 });
-
                 //监听聊天窗口的切换
                 layim.on('chatChange', function (res) {
                     im.closeAllGroupList();
@@ -79,9 +77,7 @@
 
 
     var im = {
-        init: function () {
-            this.initListener();    //初始化事件监听
-        },
+        
         contextMenu: function () {//定义右键操作
             let my_spread = $('.layim-list-friend >li');
             my_spread.mousedown(function () {
@@ -212,8 +208,8 @@
 
 
         },
-        initListener: function () { //初始化监听
-            let webSocket = new WebSocket("ws://127.0.0.1:8999");
+        init: function () { //初始化监听
+            webSocket = new WebSocket("ws://127.0.0.1:8999");
             webSocket.onopen = function() {
 
             };
@@ -222,6 +218,7 @@
                     skin: 'layui-layer-molv' //样式类名
                     , closeBtn: 0
                 }, function () {
+                    localStorage.removeItem("user");
                     window.location.href = 'login.html';
                 });
             };
@@ -513,50 +510,8 @@
         sendMsg: function (data) {  //根据layim提供的data数据，进行解析
             var id = new Snowflake().nextId();
             var content = data.mine.content;
+            webSocket
 
-            msg.set({
-                content: data.mine.content,
-                to: data.to.id,                        // 接收消息对象（用户id）
-                from: data.mine.id,
-                success: function (id, serverMsgId) {//发送成功则记录信息到服务器
-                    var sendData = {
-                        to: data.to.id,
-                        content: data.mine.content,
-                        sendTime: data.mine.timestamp,
-                        type: data.to.type
-                    };
-
-                    if (data.to.cmd && (data.to.cmd.cmdName == 'leaveGroup' || data.to.cmd.cmdName == 'joinGroup')) {
-                        sendData.sysLog = true;
-                    }
-                    if ((data.to.cmd && sendData.sysLog) || data.to.cmd == 0) {
-                        $.get('class/doAction.php?action=addChatLog', sendData, function (res) {
-                            var data = eval('(' + res + ')');
-                            if (data.code != 0) {
-                                console.log('message record fail');
-                            }
-                        });
-                    }
-                },
-                fail: function (e) {//发送失败移除发送消息并提示发送失败
-                    im.popMsg(data, '发送失败 刷新页面试试！');
-                }
-            });
-            if (data.to.id == data.mine.id) {
-                layer.msg('不能给自己发送消息');
-                return;
-            }
-            if (data.to.cmd) {
-                msg.body.ext.cmd = data.to.cmd;
-            }
-            msg.body.ext.username = cachedata.mine.username;
-            if (data.to.type == 'group') {
-                msg.setGroup('groupchat');
-                msg.body.chatType = 'chatRoom';
-            } else {
-                msg.body.chatType = 'singleChat';
-            }
-            conn.send(msg.body);
         },
         getChatLog: function (data) {
             if (!cachedata.base.chatLog) {
@@ -1680,3 +1635,9 @@
     exports('socket', socket);
     exports('im', im);
 });
+
+var message = {
+    transform : function () {
+        
+    }
+}
