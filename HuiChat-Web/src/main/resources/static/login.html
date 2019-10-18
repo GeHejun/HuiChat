@@ -63,7 +63,7 @@
                 dataType: "json",
                 success: function (data) {
                     if (data.code == 0) {
-                        layui.data("user", JSON.stringify(data.data));
+                        localStorage.setItem("user", JSON.stringify(data.data));
                         location.href = "index.html";
                     }
                 },

@@ -22,6 +22,8 @@ public class Constant {
 
     public static final String SERVER_NODE = "/server";
 
+    public static final String WEBSOCKET_SERVER_NODE = "/websocket_server";
+
     public static final String SUCCESS = "成功";
 
     public static final String LOGIN_SUCCESS = "登录成功";

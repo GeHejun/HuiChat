@@ -17,7 +17,7 @@
             }).extend({
                 socket: 'socket',
             });
-            var user = layui.data('user');
+            var user = JSON.parse(localStorage.getItem("user"));
             layui.use(['layim', 'jquery', 'socket'], function (layim) {
                 var $ = layui.jquery;
                 var socket = layui.socket;

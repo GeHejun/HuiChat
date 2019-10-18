@@ -20,7 +20,7 @@
                 });
                 //监听签名修改
                 layim.on('sign', function (value) {
-                    $.post('class/doAction.php?action=change_sign', {sign: value}, function (data) {
+                    $.post('', {sign: value}, function (data) {
                         console.log('签名修改' + data);
                     });
                 });
@@ -37,10 +37,6 @@
                 layim.on('members', function (data) {
                 });
 
-                $('body').on('click', '*[socket-event]', function (e) {//自定义事件
-                    var othis = $(this), methid = othis.attr('socket-event');
-                    im[methid] ? im[methid].call(this, othis, e) : '';
-                });
                 //监听聊天窗口的切换
                 layim.on('chatChange', function (res) {
                     im.closeAllGroupList();
@@ -86,8 +82,8 @@
     // }
 
     var im = {
-        init: function (user, pwd) {
-            this.initListener(user, pwd);    //初始化事件监听
+        init: function () {
+            this.initListener();    //初始化事件监听
         },
         contextMenu: function () {//定义右键操作
             var my_spread = $('.layim-list-friend >li');
@@ -175,10 +171,10 @@
                     },
                     menu: []
                 };
-                var _this = $(this);
-                var groupInfo = conf.layim.thisChat().data;
-                var _time = (new Date()).valueOf();//当前时间
-                var _gagTime = parseInt(_this.attr('gagTime'));//当前禁言时间                  
+                let _this = $(this);
+                let groupInfo = conf.layim.thisChat().data;
+                let _time = (new Date()).valueOf();//当前时间
+                let _gagTime = parseInt(_this.attr('gagTime'));//当前禁言时间
                 if (cachedata.mine.id !== _this.attr('id')) {
                     data.menu.push(im.menuChat());
                     data.menu.push(im.menuInfo());
@@ -220,7 +216,7 @@
 
         },
         initListener: function () { //初始化监听
-            var webSocket = new WebSocket("ws://127.0.0.1:8999");
+            let webSocket = new WebSocket("ws://127.0.0.1:8999");
             webSocket.onopen = function() {
 
             };
@@ -432,7 +428,7 @@
         },
         //自定义消息，把消息格式定义为layim的消息类型
         defineMessage: function (message, msgType) {
-            var msg;
+            let msg;
             switch (msgType) {
                 case 'Text':
                     msg = message.data;
@@ -489,11 +485,11 @@
             }
             ;
             if (message.type == 'chat') {
-                var type = 'friend';
-                var id = message.from;
+                let type = 'friend';
+                let id = message.from;
             } else if (message.type == 'groupchat') {
-                var type = 'group';
-                var id = message.to;
+                let type = 'group';
+                let id = message.to;
             }
             if (message.delay) {//离线消息获取不到本地cachedata用户名称需要从服务器获取
                 var timestamp = Date.parse(new Date(message.delay));

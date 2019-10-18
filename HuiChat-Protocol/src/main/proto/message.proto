@@ -51,14 +51,14 @@ message Logout {
 
 message Ack {
     int64 msgId = 1;
-    int32 from = 2;
-    int32 to = 3;
+    int32 to = 2;
 
-    AckStatus ackStatus = 4;
+    AckStatus ackStatus = 3;
 
     enum AckStatus {
         Receive = 0;
-        Read = 1;
+        accept = 1;
+        Read = 2;
     }
 }
 
