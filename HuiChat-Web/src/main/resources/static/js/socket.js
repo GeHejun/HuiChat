@@ -77,7 +77,6 @@
 
 
     var im = {
-        
         contextMenu: function () {//定义右键操作
             let my_spread = $('.layim-list-friend >li');
             my_spread.mousedown(function () {
@@ -209,7 +208,7 @@
 
         },
         init: function () { //初始化监听
-            webSocket = new WebSocket("ws://127.0.0.1:8999");
+           var webSocket = new WebSocket("ws://127.0.0.1:8999");
             webSocket.onopen = function() {
 
             };
@@ -419,93 +418,7 @@
                 //     });
                 // }
             };
-        },
-        //自定义消息，把消息格式定义为layim的消息类型
-        defineMessage: function (message, msgType) {
-            let msg;
-            switch (msgType) {
-                case 'Text':
-                    msg = message.data;
-                    break;
-                case 'Picture':
-                    msg = 'img[' + message.thumb + ']';
-                    break;
-                case 'Audio':
-                    msg = 'audio[' + message.audio + ']';
-                    break;
-                case 'File':
-                    msg = 'file(' + message.url + ')[' + message.filename + ']';
-                    break;
-                case 'Video':
-                    msg = 'video[' + message.video + ']';
-                    break;
-            }
-            ;
-            if (message.ext.cmd) {//如果有命令参数
-
-                switch (message.ext.cmd.cmdName) {
-                    case 'gag': //禁言
-                        im.setGag({
-                            groupidx: message.to,
-                            type: 'set',
-                            user: message.ext.cmd.id,
-                            gagTime: message.data
-                        });
-                        break;
-                    case 'liftGag': //取消禁言 
-                        im.setGag({
-                            groupidx: message.to,
-                            type: 'lift',
-                            user: message.ext.cmd.id,
-                            gagTime: 0
-                        });
-                        break;
-                    // case 'setGag': //禁言
-                    // case 'joinGroup': //取消禁言
-                    // case 'joinGroup': //加入群
-                    // case 'leaveGroup': //退出群
-                    // case 'setAdmin': //设置管理员                      
-                    // case 'removeAdmin': //取消管理员                   
-                    // break;
-                    default:
-                        conf.layim.getMessage({
-                            system: true //系统消息
-                            , id: message.to //聊天窗口ID
-                            , type: "group" //聊天窗口类型
-                            , content: msg
-                        });
-                }
-                ;
-            }
-            ;
-            if (message.type == 'chat') {
-                let type = 'friend';
-                let id = message.from;
-            } else if (message.type == 'groupchat') {
-                let type = 'group';
-                let id = message.to;
-            }
-            if (message.delay) {//离线消息获取不到本地cachedata用户名称需要从服务器获取
-                var timestamp = Date.parse(new Date(message.delay));
-            } else {
-                var timestamp = (new Date()).valueOf();
-            }
-            var data = {
-                mine: false,
-                cid: 0,
-                username: message.ext.username,
-                avatar: "./uploads/person/" + message.from + ".jpg",
-                content: msg,
-                id: id,
-                fromid: message.from,
-                timestamp: timestamp,
-                type: type
-            }
-            if (!message.ext.cmd) {
-                conf.layim.getMessage(data);
-            }
-            ;
-
+            return webSocket;
         },
         sendMsg: function (data) {  //根据layim提供的data数据，进行解析
             var id = new Snowflake().nextId();

@@ -41,7 +41,6 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                 ack = Message.Data.newBuilder()
                         .setDataType(Message.Data.DataType.Ack)
                         .setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
-                channel.writeAndFlush(ack);
                 break;
             case Ping:
                 NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
@@ -50,22 +49,20 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                 MessageManager.getInstance().putMessage(data);
                 Message.Chat chat = data.getChat();
                 ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
-                channel.writeAndFlush(ack);
                 break;
             case Logout:
                 Message.Logout logout = data.getLogout();
                 SessionManager.removeSession(logout.getForm());
                 ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
-                channel.writeAndFlush(ack);
                 break;
             case Ack:
                 MessageManager.getInstance().putMessage(data);
                 ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(data.getAck().getMsgId()).setTo(data.getAck().getFrom()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
-                channel.writeAndFlush(ack);
                 break;
             case UNRECOGNIZED:
             default:
         }
+        MessageManager.getInstance().putMessage(ack);
     }
 
     private void validateUser(Message.Login login) {
