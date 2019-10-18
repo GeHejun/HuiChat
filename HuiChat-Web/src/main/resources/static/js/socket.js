@@ -9,7 +9,7 @@
         config: function (options) {
             conf = $.extend(conf, options); //把layim继承出去，方便在register中使用
             this.register();
-            im.init(options.user, options.pwd);
+            im.init();
         },
         register: function () {
             var layim = conf.layim;
@@ -77,18 +77,15 @@
         }
     };
 
-    // var ext = {
-
-    // }
 
     var im = {
         init: function () {
             this.initListener();    //初始化事件监听
         },
         contextMenu: function () {//定义右键操作
-            var my_spread = $('.layim-list-friend >li');
-            my_spread.mousedown(function (e) {
-                var data = {
+            let my_spread = $('.layim-list-friend >li');
+            my_spread.mousedown(function () {
+                let data = {
                     contextItem: "context-friend", // 添加class
                     target: function (ele) { // 当前元素
                         $(".context-friend").attr("data-id", ele[0].id.replace(/[^0-9]/ig, "")).attr("data-name", ele.find("span").html());
@@ -514,14 +511,13 @@
 
         },
         sendMsg: function (data) {  //根据layim提供的data数据，进行解析
-            var id = conn.getUniqueId();
+            var id = new Snowflake().nextId();
             var content = data.mine.content;
-            var msg = new WebIM.message('txt', id);    // 创建文本消息
 
             msg.set({
-                msg: data.mine.content,
+                content: data.mine.content,
                 to: data.to.id,                        // 接收消息对象（用户id）
-                roomType: false,
+                from: data.mine.id,
                 success: function (id, serverMsgId) {//发送成功则记录信息到服务器
                     var sendData = {
                         to: data.to.id,
