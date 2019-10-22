@@ -23,7 +23,7 @@
                 $.ajax({
                     url: "/route/bestRoute", success: function (data) {
                         createSocket(data.data);
-                        sendWSPush();
+                        sendWSPush({"from":user.id, "token":user.token});
                     }
                 });
 
