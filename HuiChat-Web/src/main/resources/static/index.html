@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>layim - WebIM</title><link rel="stylesheet" href="css/contextMenu.css" />
+        <title>layim - WebIM</title>
+        <link rel="stylesheet" href="css/contextMenu.css" />
         <link rel="stylesheet" href="layui/css/layui.css">
         <link rel="stylesheet" href="css/menu.css">
     </head>
@@ -21,17 +22,11 @@
                 socket: 'socket',
             });
             var user = JSON.parse(localStorage.getItem("user"));
-            layui.use(['layim', 'jquery', 'socket'], function (layim) {
-                var $ = layui.jquery;
-                var socket = layui.socket;
-                socket.config({
-                    user: user,
-                    layim: layim,
-                });
-
+            layui.use(['layim', 'jquery'], function () {
+                var layim = layui.layim;
                 layim.config({
                     init: {
-                        url: '/index/initMainFrame?id='+ user.id
+                        url: ''
                     },
                     //获取群成员
                     members: {
