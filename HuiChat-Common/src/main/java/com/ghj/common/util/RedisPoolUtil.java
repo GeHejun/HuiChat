@@ -129,4 +129,17 @@ public class RedisPoolUtil {
         return result;
     }
 
+    public static Long ttl(String key) {
+        Jedis jedis = null;
+        Long result = null;
+        try {
+            jedis = RedisPool.getJedis();
+            result = jedis.ttl(key);
+        } catch (Exception e) {
+            RedisPool.returnBrokenResource(jedis);
+        }
+        RedisPool.returnResource(jedis);
+        return result;
+    }
+
 }

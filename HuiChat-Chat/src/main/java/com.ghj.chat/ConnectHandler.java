@@ -44,6 +44,7 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                 break;
             case Chat:
                 Message.Chat chat = data.getChat();
+                validateToken(chat);
                 MessageSender.sendMsg(data);
                 channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(chat.getForm()).setMsgId(chat.getId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
@@ -65,6 +66,13 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
     private void validateUser(Message.Login login) {
         String token = RedisPoolUtil.get(Constant.SYSTEM_PREFIX + Constant.USER_TOKEN_KEY + login.getForm());
         if (StringUtils.isEmpty(token)) {
+            throw new UserException();
+        }
+    }
+
+    private void validateToken(Message.Chat chat) {
+        Long time = RedisPoolUtil.ttl(Constant.SYSTEM_PREFIX + Constant.USER_TOKEN_KEY + chat.getForm());
+        if (time <= 0) {
             throw new UserException();
         }
     }
