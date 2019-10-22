@@ -1,7 +1,7 @@
 package com.ghj.rest.service;
 
-import com.ghj.rest.entity.GroupMessageUserToUser;
 import com.baomidou.mybatisplus.service.IService;
+import com.ghj.rest.entity.GroupMessageUserToUser;
 
 /**
  * <p>

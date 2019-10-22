@@ -1,7 +1,7 @@
 package com.ghj.rest.mapper;
 
-import com.ghj.rest.entity.Province;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.ghj.rest.entity.Province;
 
 /**
  * <p>

@@ -1,9 +1,9 @@
 package com.ghj.rest.service.impl;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.ghj.rest.entity.GroupMessage;
 import com.ghj.rest.mapper.GroupMessageDao;
 import com.ghj.rest.service.GroupMessageService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

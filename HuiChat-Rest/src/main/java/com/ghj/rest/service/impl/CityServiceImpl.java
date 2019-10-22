@@ -1,9 +1,9 @@
 package com.ghj.rest.service.impl;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.ghj.rest.entity.City;
 import com.ghj.rest.mapper.CityDao;
 import com.ghj.rest.service.CityService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

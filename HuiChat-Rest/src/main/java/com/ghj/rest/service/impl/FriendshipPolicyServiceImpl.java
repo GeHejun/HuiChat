@@ -1,9 +1,9 @@
 package com.ghj.rest.service.impl;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.ghj.rest.entity.FriendshipPolicy;
 import com.ghj.rest.mapper.FriendshipPolicyDao;
 import com.ghj.rest.service.FriendshipPolicyService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
