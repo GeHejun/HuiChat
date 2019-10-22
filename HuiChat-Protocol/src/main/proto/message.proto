@@ -64,5 +64,6 @@ message Ack {
 }
 
 message Ping {
+    int32 from = 1;
 }
 

@@ -15,9 +15,9 @@
         <script type='text/javascript' src='js/socket.js'></script>
         <script src="layui/layui.js"></script>
         <script>
-            var user = JSON.parse(localStorage.getItem("user"));
+            let user = JSON.parse(localStorage.getItem("user"));
             layui.use(['layim', 'jquery'], function () {
-                var layim = layui.layim;
+                let layim = layui.layim;
                 layim.config({
                     init: {
                         url: ''

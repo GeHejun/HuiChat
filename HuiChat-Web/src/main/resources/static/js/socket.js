@@ -1,15 +1,15 @@
-﻿let Socket = ''
-let setIntervalWebSocketPush = null
+﻿let Socket = '';
+let setIntervalWebSocketPush = null;
 
 /**建立连接 */
 export function createSocket(url) {
     if (!Socket) {
         console.log('建立websocket连接')
         Socket = new WebSocket(url)
-        Socket.onopen = onopenWS
-        Socket.onmessage = onmessageWS
-        Socket.onerror = onerrorWS
-        Socket.onclose = oncloseWS
+        Socket.onopen = onopenWS;
+        Socket.onmessage = onmessageWS;
+        Socket.onerror = onerrorWS;
+        Socket.onclose = oncloseWS;
     } else {
         console.log('websocket已连接')
     }
@@ -21,7 +21,7 @@ export function onopenWS() {
 /**连接失败重连 */
 export function onerrorWS() {
     clearInterval(setIntervalWebSocketPush)
-    Socket.close()
+    Socket.close();
     createSocket() //重连
 }
 /**WS数据接收统一处理 */
@@ -54,9 +54,10 @@ export function oncloseWS() {
 }
 /**发送心跳 */
 export function sendPing() {
-    Socket.send('ping')
+    let user = localStorage.getItem("user");
+    let ping = {"from":user.id};
+    Socket.send(ping)
     setIntervalWebSocketPush = setInterval(() => {
-        var ping = {};
         Socket.send(ping)
-    }, 5000)
+    }, 2000)
 }
