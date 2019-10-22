@@ -1,7 +1,6 @@
 package com.ghj.common.util;
 
 import com.ghj.common.base.Constant;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
 import org.apache.curator.retry.RetryNTimes;

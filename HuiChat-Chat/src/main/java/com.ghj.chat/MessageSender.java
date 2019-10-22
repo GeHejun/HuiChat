@@ -2,14 +2,11 @@ package com.ghj.chat;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.ghj.chat.Session;
-import com.ghj.chat.SessionManager;
 import com.ghj.chat.constant.Route;
 import com.ghj.common.exception.ChatException;
 import com.ghj.common.util.OkHttpUtil;
 import com.ghj.common.util.PropertiesUtil;
 import com.ghj.protocol.Message;
-import io.netty.channel.Channel;
 
 import java.io.IOException;
 import java.util.Objects;

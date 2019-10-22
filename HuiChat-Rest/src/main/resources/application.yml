@@ -33,7 +33,10 @@ eureka:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka
 
-mybatis:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+    mapper-locations: classpath:com/ghj/rest/mapper/*Mapper.xml
+    type-aliases-package: com.ghj.rest.entity
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
