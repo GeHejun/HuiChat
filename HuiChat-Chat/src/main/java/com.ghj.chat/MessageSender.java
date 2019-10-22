@@ -1,4 +1,4 @@
-package com.ghj.chat.message;
+package com.ghj.chat;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -9,6 +9,7 @@ import com.ghj.common.exception.ChatException;
 import com.ghj.common.util.OkHttpUtil;
 import com.ghj.common.util.PropertiesUtil;
 import com.ghj.protocol.Message;
+import io.netty.channel.Channel;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -23,52 +24,34 @@ import static com.ghj.common.base.Constant.REST_CONNECT;
  * @author GeHejun
  * @date 2019/6/24 13:30
  */
-public class MessageSender implements Runnable {
+public class MessageSender {
 
-    /**
-     * 消息
-     */
-    private Message.Data data;
-
-    /**
-     * 初始化消息
-     *
-     * @param data
-     */
-    public MessageSender(Message.Data data) {
-        this.data = data;
-    }
-
-    /**
-     * 处理消息
-     */
-    @Override
-    public void run() {
-          switch (data.getDataType()) {
-              case Ack:
-                  dealAckMessage(data.getAck());
-                  break;
-              case Chat:
-                  switch (data.getChat().getChatType()) {
-                      case Single:
-                          dealSingleMessage(data.getChat());
-                          break;
-                      case Group:
-                          dealGroupMessage(data.getChat());
-                          break;
-                          default:
-                  }
-                  break;
+  public static void sendMsg(Message.Data data) {
+      switch (data.getDataType()) {
+          case Ack:
+              dealAckMessage(data.getAck());
+              break;
+          case Chat:
+              switch (data.getChat().getChatType()) {
+                  case Single:
+                      dealSingleMessage(data.getChat());
+                      break;
+                  case Group:
+                      dealGroupMessage(data.getChat());
+                      break;
                   default:
-          }
-    }
+              }
+              break;
+          default:
+      }
+  }
 
     /**
      * 处理点对点聊天消息
      *
      * @param chat
      */
-    private void dealSingleMessage(Message.Chat chat) {
+    private static void dealSingleMessage(Message.Chat chat) {
         Integer sessionKey = chat.getTo();
         Session session = SessionManager.getSession(sessionKey);
         if (session == null) {
@@ -82,7 +65,7 @@ public class MessageSender implements Runnable {
      *
      * @param chat
      */
-    private void dealGroupMessage(Message.Chat chat) {
+    private static void dealGroupMessage(Message.Chat chat) {
         Integer to = chat.getTo();
         try {
             JSONObject result = OkHttpUtil.get(PropertiesUtil.getInstance().getValue(REST_CONNECT) + Route.GET_GROUP_MEMBER + to);
@@ -106,7 +89,7 @@ public class MessageSender implements Runnable {
      *
      * @param ack
      */
-    private void dealAckMessage(Message.Ack ack) {
+    private static void dealAckMessage(Message.Ack ack) {
         Integer sessionKey = ack.getTo();
         Session session = SessionManager.getSession(sessionKey);
         if (session == null) {

@@ -58,7 +58,8 @@ message Ack {
 
     enum AckStatus {
         Receive = 0;
-        Read = 1;
+        Accept = 1;
+        Read = 2;
     }
 }
 

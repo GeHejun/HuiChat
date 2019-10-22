@@ -1,6 +1,5 @@
 package com.ghj.chat;
 
-import com.ghj.chat.message.MessageManager;
 import com.ghj.common.base.Constant;
 import com.ghj.common.exception.UserException;
 import com.ghj.common.util.*;
@@ -27,7 +26,6 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
         System.out.println(o);
         Message.Data data = (Message.Data) o;
         Channel channel = channelHandlerContext.channel();
-        Message.Data ack = null;
         switch (data.getDataType()) {
             case Login:
                 Message.Login login = data.getLogin();
@@ -38,31 +36,30 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
                         .build();
                 SessionManager.putSession(login.getForm(), session);
                 incrementOnLineUser(channel);
-                ack = Message.Data.newBuilder()
-                        .setDataType(Message.Data.DataType.Ack)
-                        .setAck(Message.Ack.newBuilder().setMsgId(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
+                MessageSender.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
             case Ping:
                 NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
                 break;
             case Chat:
-                MessageManager.getInstance().putMessage(data);
                 Message.Chat chat = data.getChat();
-                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(chat.getId()).setTo(chat.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
+                MessageSender.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(chat.getForm()).setMsgId(chat.getId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
             case Logout:
                 Message.Logout logout = data.getLogout();
                 SessionManager.removeSession(logout.getForm());
-                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
             case Ack:
-                MessageManager.getInstance().putMessage(data);
-                ack = Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(data.getAck().getMsgId()).setTo(data.getAck().getFrom()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build();
+                Message.Ack ack = data.getAck();
+                MessageSender.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(ack.getMsgId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
                 break;
             case UNRECOGNIZED:
             default:
         }
-        MessageManager.getInstance().putMessage(ack);
     }
 
     private void validateUser(Message.Login login) {
@@ -81,8 +78,10 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
             DistributedAtomicInteger atomicInteger = new DistributedAtomicInteger(client, path, new RetryNTimes(3, 1000));
             atomicInteger.increment();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
 
 
 }
