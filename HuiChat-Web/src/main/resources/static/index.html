@@ -9,18 +9,12 @@
     </head>
     <body>
 
-        <script type='text/javascript' src='js/strophe-1.2.8.min.js'></script>
         <script type='text/javascript' src='js/biginteger.js'></script>
         <script type='text/javascript' src='js/snowflake.js'></script>
         <script type='text/javascript' src='js/protobuf.js'></script>
+        <script type='text/javascript' src='js/socket.js'></script>
         <script src="layui/layui.js"></script>
         <script>
-            //layui绑定扩展
-            layui.config({
-                base: 'js/'
-            }).extend({
-                socket: 'socket',
-            });
             var user = JSON.parse(localStorage.getItem("user"));
             layui.use(['layim', 'jquery'], function () {
                 var layim = layui.layim;
@@ -112,6 +106,19 @@
                     , Information: layui.cache.dir + 'css/modules/layim/html/getInformation.html' //好友群资料页面
                 });  
             });
+            // import { createSocket, sendWSPush } from './api/websocket'
+            //
+            // createSocket() //创建
+            // sendWSPush(11111) //发送数据
+            //
+            // //监听ws数据响应
+            // const getDataFunc = function(e) {
+            //     console.log(e.detail.data)
+            // }
+            // window.addEventListener('onmessageWS', getDataFunc)
+            //
+            // //根据需要，销毁事件监听
+            // window.removeEventListener('onmessageWS', getDataFunc)
         </script>
     </body>
 </html>
