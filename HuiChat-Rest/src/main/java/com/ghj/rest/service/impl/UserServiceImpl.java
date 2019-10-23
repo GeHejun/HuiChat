@@ -1,9 +1,11 @@
 package com.ghj.rest.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.ghj.common.dto.UserResponse;
 import com.ghj.rest.entity.User;
 import com.ghj.rest.mapper.UserDao;
 import com.ghj.rest.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,7 +20,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
     @Override
-    public void queryUserById(Integer id) {
+    public UserResponse queryUserById(Integer id) {
         User user = this.selectById(id);
+        UserResponse userResponse = new UserResponse();
+        BeanUtils.copyProperties(user, userResponse);
+        return userResponse;
     }
 }
