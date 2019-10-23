@@ -12,5 +12,5 @@ import com.ghj.rest.entity.User;
  * @since 2019-10-22
  */
 public interface UserService extends IService<User> {
-
+    void queryUserById(Integer id);
 }

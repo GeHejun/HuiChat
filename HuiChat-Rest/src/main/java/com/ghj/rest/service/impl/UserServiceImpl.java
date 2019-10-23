@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
+    @Override
+    public void queryUserById(Integer id) {
+        User user = this.selectById(id);
+    }
 }
