@@ -16,6 +16,7 @@
         <script src="layui/layui.js"></script>
         <script>
             let user = JSON.parse(localStorage.getItem("user"));
+            let ackMsg = {};
             layui.use(['layim', 'jquery'], function () {
                 let layim = layui.layim;
                 let $ = layui.jquery;
@@ -23,16 +24,19 @@
                 $.ajax({
                     url: "/route/bestRoute", success: function (data) {
                         createSocket(data.data);
-                        sendWSPush({"from":user.id, "token":user.token});
+                        let loginId = new Snowflake().nextId();
+                        let loginMsg = {"id":loginId, "from":user.id, "token":user.token};
+                        ackMsg[loginId] = loginMsg;
+                        sendWSPush();
                     }
                 });
 
-                //
-                // //监听ws数据响应
-                // const getDataFunc = function(e) {
-                //     console.log(e.detail.data)
-                // }
-                // window.addEventListener('onmessageWS', getDataFunc)
+
+                //监听ws数据响应
+                const getDataFunc = function(data) {
+
+                };
+                window.addEventListener('onmessageWS', getDataFunc)
                 //
                 // //根据需要，销毁事件监听
                 // window.removeEventListener('onmessageWS', getDataFunc)

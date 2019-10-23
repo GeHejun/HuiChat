@@ -41,11 +41,13 @@ message Chat{
 }
 
 message Login{
+    int64 id = 1;
     int32 form = 2;
     string token = 3;
 }
 
 message Logout {
+    int64 id = 1;
     int32 form = 2;
 }
 

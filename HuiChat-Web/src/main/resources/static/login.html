@@ -63,8 +63,26 @@
                 dataType: "json",
                 success: function (data) {
                     if (data.code == 0) {
-                        localStorage.setItem("user", JSON.stringify(data.data));
-                        location.href = "index.html";
+                        import { createSocket, sendWSPush } from '/js/socket'
+                        $.ajax({
+                            url: "/route/bestRoute", success: function (data) {
+                                createSocket(data.data);
+                                sendWSPush({"id":new Snowflake().nextId(), "from":user.id, "token":user.token});
+                            }
+                        });
+
+
+                        //监听ws数据响应
+                        const getDataFunc = function(data) {
+                            if (data) {
+                                window.removeEventListener('onmessageWS', getDataFunc);
+                                localStorage.setItem("user", JSON.stringify(data.data));
+                                location.href = "index.html";
+                            }
+                        };
+                        window.addEventListener('onmessageWS', getDataFunc);
+
+
                     }
                 },
                 error: function (data) {
