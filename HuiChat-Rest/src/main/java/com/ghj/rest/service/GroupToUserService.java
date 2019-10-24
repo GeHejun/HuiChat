@@ -1,7 +1,11 @@
 package com.ghj.rest.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.ghj.common.dto.GroupToUserRequest;
+import com.ghj.common.dto.GroupToUserResponse;
 import com.ghj.rest.entity.GroupToUser;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.ghj.rest.entity.GroupToUser;
  */
 public interface GroupToUserService extends IService<GroupToUser> {
 
+    List<GroupToUserResponse> queryGroupToUserList(GroupToUserRequest groupToUserRequest);
 }
