@@ -2,11 +2,15 @@ package com.ghj.rest.web;
 
 
 import com.ghj.common.base.Result;
+import com.ghj.common.dto.UserRequest;
 import com.ghj.common.dto.UserResponse;
+import com.ghj.rest.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -20,9 +24,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/{id}")
-    @ResponseBody
-    public Result<UserResponse> queryUser(@PathVariable("id") Integer id) {
+    @Resource
+    UserService userService;
 
+    @RequestMapping("/queryUser")
+    @ResponseBody
+    public Result<UserResponse> queryUser(UserRequest userRequest) {
+        UserResponse userResponse = userService.queryUser(userRequest);
+        return Result.defaultSuccess(userResponse);
+    }
+
+    @RequestMapping("/queryUserList")
+    @ResponseBody
+    public Result<List<UserResponse>> queryUserList(UserRequest userRequest) {
+        List<UserResponse> userResponseList = userService.queryUserList(userRequest);
+        return Result.defaultSuccess(userResponseList);
     }
 }

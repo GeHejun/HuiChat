@@ -1,8 +1,11 @@
 package com.ghj.rest.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.ghj.common.dto.UserRequest;
 import com.ghj.common.dto.UserResponse;
 import com.ghj.rest.entity.User;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,9 +17,16 @@ import com.ghj.rest.entity.User;
  */
 public interface UserService extends IService<User> {
     /**
-     * 通过id查询用户
-     * @param id
+     * 查询用户
+     * @param userRequest
      * @return
      */
-    UserResponse queryUserById(Integer id);
+    UserResponse queryUser(UserRequest userRequest);
+
+    /**
+     * 查询用户
+     * @param userRequest
+     * @return
+     */
+    List<UserResponse> queryUserList(UserRequest userRequest);
 }
