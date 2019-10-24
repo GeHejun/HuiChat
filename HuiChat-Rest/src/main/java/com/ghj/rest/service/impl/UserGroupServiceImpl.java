@@ -29,7 +29,7 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupDao, UserGroup> i
     @Override
     public List<UserGroupResponse> queryGroupList(UserGroupRequest userGroupRequest) {
         UserGroup userGroup = new UserGroup();
-        BeanUtils.copyProperties(userGroupRequest, userGroup);
+        userGroup.setId(userGroupRequest.getGroupId());
         EntityWrapper<UserGroup> userGroupEntityWrapper = new EntityWrapper<>(userGroup);
         List<UserGroup> userGroupList = this.selectList(userGroupEntityWrapper);
         List<UserGroupResponse> userGroupResponseList = new ArrayList<>(userGroupList.size());

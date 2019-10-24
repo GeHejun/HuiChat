@@ -1,10 +1,7 @@
 package com.ghj.web.service;
 
 import com.ghj.common.base.Result;
-import com.ghj.common.dto.FriendRequest;
-import com.ghj.common.dto.FriendResponse;
-import com.ghj.common.dto.UserRequest;
-import com.ghj.common.dto.UserResponse;
+import com.ghj.common.dto.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,4 +29,13 @@ public interface RestService {
     @RequestMapping("/queryFriendList")
     @ResponseBody
     Result<List<FriendResponse>> queryFriendList(FriendRequest friendRequest);
+
+    @RequestMapping("/queryGroupList")
+    @ResponseBody
+    Result<List<UserGroupResponse>> queryGroupList(UserGroupRequest userGroupRequest);
+
+
+    @RequestMapping("/queryGroupToUserList")
+    @ResponseBody
+    Result<List<GroupToUserResponse>> queryGroupToUserList(GroupToUserRequest groupToUserRequest);
 }

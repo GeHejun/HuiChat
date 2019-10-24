@@ -1,9 +1,7 @@
 package com.ghj.web.service.impl;
 
-import com.ghj.common.dto.FriendRequest;
-import com.ghj.common.dto.FriendResponse;
-import com.ghj.common.dto.UserRequest;
-import com.ghj.common.dto.UserResponse;
+import com.ghj.common.base.Result;
+import com.ghj.common.dto.*;
 import com.ghj.web.service.IndexService;
 import com.ghj.web.service.RestService;
 import com.ghj.web.vo.MainFrameVO;
@@ -29,6 +27,14 @@ public class IndexServiceImpl implements IndexService {
 
         FriendRequest friendRequest = FriendRequest.builder().userId(id).build();
         List<FriendResponse> friendResponseList = restService.queryFriendList(friendRequest).getData();
+
+        GroupToUserRequest groupToUserRequest = GroupToUserRequest.builder().toUserId(id).build();
+        List<GroupToUserResponse> groupToUserResponseList = restService.queryGroupToUserList(groupToUserRequest).getData();
+
+        groupToUserResponseList.forEach(groupToUserResponse -> {
+            UserGroupRequest userGroupRequest = UserGroupRequest.builder().groupId(groupToUserResponse.getGroupId()).build();
+            List<UserGroupResponse> userGroupResponseList = restService.queryGroupList(userGroupRequest).getData();
+        });
         return null;
     }
 }

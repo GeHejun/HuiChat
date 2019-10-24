@@ -12,4 +12,6 @@ import lombok.Data;
 @Data
 @Builder
 public class UserGroupRequest {
+
+    private Integer groupId;
 }
