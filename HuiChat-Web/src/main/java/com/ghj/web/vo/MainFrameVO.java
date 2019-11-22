@@ -15,7 +15,7 @@ public class MainFrameVO {
 
     private UserVO mine;
 
-    private List<FriendVO> frined;
+    private List<FriendVO> friend;
 
     private List<GroupVO> group;
 }
