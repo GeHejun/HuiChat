@@ -1,7 +1,5 @@
 package com.ghj.androidsdk;
 
-import com.ghj.protocol.Message;
-
 /**
  * @author gehj
  * @version 1.0

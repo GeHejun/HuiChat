@@ -4,7 +4,6 @@ package com.ghj.chat;
 import com.ghj.common.base.Constant;
 import com.ghj.common.util.PropertiesUtil;
 import com.ghj.common.util.ZookeeperUtil;
-import com.ghj.protocol.Message;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

@@ -2,7 +2,6 @@ package com.ghj.androidsdk;
 
 import com.ghj.common.base.Constant;
 import com.ghj.common.util.SnowFlakeIdGenerator;
-import com.ghj.protocol.Message;
 
 /**
  * @author gehj

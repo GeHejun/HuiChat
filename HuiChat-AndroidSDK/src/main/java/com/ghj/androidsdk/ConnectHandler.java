@@ -1,6 +1,5 @@
 package com.ghj.androidsdk;
 
-import com.ghj.protocol.Message;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

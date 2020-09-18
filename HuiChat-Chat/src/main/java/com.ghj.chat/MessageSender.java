@@ -6,7 +6,6 @@ import com.ghj.chat.constant.Route;
 import com.ghj.common.exception.ChatException;
 import com.ghj.common.util.OkHttpUtil;
 import com.ghj.common.util.PropertiesUtil;
-import com.ghj.protocol.Message;
 
 import java.io.IOException;
 import java.util.Objects;

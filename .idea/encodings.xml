@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-AndroidSDK" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Chat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Chat/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Protocol" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Protocol/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Rest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Rest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Web/src/main/java" charset="UTF-8" />
   </component>
 </project>

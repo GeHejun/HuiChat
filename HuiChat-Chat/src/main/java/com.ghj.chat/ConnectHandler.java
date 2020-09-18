@@ -3,7 +3,6 @@ package com.ghj.chat;
 import com.ghj.common.base.Constant;
 import com.ghj.common.exception.UserException;
 import com.ghj.common.util.*;
-import com.ghj.protocol.Message;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

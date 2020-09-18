@@ -1,7 +1,6 @@
 package com.ghj.androidsdk;
 
 import com.ghj.common.util.RoutingStrategy;
-import com.ghj.protocol.Message;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
