@@ -31,6 +31,7 @@ public class MessageQueue {
 
     public static void dealMsg(ChannelHandlerContext channelHandlerContext, Message.Data data) {
         putMsg(data);
+        //改多线程
         while (true) {
             data = getMsg();
             Channel channel = channelHandlerContext.channel();
