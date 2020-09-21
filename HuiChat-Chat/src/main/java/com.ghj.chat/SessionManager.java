@@ -4,8 +4,10 @@ import com.ghj.common.base.Constant;
 import com.ghj.common.util.NettyAttrUtil;
 import com.ghj.common.util.RedisPoolUtil;
 import com.ghj.common.util.ThreadPoolManager;
+import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
 
 import java.net.InetSocketAddress;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
@@ -15,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class SessionManager {
 
-    private static final ConcurrentHashMap<Integer, Session> SESSION_MAP = new ConcurrentHashMap(16);
+    private static final Map<Integer, Session> SESSION_MAP = new ConcurrentHashMap<>(16);
 
     public static void putSession(Integer id, Session session) {
         SESSION_MAP.put(id, session);

@@ -23,12 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="proto">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ConnectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/SessionManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,15 +79,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,7 +121,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600404282251</updated>
       <workItem from="1600404283315" duration="7680000" />
-      <workItem from="1600598333235" duration="3342000" />
+      <workItem from="1600598333235" duration="3381000" />
+      <workItem from="1600664722084" duration="2846000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -134,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600415057506</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="proto">
+      <created>1600653167906</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600653167906</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,17 +194,29 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1600415078933" />
+    <state x="624" y="442" key="ReplaceDuplicatesPrompt" timestamp="1600665823513">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="624" y="442" key="ReplaceDuplicatesPrompt/0.23.1792.1017@0.23.1792.1017" timestamp="1600665823513" />
     <state x="330" y="156" key="SettingsEditor" timestamp="1600601044983">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600415070208">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600653181908">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600415070208" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600653181908" />
+    <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="858" y="478" width="535" height="516" key="extract.method.dialog/0.23.1792.1017@0.23.1792.1017" timestamp="1600666205407" />
     <state x="594" y="315" width="604" height="490" key="find.popup" timestamp="1600409644886">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600666696666">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1600666696666" />
   </component>
 </project>

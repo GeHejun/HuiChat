@@ -63,7 +63,7 @@ public class MessageHandler {
      * @param chat
      */
     private static void dealGroupMessage(Message.Chat chat) {
-        Integer to = chat.getTo();
+        int to = chat.getTo();
         try {
             JSONObject result = OkHttpUtil.get(PropertiesUtil.getInstance().getValue(REST_CONNECT) + Route.GET_GROUP_MEMBER + to);
             JSONArray toIds = result.getJSONArray(DATA_KEY);
