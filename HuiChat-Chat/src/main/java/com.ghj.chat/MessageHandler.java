@@ -6,6 +6,7 @@ import com.ghj.chat.constant.Route;
 import com.ghj.common.exception.ChatException;
 import com.ghj.common.util.OkHttpUtil;
 import com.ghj.common.util.PropertiesUtil;
+import com.ghj.protocol.Message;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -20,7 +21,7 @@ import static com.ghj.common.base.Constant.REST_CONNECT;
  * @author GeHejun
  * @date 2019/6/24 13:30
  */
-public class MessageSender {
+public class MessageHandler {
 
   public static void sendMsg(Message.Data data) {
       switch (data.getDataType()) {

@@ -4,6 +4,7 @@ package com.ghj.chat;
 import com.ghj.common.base.Constant;
 import com.ghj.common.util.PropertiesUtil;
 import com.ghj.common.util.ZookeeperUtil;
+import com.ghj.protocol.Message;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -25,8 +26,8 @@ import java.net.InetSocketAddress;
  */
 public class ServerConnector {
 
-    private NioEventLoopGroup bossGroup = new NioEventLoopGroup();
-    private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
+    private final NioEventLoopGroup bossGroup = new NioEventLoopGroup();
+    private final NioEventLoopGroup workerGroup = new NioEventLoopGroup();
 
 
     public void start(int port) {

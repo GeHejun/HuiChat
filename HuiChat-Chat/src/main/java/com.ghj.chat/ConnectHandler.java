@@ -3,64 +3,25 @@ package com.ghj.chat;
 import com.ghj.common.base.Constant;
 import com.ghj.common.exception.UserException;
 import com.ghj.common.util.*;
+import com.ghj.protocol.Message;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import org.apache.commons.lang3.time.DateUtils;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicInteger;
 import org.apache.curator.retry.RetryNTimes;
 
 import java.net.InetSocketAddress;
+import java.util.Date;
 
 /**
  * @author GeHejun
  * @date 2019-06-24
  */
 @ChannelHandler.Sharable
-public class ConnectHandler extends SimpleChannelInboundHandler {
-
-    @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object o) {
-        System.out.println(o);
-        Message.Data data = (Message.Data) o;
-        Channel channel = channelHandlerContext.channel();
-        switch (data.getDataType()) {
-            case Login:
-                Message.Login login = data.getLogin();
-                validateUser(login);
-                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
-                Session session = Session.builder().channel(channel)
-                        .userId(login.getForm())
-                        .build();
-                SessionManager.putSession(login.getForm(), session);
-                incrementOnLineUser(channel);
-                MessageSender.sendMsg(data);
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
-                break;
-            case Ping:
-                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
-                break;
-            case Chat:
-                Message.Chat chat = data.getChat();
-                validateToken(chat);
-                MessageSender.sendMsg(data);
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(chat.getForm()).setMsgId(chat.getId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
-                break;
-            case Logout:
-                Message.Logout logout = data.getLogout();
-                SessionManager.removeSession(logout.getForm());
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
-                break;
-            case Ack:
-                Message.Ack ack = data.getAck();
-                MessageSender.sendMsg(data);
-                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(ack.getMsgId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
-                break;
-            case UNRECOGNIZED:
-            default:
-        }
-    }
+public class ConnectHandler extends SimpleChannelInboundHandler<Message.Data> {
 
     private void validateUser(Message.Login login) {
         String token = RedisPoolUtil.get(Constant.SYSTEM_PREFIX + Constant.USER_TOKEN_KEY + login.getForm());
@@ -90,5 +51,44 @@ public class ConnectHandler extends SimpleChannelInboundHandler {
     }
 
 
-
+    @Override
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Message.Data data) throws Exception {
+        Channel channel = channelHandlerContext.channel();
+        switch (data.getDataType()) {
+            case Login:
+                Message.Login login = data.getLogin();
+                validateUser(login);
+                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
+                Session session = Session.builder().channel(channel)
+                        .userId(login.getForm())
+                        .buildTime(new Date())
+                        .build();
+                SessionManager.putSession(login.getForm(), session);
+                incrementOnLineUser(channel);
+                MessageHandler.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(login.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                break;
+            case Ping:
+                NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
+                break;
+            case Chat:
+                Message.Chat chat = data.getChat();
+                validateToken(chat);
+                MessageHandler.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(chat.getForm()).setMsgId(chat.getId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                break;
+            case Logout:
+                Message.Logout logout = data.getLogout();
+                SessionManager.removeSession(logout.getForm());
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setTo(logout.getForm()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                break;
+            case Ack:
+                Message.Ack ack = data.getAck();
+                MessageHandler.sendMsg(data);
+                channel.writeAndFlush(Message.Data.newBuilder().setDataType(Message.Data.DataType.Ack).setAck(Message.Ack.newBuilder().setMsgId(ack.getMsgId()).setAckStatus(Message.Ack.AckStatus.Receive).build()).build());
+                break;
+            case UNRECOGNIZED:
+            default:
+        }
+    }
 }
