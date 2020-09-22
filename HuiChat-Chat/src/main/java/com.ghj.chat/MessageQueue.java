@@ -12,10 +12,9 @@ import org.apache.curator.retry.RetryNTimes;
 
 import java.net.InetSocketAddress;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class MessageQueue {
@@ -25,11 +24,12 @@ public class MessageQueue {
         ThreadPoolManager.getsInstance().execute(() -> dataQueue.add(data));
     }
 
-    public static Message.Data getMsg() {
-        return dataQueue.poll();
+    public static Message.Data getMsg() throws ExecutionException, InterruptedException {
+        Future<Message.Data> submit = ThreadPoolManager.getsInstance().submit(dataQueue::poll);
+        return submit.get();
     }
 
-    public static void dealMsg(ChannelHandlerContext channelHandlerContext, Message.Data data) {
+    public static void dealMsg(ChannelHandlerContext channelHandlerContext, Message.Data data) throws ExecutionException, InterruptedException {
         putMsg(data);
         //改多线程
         while (true) {
@@ -85,7 +85,6 @@ public class MessageQueue {
     private static void dealLoginMsg(Message.Data data, Channel channel) {
         Message.Login login = data.getLogin();
         validateUser(login);
-        NettyAttrUtil.updateReaderTime(channel, System.currentTimeMillis() + Constant.PING_ADD_TIME);
         Session session = Session.builder().channel(channel)
                 .userId(login.getForm())
                 .buildTime(new Date())

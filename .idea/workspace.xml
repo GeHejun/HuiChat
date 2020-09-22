@@ -22,12 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="proto">
-      <change afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageQueue.java" afterDir="false" />
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息队列">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ConnectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageQueue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,17 +77,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HuiChatEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="HuiChat-Eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.eureka.HuiChatEurekaApplication" />
@@ -122,7 +109,8 @@
       <updated>1600404282251</updated>
       <workItem from="1600404283315" duration="7680000" />
       <workItem from="1600598333235" duration="3381000" />
-      <workItem from="1600664722084" duration="2846000" />
+      <workItem from="1600664722084" duration="2917000" />
+      <workItem from="1600754040419" duration="2122000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -138,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600653167906</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="消息队列">
+      <created>1600667718698</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600667718698</updated>
+    </task>
+    <task id="LOCAL-00004" summary="消息队列">
+      <created>1600667764308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600667764308</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +161,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="proto" />
-    <option name="LAST_COMMIT_MESSAGE" value="proto" />
+    <MESSAGE value="消息队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息队列" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
@@ -202,10 +205,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600653181908">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600667770663">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600653181908" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600667770663" />
     <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -214,9 +217,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
-    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600666696666">
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1600666696666" />
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1600761399172" />
   </component>
 </project>
