@@ -14,15 +14,14 @@ import static com.ghj.chat.MessageQueue.dealMsg;
 @ChannelHandler.Sharable
 public class ConnectHandler extends SimpleChannelInboundHandler<Message.Data> {
 
-
-    @Override
-    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        super.channelRegistered(ctx);
-    }
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        super.channelInactive(ctx);
     }
 
     @Override
