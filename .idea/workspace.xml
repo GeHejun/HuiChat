@@ -23,7 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息队列">
+      <change afterPath="$PROJECT_DIR$/HuiChat-Auth/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +123,7 @@
       <workItem from="1600404283315" duration="7680000" />
       <workItem from="1600598333235" duration="3381000" />
       <workItem from="1600664722084" duration="2917000" />
-      <workItem from="1600754040419" duration="2639000" />
+      <workItem from="1600754040419" duration="3541000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -158,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600761440151</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="active">
+      <created>1600762895448</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600762895448</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,10 +201,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1600413683975" />
-    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600600055567">
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600762510098">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1600600055567" />
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1600762510098" />
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600600281584">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -224,10 +233,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600761444661">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600762902924">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600761444661" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600762902924" />
     <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -236,6 +245,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
+    <state x="197" y="180" key="new project wizard" timestamp="1600763989314">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600763989314" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
