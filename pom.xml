@@ -9,19 +9,19 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+
     <modules>
-        <module>HuiChat-Common</module>
-        <module>HuiChat-Chat</module>
-        <module>HuiChat-Rest</module>
-        <module>HuiChat-Protocol</module>
-        <module>HuiChat-Auth</module>
-        <module>HuiChat-Proxy</module>
-        <module>HuiChat-Router</module>
-        <module>HuiChat-Access</module>
-        <module>HuiChat-GChat</module>
-        <module>HuiChat-Auth</module>
-        <module>HuiChat-MsgService</module>
-        <module>HuiChat-UService</module>
+        <module>huichat-common</module>
+        <module>huichat-rest</module>
+        <module>huichat-chat</module>
+        <module>huichat-proxy</module>
+        <module>huichat-router</module>
+        <module>huichat-msgservice</module>
+        <module>huichat-protocol</module>
+        <module>huichat-gchat</module>
+        <module>huichat-auth</module>
+        <module>huichat-access</module>
+        <module>huichat-lservice</module>
     </modules>
 
 
@@ -31,7 +31,4 @@
         <version>2.1.4.RELEASE</version>
     </parent>
 
-
-
-    
 </project>
