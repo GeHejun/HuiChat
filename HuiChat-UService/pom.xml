@@ -11,5 +11,9 @@
 
     <artifactId>HuiChat-Server</artifactId>
 
+    <dependencies>
+
+    </dependencies>
+
 
 </project>
