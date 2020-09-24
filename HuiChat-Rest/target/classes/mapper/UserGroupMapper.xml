@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghj.rest.dao.UserGroupMapper">
+    <resultMap id="BaseResultMap" type="com.ghj.rest.model.UserGroup">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="admin_id" jdbcType="INTEGER" property="adminId"/>
+        <result column="icon" jdbcType="VARCHAR" property="icon"/>
+        <result column="notice" jdbcType="VARCHAR" property="notice"/>
+        <result column="intro" jdbcType="VARCHAR" property="intro"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, `name`, create_time, admin_id, icon, notice, intro
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_group
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectGroupByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_group
+        where name like concat(concat('%', #{name}), '%');
+    </select>
+    <select id="selectGroupByAdminId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_group
+        where admin_id = #{toUserId, jdbcType=INTEGER};
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_group
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.ghj.rest.model.UserGroup">
+    insert into user_group (id, `name`, create_time, 
+      admin_id, icon, notice, 
+      intro)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{adminId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{notice,jdbcType=VARCHAR}, 
+      #{intro,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.ghj.rest.model.UserGroup">
+    insert into user_group (id, `name`, create_time,
+      admin_id, icon, notice,
+      intro)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+      #{adminId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{notice,jdbcType=VARCHAR},
+      #{intro,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.ghj.rest.model.UserGroup">
+        insert into user_group
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="adminId != null">
+                admin_id,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+            <if test="notice != null">
+                notice,
+            </if>
+            <if test="intro != null">
+                intro,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="adminId != null">
+                #{adminId,jdbcType=INTEGER},
+            </if>
+            <if test="icon != null">
+                #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="notice != null">
+                #{notice,jdbcType=VARCHAR},
+            </if>
+            <if test="intro != null">
+                #{intro,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.UserGroup">
+        update user_group
+        <set>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="adminId != null">
+                admin_id = #{adminId,jdbcType=INTEGER},
+            </if>
+            <if test="icon != null">
+                icon = #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="notice != null">
+                notice = #{notice,jdbcType=VARCHAR},
+            </if>
+            <if test="intro != null">
+                intro = #{intro,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.UserGroup">
+    update user_group
+    set `name` = #{name,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      admin_id = #{adminId,jdbcType=INTEGER},
+      icon = #{icon,jdbcType=VARCHAR},
+      notice = #{notice,jdbcType=VARCHAR},
+      intro = #{intro,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
