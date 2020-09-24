@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息队列">
+      <change afterPath="$PROJECT_DIR$/huichat-auth/target/huichat-auth-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-auth/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-auth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-chat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-gchat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-gchat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-lservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-lservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-msgservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-msgservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/HuiChat-Protocol-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ack$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ack$AckStatus$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ack$AckStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ack$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$AckOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Chat$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Chat$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Chat$ChatType$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Chat$ChatType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Chat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$ChatOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data$DataBodyCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data$DataType$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data$DataType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$DataOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Login$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Login$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$LoginOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Logout$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Logout$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Logout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$LogoutOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ping$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ping$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$Ping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message$PingOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/com/ghj/protocol/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/classes/message.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/annotations.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/auth.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/backend.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/billing.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/config_change.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/consumer.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/context.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/control.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/distribution.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/documentation.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/endpoint.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/experimental/authorization_config.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/experimental/experimental.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/http.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/httpbody.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/label.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/log.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/logging.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/metric.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/monitored_resource.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/monitoring.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/quota.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/service.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/source_info.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/system_parameter.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/usage.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/cloud/audit/audit_log.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/logging/type/http_request.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/logging/type/log_severity.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/longrunning/operations.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/code.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/error_details.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/status.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/color.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/date.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/dayofweek.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/latlng.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/money.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/postal_address.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/timeofday.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/any.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/api.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/compiler/plugin.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/descriptor.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/duration.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/empty.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/field_mask.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/source_context.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/struct.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/timestamp.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/type.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/wrappers.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-plugins/protoc-3.8.0-osx-x86_64.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/protoc-plugins/protoc-gen-grpc-java-1.18.0-osx-x86_64.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-router/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-router/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hfZoWBWozvRbciPKnjm35x73ST" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
+    <configuration name="HuiChatEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="HuiChat-Eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.eureka.HuiChatEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuiChatRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="huichat-rest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.rest.HuiChatRestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuiChatWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="HuiChat-Web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.web.HuiChatWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="" />
+      <created>1600404282251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600404282251</updated>
+      <workItem from="1600404283315" duration="7680000" />
+      <workItem from="1600598333235" duration="3381000" />
+      <workItem from="1600664722084" duration="2917000" />
+      <workItem from="1600754040419" duration="4409000" />
+      <workItem from="1600777468855" duration="128000" />
+      <workItem from="1600825076417" duration="5539000" />
+    </task>
+    <task id="LOCAL-00001" summary="proto">
+      <created>1600415057506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600415057506</updated>
+    </task>
+    <task id="LOCAL-00002" summary="proto">
+      <created>1600653167906</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600653167906</updated>
+    </task>
+    <task id="LOCAL-00003" summary="消息队列">
+      <created>1600667718698</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600667718698</updated>
+    </task>
+    <task id="LOCAL-00004" summary="消息队列">
+      <created>1600667764308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600667764308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="active">
+      <created>1600761440151</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600761440151</updated>
+    </task>
+    <task id="LOCAL-00006" summary="active">
+      <created>1600762895448</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600762895448</updated>
+    </task>
+    <task id="LOCAL-00007" summary="鉴权">
+      <created>1600764025582</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600764025582</updated>
+    </task>
+    <task id="LOCAL-00008" summary="重新架构">
+      <created>1600919969522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600919969522</updated>
+    </task>
+    <task id="LOCAL-00009" summary="重新架构">
+      <created>1600924612220</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600924612220</updated>
+    </task>
+    <task id="LOCAL-00010" summary="消息队列">
+      <created>1600965314216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600965314216</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="proto" />
+    <MESSAGE value="active" />
+    <MESSAGE value="鉴权" />
+    <MESSAGE value="重新架构" />
+    <MESSAGE value="消息队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息队列" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="463" y="203" key="#Inspections/0.23.1792.1017@0.23.1792.1017" timestamp="1600600798389" />
+    <state x="317" y="99" key="#Project_Structure" timestamp="1600938078746">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1600938078746" />
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600762510098">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1600762510098" />
+    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600600281584">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1600600281584" />
+    <state width="1599" height="252" key="GridCell.Tab.0.bottom" timestamp="1600966336610">
+      <screen x="0" y="23" width="1920" height="963" />
+    </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1600415078933" />
+    <state width="1599" height="252" key="GridCell.Tab.0.bottom/0.23.1920.963@0.23.1920.963" timestamp="1600966336610" />
+    <state width="1599" height="252" key="GridCell.Tab.0.center" timestamp="1600966336609">
+      <screen x="0" y="23" width="1920" height="963" />
+    </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1600415078932" />
+    <state width="1599" height="252" key="GridCell.Tab.0.center/0.23.1920.963@0.23.1920.963" timestamp="1600966336609" />
+    <state width="1599" height="252" key="GridCell.Tab.0.left" timestamp="1600966336609">
+      <screen x="0" y="23" width="1920" height="963" />
+    </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1600415078932" />
+    <state width="1599" height="252" key="GridCell.Tab.0.left/0.23.1920.963@0.23.1920.963" timestamp="1600966336609" />
+    <state width="1599" height="252" key="GridCell.Tab.0.right" timestamp="1600966336610">
+      <screen x="0" y="23" width="1920" height="963" />
+    </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1600415078933" />
+    <state width="1599" height="252" key="GridCell.Tab.0.right/0.23.1920.963@0.23.1920.963" timestamp="1600966336610" />
+    <state x="624" y="442" key="ReplaceDuplicatesPrompt" timestamp="1600665823513">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="624" y="442" key="ReplaceDuplicatesPrompt/0.23.1792.1017@0.23.1792.1017" timestamp="1600665823513" />
+    <state x="330" y="156" key="SettingsEditor" timestamp="1600601044983">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600924698248">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600924698248" />
+    <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="858" y="478" width="535" height="516" key="extract.method.dialog/0.23.1792.1017@0.23.1792.1017" timestamp="1600666205407" />
+    <state x="594" y="315" width="604" height="490" key="find.popup" timestamp="1600409644886">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
+    <state x="1360" y="339" key="git4idea.merge.GitPullDialog" timestamp="1600958974443">
+      <screen x="0" y="23" width="1920" height="963" />
+    </state>
+    <state x="1360" y="339" key="git4idea.merge.GitPullDialog/0.23.1920.963@0.23.1920.963" timestamp="1600958974443" />
+    <state x="197" y="180" key="new project wizard" timestamp="1600938046680">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600938046680" />
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1600761399172" />
+  </component>
+</project>
