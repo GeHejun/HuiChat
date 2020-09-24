@@ -3,14 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HuiChat.iml" filepath="$PROJECT_DIR$/.idea/HuiChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-AndroidSDK/HuiChat-AndroidSDK.iml" filepath="$PROJECT_DIR$/HuiChat-AndroidSDK/HuiChat-AndroidSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Access/HuiChat-Access.iml" filepath="$PROJECT_DIR$/HuiChat-Access/HuiChat-Access.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" filepath="$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" filepath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" filepath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" filepath="$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" filepath="$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" filepath="$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" filepath="$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Proxy/HuiChat-Proxy.iml" filepath="$PROJECT_DIR$/HuiChat-Proxy/HuiChat-Proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" filepath="$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Web/HuiChat-Web.iml" filepath="$PROJECT_DIR$/HuiChat-Web/HuiChat-Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-Router/HuiChat-Router.iml" filepath="$PROJECT_DIR$/HuiChat-Router/HuiChat-Router.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" filepath="$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" />
     </modules>
   </component>
 </project>

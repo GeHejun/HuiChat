@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息队列" />
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="重新架构">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-UService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-UService/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,8 +64,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -73,6 +76,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HuiChatEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="HuiChat-Eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.eureka.HuiChatEurekaApplication" />
@@ -96,9 +110,6 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="" />
@@ -109,7 +120,9 @@
       <workItem from="1600404283315" duration="7680000" />
       <workItem from="1600598333235" duration="3381000" />
       <workItem from="1600664722084" duration="2917000" />
-      <workItem from="1600754040419" duration="3541000" />
+      <workItem from="1600754040419" duration="4409000" />
+      <workItem from="1600777468855" duration="128000" />
+      <workItem from="1600825076417" duration="5539000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -153,21 +166,28 @@
       <option name="project" value="LOCAL" />
       <updated>1600762895448</updated>
     </task>
-    <task id="LOCAL-00007" summary="消息队列">
-      <created>1600958015755</created>
+    <task id="LOCAL-00007" summary="鉴权">
+      <created>1600764025582</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1600958015755</updated>
+      <updated>1600764025582</updated>
     </task>
-    <task id="LOCAL-00008" summary="消息队列">
-      <created>1600958058977</created>
+    <task id="LOCAL-00008" summary="重新架构">
+      <created>1600919969522</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1600958058977</updated>
+      <updated>1600919969522</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="重新架构">
+      <created>1600924612220</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600924612220</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,19 +208,21 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="proto" />
-    <MESSAGE value="active" />
     <MESSAGE value="消息队列" />
-    <option name="LAST_COMMIT_MESSAGE" value="消息队列" />
+    <MESSAGE value="active" />
+    <MESSAGE value="鉴权" />
+    <MESSAGE value="重新架构" />
+    <option name="LAST_COMMIT_MESSAGE" value="重新架构" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="463" y="203" key="#Inspections/0.23.1792.1017@0.23.1792.1017" timestamp="1600600798389" />
-    <state x="317" y="99" key="#Project_Structure" timestamp="1600413683975">
+    <state x="317" y="99" key="#Project_Structure" timestamp="1600938078746">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1600413683975" />
+    <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1600938078746" />
     <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600762510098">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -229,18 +251,14 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="624" y="442" key="ReplaceDuplicatesPrompt/0.23.1792.1017@0.23.1792.1017" timestamp="1600665823513" />
-    <state x="636" y="223" key="RollbackChangesDialog" timestamp="1600957888400">
-      <screen x="0" y="23" width="1920" height="963" />
-    </state>
-    <state x="636" y="223" key="RollbackChangesDialog/0.23.1920.963@0.23.1920.963" timestamp="1600957888400" />
     <state x="330" y="156" key="SettingsEditor" timestamp="1600601044983">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600762902924">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600924698248">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600762902924" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600924698248" />
     <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -249,14 +267,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
-    <state x="627" y="312" key="git4idea.merge.GitPullDialog" timestamp="1600958184607">
-      <screen x="0" y="23" width="1920" height="963" />
-    </state>
-    <state x="627" y="312" key="git4idea.merge.GitPullDialog/0.23.1920.963@0.23.1920.963" timestamp="1600958184607" />
-    <state x="197" y="180" key="new project wizard" timestamp="1600763989314">
+    <state x="197" y="180" key="new project wizard" timestamp="1600938046680">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600763989314" />
+    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600938046680" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

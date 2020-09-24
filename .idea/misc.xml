@@ -11,6 +11,15 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/HuiChat-AndroidSDK/pom.xml" />
+        <option value="$PROJECT_DIR$/HuiChat-Auth/pom.xml" />
+        <option value="$PROJECT_DIR$/HuiChat-Eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/HuiChat-Web/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
