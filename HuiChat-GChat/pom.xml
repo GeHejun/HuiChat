@@ -7,17 +7,9 @@
         <groupId>com.ghj</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>HuiChat-Chat</artifactId>
+    <artifactId>HuiChat-GChat</artifactId>
 
 
-    <dependencies>
-        <dependency>
-            <groupId>com.ghj</groupId>
-            <artifactId>HuiChat-Common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

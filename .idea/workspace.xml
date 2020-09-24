@@ -22,8 +22,250 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="鉴权">
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="重新架构">
+      <change afterPath="$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuiChat-MsgService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuiChat-UService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_9_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_9_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_9_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/HuiChat-AndroidSDK.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-GChat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/ChatMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/ClientConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/ClientStarter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/ConnectHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/MessageManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/MessageReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java/com/ghj/androidsdk/MessageSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Chat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Eureka/HuiChat-Eureka.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Eureka/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Eureka/src/main/java/com/ghj/eureka/HuiChatEurekaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Eureka/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HuiChat-Rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/HuiChat-Web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/HuiChatWebApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/controller/IndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/controller/RouteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/service/IndexService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/service/RestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/service/impl/IndexServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/vo/FriendVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/vo/GroupVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/vo/MainFrameVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/java/com/ghj/web/vo/UserVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/contextMenu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/css/templatemo-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/biginteger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/contextMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/jquery-3.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/protobuf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/snowflake.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/js/socket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/layui.demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/layui.mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/laydate/default/font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/html/chatlog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/html/createGroup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/html/find.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/html/getInformation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/html/msgbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/layim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/mobile/layim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/skin/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/css/modules/layim/voice/default.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/easemob_face/ee_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/14.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/15.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/16.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/17.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/18.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/19.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/20.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/21.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/22.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/23.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/24.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/25.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/26.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/27.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/28.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/29.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/30.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/31.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/32.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/33.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/34.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/35.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/36.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/37.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/38.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/39.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/40.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/41.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/42.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/43.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/44.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/45.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/46.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/47.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/48.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/49.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/51.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/52.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/53.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/54.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/55.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/56.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/57.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/58.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/59.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/60.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/61.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/62.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/63.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/64.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/65.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/66.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/67.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/68.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/69.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/70.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/71.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/images/face/9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/all-mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/element.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/layedit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/layim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/laypage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/laytpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile/layer-mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile/layim-mobile-open.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile/layim-mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile/upload-mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/mobile/zepto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/notice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/lay/modules/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/layui/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuiChat-Web/src/main/resources/static/register.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +364,7 @@
       <workItem from="1600664722084" duration="2917000" />
       <workItem from="1600754040419" duration="4409000" />
       <workItem from="1600777468855" duration="128000" />
-      <workItem from="1600825076417" duration="1416000" />
+      <workItem from="1600825076417" duration="3681000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -173,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600764025582</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="重新架构">
+      <created>1600919969522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600919969522</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +446,8 @@
     <MESSAGE value="消息队列" />
     <MESSAGE value="active" />
     <MESSAGE value="鉴权" />
-    <option name="LAST_COMMIT_MESSAGE" value="鉴权" />
+    <MESSAGE value="重新架构" />
+    <option name="LAST_COMMIT_MESSAGE" value="重新架构" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
@@ -240,10 +490,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600764030589">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1600919979620">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600764030589" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1600919979620" />
     <state x="858" y="478" width="535" height="516" key="extract.method.dialog" timestamp="1600666205407">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -252,10 +502,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="594" y="315" width="604" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1600409644886" />
-    <state x="197" y="180" key="new project wizard" timestamp="1600919929091">
+    <state x="197" y="180" key="new project wizard" timestamp="1600924002767">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600919929091" />
+    <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1600924002767" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

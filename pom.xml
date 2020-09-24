@@ -14,14 +14,14 @@
         <module>HuiChat-Chat</module>
         <module>HuiChat-Rest</module>
         <module>HuiChat-Protocol</module>
-        <module>HuiChat-Eureka</module>
-        <module>HuiChat-AndroidSDK</module>
-        <module>HuiChat-Web</module>
         <module>HuiChat-Auth</module>
-        <module>untitled</module>
         <module>HuiChat-Proxy</module>
         <module>HuiChat-Router</module>
         <module>HuiChat-Access</module>
+        <module>HuiChat-GChat</module>
+        <module>HuiChat-Auth</module>
+        <module>HuiChat-MsgService</module>
+        <module>HuiChat-UService</module>
     </modules>
 
 
@@ -31,23 +31,7 @@
         <version>2.1.4.RELEASE</version>
     </parent>
 
-    <properties>
-        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-    </properties>
 
 
-
-    <!--SpringCloud依赖版本管理-->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     
 </project>
