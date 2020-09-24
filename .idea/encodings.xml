@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Access/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-AndroidSDK" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-AndroidSDK/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Auth/src/main/java" charset="UTF-8" />
@@ -13,8 +14,10 @@
     <file url="file://$PROJECT_DIR$/HuiChat-Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Protocol" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Protocol/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Proxy/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Rest" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Rest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HuiChat-Router/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HuiChat-Web/src/main/java" charset="UTF-8" />
   </component>

@@ -18,6 +18,10 @@
         <module>HuiChat-AndroidSDK</module>
         <module>HuiChat-Web</module>
         <module>HuiChat-Auth</module>
+        <module>untitled</module>
+        <module>HuiChat-Proxy</module>
+        <module>HuiChat-Router</module>
+        <module>HuiChat-Access</module>
     </modules>
 
 

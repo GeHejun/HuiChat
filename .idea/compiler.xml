@@ -10,35 +10,47 @@
         <module name="HuiChat-Eureka" />
         <module name="HuiChat-AndroidSDK" />
         <module name="HuiChat-Web" />
+        <module name="untitled" />
         <module name="HuiChat-Rest" />
         <module name="HuiChat-Chat" />
+        <module name="HuiChat-Access" />
         <module name="HuiChat-Common" />
         <module name="HuiChat-Protocol" />
         <module name="HuiChat-Auth" />
+        <module name="HuiChat-Proxy" />
+        <module name="HuiChat-Router" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HuiChat" target="1.8" />
+      <module name="HuiChat-Access" target="1.8" />
       <module name="HuiChat-AndroidSDK" target="1.8" />
       <module name="HuiChat-Auth" target="1.8" />
       <module name="HuiChat-Chat" target="1.8" />
       <module name="HuiChat-Common" target="1.8" />
       <module name="HuiChat-Eureka" target="1.8" />
       <module name="HuiChat-Protocol" target="1.8" />
+      <module name="HuiChat-Proxy" target="1.8" />
       <module name="HuiChat-Rest" target="1.8" />
+      <module name="HuiChat-Router" target="1.8" />
       <module name="HuiChat-Web" target="1.8" />
+      <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="HuiChat-Access" options="-parameters" />
       <module name="HuiChat-AndroidSDK" options="-parameters" />
       <module name="HuiChat-Auth" options="-parameters" />
       <module name="HuiChat-Chat" options="-parameters" />
       <module name="HuiChat-Common" options="-parameters" />
       <module name="HuiChat-Eureka" options="-parameters" />
       <module name="HuiChat-Protocol" options="-parameters" />
+      <module name="HuiChat-Proxy" options="-parameters" />
       <module name="HuiChat-Rest" options="-parameters" />
+      <module name="HuiChat-Router" options="-parameters" />
       <module name="HuiChat-Web" options="-parameters" />
+      <module name="untitled" options="-parameters" />
     </option>
   </component>
 </project>
