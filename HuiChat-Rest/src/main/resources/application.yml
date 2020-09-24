@@ -18,6 +18,7 @@ spring:
     password: guest
     host: 127.0.0.1
 
+
 fdfs:
   soTimeout: 1500
   connectTimeout: 600
