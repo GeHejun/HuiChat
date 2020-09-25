@@ -7,56 +7,53 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="untitled" />
-        <module name="HuiChat-GChat" />
-        <module name="HuiChat-Rest" />
-        <module name="HuiChat-Chat" />
-        <module name="HuiChat-Access" />
-        <module name="HuiChat-Common" />
-        <module name="HuiChat-Protocol" />
-        <module name="HuiChat-Auth" />
-        <module name="HuiChat-MsgService" />
-        <module name="HuiChat-UService" />
-        <module name="HuiChat-Proxy" />
-        <module name="HuiChat-Router" />
+        <module name="huichat-userver" />
+        <module name="huichat-router" />
+        <module name="huichat-protocol" />
+        <module name="huichat-common" />
+        <module name="huichat-chat" />
+        <module name="huichat-access" />
+        <module name="huichat-proxy" />
+        <module name="huichat-rest" />
+        <module name="huichat-gchat" />
+        <module name="huichat-lservice" />
+        <module name="huichat-auth" />
+        <module name="huichat-msgserver" />
+        <module name="huichat-registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HuiChat" target="1.8" />
-      <module name="HuiChat-Access" target="1.8" />
-      <module name="HuiChat-AndroidSDK" target="1.8" />
-      <module name="HuiChat-Auth" target="1.8" />
-      <module name="HuiChat-Chat" target="1.8" />
-      <module name="HuiChat-Common" target="1.8" />
-      <module name="HuiChat-Eureka" target="1.8" />
-      <module name="HuiChat-GChat" target="1.8" />
-      <module name="HuiChat-MsgService" target="1.8" />
-      <module name="HuiChat-Protocol" target="1.8" />
-      <module name="HuiChat-Proxy" target="1.8" />
-      <module name="HuiChat-Rest" target="1.8" />
-      <module name="HuiChat-Router" target="1.8" />
-      <module name="HuiChat-UService" target="1.8" />
-      <module name="HuiChat-Web" target="1.8" />
-      <module name="untitled" target="1.8" />
+      <module name="huichat-access" target="1.8" />
+      <module name="huichat-auth" target="1.8" />
+      <module name="huichat-chat" target="1.8" />
+      <module name="huichat-common" target="1.8" />
+      <module name="huichat-gchat" target="1.8" />
+      <module name="huichat-lservice" target="1.8" />
+      <module name="huichat-msgserver" target="1.8" />
+      <module name="huichat-protocol" target="1.8" />
+      <module name="huichat-proxy" target="1.8" />
+      <module name="huichat-registry" target="1.8" />
+      <module name="huichat-rest" target="1.8" />
+      <module name="huichat-router" target="1.8" />
+      <module name="huichat-userver" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="HuiChat-Access" options="-parameters" />
-      <module name="HuiChat-AndroidSDK" options="-parameters" />
-      <module name="HuiChat-Auth" options="-parameters" />
-      <module name="HuiChat-Chat" options="-parameters" />
-      <module name="HuiChat-Common" options="-parameters" />
-      <module name="HuiChat-Eureka" options="-parameters" />
-      <module name="HuiChat-GChat" options="-parameters" />
-      <module name="HuiChat-MsgService" options="-parameters" />
-      <module name="HuiChat-Protocol" options="-parameters" />
-      <module name="HuiChat-Proxy" options="-parameters" />
-      <module name="HuiChat-Rest" options="-parameters" />
-      <module name="HuiChat-Router" options="-parameters" />
-      <module name="HuiChat-UService" options="-parameters" />
-      <module name="HuiChat-Web" options="-parameters" />
-      <module name="untitled" options="-parameters" />
+      <module name="huichat-access" options="-parameters" />
+      <module name="huichat-auth" options="-parameters" />
+      <module name="huichat-chat" options="-parameters" />
+      <module name="huichat-common" options="-parameters" />
+      <module name="huichat-gchat" options="-parameters" />
+      <module name="huichat-lservice" options="-parameters" />
+      <module name="huichat-msgserver" options="-parameters" />
+      <module name="huichat-protocol" options="-parameters" />
+      <module name="huichat-proxy" options="-parameters" />
+      <module name="huichat-registry" options="-parameters" />
+      <module name="huichat-rest" options="-parameters" />
+      <module name="huichat-router" options="-parameters" />
+      <module name="huichat-userver" options="-parameters" />
     </option>
   </component>
 </project>

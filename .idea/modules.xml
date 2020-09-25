@@ -3,17 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HuiChat.iml" filepath="$PROJECT_DIR$/.idea/HuiChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Access/HuiChat-Access.iml" filepath="$PROJECT_DIR$/HuiChat-Access/HuiChat-Access.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" filepath="$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" filepath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" filepath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" filepath="$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" filepath="$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" filepath="$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Proxy/HuiChat-Proxy.iml" filepath="$PROJECT_DIR$/HuiChat-Proxy/HuiChat-Proxy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" filepath="$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-Router/HuiChat-Router.iml" filepath="$PROJECT_DIR$/HuiChat-Router/HuiChat-Router.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" filepath="$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-access/huichat-access.iml" filepath="$PROJECT_DIR$/huichat-access/huichat-access.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-auth/huichat-auth.iml" filepath="$PROJECT_DIR$/huichat-auth/huichat-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-chat/huichat-chat.iml" filepath="$PROJECT_DIR$/huichat-chat/huichat-chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-common/huichat-common.iml" filepath="$PROJECT_DIR$/huichat-common/huichat-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-gchat/huichat-gchat.iml" filepath="$PROJECT_DIR$/huichat-gchat/huichat-gchat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-lservice/huichat-lservice.iml" filepath="$PROJECT_DIR$/huichat-lservice/huichat-lservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-msgserver/huichat-msgserver.iml" filepath="$PROJECT_DIR$/huichat-msgserver/huichat-msgserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-protocol/huichat-protocol.iml" filepath="$PROJECT_DIR$/huichat-protocol/huichat-protocol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-proxy/huichat-proxy.iml" filepath="$PROJECT_DIR$/huichat-proxy/huichat-proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-registry/huichat-registry.iml" filepath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-rest/huichat-rest.iml" filepath="$PROJECT_DIR$/huichat-rest/huichat-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-router/huichat-router.iml" filepath="$PROJECT_DIR$/huichat-router/huichat-router.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-userver/huichat-userver.iml" filepath="$PROJECT_DIR$/huichat-userver/huichat-userver.iml" />
     </modules>
   </component>
 </project>

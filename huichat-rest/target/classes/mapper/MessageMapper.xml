@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghj.rest.dao.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.ghj.rest.model.Message">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="status" jdbcType="BIT" property="status"/>
+        <result column="send_time" jdbcType="TIMESTAMP" property="sendTime"/>
+        <result column="message_type_id" jdbcType="INTEGER" property="messageTypeId"/>
+        <result column="from_user_id" jdbcType="INTEGER" property="fromUserId"/>
+        <result column="to_user_id" jdbcType="INTEGER" property="toUserId"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ghj.rest.model.Message">
+        <result column="post_message" jdbcType="LONGVARCHAR" property="postMessage"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, `status`, send_time, message_type_id, from_user_id, to_user_id
+  </sql>
+    <sql id="Blob_Column_List">
+    post_message
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from message
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectMessageByToUserIdWithStatus" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from message
+        where to_user_id = #{toUserId,jdbcType=INTEGER} and status = #{status, jdbcType=BIT}
+    </select>
+    <select id="selectMessageByToUserId" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from message
+        where
+        (to_user_id = #{toUserId,jdbcType=INTEGER} and from_user_id = #{fromUserId, jdbcType=INTEGER})
+        or
+        (to_user_id = #{fromUserId,jdbcType=INTEGER} and from_user_id = #{toUserId, jdbcType=INTEGER})
+        order by send_time desc
+    </select>
+    <select id="selectMessageByFromUserIdAndToUserIdWithStatus" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from message
+        where from_user_id = #{fromUserId, jdbcType=INTEGER} and to_user_id = #{toUserId,jdbcType=INTEGER} and status = #{status, jdbcType=BIT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from message
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.ghj.rest.model.Message">
+    insert into message (id, `status`, send_time, 
+      message_type_id, from_user_id, to_user_id, 
+      post_message)
+    values (#{id,jdbcType=BIGINT}, #{status,jdbcType=BIT}, #{sendTime,jdbcType=TIMESTAMP},
+      #{messageTypeId,jdbcType=INTEGER}, #{fromUserId,jdbcType=INTEGER}, #{toUserId,jdbcType=INTEGER}, 
+      #{postMessage,jdbcType=LONGVARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.ghj.rest.model.Message">
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="sendTime != null">
+                send_time,
+            </if>
+            <if test="messageTypeId != null">
+                message_type_id,
+            </if>
+            <if test="fromUserId != null">
+                from_user_id,
+            </if>
+            <if test="toUserId != null">
+                to_user_id,
+            </if>
+            <if test="postMessage != null">
+                post_message,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=BIT},
+            </if>
+            <if test="sendTime != null">
+                #{sendTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="messageTypeId != null">
+                #{messageTypeId,jdbcType=INTEGER},
+            </if>
+            <if test="fromUserId != null">
+                #{fromUserId,jdbcType=INTEGER},
+            </if>
+            <if test="toUserId != null">
+                #{toUserId,jdbcType=INTEGER},
+            </if>
+            <if test="postMessage != null">
+                #{postMessage,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ghj.rest.model.Message">
+        update message
+        <set>
+            <if test="status != null">
+                `status` = #{status,jdbcType=BIT},
+            </if>
+            <if test="sendTime != null">
+                send_time = #{sendTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="messageTypeId != null">
+                message_type_id = #{messageTypeId,jdbcType=INTEGER},
+            </if>
+            <if test="fromUserId != null">
+                from_user_id = #{fromUserId,jdbcType=INTEGER},
+            </if>
+            <if test="toUserId != null">
+                to_user_id = #{toUserId,jdbcType=INTEGER},
+            </if>
+            <if test="postMessage != null">
+                post_message = #{postMessage,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ghj.rest.model.Message">
+    update message
+    set `status` = #{status,jdbcType=BIT},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      message_type_id = #{messageTypeId,jdbcType=INTEGER},
+      from_user_id = #{fromUserId,jdbcType=INTEGER},
+      to_user_id = #{toUserId,jdbcType=INTEGER},
+      post_message = #{postMessage,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+    <update id="updateByPrimaryKey" parameterType="com.ghj.rest.model.Message">
+    update message
+    set `status` = #{status,jdbcType=BIT},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      message_type_id = #{messageTypeId,jdbcType=INTEGER},
+      from_user_id = #{fromUserId,jdbcType=INTEGER},
+      to_user_id = #{toUserId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
