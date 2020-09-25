@@ -4,7 +4,6 @@ import com.ghj.common.base.Constant;
 import com.ghj.common.util.NettyAttrUtil;
 import com.ghj.common.util.RedisPoolUtil;
 import com.ghj.common.util.ThreadPoolManager;
-import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
 
 import java.net.InetSocketAddress;
 import java.util.Map;

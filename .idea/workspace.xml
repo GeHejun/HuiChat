@@ -23,498 +23,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
-      <change afterPath="$PROJECT_DIR$/huichat-auth/target/huichat-auth-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-auth/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-lservice/huichat-lservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-protocol/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-protocol/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-protocol/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/HuiChatRestApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/MyBatisPlusConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/MysqlGenerator$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/MysqlGenerator$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/MysqlGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/SecurityInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/WebConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/config/WebControllerAdvice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/FileController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/FriendController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/FriendGroupController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/GroupMessageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/GroupMessageToUserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/GroupToUserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/MessageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/MessageTypeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/SessionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/SystemMessageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/UserGroupController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/controller/UserStateController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/CityMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/FriendGroupMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/FriendMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/FriendTypeMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/FriendshipPolicyMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/GroupMessageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/GroupMessageToUserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/GroupMessageUserToUserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/GroupToUserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/MessageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/MessageTypeMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/MyBatisBaseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/NationMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/ProvinceMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/SystemMessageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/UserGroupMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/dao/UserStateMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/City.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/Friend.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/FriendGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/FriendType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/FriendshipPolicy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/GroupMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/GroupMessageToUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/GroupMessageUserToUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/GroupToUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/MessageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/Nation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/Province.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/SystemMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/UserGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/model/UserState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/mq/RabbitMqConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/mq/RabbitMqReceiver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/FileService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/FriendGroupService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/FriendService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/GroupMessageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/GroupMessageToUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/GroupToUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/MessageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/MessageTypeService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/SessionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/SystemMessageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/UserGroupService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/UserStateService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/FileServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/FriendGroupServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/FriendServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/GroupMessageServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/GroupMessageToUserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/GroupToUserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/MessageServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/MessageTypeServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/SessionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/SystemMessageImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/UserGroupServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/com/ghj/rest/service/impl/UserStateServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/CityMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/FriendGroupMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/FriendMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/FriendTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/FriendshipPolicyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/GroupMessageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/GroupMessageToUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/GroupMessageUserToUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/GroupToUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/MessageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/MessageTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/NationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/ProvinceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/SystemMessageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/UserGroupMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-rest/target/classes/mapper/UserStateMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-router/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-userver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HuiChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/huichat-access.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_53.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generate_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_support_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_tobato_fastdfs_client_1_25_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_api_grpc_proto_google_common_protos_1_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_1_android.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_3_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_4_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_context_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_core_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_netty_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_protobuf_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_protobuf_lite_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_stub_1_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_10_6_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_34_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_api_0_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_contrib_grpc_metrics_0_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_shardingjdbc_sharding_jdbc_core_2_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_45.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_coobird_thumbnailator_0_4_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_recipes_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_yetus_audience_annotations_0_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_indy_2_4_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_16_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_6_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/thriftCompiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Access/HuiChat-Access.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-proxy/huichat-proxy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Access/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-proxy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Auth/HuiChat-Auth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-auth/huichat-auth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/HuiChat-Chat.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/ConnectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/MessageQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/MessageQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/ServerStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/ServerStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/java/com.ghj.chat/constant/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/constant/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Chat/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/HuiChat-Common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/huichat-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/base/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/base/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/base/ContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/ContentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/base/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/FriendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/FriendRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/FriendResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/FriendResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/GroupToUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/GroupToUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/GroupToUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/GroupToUserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/UserGroupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserGroupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/UserGroupResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserGroupResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/ChatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/ChatException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/FileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/FileException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/MessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/MessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/ServerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/ServerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/exception/UserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/UserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/fastdfs/FastDFSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/fastdfs/FastDFSClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/fastdfs/FastDFSFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/fastdfs/FastDFSFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/mq/ConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/mq/ConnectionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/mq/SendUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/mq/SendUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/BeanValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/BeanValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/ConsistentHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/ConsistentHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/CustomSystemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/CustomSystemUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/DesEncryptDecrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/DesEncryptDecrypt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/MachineSerialNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/MachineSerialNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/NettyAttrUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/NettyAttrUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/OkHttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/OkHttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/PropertiesUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/RedisPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RedisPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/RedisPoolUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RedisPoolUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/RetryIntercepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RetryIntercepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/RoutingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RoutingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/SnowFlakeIdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/SnowFlakeIdGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/ThreadPoolManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/ThreadPoolManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/TokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/TokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Common/src/main/java/com/ghj/common/util/ZookeeperUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/ZookeeperUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-GChat/HuiChat-GChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-router/huichat-router.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-GChat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-gchat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-MsgService/HuiChat-MsgService.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-MsgService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-msgserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/HuiChat-Protocol.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/huichat-protocol.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/src/main/java/com/ghj/protocol/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/java/com/ghj/protocol/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/HuiChat-Protocol-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/annotations.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/auth.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/backend.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/billing.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/config_change.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/consumer.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/context.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/control.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/distribution.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/documentation.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/endpoint.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/experimental/authorization_config.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/experimental/experimental.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/http.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/httpbody.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/label.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/log.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/logging.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/metric.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/monitored_resource.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/monitoring.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/quota.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/service.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/source_info.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/system_parameter.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/api/usage.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/cloud/audit/audit_log.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/logging/type/http_request.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/logging/type/log_severity.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/longrunning/operations.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/code.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/error_details.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/rpc/status.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/color.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/date.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/dayofweek.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/latlng.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/money.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/postal_address.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/5b62c9cad317f112577fdbd721f60bf2/google/type/timeofday.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/any.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/api.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/compiler/plugin.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/descriptor.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/duration.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/empty.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/field_mask.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/source_context.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/struct.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/timestamp.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/type.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Protocol/target/protoc-dependencies/d800c246803a73be30d6c8b450b20f23/google/protobuf/wrappers.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Proxy/HuiChat-Proxy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-gchat/huichat-gchat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/HuiChat-Rest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/HuiChatRestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/HuiChatRestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/config/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/config/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/config/SecurityInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/config/SecurityInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/config/WebControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/config/WebControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/FriendGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/FriendGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/FriendType.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/FriendType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/FriendshipPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/FriendshipPolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/GroupMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/GroupMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/GroupMessageToUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/GroupMessageToUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/GroupMessageUserToUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/GroupMessageUserToUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/GroupToUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/GroupToUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/Nation.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/Nation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/Province.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/SystemMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/SystemMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/UserGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/UserGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/entity/UserState.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/entity/UserState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/CityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/CityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/FriendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/FriendDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/FriendGroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/FriendGroupDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/FriendTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/FriendTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/FriendshipPolicyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/FriendshipPolicyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/GroupMessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/GroupMessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/GroupMessageToUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/GroupMessageToUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/GroupMessageUserToUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/GroupMessageUserToUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/GroupToUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/GroupToUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/MessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/MessageTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/MessageTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/NationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/NationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/ProvinceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/ProvinceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/SystemMessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/SystemMessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/UserGroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/UserGroupDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/UserStateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/UserStateDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/CityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/CityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/FriendGroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/FriendGroupMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/FriendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/FriendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/FriendTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/FriendTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/FriendshipPolicyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/FriendshipPolicyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageToUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageToUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageUserToUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/GroupMessageUserToUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/GroupToUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/GroupToUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/MessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/MessageTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/MessageTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/NationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/NationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/ProvinceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/ProvinceMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/SystemMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/SystemMessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/UserGroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/UserGroupMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mapper/xml/UserStateMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mapper/xml/UserStateMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mq/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mq/RabbitMqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/mq/RabbitMqReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mq/RabbitMqReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/CityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/FriendGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/FriendGroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/FriendService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/FriendTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/FriendTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/FriendshipPolicyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/FriendshipPolicyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/GroupMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/GroupMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/GroupMessageToUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/GroupMessageToUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/GroupMessageUserToUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/GroupMessageUserToUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/GroupToUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/GroupToUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/MessageTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/MessageTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/NationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/NationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/ProvinceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/ProvinceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/SystemMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/SystemMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/UserGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/UserGroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/UserStateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/UserStateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/CityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/CityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/FriendGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/FriendGroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/FriendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/FriendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/FriendTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/FriendTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/FriendshipPolicyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/FriendshipPolicyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/GroupMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/GroupMessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/GroupMessageToUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/GroupMessageToUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/GroupMessageUserToUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/GroupMessageUserToUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/GroupToUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/GroupToUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/MessageTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/MessageTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/NationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/NationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/ProvinceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/ProvinceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/SystemMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/SystemMessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/UserGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/UserGroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/service/impl/UserStateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/UserStateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/CityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/FriendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/FriendGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/FriendGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/FriendTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/FriendTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/FriendshipPolicyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/FriendshipPolicyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/GroupMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/GroupMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/GroupMessageToUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/GroupMessageToUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/GroupMessageUserToUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/GroupMessageUserToUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/GroupToUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/GroupToUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/MessageTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/MessageTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/NationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/NationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/ProvinceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/ProvinceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/SystemMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/SystemMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/UserGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/UserGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/java/com/ghj/rest/web/UserStateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/web/UserStateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Rest/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Router/HuiChat-Router.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-Router/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-UService/HuiChat-UService.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuiChat-UService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-lservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-chat/huiChat-chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/huiChat-chat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-rest/huichat-rest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/huichat-rest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/HuiChatAccessStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/ReceiveHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/HuiChatRegistryStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-registry/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/MessageQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/MessageQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-chat/src/main/java/com.ghj.chat/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Code.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Constant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/ContentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/base/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/FriendRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/FriendResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/GroupToUserRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/GroupToUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserGroupRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserGroupResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/dto/UserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/BusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/ChatException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/FileException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/MessageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/ServerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/exception/UserException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/mq/ConnectionUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/mq/SendUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RedisPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RedisPoolUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-registry/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mq/RabbitMqReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/mq/RabbitMqReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/UserGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-rest/src/main/java/com/ghj/rest/service/impl/UserGroupServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -551,7 +94,6 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
@@ -617,7 +159,7 @@
       <workItem from="1600754040419" duration="4409000" />
       <workItem from="1600777468855" duration="128000" />
       <workItem from="1600825076417" duration="5539000" />
-      <workItem from="1601000371756" duration="788000" />
+      <workItem from="1601000371756" duration="7014000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -703,7 +245,28 @@
       <option name="project" value="LOCAL" />
       <updated>1600966383582</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="架构">
+      <created>1601001271490</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601001271491</updated>
+    </task>
+    <task id="LOCAL-00014" summary="架构">
+      <created>1601001278110</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1601001278110</updated>
+    </task>
+    <task id="LOCAL-00015" summary="架构">
+      <created>1601002455152</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601002455152</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -741,14 +304,14 @@
     </state>
     <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1600938078746" />
     <state x="340" y="95" key="#Project_Structure/0.23.1920.963@0.23.1920.963" timestamp="1600967297330" />
-    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600762510098">
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1601010741836">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1600762510098" />
-    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600600281584">
+    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1601010741836" />
+    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601010517098">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1600600281584" />
+    <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601010517098" />
     <state width="1599" height="252" key="GridCell.Tab.0.bottom" timestamp="1600967347358">
       <screen x="0" y="23" width="1920" height="963" />
     </state>
@@ -781,10 +344,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1600601044983" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601001285070">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601002460507">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601001285070" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601002460507" />
     <state x="460" y="245" key="Vcs.Push.Dialog.v2/0.23.1920.963@0.23.1920.963" timestamp="1600966781344" />
     <state x="627" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601000586241">
       <screen x="0" y="23" width="1792" height="1017" />
@@ -806,9 +369,9 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1601001198559" />
-    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1600761399172">
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1601011108598">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1600761399172" />
+    <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1601011108598" />
   </component>
 </project>

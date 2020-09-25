@@ -2,7 +2,6 @@ package com.ghj.rest.mq;
 
 import com.ghj.common.base.Constant;
 import org.springframework.amqp.core.ExchangeTypes;
-import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Component

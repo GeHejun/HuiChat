@@ -2,10 +2,8 @@ package com.ghj.rest.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.ghj.common.dto.GroupToUserResponse;
 import com.ghj.common.dto.UserGroupRequest;
 import com.ghj.common.dto.UserGroupResponse;
-import com.ghj.rest.entity.GroupToUser;
 import com.ghj.rest.entity.UserGroup;
 import com.ghj.rest.mapper.UserGroupDao;
 import com.ghj.rest.service.UserGroupService;

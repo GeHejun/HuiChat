@@ -11,5 +11,12 @@
 
     <artifactId>huichat-registry</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.ghj</groupId>
+            <artifactId>huichat-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
