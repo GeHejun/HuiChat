@@ -14,11 +14,12 @@
         <module name="huichat-chat" />
         <module name="huichat-access" />
         <module name="huichat-proxy" />
+        <module name="huichat-msgbox" />
         <module name="huichat-rest" />
         <module name="huichat-gchat" />
         <module name="huichat-lservice" />
-        <module name="huichat-auth" />
         <module name="huichat-msgserver" />
+        <module name="huichat-auth" />
         <module name="huichat-registry" />
       </profile>
     </annotationProcessing>
@@ -30,6 +31,7 @@
       <module name="huichat-common" target="1.8" />
       <module name="huichat-gchat" target="1.8" />
       <module name="huichat-lservice" target="1.8" />
+      <module name="huichat-msgbox" target="1.8" />
       <module name="huichat-msgserver" target="1.8" />
       <module name="huichat-protocol" target="1.8" />
       <module name="huichat-proxy" target="1.8" />
@@ -37,6 +39,7 @@
       <module name="huichat-rest" target="1.8" />
       <module name="huichat-router" target="1.8" />
       <module name="huichat-userver" target="1.8" />
+      <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -47,6 +50,7 @@
       <module name="huichat-common" options="-parameters" />
       <module name="huichat-gchat" options="-parameters" />
       <module name="huichat-lservice" options="-parameters" />
+      <module name="huichat-msgbox" options="-parameters" />
       <module name="huichat-msgserver" options="-parameters" />
       <module name="huichat-protocol" options="-parameters" />
       <module name="huichat-proxy" options="-parameters" />
@@ -54,6 +58,7 @@
       <module name="huichat-rest" options="-parameters" />
       <module name="huichat-router" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
+      <module name="untitled" options="-parameters" />
     </option>
   </component>
 </project>
