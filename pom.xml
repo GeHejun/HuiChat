@@ -24,6 +24,7 @@
         <module>huichat-userver</module>
         <module>huichat-msgserver</module>
         <module>huichat-registry</module>
+        <module>huichat-msgbox</module>
     </modules>
 
 

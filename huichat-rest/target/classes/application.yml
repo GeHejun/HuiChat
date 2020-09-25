@@ -18,17 +18,6 @@ spring:
     password: guest
     host: 127.0.0.1
 
-mybatis-plus:
-  global-config:
-    db-config:
-      id-type: auto
-      field-strategy: not_empty
-      table-underline: true
-      db-type: mysql
-      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
-      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
-  mapper-locations: classpath:/mapper/*.xml
-
 
 fdfs:
   soTimeout: 1500
@@ -45,7 +34,10 @@ eureka:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka
 
-mybatis:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+    mapper-locations: classpath:com/ghj/rest/mapper/*Mapper.xml
+    type-aliases-package: com.ghj.rest.entity
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
