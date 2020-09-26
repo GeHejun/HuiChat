@@ -28,7 +28,7 @@ public class HSession {
     /**
      * 用户ID
      */
-    private String uId;
+    private Long uId;
 
 
 }

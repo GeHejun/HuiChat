@@ -1481,24 +1481,14 @@ public final class Message {
     long getId();
 
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    java.lang.String getForm();
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getFormBytes();
+    long getForm();
 
     /**
-     * <code>optional string to = 3;</code>
+     * <code>optional int64 to = 3;</code>
      */
-    java.lang.String getTo();
-    /**
-     * <code>optional string to = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getToBytes();
+    long getTo();
 
     /**
      * <code>optional int32 type = 4;</code>
@@ -1547,8 +1537,8 @@ public final class Message {
     }
     private Chat() {
       id_ = 0L;
-      form_ = "";
-      to_ = "";
+      form_ = 0L;
+      to_ = 0L;
       type_ = 0;
       chatType_ = 0;
       content_ = "";
@@ -1585,16 +1575,14 @@ public final class Message {
               id_ = input.readInt64();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              form_ = s;
+              form_ = input.readInt64();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              to_ = s;
+              to_ = input.readInt64();
               break;
             }
             case 32: {
@@ -1751,71 +1739,21 @@ public final class Message {
     }
 
     public static final int FORM_FIELD_NUMBER = 2;
-    private volatile java.lang.Object form_;
+    private long form_;
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    public java.lang.String getForm() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        form_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFormBytes() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        form_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getForm() {
+      return form_;
     }
 
     public static final int TO_FIELD_NUMBER = 3;
-    private volatile java.lang.Object to_;
+    private long to_;
     /**
-     * <code>optional string to = 3;</code>
+     * <code>optional int64 to = 3;</code>
      */
-    public java.lang.String getTo() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        to_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string to = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTo() {
+      return to_;
     }
 
     public static final int TYPE_FIELD_NUMBER = 4;
@@ -1926,11 +1864,11 @@ public final class Message {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, form_);
+      if (form_ != 0L) {
+        output.writeInt64(2, form_);
       }
-      if (!getToBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, to_);
+      if (to_ != 0L) {
+        output.writeInt64(3, to_);
       }
       if (type_ != 0) {
         output.writeInt32(4, type_);
@@ -1955,11 +1893,13 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, form_);
+      if (form_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, form_);
       }
-      if (!getToBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, to_);
+      if (to_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, to_);
       }
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1993,10 +1933,10 @@ public final class Message {
       boolean result = true;
       result = result && (getId()
           == other.getId());
-      result = result && getForm()
-          .equals(other.getForm());
-      result = result && getTo()
-          .equals(other.getTo());
+      result = result && (getForm()
+          == other.getForm());
+      result = result && (getTo()
+          == other.getTo());
       result = result && (getType()
           == other.getType());
       result = result && chatType_ == other.chatType_;
@@ -2018,9 +1958,11 @@ public final class Message {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
       hash = (37 * hash) + FORM_FIELD_NUMBER;
-      hash = (53 * hash) + getForm().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getForm());
       hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + getTo().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTo());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
       hash = (37 * hash) + CHATTYPE_FIELD_NUMBER;
@@ -2149,9 +2091,9 @@ public final class Message {
         super.clear();
         id_ = 0L;
 
-        form_ = "";
+        form_ = 0L;
 
-        to_ = "";
+        to_ = 0L;
 
         type_ = 0;
 
@@ -2234,13 +2176,11 @@ public final class Message {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (!other.getForm().isEmpty()) {
-          form_ = other.form_;
-          onChanged();
+        if (other.getForm() != 0L) {
+          setForm(other.getForm());
         }
-        if (!other.getTo().isEmpty()) {
-          to_ = other.to_;
-          onChanged();
+        if (other.getTo() != 0L) {
+          setTo(other.getTo());
         }
         if (other.getType() != 0) {
           setType(other.getType());
@@ -2308,140 +2248,54 @@ public final class Message {
         return this;
       }
 
-      private java.lang.Object form_ = "";
+      private long form_ ;
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public java.lang.String getForm() {
-        java.lang.Object ref = form_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          form_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getForm() {
+        return form_;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getFormBytes() {
-        java.lang.Object ref = form_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          form_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setForm(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setForm(long value) {
+        
         form_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
       public Builder clearForm() {
         
-        form_ = getDefaultInstance().getForm();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setFormBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        form_ = value;
+        form_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object to_ = "";
+      private long to_ ;
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
-      public java.lang.String getTo() {
-        java.lang.Object ref = to_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          to_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getTo() {
+        return to_;
       }
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getToBytes() {
-        java.lang.Object ref = to_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          to_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string to = 3;</code>
-       */
-      public Builder setTo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTo(long value) {
+        
         to_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
       public Builder clearTo() {
         
-        to_ = getDefaultInstance().getTo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string to = 3;</code>
-       */
-      public Builder setToBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        to_ = value;
+        to_ = 0L;
         onChanged();
         return this;
       }
@@ -2712,14 +2566,9 @@ public final class Message {
     long getId();
 
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    java.lang.String getForm();
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getFormBytes();
+    long getForm();
   }
   /**
    * Protobuf type {@code Login}
@@ -2734,7 +2583,7 @@ public final class Message {
     }
     private Login() {
       id_ = 0L;
-      form_ = "";
+      form_ = 0L;
     }
 
     @java.lang.Override
@@ -2767,10 +2616,9 @@ public final class Message {
               id_ = input.readInt64();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              form_ = s;
+              form_ = input.readInt64();
               break;
             }
           }
@@ -2806,37 +2654,12 @@ public final class Message {
     }
 
     public static final int FORM_FIELD_NUMBER = 2;
-    private volatile java.lang.Object form_;
+    private long form_;
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    public java.lang.String getForm() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        form_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFormBytes() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        form_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getForm() {
+      return form_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2854,8 +2677,8 @@ public final class Message {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, form_);
+      if (form_ != 0L) {
+        output.writeInt64(2, form_);
       }
     }
 
@@ -2868,8 +2691,9 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, form_);
+      if (form_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, form_);
       }
       memoizedSize = size;
       return size;
@@ -2889,8 +2713,8 @@ public final class Message {
       boolean result = true;
       result = result && (getId()
           == other.getId());
-      result = result && getForm()
-          .equals(other.getForm());
+      result = result && (getForm()
+          == other.getForm());
       return result;
     }
 
@@ -2905,7 +2729,8 @@ public final class Message {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
       hash = (37 * hash) + FORM_FIELD_NUMBER;
-      hash = (53 * hash) + getForm().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getForm());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3026,7 +2851,7 @@ public final class Message {
         super.clear();
         id_ = 0L;
 
-        form_ = "";
+        form_ = 0L;
 
         return this;
       }
@@ -3096,9 +2921,8 @@ public final class Message {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (!other.getForm().isEmpty()) {
-          form_ = other.form_;
-          onChanged();
+        if (other.getForm() != 0L) {
+          setForm(other.getForm());
         }
         onChanged();
         return this;
@@ -3152,71 +2976,28 @@ public final class Message {
         return this;
       }
 
-      private java.lang.Object form_ = "";
+      private long form_ ;
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public java.lang.String getForm() {
-        java.lang.Object ref = form_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          form_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getForm() {
+        return form_;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getFormBytes() {
-        java.lang.Object ref = form_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          form_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setForm(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setForm(long value) {
+        
         form_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
       public Builder clearForm() {
         
-        form_ = getDefaultInstance().getForm();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setFormBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        form_ = value;
+        form_ = 0L;
         onChanged();
         return this;
       }
@@ -3279,14 +3060,9 @@ public final class Message {
     long getId();
 
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    java.lang.String getForm();
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getFormBytes();
+    long getForm();
   }
   /**
    * Protobuf type {@code Logout}
@@ -3301,7 +3077,7 @@ public final class Message {
     }
     private Logout() {
       id_ = 0L;
-      form_ = "";
+      form_ = 0L;
     }
 
     @java.lang.Override
@@ -3334,10 +3110,9 @@ public final class Message {
               id_ = input.readInt64();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              form_ = s;
+              form_ = input.readInt64();
               break;
             }
           }
@@ -3373,37 +3148,12 @@ public final class Message {
     }
 
     public static final int FORM_FIELD_NUMBER = 2;
-    private volatile java.lang.Object form_;
+    private long form_;
     /**
-     * <code>optional string form = 2;</code>
+     * <code>optional int64 form = 2;</code>
      */
-    public java.lang.String getForm() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        form_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string form = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFormBytes() {
-      java.lang.Object ref = form_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        form_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getForm() {
+      return form_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3421,8 +3171,8 @@ public final class Message {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, form_);
+      if (form_ != 0L) {
+        output.writeInt64(2, form_);
       }
     }
 
@@ -3435,8 +3185,9 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (!getFormBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, form_);
+      if (form_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, form_);
       }
       memoizedSize = size;
       return size;
@@ -3456,8 +3207,8 @@ public final class Message {
       boolean result = true;
       result = result && (getId()
           == other.getId());
-      result = result && getForm()
-          .equals(other.getForm());
+      result = result && (getForm()
+          == other.getForm());
       return result;
     }
 
@@ -3472,7 +3223,8 @@ public final class Message {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
       hash = (37 * hash) + FORM_FIELD_NUMBER;
-      hash = (53 * hash) + getForm().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getForm());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3593,7 +3345,7 @@ public final class Message {
         super.clear();
         id_ = 0L;
 
-        form_ = "";
+        form_ = 0L;
 
         return this;
       }
@@ -3663,9 +3415,8 @@ public final class Message {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (!other.getForm().isEmpty()) {
-          form_ = other.form_;
-          onChanged();
+        if (other.getForm() != 0L) {
+          setForm(other.getForm());
         }
         onChanged();
         return this;
@@ -3719,71 +3470,28 @@ public final class Message {
         return this;
       }
 
-      private java.lang.Object form_ = "";
+      private long form_ ;
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public java.lang.String getForm() {
-        java.lang.Object ref = form_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          form_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getForm() {
+        return form_;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getFormBytes() {
-        java.lang.Object ref = form_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          form_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setForm(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setForm(long value) {
+        
         form_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string form = 2;</code>
+       * <code>optional int64 form = 2;</code>
        */
       public Builder clearForm() {
         
-        form_ = getDefaultInstance().getForm();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string form = 2;</code>
-       */
-      public Builder setFormBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        form_ = value;
+        form_ = 0L;
         onChanged();
         return this;
       }
@@ -3846,24 +3554,14 @@ public final class Message {
     long getMsgId();
 
     /**
-     * <code>optional string from = 2;</code>
+     * <code>optional int64 from = 2;</code>
      */
-    java.lang.String getFrom();
-    /**
-     * <code>optional string from = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getFromBytes();
+    long getFrom();
 
     /**
-     * <code>optional string to = 3;</code>
+     * <code>optional int64 to = 3;</code>
      */
-    java.lang.String getTo();
-    /**
-     * <code>optional string to = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getToBytes();
+    long getTo();
 
     /**
      * <code>optional .Ack.AckStatus ackStatus = 4;</code>
@@ -3887,8 +3585,8 @@ public final class Message {
     }
     private Ack() {
       msgId_ = 0L;
-      from_ = "";
-      to_ = "";
+      from_ = 0L;
+      to_ = 0L;
       ackStatus_ = 0;
     }
 
@@ -3922,16 +3620,14 @@ public final class Message {
               msgId_ = input.readInt64();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              from_ = s;
+              from_ = input.readInt64();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              to_ = s;
+              to_ = input.readInt64();
               break;
             }
             case 32: {
@@ -4080,71 +3776,21 @@ public final class Message {
     }
 
     public static final int FROM_FIELD_NUMBER = 2;
-    private volatile java.lang.Object from_;
+    private long from_;
     /**
-     * <code>optional string from = 2;</code>
+     * <code>optional int64 from = 2;</code>
      */
-    public java.lang.String getFrom() {
-      java.lang.Object ref = from_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        from_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string from = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFromBytes() {
-      java.lang.Object ref = from_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        from_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFrom() {
+      return from_;
     }
 
     public static final int TO_FIELD_NUMBER = 3;
-    private volatile java.lang.Object to_;
+    private long to_;
     /**
-     * <code>optional string to = 3;</code>
+     * <code>optional int64 to = 3;</code>
      */
-    public java.lang.String getTo() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        to_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string to = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTo() {
+      return to_;
     }
 
     public static final int ACKSTATUS_FIELD_NUMBER = 4;
@@ -4178,11 +3824,11 @@ public final class Message {
       if (msgId_ != 0L) {
         output.writeInt64(1, msgId_);
       }
-      if (!getFromBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, from_);
+      if (from_ != 0L) {
+        output.writeInt64(2, from_);
       }
-      if (!getToBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, to_);
+      if (to_ != 0L) {
+        output.writeInt64(3, to_);
       }
       if (ackStatus_ != com.ghj.protocol.Message.Ack.AckStatus.Receive.getNumber()) {
         output.writeEnum(4, ackStatus_);
@@ -4198,11 +3844,13 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, msgId_);
       }
-      if (!getFromBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, from_);
+      if (from_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, from_);
       }
-      if (!getToBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, to_);
+      if (to_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, to_);
       }
       if (ackStatus_ != com.ghj.protocol.Message.Ack.AckStatus.Receive.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -4226,10 +3874,10 @@ public final class Message {
       boolean result = true;
       result = result && (getMsgId()
           == other.getMsgId());
-      result = result && getFrom()
-          .equals(other.getFrom());
-      result = result && getTo()
-          .equals(other.getTo());
+      result = result && (getFrom()
+          == other.getFrom());
+      result = result && (getTo()
+          == other.getTo());
       result = result && ackStatus_ == other.ackStatus_;
       return result;
     }
@@ -4245,9 +3893,11 @@ public final class Message {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgId());
       hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrom().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFrom());
       hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + getTo().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTo());
       hash = (37 * hash) + ACKSTATUS_FIELD_NUMBER;
       hash = (53 * hash) + ackStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4370,9 +4020,9 @@ public final class Message {
         super.clear();
         msgId_ = 0L;
 
-        from_ = "";
+        from_ = 0L;
 
-        to_ = "";
+        to_ = 0L;
 
         ackStatus_ = 0;
 
@@ -4446,13 +4096,11 @@ public final class Message {
         if (other.getMsgId() != 0L) {
           setMsgId(other.getMsgId());
         }
-        if (!other.getFrom().isEmpty()) {
-          from_ = other.from_;
-          onChanged();
+        if (other.getFrom() != 0L) {
+          setFrom(other.getFrom());
         }
-        if (!other.getTo().isEmpty()) {
-          to_ = other.to_;
-          onChanged();
+        if (other.getTo() != 0L) {
+          setTo(other.getTo());
         }
         if (other.ackStatus_ != 0) {
           setAckStatusValue(other.getAckStatusValue());
@@ -4509,140 +4157,54 @@ public final class Message {
         return this;
       }
 
-      private java.lang.Object from_ = "";
+      private long from_ ;
       /**
-       * <code>optional string from = 2;</code>
+       * <code>optional int64 from = 2;</code>
        */
-      public java.lang.String getFrom() {
-        java.lang.Object ref = from_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          from_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFrom() {
+        return from_;
       }
       /**
-       * <code>optional string from = 2;</code>
+       * <code>optional int64 from = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getFromBytes() {
-        java.lang.Object ref = from_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          from_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string from = 2;</code>
-       */
-      public Builder setFrom(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setFrom(long value) {
+        
         from_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string from = 2;</code>
+       * <code>optional int64 from = 2;</code>
        */
       public Builder clearFrom() {
         
-        from_ = getDefaultInstance().getFrom();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string from = 2;</code>
-       */
-      public Builder setFromBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        from_ = value;
+        from_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object to_ = "";
+      private long to_ ;
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
-      public java.lang.String getTo() {
-        java.lang.Object ref = to_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          to_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getTo() {
+        return to_;
       }
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getToBytes() {
-        java.lang.Object ref = to_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          to_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string to = 3;</code>
-       */
-      public Builder setTo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTo(long value) {
+        
         to_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string to = 3;</code>
+       * <code>optional int64 to = 3;</code>
        */
       public Builder clearTo() {
         
-        to_ = getDefaultInstance().getTo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string to = 3;</code>
-       */
-      public Builder setToBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        to_ = value;
+        to_ = 0L;
         onChanged();
         return this;
       }
@@ -4744,14 +4306,9 @@ public final class Message {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string from = 1;</code>
+     * <code>optional int64 from = 1;</code>
      */
-    java.lang.String getFrom();
-    /**
-     * <code>optional string from = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getFromBytes();
+    long getFrom();
   }
   /**
    * Protobuf type {@code Ping}
@@ -4765,7 +4322,7 @@ public final class Message {
       super(builder);
     }
     private Ping() {
-      from_ = "";
+      from_ = 0L;
     }
 
     @java.lang.Override
@@ -4793,10 +4350,9 @@ public final class Message {
               }
               break;
             }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              from_ = s;
+              from_ = input.readInt64();
               break;
             }
           }
@@ -4823,37 +4379,12 @@ public final class Message {
     }
 
     public static final int FROM_FIELD_NUMBER = 1;
-    private volatile java.lang.Object from_;
+    private long from_;
     /**
-     * <code>optional string from = 1;</code>
+     * <code>optional int64 from = 1;</code>
      */
-    public java.lang.String getFrom() {
-      java.lang.Object ref = from_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        from_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string from = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFromBytes() {
-      java.lang.Object ref = from_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        from_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFrom() {
+      return from_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4868,8 +4399,8 @@ public final class Message {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFromBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, from_);
+      if (from_ != 0L) {
+        output.writeInt64(1, from_);
       }
     }
 
@@ -4878,8 +4409,9 @@ public final class Message {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFromBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, from_);
+      if (from_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, from_);
       }
       memoizedSize = size;
       return size;
@@ -4897,8 +4429,8 @@ public final class Message {
       com.ghj.protocol.Message.Ping other = (com.ghj.protocol.Message.Ping) obj;
 
       boolean result = true;
-      result = result && getFrom()
-          .equals(other.getFrom());
+      result = result && (getFrom()
+          == other.getFrom());
       return result;
     }
 
@@ -4910,7 +4442,8 @@ public final class Message {
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrom().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFrom());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5029,7 +4562,7 @@ public final class Message {
       }
       public Builder clear() {
         super.clear();
-        from_ = "";
+        from_ = 0L;
 
         return this;
       }
@@ -5095,9 +4628,8 @@ public final class Message {
 
       public Builder mergeFrom(com.ghj.protocol.Message.Ping other) {
         if (other == com.ghj.protocol.Message.Ping.getDefaultInstance()) return this;
-        if (!other.getFrom().isEmpty()) {
-          from_ = other.from_;
-          onChanged();
+        if (other.getFrom() != 0L) {
+          setFrom(other.getFrom());
         }
         onChanged();
         return this;
@@ -5125,71 +4657,28 @@ public final class Message {
         return this;
       }
 
-      private java.lang.Object from_ = "";
+      private long from_ ;
       /**
-       * <code>optional string from = 1;</code>
+       * <code>optional int64 from = 1;</code>
        */
-      public java.lang.String getFrom() {
-        java.lang.Object ref = from_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          from_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFrom() {
+        return from_;
       }
       /**
-       * <code>optional string from = 1;</code>
+       * <code>optional int64 from = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getFromBytes() {
-        java.lang.Object ref = from_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          from_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string from = 1;</code>
-       */
-      public Builder setFrom(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setFrom(long value) {
+        
         from_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string from = 1;</code>
+       * <code>optional int64 from = 1;</code>
        */
       public Builder clearFrom() {
         
-        from_ = getDefaultInstance().getFrom();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string from = 1;</code>
-       */
-      public Builder setFromBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        from_ = value;
+        from_ = 0L;
         onChanged();
         return this;
       }
@@ -5287,16 +4776,16 @@ public final class Message {
       "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\">\n\010Da" +
       "taType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022" +
       "\007\n\003Ack\020\003\022\010\n\004Ping\020\004B\n\n\010dataBody\"\235\001\n\004Chat\022" +
-      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\t\022\n\n\002to\030\003 \001(\t\022\014\n" +
+      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\014\n" +
       "\004type\030\004 \001(\005\022 \n\010chatType\030\005 \001(\0162\016.Chat.Cha" +
       "tType\022\017\n\007content\030\006 \001(\t\022\013\n\003ext\030\007 \001(\t\"!\n\010C" +
       "hatType\022\n\n\006Single\020\000\022\t\n\005Group\020\001\"!\n\005Login\022",
-      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\t\"\"\n\006Logout\022\n\n\002i" +
-      "d\030\001 \001(\003\022\014\n\004form\030\002 \001(\t\"\201\001\n\003Ack\022\r\n\005msgId\030\001" +
-      " \001(\003\022\014\n\004from\030\002 \001(\t\022\n\n\002to\030\003 \001(\t\022!\n\tackSta" +
+      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\"\n\006Logout\022\n\n\002i" +
+      "d\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\201\001\n\003Ack\022\r\n\005msgId\030\001" +
+      " \001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022!\n\tackSta" +
       "tus\030\004 \001(\0162\016.Ack.AckStatus\".\n\tAckStatus\022\013" +
       "\n\007Receive\020\000\022\n\n\006Accept\020\001\022\010\n\004Read\020\002\"\024\n\004Pin" +
-      "g\022\014\n\004from\030\001 \001(\tB\033\n\020com.ghj.protocolB\007Mes" +
+      "g\022\014\n\004from\030\001 \001(\003B\033\n\020com.ghj.protocolB\007Mes" +
       "sageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

@@ -20,6 +20,7 @@
         <module name="huichat-lservice" />
         <module name="huichat-msgserver" />
         <module name="huichat-auth" />
+        <module name="huichat-upms" />
         <module name="huichat-registry" />
       </profile>
     </annotationProcessing>
@@ -38,6 +39,7 @@
       <module name="huichat-registry" target="1.8" />
       <module name="huichat-rest" target="1.8" />
       <module name="huichat-router" target="1.8" />
+      <module name="huichat-upms" target="1.8" />
       <module name="huichat-userver" target="1.8" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
@@ -57,6 +59,7 @@
       <module name="huichat-registry" options="-parameters" />
       <module name="huichat-rest" options="-parameters" />
       <module name="huichat-router" options="-parameters" />
+      <module name="huichat-upms" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>

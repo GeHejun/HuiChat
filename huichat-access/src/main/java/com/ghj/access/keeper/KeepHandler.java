@@ -3,24 +3,28 @@ package com.ghj.access.keeper;
 import com.alibaba.fastjson.JSON;
 import com.ghj.common.HSStatusEnum;
 import com.ghj.common.HSession;
+import com.ghj.common.constant.Constant;
 import com.ghj.protocol.Message;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.time.Instant;
 
-import static com.ghj.common.constant.Constant.CHANNEL_ID;
+import static com.ghj.common.constant.Constant.*;
 
 @Component
 public class KeepHandler extends SimpleChannelInboundHandler<Message.Data> {
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+
+    @Resource
+    KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -42,8 +46,9 @@ public class KeepHandler extends SimpleChannelInboundHandler<Message.Data> {
         }
     }
 
+
     private void dealLoutMsg(Message.Data data) {
-        stringRedisTemplate.delete(data.getLogout().getForm());
+        stringRedisTemplate.delete(LOGIN_USER + data.getLogout().getForm());
     }
 
     /**
@@ -57,6 +62,8 @@ public class KeepHandler extends SimpleChannelInboundHandler<Message.Data> {
                 .setCreateTime(Instant.now().toEpochMilli())
                 .setStatus(HSStatusEnum.ON_LINE.getCode())
                 .setUId(data.getLogin().getForm());
-        stringRedisTemplate.opsForValue().set(data.getLogin().getForm(), JSON.toJSONString(hSession));
+        String sessionStr = JSON.toJSONString(hSession);
+        stringRedisTemplate.opsForValue().set(LOGIN_USER + data.getLogin().getForm(), sessionStr);
+        kafkaTemplate.send(TOPIC_SESSION, sessionStr);
     }
 }
