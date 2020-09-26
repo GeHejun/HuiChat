@@ -1,7 +1,7 @@
-package com.ghj.access.keeper;
+package com.ghj.access.keep;
 
 import com.ghj.access.config.Config;
-import com.ghj.protocol.Message;
+import com.ghj.protocol.Msg;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -66,7 +66,7 @@ public class Keeper {
                 protected void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline()
                             .addLast(new ProtobufEncoder())
-                            .addLast(new ProtobufDecoder(Message.Data.getDefaultInstance()))
+                            .addLast(new ProtobufDecoder(Msg.Data.getDefaultInstance()))
                             .addLast(keepHandler);
                 }
             });

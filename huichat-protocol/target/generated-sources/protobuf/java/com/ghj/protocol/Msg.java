@@ -3,8 +3,8 @@
 
 package com.ghj.protocol;
 
-public final class Message {
-  private Message() {}
+public final class Msg {
+  private Msg() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -25,45 +25,45 @@ public final class Message {
     /**
      * <code>optional .Data.DataType dataType = 1;</code>
      */
-    com.ghj.protocol.Message.Data.DataType getDataType();
+    com.ghj.protocol.Msg.Data.DataType getDataType();
 
     /**
      * <code>optional .Chat chat = 2;</code>
      */
-    com.ghj.protocol.Message.Chat getChat();
+    com.ghj.protocol.Msg.Chat getChat();
     /**
      * <code>optional .Chat chat = 2;</code>
      */
-    com.ghj.protocol.Message.ChatOrBuilder getChatOrBuilder();
+    com.ghj.protocol.Msg.ChatOrBuilder getChatOrBuilder();
 
     /**
      * <code>optional .Login login = 3;</code>
      */
-    com.ghj.protocol.Message.Login getLogin();
+    com.ghj.protocol.Msg.Login getLogin();
     /**
      * <code>optional .Login login = 3;</code>
      */
-    com.ghj.protocol.Message.LoginOrBuilder getLoginOrBuilder();
+    com.ghj.protocol.Msg.LoginOrBuilder getLoginOrBuilder();
 
     /**
      * <code>optional .Logout logout = 4;</code>
      */
-    com.ghj.protocol.Message.Logout getLogout();
+    com.ghj.protocol.Msg.Logout getLogout();
     /**
      * <code>optional .Logout logout = 4;</code>
      */
-    com.ghj.protocol.Message.LogoutOrBuilder getLogoutOrBuilder();
+    com.ghj.protocol.Msg.LogoutOrBuilder getLogoutOrBuilder();
 
     /**
      * <code>optional .Ack ack = 5;</code>
      */
-    com.ghj.protocol.Message.Ack getAck();
+    com.ghj.protocol.Msg.Ack getAck();
     /**
      * <code>optional .Ack ack = 5;</code>
      */
-    com.ghj.protocol.Message.AckOrBuilder getAckOrBuilder();
+    com.ghj.protocol.Msg.AckOrBuilder getAckOrBuilder();
 
-    public com.ghj.protocol.Message.Data.DataBodyCase getDataBodyCase();
+    public com.ghj.protocol.Msg.Data.DataBodyCase getDataBodyCase();
   }
   /**
    * Protobuf type {@code Data}
@@ -112,56 +112,56 @@ public final class Message {
               break;
             }
             case 18: {
-              com.ghj.protocol.Message.Chat.Builder subBuilder = null;
+              com.ghj.protocol.Msg.Chat.Builder subBuilder = null;
               if (dataBodyCase_ == 2) {
-                subBuilder = ((com.ghj.protocol.Message.Chat) dataBody_).toBuilder();
+                subBuilder = ((com.ghj.protocol.Msg.Chat) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(com.ghj.protocol.Message.Chat.parser(), extensionRegistry);
+                  input.readMessage(com.ghj.protocol.Msg.Chat.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.ghj.protocol.Message.Chat) dataBody_);
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Chat) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 2;
               break;
             }
             case 26: {
-              com.ghj.protocol.Message.Login.Builder subBuilder = null;
+              com.ghj.protocol.Msg.Login.Builder subBuilder = null;
               if (dataBodyCase_ == 3) {
-                subBuilder = ((com.ghj.protocol.Message.Login) dataBody_).toBuilder();
+                subBuilder = ((com.ghj.protocol.Msg.Login) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(com.ghj.protocol.Message.Login.parser(), extensionRegistry);
+                  input.readMessage(com.ghj.protocol.Msg.Login.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.ghj.protocol.Message.Login) dataBody_);
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Login) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 3;
               break;
             }
             case 34: {
-              com.ghj.protocol.Message.Logout.Builder subBuilder = null;
+              com.ghj.protocol.Msg.Logout.Builder subBuilder = null;
               if (dataBodyCase_ == 4) {
-                subBuilder = ((com.ghj.protocol.Message.Logout) dataBody_).toBuilder();
+                subBuilder = ((com.ghj.protocol.Msg.Logout) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(com.ghj.protocol.Message.Logout.parser(), extensionRegistry);
+                  input.readMessage(com.ghj.protocol.Msg.Logout.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.ghj.protocol.Message.Logout) dataBody_);
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Logout) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 4;
               break;
             }
             case 42: {
-              com.ghj.protocol.Message.Ack.Builder subBuilder = null;
+              com.ghj.protocol.Msg.Ack.Builder subBuilder = null;
               if (dataBodyCase_ == 5) {
-                subBuilder = ((com.ghj.protocol.Message.Ack) dataBody_).toBuilder();
+                subBuilder = ((com.ghj.protocol.Msg.Ack) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(com.ghj.protocol.Message.Ack.parser(), extensionRegistry);
+                  input.readMessage(com.ghj.protocol.Msg.Ack.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.ghj.protocol.Message.Ack) dataBody_);
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Ack) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 5;
@@ -180,14 +180,14 @@ public final class Message {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Data_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Data_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Data_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Data_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Data.class, com.ghj.protocol.Message.Data.Builder.class);
+              com.ghj.protocol.Msg.Data.class, com.ghj.protocol.Msg.Data.Builder.class);
     }
 
     /**
@@ -211,10 +211,6 @@ public final class Message {
        * <code>Ack = 3;</code>
        */
       Ack(3),
-      /**
-       * <code>Ping = 4;</code>
-       */
-      Ping(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -234,10 +230,6 @@ public final class Message {
        * <code>Ack = 3;</code>
        */
       public static final int Ack_VALUE = 3;
-      /**
-       * <code>Ping = 4;</code>
-       */
-      public static final int Ping_VALUE = 4;
 
 
       public final int getNumber() {
@@ -262,7 +254,6 @@ public final class Message {
           case 1: return Login;
           case 2: return Logout;
           case 3: return Ack;
-          case 4: return Ping;
           default: return null;
         }
       }
@@ -289,7 +280,7 @@ public final class Message {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.Data.getDescriptor().getEnumTypes().get(0);
+        return com.ghj.protocol.Msg.Data.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final DataType[] VALUES = values();
@@ -368,89 +359,89 @@ public final class Message {
     /**
      * <code>optional .Data.DataType dataType = 1;</code>
      */
-    public com.ghj.protocol.Message.Data.DataType getDataType() {
-      com.ghj.protocol.Message.Data.DataType result = com.ghj.protocol.Message.Data.DataType.valueOf(dataType_);
-      return result == null ? com.ghj.protocol.Message.Data.DataType.UNRECOGNIZED : result;
+    public com.ghj.protocol.Msg.Data.DataType getDataType() {
+      com.ghj.protocol.Msg.Data.DataType result = com.ghj.protocol.Msg.Data.DataType.valueOf(dataType_);
+      return result == null ? com.ghj.protocol.Msg.Data.DataType.UNRECOGNIZED : result;
     }
 
     public static final int CHAT_FIELD_NUMBER = 2;
     /**
      * <code>optional .Chat chat = 2;</code>
      */
-    public com.ghj.protocol.Message.Chat getChat() {
+    public com.ghj.protocol.Msg.Chat getChat() {
       if (dataBodyCase_ == 2) {
-         return (com.ghj.protocol.Message.Chat) dataBody_;
+         return (com.ghj.protocol.Msg.Chat) dataBody_;
       }
-      return com.ghj.protocol.Message.Chat.getDefaultInstance();
+      return com.ghj.protocol.Msg.Chat.getDefaultInstance();
     }
     /**
      * <code>optional .Chat chat = 2;</code>
      */
-    public com.ghj.protocol.Message.ChatOrBuilder getChatOrBuilder() {
+    public com.ghj.protocol.Msg.ChatOrBuilder getChatOrBuilder() {
       if (dataBodyCase_ == 2) {
-         return (com.ghj.protocol.Message.Chat) dataBody_;
+         return (com.ghj.protocol.Msg.Chat) dataBody_;
       }
-      return com.ghj.protocol.Message.Chat.getDefaultInstance();
+      return com.ghj.protocol.Msg.Chat.getDefaultInstance();
     }
 
     public static final int LOGIN_FIELD_NUMBER = 3;
     /**
      * <code>optional .Login login = 3;</code>
      */
-    public com.ghj.protocol.Message.Login getLogin() {
+    public com.ghj.protocol.Msg.Login getLogin() {
       if (dataBodyCase_ == 3) {
-         return (com.ghj.protocol.Message.Login) dataBody_;
+         return (com.ghj.protocol.Msg.Login) dataBody_;
       }
-      return com.ghj.protocol.Message.Login.getDefaultInstance();
+      return com.ghj.protocol.Msg.Login.getDefaultInstance();
     }
     /**
      * <code>optional .Login login = 3;</code>
      */
-    public com.ghj.protocol.Message.LoginOrBuilder getLoginOrBuilder() {
+    public com.ghj.protocol.Msg.LoginOrBuilder getLoginOrBuilder() {
       if (dataBodyCase_ == 3) {
-         return (com.ghj.protocol.Message.Login) dataBody_;
+         return (com.ghj.protocol.Msg.Login) dataBody_;
       }
-      return com.ghj.protocol.Message.Login.getDefaultInstance();
+      return com.ghj.protocol.Msg.Login.getDefaultInstance();
     }
 
     public static final int LOGOUT_FIELD_NUMBER = 4;
     /**
      * <code>optional .Logout logout = 4;</code>
      */
-    public com.ghj.protocol.Message.Logout getLogout() {
+    public com.ghj.protocol.Msg.Logout getLogout() {
       if (dataBodyCase_ == 4) {
-         return (com.ghj.protocol.Message.Logout) dataBody_;
+         return (com.ghj.protocol.Msg.Logout) dataBody_;
       }
-      return com.ghj.protocol.Message.Logout.getDefaultInstance();
+      return com.ghj.protocol.Msg.Logout.getDefaultInstance();
     }
     /**
      * <code>optional .Logout logout = 4;</code>
      */
-    public com.ghj.protocol.Message.LogoutOrBuilder getLogoutOrBuilder() {
+    public com.ghj.protocol.Msg.LogoutOrBuilder getLogoutOrBuilder() {
       if (dataBodyCase_ == 4) {
-         return (com.ghj.protocol.Message.Logout) dataBody_;
+         return (com.ghj.protocol.Msg.Logout) dataBody_;
       }
-      return com.ghj.protocol.Message.Logout.getDefaultInstance();
+      return com.ghj.protocol.Msg.Logout.getDefaultInstance();
     }
 
     public static final int ACK_FIELD_NUMBER = 5;
     /**
      * <code>optional .Ack ack = 5;</code>
      */
-    public com.ghj.protocol.Message.Ack getAck() {
+    public com.ghj.protocol.Msg.Ack getAck() {
       if (dataBodyCase_ == 5) {
-         return (com.ghj.protocol.Message.Ack) dataBody_;
+         return (com.ghj.protocol.Msg.Ack) dataBody_;
       }
-      return com.ghj.protocol.Message.Ack.getDefaultInstance();
+      return com.ghj.protocol.Msg.Ack.getDefaultInstance();
     }
     /**
      * <code>optional .Ack ack = 5;</code>
      */
-    public com.ghj.protocol.Message.AckOrBuilder getAckOrBuilder() {
+    public com.ghj.protocol.Msg.AckOrBuilder getAckOrBuilder() {
       if (dataBodyCase_ == 5) {
-         return (com.ghj.protocol.Message.Ack) dataBody_;
+         return (com.ghj.protocol.Msg.Ack) dataBody_;
       }
-      return com.ghj.protocol.Message.Ack.getDefaultInstance();
+      return com.ghj.protocol.Msg.Ack.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -465,20 +456,20 @@ public final class Message {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dataType_ != com.ghj.protocol.Message.Data.DataType.Chat.getNumber()) {
+      if (dataType_ != com.ghj.protocol.Msg.Data.DataType.Chat.getNumber()) {
         output.writeEnum(1, dataType_);
       }
       if (dataBodyCase_ == 2) {
-        output.writeMessage(2, (com.ghj.protocol.Message.Chat) dataBody_);
+        output.writeMessage(2, (com.ghj.protocol.Msg.Chat) dataBody_);
       }
       if (dataBodyCase_ == 3) {
-        output.writeMessage(3, (com.ghj.protocol.Message.Login) dataBody_);
+        output.writeMessage(3, (com.ghj.protocol.Msg.Login) dataBody_);
       }
       if (dataBodyCase_ == 4) {
-        output.writeMessage(4, (com.ghj.protocol.Message.Logout) dataBody_);
+        output.writeMessage(4, (com.ghj.protocol.Msg.Logout) dataBody_);
       }
       if (dataBodyCase_ == 5) {
-        output.writeMessage(5, (com.ghj.protocol.Message.Ack) dataBody_);
+        output.writeMessage(5, (com.ghj.protocol.Msg.Ack) dataBody_);
       }
     }
 
@@ -487,25 +478,25 @@ public final class Message {
       if (size != -1) return size;
 
       size = 0;
-      if (dataType_ != com.ghj.protocol.Message.Data.DataType.Chat.getNumber()) {
+      if (dataType_ != com.ghj.protocol.Msg.Data.DataType.Chat.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, dataType_);
       }
       if (dataBodyCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.ghj.protocol.Message.Chat) dataBody_);
+          .computeMessageSize(2, (com.ghj.protocol.Msg.Chat) dataBody_);
       }
       if (dataBodyCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.ghj.protocol.Message.Login) dataBody_);
+          .computeMessageSize(3, (com.ghj.protocol.Msg.Login) dataBody_);
       }
       if (dataBodyCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (com.ghj.protocol.Message.Logout) dataBody_);
+          .computeMessageSize(4, (com.ghj.protocol.Msg.Logout) dataBody_);
       }
       if (dataBodyCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (com.ghj.protocol.Message.Ack) dataBody_);
+          .computeMessageSize(5, (com.ghj.protocol.Msg.Ack) dataBody_);
       }
       memoizedSize = size;
       return size;
@@ -517,10 +508,10 @@ public final class Message {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Message.Data)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Data)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Message.Data other = (com.ghj.protocol.Message.Data) obj;
+      com.ghj.protocol.Msg.Data other = (com.ghj.protocol.Msg.Data) obj;
 
       boolean result = true;
       result = result && dataType_ == other.dataType_;
@@ -584,58 +575,58 @@ public final class Message {
       return hash;
     }
 
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Data parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Data parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Data parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Data parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Data parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Data parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Data parseFrom(
+    public static com.ghj.protocol.Msg.Data parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -647,7 +638,7 @@ public final class Message {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Message.Data prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Data prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -667,20 +658,20 @@ public final class Message {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Data)
-        com.ghj.protocol.Message.DataOrBuilder {
+        com.ghj.protocol.Msg.DataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Data_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Data_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Data_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Data_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Data.class, com.ghj.protocol.Message.Data.Builder.class);
+                com.ghj.protocol.Msg.Data.class, com.ghj.protocol.Msg.Data.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Message.Data.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Data.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -706,23 +697,23 @@ public final class Message {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Data_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Data_descriptor;
       }
 
-      public com.ghj.protocol.Message.Data getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Data.getDefaultInstance();
+      public com.ghj.protocol.Msg.Data getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Data.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Message.Data build() {
-        com.ghj.protocol.Message.Data result = buildPartial();
+      public com.ghj.protocol.Msg.Data build() {
+        com.ghj.protocol.Msg.Data result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Message.Data buildPartial() {
-        com.ghj.protocol.Message.Data result = new com.ghj.protocol.Message.Data(this);
+      public com.ghj.protocol.Msg.Data buildPartial() {
+        com.ghj.protocol.Msg.Data result = new com.ghj.protocol.Msg.Data(this);
         result.dataType_ = dataType_;
         if (dataBodyCase_ == 2) {
           if (chatBuilder_ == null) {
@@ -784,16 +775,16 @@ public final class Message {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Data) {
-          return mergeFrom((com.ghj.protocol.Message.Data)other);
+        if (other instanceof com.ghj.protocol.Msg.Data) {
+          return mergeFrom((com.ghj.protocol.Msg.Data)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Message.Data other) {
-        if (other == com.ghj.protocol.Message.Data.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ghj.protocol.Msg.Data other) {
+        if (other == com.ghj.protocol.Msg.Data.getDefaultInstance()) return this;
         if (other.dataType_ != 0) {
           setDataTypeValue(other.getDataTypeValue());
         }
@@ -830,11 +821,11 @@ public final class Message {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Message.Data parsedMessage = null;
+        com.ghj.protocol.Msg.Data parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Data) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Data) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -877,14 +868,14 @@ public final class Message {
       /**
        * <code>optional .Data.DataType dataType = 1;</code>
        */
-      public com.ghj.protocol.Message.Data.DataType getDataType() {
-        com.ghj.protocol.Message.Data.DataType result = com.ghj.protocol.Message.Data.DataType.valueOf(dataType_);
-        return result == null ? com.ghj.protocol.Message.Data.DataType.UNRECOGNIZED : result;
+      public com.ghj.protocol.Msg.Data.DataType getDataType() {
+        com.ghj.protocol.Msg.Data.DataType result = com.ghj.protocol.Msg.Data.DataType.valueOf(dataType_);
+        return result == null ? com.ghj.protocol.Msg.Data.DataType.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .Data.DataType dataType = 1;</code>
        */
-      public Builder setDataType(com.ghj.protocol.Message.Data.DataType value) {
+      public Builder setDataType(com.ghj.protocol.Msg.Data.DataType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -904,27 +895,27 @@ public final class Message {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Chat, com.ghj.protocol.Message.Chat.Builder, com.ghj.protocol.Message.ChatOrBuilder> chatBuilder_;
+          com.ghj.protocol.Msg.Chat, com.ghj.protocol.Msg.Chat.Builder, com.ghj.protocol.Msg.ChatOrBuilder> chatBuilder_;
       /**
        * <code>optional .Chat chat = 2;</code>
        */
-      public com.ghj.protocol.Message.Chat getChat() {
+      public com.ghj.protocol.Msg.Chat getChat() {
         if (chatBuilder_ == null) {
           if (dataBodyCase_ == 2) {
-            return (com.ghj.protocol.Message.Chat) dataBody_;
+            return (com.ghj.protocol.Msg.Chat) dataBody_;
           }
-          return com.ghj.protocol.Message.Chat.getDefaultInstance();
+          return com.ghj.protocol.Msg.Chat.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 2) {
             return chatBuilder_.getMessage();
           }
-          return com.ghj.protocol.Message.Chat.getDefaultInstance();
+          return com.ghj.protocol.Msg.Chat.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Chat chat = 2;</code>
        */
-      public Builder setChat(com.ghj.protocol.Message.Chat value) {
+      public Builder setChat(com.ghj.protocol.Msg.Chat value) {
         if (chatBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -941,7 +932,7 @@ public final class Message {
        * <code>optional .Chat chat = 2;</code>
        */
       public Builder setChat(
-          com.ghj.protocol.Message.Chat.Builder builderForValue) {
+          com.ghj.protocol.Msg.Chat.Builder builderForValue) {
         if (chatBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -954,11 +945,11 @@ public final class Message {
       /**
        * <code>optional .Chat chat = 2;</code>
        */
-      public Builder mergeChat(com.ghj.protocol.Message.Chat value) {
+      public Builder mergeChat(com.ghj.protocol.Msg.Chat value) {
         if (chatBuilder_ == null) {
           if (dataBodyCase_ == 2 &&
-              dataBody_ != com.ghj.protocol.Message.Chat.getDefaultInstance()) {
-            dataBody_ = com.ghj.protocol.Message.Chat.newBuilder((com.ghj.protocol.Message.Chat) dataBody_)
+              dataBody_ != com.ghj.protocol.Msg.Chat.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Chat.newBuilder((com.ghj.protocol.Msg.Chat) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -995,35 +986,35 @@ public final class Message {
       /**
        * <code>optional .Chat chat = 2;</code>
        */
-      public com.ghj.protocol.Message.Chat.Builder getChatBuilder() {
+      public com.ghj.protocol.Msg.Chat.Builder getChatBuilder() {
         return getChatFieldBuilder().getBuilder();
       }
       /**
        * <code>optional .Chat chat = 2;</code>
        */
-      public com.ghj.protocol.Message.ChatOrBuilder getChatOrBuilder() {
+      public com.ghj.protocol.Msg.ChatOrBuilder getChatOrBuilder() {
         if ((dataBodyCase_ == 2) && (chatBuilder_ != null)) {
           return chatBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 2) {
-            return (com.ghj.protocol.Message.Chat) dataBody_;
+            return (com.ghj.protocol.Msg.Chat) dataBody_;
           }
-          return com.ghj.protocol.Message.Chat.getDefaultInstance();
+          return com.ghj.protocol.Msg.Chat.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Chat chat = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Chat, com.ghj.protocol.Message.Chat.Builder, com.ghj.protocol.Message.ChatOrBuilder> 
+          com.ghj.protocol.Msg.Chat, com.ghj.protocol.Msg.Chat.Builder, com.ghj.protocol.Msg.ChatOrBuilder> 
           getChatFieldBuilder() {
         if (chatBuilder_ == null) {
           if (!(dataBodyCase_ == 2)) {
-            dataBody_ = com.ghj.protocol.Message.Chat.getDefaultInstance();
+            dataBody_ = com.ghj.protocol.Msg.Chat.getDefaultInstance();
           }
           chatBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.ghj.protocol.Message.Chat, com.ghj.protocol.Message.Chat.Builder, com.ghj.protocol.Message.ChatOrBuilder>(
-                  (com.ghj.protocol.Message.Chat) dataBody_,
+              com.ghj.protocol.Msg.Chat, com.ghj.protocol.Msg.Chat.Builder, com.ghj.protocol.Msg.ChatOrBuilder>(
+                  (com.ghj.protocol.Msg.Chat) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1034,27 +1025,27 @@ public final class Message {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Login, com.ghj.protocol.Message.Login.Builder, com.ghj.protocol.Message.LoginOrBuilder> loginBuilder_;
+          com.ghj.protocol.Msg.Login, com.ghj.protocol.Msg.Login.Builder, com.ghj.protocol.Msg.LoginOrBuilder> loginBuilder_;
       /**
        * <code>optional .Login login = 3;</code>
        */
-      public com.ghj.protocol.Message.Login getLogin() {
+      public com.ghj.protocol.Msg.Login getLogin() {
         if (loginBuilder_ == null) {
           if (dataBodyCase_ == 3) {
-            return (com.ghj.protocol.Message.Login) dataBody_;
+            return (com.ghj.protocol.Msg.Login) dataBody_;
           }
-          return com.ghj.protocol.Message.Login.getDefaultInstance();
+          return com.ghj.protocol.Msg.Login.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 3) {
             return loginBuilder_.getMessage();
           }
-          return com.ghj.protocol.Message.Login.getDefaultInstance();
+          return com.ghj.protocol.Msg.Login.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Login login = 3;</code>
        */
-      public Builder setLogin(com.ghj.protocol.Message.Login value) {
+      public Builder setLogin(com.ghj.protocol.Msg.Login value) {
         if (loginBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1071,7 +1062,7 @@ public final class Message {
        * <code>optional .Login login = 3;</code>
        */
       public Builder setLogin(
-          com.ghj.protocol.Message.Login.Builder builderForValue) {
+          com.ghj.protocol.Msg.Login.Builder builderForValue) {
         if (loginBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -1084,11 +1075,11 @@ public final class Message {
       /**
        * <code>optional .Login login = 3;</code>
        */
-      public Builder mergeLogin(com.ghj.protocol.Message.Login value) {
+      public Builder mergeLogin(com.ghj.protocol.Msg.Login value) {
         if (loginBuilder_ == null) {
           if (dataBodyCase_ == 3 &&
-              dataBody_ != com.ghj.protocol.Message.Login.getDefaultInstance()) {
-            dataBody_ = com.ghj.protocol.Message.Login.newBuilder((com.ghj.protocol.Message.Login) dataBody_)
+              dataBody_ != com.ghj.protocol.Msg.Login.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Login.newBuilder((com.ghj.protocol.Msg.Login) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -1125,35 +1116,35 @@ public final class Message {
       /**
        * <code>optional .Login login = 3;</code>
        */
-      public com.ghj.protocol.Message.Login.Builder getLoginBuilder() {
+      public com.ghj.protocol.Msg.Login.Builder getLoginBuilder() {
         return getLoginFieldBuilder().getBuilder();
       }
       /**
        * <code>optional .Login login = 3;</code>
        */
-      public com.ghj.protocol.Message.LoginOrBuilder getLoginOrBuilder() {
+      public com.ghj.protocol.Msg.LoginOrBuilder getLoginOrBuilder() {
         if ((dataBodyCase_ == 3) && (loginBuilder_ != null)) {
           return loginBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 3) {
-            return (com.ghj.protocol.Message.Login) dataBody_;
+            return (com.ghj.protocol.Msg.Login) dataBody_;
           }
-          return com.ghj.protocol.Message.Login.getDefaultInstance();
+          return com.ghj.protocol.Msg.Login.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Login login = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Login, com.ghj.protocol.Message.Login.Builder, com.ghj.protocol.Message.LoginOrBuilder> 
+          com.ghj.protocol.Msg.Login, com.ghj.protocol.Msg.Login.Builder, com.ghj.protocol.Msg.LoginOrBuilder> 
           getLoginFieldBuilder() {
         if (loginBuilder_ == null) {
           if (!(dataBodyCase_ == 3)) {
-            dataBody_ = com.ghj.protocol.Message.Login.getDefaultInstance();
+            dataBody_ = com.ghj.protocol.Msg.Login.getDefaultInstance();
           }
           loginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.ghj.protocol.Message.Login, com.ghj.protocol.Message.Login.Builder, com.ghj.protocol.Message.LoginOrBuilder>(
-                  (com.ghj.protocol.Message.Login) dataBody_,
+              com.ghj.protocol.Msg.Login, com.ghj.protocol.Msg.Login.Builder, com.ghj.protocol.Msg.LoginOrBuilder>(
+                  (com.ghj.protocol.Msg.Login) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1164,27 +1155,27 @@ public final class Message {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Logout, com.ghj.protocol.Message.Logout.Builder, com.ghj.protocol.Message.LogoutOrBuilder> logoutBuilder_;
+          com.ghj.protocol.Msg.Logout, com.ghj.protocol.Msg.Logout.Builder, com.ghj.protocol.Msg.LogoutOrBuilder> logoutBuilder_;
       /**
        * <code>optional .Logout logout = 4;</code>
        */
-      public com.ghj.protocol.Message.Logout getLogout() {
+      public com.ghj.protocol.Msg.Logout getLogout() {
         if (logoutBuilder_ == null) {
           if (dataBodyCase_ == 4) {
-            return (com.ghj.protocol.Message.Logout) dataBody_;
+            return (com.ghj.protocol.Msg.Logout) dataBody_;
           }
-          return com.ghj.protocol.Message.Logout.getDefaultInstance();
+          return com.ghj.protocol.Msg.Logout.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 4) {
             return logoutBuilder_.getMessage();
           }
-          return com.ghj.protocol.Message.Logout.getDefaultInstance();
+          return com.ghj.protocol.Msg.Logout.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Logout logout = 4;</code>
        */
-      public Builder setLogout(com.ghj.protocol.Message.Logout value) {
+      public Builder setLogout(com.ghj.protocol.Msg.Logout value) {
         if (logoutBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1201,7 +1192,7 @@ public final class Message {
        * <code>optional .Logout logout = 4;</code>
        */
       public Builder setLogout(
-          com.ghj.protocol.Message.Logout.Builder builderForValue) {
+          com.ghj.protocol.Msg.Logout.Builder builderForValue) {
         if (logoutBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -1214,11 +1205,11 @@ public final class Message {
       /**
        * <code>optional .Logout logout = 4;</code>
        */
-      public Builder mergeLogout(com.ghj.protocol.Message.Logout value) {
+      public Builder mergeLogout(com.ghj.protocol.Msg.Logout value) {
         if (logoutBuilder_ == null) {
           if (dataBodyCase_ == 4 &&
-              dataBody_ != com.ghj.protocol.Message.Logout.getDefaultInstance()) {
-            dataBody_ = com.ghj.protocol.Message.Logout.newBuilder((com.ghj.protocol.Message.Logout) dataBody_)
+              dataBody_ != com.ghj.protocol.Msg.Logout.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Logout.newBuilder((com.ghj.protocol.Msg.Logout) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -1255,35 +1246,35 @@ public final class Message {
       /**
        * <code>optional .Logout logout = 4;</code>
        */
-      public com.ghj.protocol.Message.Logout.Builder getLogoutBuilder() {
+      public com.ghj.protocol.Msg.Logout.Builder getLogoutBuilder() {
         return getLogoutFieldBuilder().getBuilder();
       }
       /**
        * <code>optional .Logout logout = 4;</code>
        */
-      public com.ghj.protocol.Message.LogoutOrBuilder getLogoutOrBuilder() {
+      public com.ghj.protocol.Msg.LogoutOrBuilder getLogoutOrBuilder() {
         if ((dataBodyCase_ == 4) && (logoutBuilder_ != null)) {
           return logoutBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 4) {
-            return (com.ghj.protocol.Message.Logout) dataBody_;
+            return (com.ghj.protocol.Msg.Logout) dataBody_;
           }
-          return com.ghj.protocol.Message.Logout.getDefaultInstance();
+          return com.ghj.protocol.Msg.Logout.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Logout logout = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Logout, com.ghj.protocol.Message.Logout.Builder, com.ghj.protocol.Message.LogoutOrBuilder> 
+          com.ghj.protocol.Msg.Logout, com.ghj.protocol.Msg.Logout.Builder, com.ghj.protocol.Msg.LogoutOrBuilder> 
           getLogoutFieldBuilder() {
         if (logoutBuilder_ == null) {
           if (!(dataBodyCase_ == 4)) {
-            dataBody_ = com.ghj.protocol.Message.Logout.getDefaultInstance();
+            dataBody_ = com.ghj.protocol.Msg.Logout.getDefaultInstance();
           }
           logoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.ghj.protocol.Message.Logout, com.ghj.protocol.Message.Logout.Builder, com.ghj.protocol.Message.LogoutOrBuilder>(
-                  (com.ghj.protocol.Message.Logout) dataBody_,
+              com.ghj.protocol.Msg.Logout, com.ghj.protocol.Msg.Logout.Builder, com.ghj.protocol.Msg.LogoutOrBuilder>(
+                  (com.ghj.protocol.Msg.Logout) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1294,27 +1285,27 @@ public final class Message {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Ack, com.ghj.protocol.Message.Ack.Builder, com.ghj.protocol.Message.AckOrBuilder> ackBuilder_;
+          com.ghj.protocol.Msg.Ack, com.ghj.protocol.Msg.Ack.Builder, com.ghj.protocol.Msg.AckOrBuilder> ackBuilder_;
       /**
        * <code>optional .Ack ack = 5;</code>
        */
-      public com.ghj.protocol.Message.Ack getAck() {
+      public com.ghj.protocol.Msg.Ack getAck() {
         if (ackBuilder_ == null) {
           if (dataBodyCase_ == 5) {
-            return (com.ghj.protocol.Message.Ack) dataBody_;
+            return (com.ghj.protocol.Msg.Ack) dataBody_;
           }
-          return com.ghj.protocol.Message.Ack.getDefaultInstance();
+          return com.ghj.protocol.Msg.Ack.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 5) {
             return ackBuilder_.getMessage();
           }
-          return com.ghj.protocol.Message.Ack.getDefaultInstance();
+          return com.ghj.protocol.Msg.Ack.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Ack ack = 5;</code>
        */
-      public Builder setAck(com.ghj.protocol.Message.Ack value) {
+      public Builder setAck(com.ghj.protocol.Msg.Ack value) {
         if (ackBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1331,7 +1322,7 @@ public final class Message {
        * <code>optional .Ack ack = 5;</code>
        */
       public Builder setAck(
-          com.ghj.protocol.Message.Ack.Builder builderForValue) {
+          com.ghj.protocol.Msg.Ack.Builder builderForValue) {
         if (ackBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -1344,11 +1335,11 @@ public final class Message {
       /**
        * <code>optional .Ack ack = 5;</code>
        */
-      public Builder mergeAck(com.ghj.protocol.Message.Ack value) {
+      public Builder mergeAck(com.ghj.protocol.Msg.Ack value) {
         if (ackBuilder_ == null) {
           if (dataBodyCase_ == 5 &&
-              dataBody_ != com.ghj.protocol.Message.Ack.getDefaultInstance()) {
-            dataBody_ = com.ghj.protocol.Message.Ack.newBuilder((com.ghj.protocol.Message.Ack) dataBody_)
+              dataBody_ != com.ghj.protocol.Msg.Ack.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Ack.newBuilder((com.ghj.protocol.Msg.Ack) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -1385,35 +1376,35 @@ public final class Message {
       /**
        * <code>optional .Ack ack = 5;</code>
        */
-      public com.ghj.protocol.Message.Ack.Builder getAckBuilder() {
+      public com.ghj.protocol.Msg.Ack.Builder getAckBuilder() {
         return getAckFieldBuilder().getBuilder();
       }
       /**
        * <code>optional .Ack ack = 5;</code>
        */
-      public com.ghj.protocol.Message.AckOrBuilder getAckOrBuilder() {
+      public com.ghj.protocol.Msg.AckOrBuilder getAckOrBuilder() {
         if ((dataBodyCase_ == 5) && (ackBuilder_ != null)) {
           return ackBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 5) {
-            return (com.ghj.protocol.Message.Ack) dataBody_;
+            return (com.ghj.protocol.Msg.Ack) dataBody_;
           }
-          return com.ghj.protocol.Message.Ack.getDefaultInstance();
+          return com.ghj.protocol.Msg.Ack.getDefaultInstance();
         }
       }
       /**
        * <code>optional .Ack ack = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.ghj.protocol.Message.Ack, com.ghj.protocol.Message.Ack.Builder, com.ghj.protocol.Message.AckOrBuilder> 
+          com.ghj.protocol.Msg.Ack, com.ghj.protocol.Msg.Ack.Builder, com.ghj.protocol.Msg.AckOrBuilder> 
           getAckFieldBuilder() {
         if (ackBuilder_ == null) {
           if (!(dataBodyCase_ == 5)) {
-            dataBody_ = com.ghj.protocol.Message.Ack.getDefaultInstance();
+            dataBody_ = com.ghj.protocol.Msg.Ack.getDefaultInstance();
           }
           ackBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.ghj.protocol.Message.Ack, com.ghj.protocol.Message.Ack.Builder, com.ghj.protocol.Message.AckOrBuilder>(
-                  (com.ghj.protocol.Message.Ack) dataBody_,
+              com.ghj.protocol.Msg.Ack, com.ghj.protocol.Msg.Ack.Builder, com.ghj.protocol.Msg.AckOrBuilder>(
+                  (com.ghj.protocol.Msg.Ack) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1437,12 +1428,12 @@ public final class Message {
     }
 
     // @@protoc_insertion_point(class_scope:Data)
-    private static final com.ghj.protocol.Message.Data DEFAULT_INSTANCE;
+    private static final com.ghj.protocol.Msg.Data DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Data();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Data();
     }
 
-    public static com.ghj.protocol.Message.Data getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Data getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1465,7 +1456,7 @@ public final class Message {
       return PARSER;
     }
 
-    public com.ghj.protocol.Message.Data getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Data getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1502,7 +1493,7 @@ public final class Message {
     /**
      * <code>optional .Chat.ChatType chatType = 5;</code>
      */
-    com.ghj.protocol.Message.Chat.ChatType getChatType();
+    com.ghj.protocol.Msg.Chat.ChatType getChatType();
 
     /**
      * <code>optional string content = 6;</code>
@@ -1621,14 +1612,14 @@ public final class Message {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Chat_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Chat_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Chat_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Chat_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Chat.class, com.ghj.protocol.Message.Chat.Builder.class);
+              com.ghj.protocol.Msg.Chat.class, com.ghj.protocol.Msg.Chat.Builder.class);
     }
 
     /**
@@ -1703,7 +1694,7 @@ public final class Message {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.Chat.getDescriptor().getEnumTypes().get(0);
+        return com.ghj.protocol.Msg.Chat.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final ChatType[] VALUES = values();
@@ -1776,9 +1767,9 @@ public final class Message {
     /**
      * <code>optional .Chat.ChatType chatType = 5;</code>
      */
-    public com.ghj.protocol.Message.Chat.ChatType getChatType() {
-      com.ghj.protocol.Message.Chat.ChatType result = com.ghj.protocol.Message.Chat.ChatType.valueOf(chatType_);
-      return result == null ? com.ghj.protocol.Message.Chat.ChatType.UNRECOGNIZED : result;
+    public com.ghj.protocol.Msg.Chat.ChatType getChatType() {
+      com.ghj.protocol.Msg.Chat.ChatType result = com.ghj.protocol.Msg.Chat.ChatType.valueOf(chatType_);
+      return result == null ? com.ghj.protocol.Msg.Chat.ChatType.UNRECOGNIZED : result;
     }
 
     public static final int CONTENT_FIELD_NUMBER = 6;
@@ -1873,7 +1864,7 @@ public final class Message {
       if (type_ != 0) {
         output.writeInt32(4, type_);
       }
-      if (chatType_ != com.ghj.protocol.Message.Chat.ChatType.Single.getNumber()) {
+      if (chatType_ != com.ghj.protocol.Msg.Chat.ChatType.Single.getNumber()) {
         output.writeEnum(5, chatType_);
       }
       if (!getContentBytes().isEmpty()) {
@@ -1905,7 +1896,7 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, type_);
       }
-      if (chatType_ != com.ghj.protocol.Message.Chat.ChatType.Single.getNumber()) {
+      if (chatType_ != com.ghj.protocol.Msg.Chat.ChatType.Single.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, chatType_);
       }
@@ -1925,10 +1916,10 @@ public final class Message {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Message.Chat)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Chat)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Message.Chat other = (com.ghj.protocol.Message.Chat) obj;
+      com.ghj.protocol.Msg.Chat other = (com.ghj.protocol.Msg.Chat) obj;
 
       boolean result = true;
       result = result && (getId()
@@ -1976,58 +1967,58 @@ public final class Message {
       return hash;
     }
 
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Chat parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Chat parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Chat parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Chat parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Chat parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Chat parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Chat parseFrom(
+    public static com.ghj.protocol.Msg.Chat parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2039,7 +2030,7 @@ public final class Message {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Message.Chat prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Chat prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2059,20 +2050,20 @@ public final class Message {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Chat)
-        com.ghj.protocol.Message.ChatOrBuilder {
+        com.ghj.protocol.Msg.ChatOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Chat_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Chat_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Chat_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Chat_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Chat.class, com.ghj.protocol.Message.Chat.Builder.class);
+                com.ghj.protocol.Msg.Chat.class, com.ghj.protocol.Msg.Chat.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Message.Chat.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Chat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2108,23 +2099,23 @@ public final class Message {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Chat_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Chat_descriptor;
       }
 
-      public com.ghj.protocol.Message.Chat getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Chat.getDefaultInstance();
+      public com.ghj.protocol.Msg.Chat getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Chat.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Message.Chat build() {
-        com.ghj.protocol.Message.Chat result = buildPartial();
+      public com.ghj.protocol.Msg.Chat build() {
+        com.ghj.protocol.Msg.Chat result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Message.Chat buildPartial() {
-        com.ghj.protocol.Message.Chat result = new com.ghj.protocol.Message.Chat(this);
+      public com.ghj.protocol.Msg.Chat buildPartial() {
+        com.ghj.protocol.Msg.Chat result = new com.ghj.protocol.Msg.Chat(this);
         result.id_ = id_;
         result.form_ = form_;
         result.to_ = to_;
@@ -2163,16 +2154,16 @@ public final class Message {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Chat) {
-          return mergeFrom((com.ghj.protocol.Message.Chat)other);
+        if (other instanceof com.ghj.protocol.Msg.Chat) {
+          return mergeFrom((com.ghj.protocol.Msg.Chat)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Message.Chat other) {
-        if (other == com.ghj.protocol.Message.Chat.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ghj.protocol.Msg.Chat other) {
+        if (other == com.ghj.protocol.Msg.Chat.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -2208,11 +2199,11 @@ public final class Message {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Message.Chat parsedMessage = null;
+        com.ghj.protocol.Msg.Chat parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Chat) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Chat) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2344,14 +2335,14 @@ public final class Message {
       /**
        * <code>optional .Chat.ChatType chatType = 5;</code>
        */
-      public com.ghj.protocol.Message.Chat.ChatType getChatType() {
-        com.ghj.protocol.Message.Chat.ChatType result = com.ghj.protocol.Message.Chat.ChatType.valueOf(chatType_);
-        return result == null ? com.ghj.protocol.Message.Chat.ChatType.UNRECOGNIZED : result;
+      public com.ghj.protocol.Msg.Chat.ChatType getChatType() {
+        com.ghj.protocol.Msg.Chat.ChatType result = com.ghj.protocol.Msg.Chat.ChatType.valueOf(chatType_);
+        return result == null ? com.ghj.protocol.Msg.Chat.ChatType.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .Chat.ChatType chatType = 5;</code>
        */
-      public Builder setChatType(com.ghj.protocol.Message.Chat.ChatType value) {
+      public Builder setChatType(com.ghj.protocol.Msg.Chat.ChatType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2522,12 +2513,12 @@ public final class Message {
     }
 
     // @@protoc_insertion_point(class_scope:Chat)
-    private static final com.ghj.protocol.Message.Chat DEFAULT_INSTANCE;
+    private static final com.ghj.protocol.Msg.Chat DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Chat();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Chat();
     }
 
-    public static com.ghj.protocol.Message.Chat getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Chat getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2550,7 +2541,7 @@ public final class Message {
       return PARSER;
     }
 
-    public com.ghj.protocol.Message.Chat getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Chat getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2634,14 +2625,14 @@ public final class Message {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Login_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Login_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Login_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Login_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Login.class, com.ghj.protocol.Message.Login.Builder.class);
+              com.ghj.protocol.Msg.Login.class, com.ghj.protocol.Msg.Login.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -2705,10 +2696,10 @@ public final class Message {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Message.Login)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Login)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Message.Login other = (com.ghj.protocol.Message.Login) obj;
+      com.ghj.protocol.Msg.Login other = (com.ghj.protocol.Msg.Login) obj;
 
       boolean result = true;
       result = result && (getId()
@@ -2736,58 +2727,58 @@ public final class Message {
       return hash;
     }
 
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Login parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Login parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Login parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Login parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Login parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Login parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Login parseFrom(
+    public static com.ghj.protocol.Msg.Login parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2799,7 +2790,7 @@ public final class Message {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Message.Login prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Login prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2819,20 +2810,20 @@ public final class Message {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Login)
-        com.ghj.protocol.Message.LoginOrBuilder {
+        com.ghj.protocol.Msg.LoginOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Login_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Login_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Login_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Login_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Login.class, com.ghj.protocol.Message.Login.Builder.class);
+                com.ghj.protocol.Msg.Login.class, com.ghj.protocol.Msg.Login.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Message.Login.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Login.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2858,23 +2849,23 @@ public final class Message {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Login_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Login_descriptor;
       }
 
-      public com.ghj.protocol.Message.Login getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Login.getDefaultInstance();
+      public com.ghj.protocol.Msg.Login getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Login.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Message.Login build() {
-        com.ghj.protocol.Message.Login result = buildPartial();
+      public com.ghj.protocol.Msg.Login build() {
+        com.ghj.protocol.Msg.Login result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Message.Login buildPartial() {
-        com.ghj.protocol.Message.Login result = new com.ghj.protocol.Message.Login(this);
+      public com.ghj.protocol.Msg.Login buildPartial() {
+        com.ghj.protocol.Msg.Login result = new com.ghj.protocol.Msg.Login(this);
         result.id_ = id_;
         result.form_ = form_;
         onBuilt();
@@ -2908,16 +2899,16 @@ public final class Message {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Login) {
-          return mergeFrom((com.ghj.protocol.Message.Login)other);
+        if (other instanceof com.ghj.protocol.Msg.Login) {
+          return mergeFrom((com.ghj.protocol.Msg.Login)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Message.Login other) {
-        if (other == com.ghj.protocol.Message.Login.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ghj.protocol.Msg.Login other) {
+        if (other == com.ghj.protocol.Msg.Login.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -2936,11 +2927,11 @@ public final class Message {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Message.Login parsedMessage = null;
+        com.ghj.protocol.Msg.Login parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Login) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Login) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3016,12 +3007,12 @@ public final class Message {
     }
 
     // @@protoc_insertion_point(class_scope:Login)
-    private static final com.ghj.protocol.Message.Login DEFAULT_INSTANCE;
+    private static final com.ghj.protocol.Msg.Login DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Login();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Login();
     }
 
-    public static com.ghj.protocol.Message.Login getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Login getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3044,7 +3035,7 @@ public final class Message {
       return PARSER;
     }
 
-    public com.ghj.protocol.Message.Login getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Login getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3128,14 +3119,14 @@ public final class Message {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Logout_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Logout_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Logout_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Logout_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Logout.class, com.ghj.protocol.Message.Logout.Builder.class);
+              com.ghj.protocol.Msg.Logout.class, com.ghj.protocol.Msg.Logout.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3199,10 +3190,10 @@ public final class Message {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Message.Logout)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Logout)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Message.Logout other = (com.ghj.protocol.Message.Logout) obj;
+      com.ghj.protocol.Msg.Logout other = (com.ghj.protocol.Msg.Logout) obj;
 
       boolean result = true;
       result = result && (getId()
@@ -3230,58 +3221,58 @@ public final class Message {
       return hash;
     }
 
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Logout parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Logout parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Logout parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Logout parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Logout parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Logout parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Logout parseFrom(
+    public static com.ghj.protocol.Msg.Logout parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3293,7 +3284,7 @@ public final class Message {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Message.Logout prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Logout prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3313,20 +3304,20 @@ public final class Message {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Logout)
-        com.ghj.protocol.Message.LogoutOrBuilder {
+        com.ghj.protocol.Msg.LogoutOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Logout_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Logout_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Logout_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Logout_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Logout.class, com.ghj.protocol.Message.Logout.Builder.class);
+                com.ghj.protocol.Msg.Logout.class, com.ghj.protocol.Msg.Logout.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Message.Logout.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Logout.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3352,23 +3343,23 @@ public final class Message {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Logout_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Logout_descriptor;
       }
 
-      public com.ghj.protocol.Message.Logout getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Logout.getDefaultInstance();
+      public com.ghj.protocol.Msg.Logout getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Logout.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Message.Logout build() {
-        com.ghj.protocol.Message.Logout result = buildPartial();
+      public com.ghj.protocol.Msg.Logout build() {
+        com.ghj.protocol.Msg.Logout result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Message.Logout buildPartial() {
-        com.ghj.protocol.Message.Logout result = new com.ghj.protocol.Message.Logout(this);
+      public com.ghj.protocol.Msg.Logout buildPartial() {
+        com.ghj.protocol.Msg.Logout result = new com.ghj.protocol.Msg.Logout(this);
         result.id_ = id_;
         result.form_ = form_;
         onBuilt();
@@ -3402,16 +3393,16 @@ public final class Message {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Logout) {
-          return mergeFrom((com.ghj.protocol.Message.Logout)other);
+        if (other instanceof com.ghj.protocol.Msg.Logout) {
+          return mergeFrom((com.ghj.protocol.Msg.Logout)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Message.Logout other) {
-        if (other == com.ghj.protocol.Message.Logout.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ghj.protocol.Msg.Logout other) {
+        if (other == com.ghj.protocol.Msg.Logout.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -3430,11 +3421,11 @@ public final class Message {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Message.Logout parsedMessage = null;
+        com.ghj.protocol.Msg.Logout parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Logout) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Logout) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3510,12 +3501,12 @@ public final class Message {
     }
 
     // @@protoc_insertion_point(class_scope:Logout)
-    private static final com.ghj.protocol.Message.Logout DEFAULT_INSTANCE;
+    private static final com.ghj.protocol.Msg.Logout DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Logout();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Logout();
     }
 
-    public static com.ghj.protocol.Message.Logout getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Logout getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3538,7 +3529,7 @@ public final class Message {
       return PARSER;
     }
 
-    public com.ghj.protocol.Message.Logout getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Logout getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3549,6 +3540,10 @@ public final class Message {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *关联的消息ID
+     * </pre>
+     *
      * <code>optional int64 msgId = 1;</code>
      */
     long getMsgId();
@@ -3564,13 +3559,13 @@ public final class Message {
     long getTo();
 
     /**
-     * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+     * <code>optional .Ack.Status status = 4;</code>
      */
-    int getAckStatusValue();
+    int getStatusValue();
     /**
-     * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+     * <code>optional .Ack.Status status = 4;</code>
      */
-    com.ghj.protocol.Message.Ack.AckStatus getAckStatus();
+    com.ghj.protocol.Msg.Ack.Status getStatus();
   }
   /**
    * Protobuf type {@code Ack}
@@ -3587,7 +3582,7 @@ public final class Message {
       msgId_ = 0L;
       from_ = 0L;
       to_ = 0L;
-      ackStatus_ = 0;
+      status_ = 0;
     }
 
     @java.lang.Override
@@ -3633,7 +3628,7 @@ public final class Message {
             case 32: {
               int rawValue = input.readEnum();
 
-              ackStatus_ = rawValue;
+              status_ = rawValue;
               break;
             }
           }
@@ -3649,48 +3644,136 @@ public final class Message {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Ack_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Ack_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Ack.class, com.ghj.protocol.Message.Ack.Builder.class);
+              com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code Ack.AckStatus}
+     * Protobuf enum {@code Ack.Status}
      */
-    public enum AckStatus
+    public enum Status
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       *服务器接收到客户端消息一般用receive
+       * </pre>
+       *
        * <code>Receive = 0;</code>
        */
       Receive(0),
       /**
+       * <pre>
+       *客户端接收到服务端的消息一般用accept
+       * </pre>
+       *
        * <code>Accept = 1;</code>
        */
       Accept(1),
       /**
+       * <pre>
+       *客户端读取服务端的消息一般用Read
+       * </pre>
+       *
        * <code>Read = 2;</code>
        */
       Read(2),
+      /**
+       * <pre>
+       *登陆成功
+       * </pre>
+       *
+       * <code>LoginSuc = 3;</code>
+       */
+      LoginSuc(3),
+      /**
+       * <pre>
+       *登出成功
+       * </pre>
+       *
+       * <code>LogoutSuc = 4;</code>
+       */
+      LogoutSuc(4),
+      /**
+       * <pre>
+       *登陆失败
+       * </pre>
+       *
+       * <code>LoginFail = 5;</code>
+       */
+      LoginFail(5),
+      /**
+       * <pre>
+       *登出失败
+       * </pre>
+       *
+       * <code>LogoutFail = 6;</code>
+       */
+      LogoutFail(6),
       UNRECOGNIZED(-1),
       ;
 
       /**
+       * <pre>
+       *服务器接收到客户端消息一般用receive
+       * </pre>
+       *
        * <code>Receive = 0;</code>
        */
       public static final int Receive_VALUE = 0;
       /**
+       * <pre>
+       *客户端接收到服务端的消息一般用accept
+       * </pre>
+       *
        * <code>Accept = 1;</code>
        */
       public static final int Accept_VALUE = 1;
       /**
+       * <pre>
+       *客户端读取服务端的消息一般用Read
+       * </pre>
+       *
        * <code>Read = 2;</code>
        */
       public static final int Read_VALUE = 2;
+      /**
+       * <pre>
+       *登陆成功
+       * </pre>
+       *
+       * <code>LoginSuc = 3;</code>
+       */
+      public static final int LoginSuc_VALUE = 3;
+      /**
+       * <pre>
+       *登出成功
+       * </pre>
+       *
+       * <code>LogoutSuc = 4;</code>
+       */
+      public static final int LogoutSuc_VALUE = 4;
+      /**
+       * <pre>
+       *登陆失败
+       * </pre>
+       *
+       * <code>LoginFail = 5;</code>
+       */
+      public static final int LoginFail_VALUE = 5;
+      /**
+       * <pre>
+       *登出失败
+       * </pre>
+       *
+       * <code>LogoutFail = 6;</code>
+       */
+      public static final int LogoutFail_VALUE = 6;
 
 
       public final int getNumber() {
@@ -3705,28 +3788,32 @@ public final class Message {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static AckStatus valueOf(int value) {
+      public static Status valueOf(int value) {
         return forNumber(value);
       }
 
-      public static AckStatus forNumber(int value) {
+      public static Status forNumber(int value) {
         switch (value) {
           case 0: return Receive;
           case 1: return Accept;
           case 2: return Read;
+          case 3: return LoginSuc;
+          case 4: return LogoutSuc;
+          case 5: return LoginFail;
+          case 6: return LogoutFail;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<AckStatus>
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          AckStatus> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AckStatus>() {
-              public AckStatus findValueByNumber(int number) {
-                return AckStatus.forNumber(number);
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
               }
             };
 
@@ -3740,12 +3827,12 @@ public final class Message {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.Ack.getDescriptor().getEnumTypes().get(0);
+        return com.ghj.protocol.Msg.Ack.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final AckStatus[] VALUES = values();
+      private static final Status[] VALUES = values();
 
-      public static AckStatus valueOf(
+      public static Status valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -3759,16 +3846,20 @@ public final class Message {
 
       private final int value;
 
-      private AckStatus(int value) {
+      private Status(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Ack.AckStatus)
+      // @@protoc_insertion_point(enum_scope:Ack.Status)
     }
 
     public static final int MSGID_FIELD_NUMBER = 1;
     private long msgId_;
     /**
+     * <pre>
+     *关联的消息ID
+     * </pre>
+     *
      * <code>optional int64 msgId = 1;</code>
      */
     public long getMsgId() {
@@ -3793,20 +3884,20 @@ public final class Message {
       return to_;
     }
 
-    public static final int ACKSTATUS_FIELD_NUMBER = 4;
-    private int ackStatus_;
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private int status_;
     /**
-     * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+     * <code>optional .Ack.Status status = 4;</code>
      */
-    public int getAckStatusValue() {
-      return ackStatus_;
+    public int getStatusValue() {
+      return status_;
     }
     /**
-     * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+     * <code>optional .Ack.Status status = 4;</code>
      */
-    public com.ghj.protocol.Message.Ack.AckStatus getAckStatus() {
-      com.ghj.protocol.Message.Ack.AckStatus result = com.ghj.protocol.Message.Ack.AckStatus.valueOf(ackStatus_);
-      return result == null ? com.ghj.protocol.Message.Ack.AckStatus.UNRECOGNIZED : result;
+    public com.ghj.protocol.Msg.Ack.Status getStatus() {
+      com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
+      return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3830,8 +3921,8 @@ public final class Message {
       if (to_ != 0L) {
         output.writeInt64(3, to_);
       }
-      if (ackStatus_ != com.ghj.protocol.Message.Ack.AckStatus.Receive.getNumber()) {
-        output.writeEnum(4, ackStatus_);
+      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
+        output.writeEnum(4, status_);
       }
     }
 
@@ -3852,9 +3943,9 @@ public final class Message {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, to_);
       }
-      if (ackStatus_ != com.ghj.protocol.Message.Ack.AckStatus.Receive.getNumber()) {
+      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, ackStatus_);
+          .computeEnumSize(4, status_);
       }
       memoizedSize = size;
       return size;
@@ -3866,10 +3957,10 @@ public final class Message {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Message.Ack)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Ack)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Message.Ack other = (com.ghj.protocol.Message.Ack) obj;
+      com.ghj.protocol.Msg.Ack other = (com.ghj.protocol.Msg.Ack) obj;
 
       boolean result = true;
       result = result && (getMsgId()
@@ -3878,7 +3969,7 @@ public final class Message {
           == other.getFrom());
       result = result && (getTo()
           == other.getTo());
-      result = result && ackStatus_ == other.ackStatus_;
+      result = result && status_ == other.status_;
       return result;
     }
 
@@ -3898,65 +3989,65 @@ public final class Message {
       hash = (37 * hash) + TO_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTo());
-      hash = (37 * hash) + ACKSTATUS_FIELD_NUMBER;
-      hash = (53 * hash) + ackStatus_;
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Ack parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Ack parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Ack parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Ack parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Message.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Ack parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3968,7 +4059,7 @@ public final class Message {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Message.Ack prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Ack prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3988,20 +4079,20 @@ public final class Message {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Ack)
-        com.ghj.protocol.Message.AckOrBuilder {
+        com.ghj.protocol.Msg.AckOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Ack_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Ack_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Ack.class, com.ghj.protocol.Message.Ack.Builder.class);
+                com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Message.Ack.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Ack.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4024,34 +4115,34 @@ public final class Message {
 
         to_ = 0L;
 
-        ackStatus_ = 0;
+        status_ = 0;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Ack_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
       }
 
-      public com.ghj.protocol.Message.Ack getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Ack.getDefaultInstance();
+      public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Ack.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Message.Ack build() {
-        com.ghj.protocol.Message.Ack result = buildPartial();
+      public com.ghj.protocol.Msg.Ack build() {
+        com.ghj.protocol.Msg.Ack result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Message.Ack buildPartial() {
-        com.ghj.protocol.Message.Ack result = new com.ghj.protocol.Message.Ack(this);
+      public com.ghj.protocol.Msg.Ack buildPartial() {
+        com.ghj.protocol.Msg.Ack result = new com.ghj.protocol.Msg.Ack(this);
         result.msgId_ = msgId_;
         result.from_ = from_;
         result.to_ = to_;
-        result.ackStatus_ = ackStatus_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -4083,16 +4174,16 @@ public final class Message {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Ack) {
-          return mergeFrom((com.ghj.protocol.Message.Ack)other);
+        if (other instanceof com.ghj.protocol.Msg.Ack) {
+          return mergeFrom((com.ghj.protocol.Msg.Ack)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Message.Ack other) {
-        if (other == com.ghj.protocol.Message.Ack.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ghj.protocol.Msg.Ack other) {
+        if (other == com.ghj.protocol.Msg.Ack.getDefaultInstance()) return this;
         if (other.getMsgId() != 0L) {
           setMsgId(other.getMsgId());
         }
@@ -4102,8 +4193,8 @@ public final class Message {
         if (other.getTo() != 0L) {
           setTo(other.getTo());
         }
-        if (other.ackStatus_ != 0) {
-          setAckStatusValue(other.getAckStatusValue());
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
         }
         onChanged();
         return this;
@@ -4117,11 +4208,11 @@ public final class Message {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Message.Ack parsedMessage = null;
+        com.ghj.protocol.Msg.Ack parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Ack) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Ack) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4133,12 +4224,20 @@ public final class Message {
 
       private long msgId_ ;
       /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
        * <code>optional int64 msgId = 1;</code>
        */
       public long getMsgId() {
         return msgId_;
       }
       /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
        * <code>optional int64 msgId = 1;</code>
        */
       public Builder setMsgId(long value) {
@@ -4148,6 +4247,10 @@ public final class Message {
         return this;
       }
       /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
        * <code>optional int64 msgId = 1;</code>
        */
       public Builder clearMsgId() {
@@ -4209,46 +4312,46 @@ public final class Message {
         return this;
       }
 
-      private int ackStatus_ = 0;
+      private int status_ = 0;
       /**
-       * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+       * <code>optional .Ack.Status status = 4;</code>
        */
-      public int getAckStatusValue() {
-        return ackStatus_;
+      public int getStatusValue() {
+        return status_;
       }
       /**
-       * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+       * <code>optional .Ack.Status status = 4;</code>
        */
-      public Builder setAckStatusValue(int value) {
-        ackStatus_ = value;
+      public Builder setStatusValue(int value) {
+        status_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+       * <code>optional .Ack.Status status = 4;</code>
        */
-      public com.ghj.protocol.Message.Ack.AckStatus getAckStatus() {
-        com.ghj.protocol.Message.Ack.AckStatus result = com.ghj.protocol.Message.Ack.AckStatus.valueOf(ackStatus_);
-        return result == null ? com.ghj.protocol.Message.Ack.AckStatus.UNRECOGNIZED : result;
+      public com.ghj.protocol.Msg.Ack.Status getStatus() {
+        com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
+        return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+       * <code>optional .Ack.Status status = 4;</code>
        */
-      public Builder setAckStatus(com.ghj.protocol.Message.Ack.AckStatus value) {
+      public Builder setStatus(com.ghj.protocol.Msg.Ack.Status value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        ackStatus_ = value.getNumber();
+        status_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>optional .Ack.AckStatus ackStatus = 4;</code>
+       * <code>optional .Ack.Status status = 4;</code>
        */
-      public Builder clearAckStatus() {
+      public Builder clearStatus() {
         
-        ackStatus_ = 0;
+        status_ = 0;
         onChanged();
         return this;
       }
@@ -4267,12 +4370,12 @@ public final class Message {
     }
 
     // @@protoc_insertion_point(class_scope:Ack)
-    private static final com.ghj.protocol.Message.Ack DEFAULT_INSTANCE;
+    private static final com.ghj.protocol.Msg.Ack DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Ack();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Ack();
     }
 
-    public static com.ghj.protocol.Message.Ack getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Ack getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4295,437 +4398,7 @@ public final class Message {
       return PARSER;
     }
 
-    public com.ghj.protocol.Message.Ack getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PingOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Ping)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int64 from = 1;</code>
-     */
-    long getFrom();
-  }
-  /**
-   * Protobuf type {@code Ping}
-   */
-  public  static final class Ping extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Ping)
-      PingOrBuilder {
-    // Use Ping.newBuilder() to construct.
-    private Ping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Ping() {
-      from_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Ping(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              from_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ghj.protocol.Message.internal_static_Ping_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Message.internal_static_Ping_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Message.Ping.class, com.ghj.protocol.Message.Ping.Builder.class);
-    }
-
-    public static final int FROM_FIELD_NUMBER = 1;
-    private long from_;
-    /**
-     * <code>optional int64 from = 1;</code>
-     */
-    public long getFrom() {
-      return from_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (from_ != 0L) {
-        output.writeInt64(1, from_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (from_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, from_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.ghj.protocol.Message.Ping)) {
-        return super.equals(obj);
-      }
-      com.ghj.protocol.Message.Ping other = (com.ghj.protocol.Message.Ping) obj;
-
-      boolean result = true;
-      result = result && (getFrom()
-          == other.getFrom());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFrom());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.ghj.protocol.Message.Ping parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.ghj.protocol.Message.Ping parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.ghj.protocol.Message.Ping parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.ghj.protocol.Message.Ping prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Ping}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Ping)
-        com.ghj.protocol.Message.PingOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ghj.protocol.Message.internal_static_Ping_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Message.internal_static_Ping_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Message.Ping.class, com.ghj.protocol.Message.Ping.Builder.class);
-      }
-
-      // Construct using com.ghj.protocol.Message.Ping.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        from_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ghj.protocol.Message.internal_static_Ping_descriptor;
-      }
-
-      public com.ghj.protocol.Message.Ping getDefaultInstanceForType() {
-        return com.ghj.protocol.Message.Ping.getDefaultInstance();
-      }
-
-      public com.ghj.protocol.Message.Ping build() {
-        com.ghj.protocol.Message.Ping result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.ghj.protocol.Message.Ping buildPartial() {
-        com.ghj.protocol.Message.Ping result = new com.ghj.protocol.Message.Ping(this);
-        result.from_ = from_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Message.Ping) {
-          return mergeFrom((com.ghj.protocol.Message.Ping)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.ghj.protocol.Message.Ping other) {
-        if (other == com.ghj.protocol.Message.Ping.getDefaultInstance()) return this;
-        if (other.getFrom() != 0L) {
-          setFrom(other.getFrom());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.ghj.protocol.Message.Ping parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Message.Ping) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long from_ ;
-      /**
-       * <code>optional int64 from = 1;</code>
-       */
-      public long getFrom() {
-        return from_;
-      }
-      /**
-       * <code>optional int64 from = 1;</code>
-       */
-      public Builder setFrom(long value) {
-        
-        from_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 from = 1;</code>
-       */
-      public Builder clearFrom() {
-        
-        from_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:Ping)
-    }
-
-    // @@protoc_insertion_point(class_scope:Ping)
-    private static final com.ghj.protocol.Message.Ping DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Message.Ping();
-    }
-
-    public static com.ghj.protocol.Message.Ping getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Ping>
-        PARSER = new com.google.protobuf.AbstractParser<Ping>() {
-      public Ping parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Ping(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Ping> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Ping> getParserForType() {
-      return PARSER;
-    }
-
-    public com.ghj.protocol.Message.Ping getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4756,11 +4429,6 @@ public final class Message {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Ack_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Ping_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Ping_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4770,23 +4438,23 @@ public final class Message {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rmessage.proto\"\324\001\n\004Data\022 \n\010dataType\030\001 \001" +
+      "\n\rmessage.proto\"\312\001\n\004Data\022 \n\010dataType\030\001 \001" +
       "(\0162\016.Data.DataType\022\025\n\004chat\030\002 \001(\0132\005.ChatH" +
       "\000\022\027\n\005login\030\003 \001(\0132\006.LoginH\000\022\031\n\006logout\030\004 \001" +
-      "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\">\n\010Da" +
+      "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\"4\n\010Da" +
       "taType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022" +
-      "\007\n\003Ack\020\003\022\010\n\004Ping\020\004B\n\n\010dataBody\"\235\001\n\004Chat\022" +
-      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\014\n" +
-      "\004type\030\004 \001(\005\022 \n\010chatType\030\005 \001(\0162\016.Chat.Cha" +
-      "tType\022\017\n\007content\030\006 \001(\t\022\013\n\003ext\030\007 \001(\t\"!\n\010C" +
-      "hatType\022\n\n\006Single\020\000\022\t\n\005Group\020\001\"!\n\005Login\022",
-      "\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\"\n\006Logout\022\n\n\002i" +
-      "d\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\201\001\n\003Ack\022\r\n\005msgId\030\001" +
-      " \001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022!\n\tackSta" +
-      "tus\030\004 \001(\0162\016.Ack.AckStatus\".\n\tAckStatus\022\013" +
-      "\n\007Receive\020\000\022\n\n\006Accept\020\001\022\010\n\004Read\020\002\"\024\n\004Pin" +
-      "g\022\014\n\004from\030\001 \001(\003B\033\n\020com.ghj.protocolB\007Mes" +
-      "sageb\006proto3"
+      "\007\n\003Ack\020\003B\n\n\010dataBody\"\235\001\n\004Chat\022\n\n\002id\030\001 \001(" +
+      "\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\014\n\004type\030\004 \001(" +
+      "\005\022 \n\010chatType\030\005 \001(\0162\016.Chat.ChatType\022\017\n\007c" +
+      "ontent\030\006 \001(\t\022\013\n\003ext\030\007 \001(\t\"!\n\010ChatType\022\n\n" +
+      "\006Single\020\000\022\t\n\005Group\020\001\"!\n\005Login\022\n\n\002id\030\001 \001(",
+      "\003\022\014\n\004form\030\002 \001(\003\"\"\n\006Logout\022\n\n\002id\030\001 \001(\003\022\014\n" +
+      "\004form\030\002 \001(\003\"\264\001\n\003Ack\022\r\n\005msgId\030\001 \001(\003\022\014\n\004fr" +
+      "om\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\033\n\006status\030\004 \001(\0162\013.A" +
+      "ck.Status\"g\n\006Status\022\013\n\007Receive\020\000\022\n\n\006Acce" +
+      "pt\020\001\022\010\n\004Read\020\002\022\014\n\010LoginSuc\020\003\022\r\n\tLogoutSu" +
+      "c\020\004\022\r\n\tLoginFail\020\005\022\016\n\nLogoutFail\020\006B\027\n\020co" +
+      "m.ghj.protocolB\003Msgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4829,13 +4497,7 @@ public final class Message {
     internal_static_Ack_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Ack_descriptor,
-        new java.lang.String[] { "MsgId", "From", "To", "AckStatus", });
-    internal_static_Ping_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_Ping_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Ping_descriptor,
-        new java.lang.String[] { "From", });
+        new java.lang.String[] { "MsgId", "From", "To", "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

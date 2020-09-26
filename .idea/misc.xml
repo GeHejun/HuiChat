@@ -9,6 +9,9 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/huichat-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/huichat-msgserver/pom.xml" />
+        <option value="$PROJECT_DIR$/huichat-upms/pom.xml" />
+        <option value="$PROJECT_DIR$/huichat-userver/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>

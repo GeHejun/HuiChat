@@ -3,7 +3,6 @@ package com.ghj.common;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.Date;
 
 @Data
 @Accessors(chain = true)
@@ -29,6 +28,21 @@ public class HSession {
      * 用户ID
      */
     private Long uId;
+
+    /**
+     * 用户名称
+     */
+    private String uName;
+
+    /**
+     * ip地址
+     */
+    private String ip;
+
+    /**
+     * 登陆地址
+     */
+    private String location;
 
 
 }

@@ -3,7 +3,7 @@ syntax = "proto3";
 //包名
 option java_package = "com.ghj.protocol";
 //源文件类名
-option java_outer_classname = "Message";
+option java_outer_classname = "Msg";
 
 message Data {
 
@@ -12,7 +12,6 @@ message Data {
         Login = 1;
         Logout = 2;
         Ack = 3;
-        Ping = 4;
     }
 
     DataType dataType = 1;
@@ -26,7 +25,7 @@ message Data {
 
 }
 
-message Chat{
+message Chat {
     int64 id = 1;
     int64 form = 2;
     int64 to = 3;
@@ -40,7 +39,7 @@ message Chat{
     }
 }
 
-message Login{
+message Login {
     int64 id = 1;
     int64 form = 2;
 }
@@ -51,20 +50,30 @@ message Logout {
 }
 
 message Ack {
+    //关联的消息ID
     int64 msgId = 1;
     int64 from = 2;
     int64 to = 3;
 
-    AckStatus ackStatus = 4;
+    Status status = 4;
 
-    enum AckStatus {
+    enum Status {
+        //服务器接收到客户端消息一般用receive
         Receive = 0;
+        //客户端接收到服务端的消息一般用accept
         Accept = 1;
+        //客户端读取服务端的消息一般用Read
         Read = 2;
+        //登陆成功
+        LoginSuc = 3;
+        //登出成功
+        LogoutSuc = 4;
+        //登陆失败
+        LoginFail = 5;
+        //登出失败
+        LogoutFail = 6;
     }
+
 }
 
-message Ping {
-    int64 from = 1;
-}
 

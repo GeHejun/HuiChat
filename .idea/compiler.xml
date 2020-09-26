@@ -7,7 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="huichat-userver" />
+        <module name="huichat-uservice" />
         <module name="huichat-router" />
         <module name="huichat-protocol" />
         <module name="huichat-common" />
@@ -18,9 +18,7 @@
         <module name="huichat-rest" />
         <module name="huichat-gchat" />
         <module name="huichat-lservice" />
-        <module name="huichat-msgserver" />
         <module name="huichat-auth" />
-        <module name="huichat-upms" />
         <module name="huichat-registry" />
       </profile>
     </annotationProcessing>
@@ -41,6 +39,7 @@
       <module name="huichat-router" target="1.8" />
       <module name="huichat-upms" target="1.8" />
       <module name="huichat-userver" target="1.8" />
+      <module name="huichat-uservice" target="1.8" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -61,6 +60,7 @@
       <module name="huichat-router" options="-parameters" />
       <module name="huichat-upms" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
+      <module name="huichat-uservice" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
   </component>

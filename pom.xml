@@ -20,11 +20,9 @@
         <module>huichat-gchat</module>
         <module>huichat-access</module>
         <module>huichat-lservice</module>
-        <module>huichat-userver</module>
-        <module>huichat-msgserver</module>
         <module>huichat-registry</module>
         <module>huichat-msgbox</module>
-        <module>huichat-upms</module>
+        <module>huichat-uservice</module>
     </modules>
 
 
