@@ -63,6 +63,24 @@ public final class Msg {
      */
     com.ghj.protocol.Msg.AckOrBuilder getAckOrBuilder();
 
+    /**
+     * <code>optional .Ping ping = 6;</code>
+     */
+    com.ghj.protocol.Msg.Ping getPing();
+    /**
+     * <code>optional .Ping ping = 6;</code>
+     */
+    com.ghj.protocol.Msg.PingOrBuilder getPingOrBuilder();
+
+    /**
+     * <code>optional .Pong pong = 7;</code>
+     */
+    com.ghj.protocol.Msg.Pong getPong();
+    /**
+     * <code>optional .Pong pong = 7;</code>
+     */
+    com.ghj.protocol.Msg.PongOrBuilder getPongOrBuilder();
+
     public com.ghj.protocol.Msg.Data.DataBodyCase getDataBodyCase();
   }
   /**
@@ -167,6 +185,34 @@ public final class Msg {
               dataBodyCase_ = 5;
               break;
             }
+            case 50: {
+              com.ghj.protocol.Msg.Ping.Builder subBuilder = null;
+              if (dataBodyCase_ == 6) {
+                subBuilder = ((com.ghj.protocol.Msg.Ping) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.Ping.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Ping) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 6;
+              break;
+            }
+            case 58: {
+              com.ghj.protocol.Msg.Pong.Builder subBuilder = null;
+              if (dataBodyCase_ == 7) {
+                subBuilder = ((com.ghj.protocol.Msg.Pong) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.Pong.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.Pong) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 7;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -211,6 +257,14 @@ public final class Msg {
        * <code>Ack = 3;</code>
        */
       Ack(3),
+      /**
+       * <code>Ping = 4;</code>
+       */
+      Ping(4),
+      /**
+       * <code>Pong = 5;</code>
+       */
+      Pong(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -230,6 +284,14 @@ public final class Msg {
        * <code>Ack = 3;</code>
        */
       public static final int Ack_VALUE = 3;
+      /**
+       * <code>Ping = 4;</code>
+       */
+      public static final int Ping_VALUE = 4;
+      /**
+       * <code>Pong = 5;</code>
+       */
+      public static final int Pong_VALUE = 5;
 
 
       public final int getNumber() {
@@ -254,6 +316,8 @@ public final class Msg {
           case 1: return Login;
           case 2: return Logout;
           case 3: return Ack;
+          case 4: return Ping;
+          case 5: return Pong;
           default: return null;
         }
       }
@@ -314,6 +378,8 @@ public final class Msg {
       LOGIN(3),
       LOGOUT(4),
       ACK(5),
+      PING(6),
+      PONG(7),
       DATABODY_NOT_SET(0);
       private final int value;
       private DataBodyCase(int value) {
@@ -333,6 +399,8 @@ public final class Msg {
           case 3: return LOGIN;
           case 4: return LOGOUT;
           case 5: return ACK;
+          case 6: return PING;
+          case 7: return PONG;
           case 0: return DATABODY_NOT_SET;
           default: return null;
         }
@@ -444,6 +512,46 @@ public final class Msg {
       return com.ghj.protocol.Msg.Ack.getDefaultInstance();
     }
 
+    public static final int PING_FIELD_NUMBER = 6;
+    /**
+     * <code>optional .Ping ping = 6;</code>
+     */
+    public com.ghj.protocol.Msg.Ping getPing() {
+      if (dataBodyCase_ == 6) {
+         return (com.ghj.protocol.Msg.Ping) dataBody_;
+      }
+      return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+    }
+    /**
+     * <code>optional .Ping ping = 6;</code>
+     */
+    public com.ghj.protocol.Msg.PingOrBuilder getPingOrBuilder() {
+      if (dataBodyCase_ == 6) {
+         return (com.ghj.protocol.Msg.Ping) dataBody_;
+      }
+      return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+    }
+
+    public static final int PONG_FIELD_NUMBER = 7;
+    /**
+     * <code>optional .Pong pong = 7;</code>
+     */
+    public com.ghj.protocol.Msg.Pong getPong() {
+      if (dataBodyCase_ == 7) {
+         return (com.ghj.protocol.Msg.Pong) dataBody_;
+      }
+      return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+    }
+    /**
+     * <code>optional .Pong pong = 7;</code>
+     */
+    public com.ghj.protocol.Msg.PongOrBuilder getPongOrBuilder() {
+      if (dataBodyCase_ == 7) {
+         return (com.ghj.protocol.Msg.Pong) dataBody_;
+      }
+      return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -471,6 +579,12 @@ public final class Msg {
       if (dataBodyCase_ == 5) {
         output.writeMessage(5, (com.ghj.protocol.Msg.Ack) dataBody_);
       }
+      if (dataBodyCase_ == 6) {
+        output.writeMessage(6, (com.ghj.protocol.Msg.Ping) dataBody_);
+      }
+      if (dataBodyCase_ == 7) {
+        output.writeMessage(7, (com.ghj.protocol.Msg.Pong) dataBody_);
+      }
     }
 
     public int getSerializedSize() {
@@ -497,6 +611,14 @@ public final class Msg {
       if (dataBodyCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, (com.ghj.protocol.Msg.Ack) dataBody_);
+      }
+      if (dataBodyCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (com.ghj.protocol.Msg.Ping) dataBody_);
+      }
+      if (dataBodyCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (com.ghj.protocol.Msg.Pong) dataBody_);
       }
       memoizedSize = size;
       return size;
@@ -535,6 +657,14 @@ public final class Msg {
           result = result && getAck()
               .equals(other.getAck());
           break;
+        case 6:
+          result = result && getPing()
+              .equals(other.getPing());
+          break;
+        case 7:
+          result = result && getPong()
+              .equals(other.getPong());
+          break;
         case 0:
         default:
       }
@@ -566,6 +696,14 @@ public final class Msg {
         case 5:
           hash = (37 * hash) + ACK_FIELD_NUMBER;
           hash = (53 * hash) + getAck().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + PING_FIELD_NUMBER;
+          hash = (53 * hash) + getPing().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + PONG_FIELD_NUMBER;
+          hash = (53 * hash) + getPong().hashCode();
           break;
         case 0:
         default:
@@ -743,6 +881,20 @@ public final class Msg {
             result.dataBody_ = ackBuilder_.build();
           }
         }
+        if (dataBodyCase_ == 6) {
+          if (pingBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = pingBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 7) {
+          if (pongBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = pongBuilder_.build();
+          }
+        }
         result.dataBodyCase_ = dataBodyCase_;
         onBuilt();
         return result;
@@ -803,6 +955,14 @@ public final class Msg {
           }
           case ACK: {
             mergeAck(other.getAck());
+            break;
+          }
+          case PING: {
+            mergePing(other.getPing());
+            break;
+          }
+          case PONG: {
+            mergePong(other.getPong());
             break;
           }
           case DATABODY_NOT_SET: {
@@ -1412,6 +1572,266 @@ public final class Msg {
         dataBodyCase_ = 5;
         onChanged();;
         return ackBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.Ping, com.ghj.protocol.Msg.Ping.Builder, com.ghj.protocol.Msg.PingOrBuilder> pingBuilder_;
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public com.ghj.protocol.Msg.Ping getPing() {
+        if (pingBuilder_ == null) {
+          if (dataBodyCase_ == 6) {
+            return (com.ghj.protocol.Msg.Ping) dataBody_;
+          }
+          return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 6) {
+            return pingBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public Builder setPing(com.ghj.protocol.Msg.Ping value) {
+        if (pingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          pingBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public Builder setPing(
+          com.ghj.protocol.Msg.Ping.Builder builderForValue) {
+        if (pingBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          pingBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public Builder mergePing(com.ghj.protocol.Msg.Ping value) {
+        if (pingBuilder_ == null) {
+          if (dataBodyCase_ == 6 &&
+              dataBody_ != com.ghj.protocol.Msg.Ping.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Ping.newBuilder((com.ghj.protocol.Msg.Ping) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 6) {
+            pingBuilder_.mergeFrom(value);
+          }
+          pingBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public Builder clearPing() {
+        if (pingBuilder_ == null) {
+          if (dataBodyCase_ == 6) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 6) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          pingBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public com.ghj.protocol.Msg.Ping.Builder getPingBuilder() {
+        return getPingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      public com.ghj.protocol.Msg.PingOrBuilder getPingOrBuilder() {
+        if ((dataBodyCase_ == 6) && (pingBuilder_ != null)) {
+          return pingBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 6) {
+            return (com.ghj.protocol.Msg.Ping) dataBody_;
+          }
+          return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .Ping ping = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.Ping, com.ghj.protocol.Msg.Ping.Builder, com.ghj.protocol.Msg.PingOrBuilder> 
+          getPingFieldBuilder() {
+        if (pingBuilder_ == null) {
+          if (!(dataBodyCase_ == 6)) {
+            dataBody_ = com.ghj.protocol.Msg.Ping.getDefaultInstance();
+          }
+          pingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.Ping, com.ghj.protocol.Msg.Ping.Builder, com.ghj.protocol.Msg.PingOrBuilder>(
+                  (com.ghj.protocol.Msg.Ping) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 6;
+        onChanged();;
+        return pingBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.Pong, com.ghj.protocol.Msg.Pong.Builder, com.ghj.protocol.Msg.PongOrBuilder> pongBuilder_;
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public com.ghj.protocol.Msg.Pong getPong() {
+        if (pongBuilder_ == null) {
+          if (dataBodyCase_ == 7) {
+            return (com.ghj.protocol.Msg.Pong) dataBody_;
+          }
+          return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 7) {
+            return pongBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public Builder setPong(com.ghj.protocol.Msg.Pong value) {
+        if (pongBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          pongBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public Builder setPong(
+          com.ghj.protocol.Msg.Pong.Builder builderForValue) {
+        if (pongBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          pongBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public Builder mergePong(com.ghj.protocol.Msg.Pong value) {
+        if (pongBuilder_ == null) {
+          if (dataBodyCase_ == 7 &&
+              dataBody_ != com.ghj.protocol.Msg.Pong.getDefaultInstance()) {
+            dataBody_ = com.ghj.protocol.Msg.Pong.newBuilder((com.ghj.protocol.Msg.Pong) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 7) {
+            pongBuilder_.mergeFrom(value);
+          }
+          pongBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public Builder clearPong() {
+        if (pongBuilder_ == null) {
+          if (dataBodyCase_ == 7) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 7) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          pongBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public com.ghj.protocol.Msg.Pong.Builder getPongBuilder() {
+        return getPongFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      public com.ghj.protocol.Msg.PongOrBuilder getPongOrBuilder() {
+        if ((dataBodyCase_ == 7) && (pongBuilder_ != null)) {
+          return pongBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 7) {
+            return (com.ghj.protocol.Msg.Pong) dataBody_;
+          }
+          return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .Pong pong = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.Pong, com.ghj.protocol.Msg.Pong.Builder, com.ghj.protocol.Msg.PongOrBuilder> 
+          getPongFieldBuilder() {
+        if (pongBuilder_ == null) {
+          if (!(dataBodyCase_ == 7)) {
+            dataBody_ = com.ghj.protocol.Msg.Pong.getDefaultInstance();
+          }
+          pongBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.Pong, com.ghj.protocol.Msg.Pong.Builder, com.ghj.protocol.Msg.PongOrBuilder>(
+                  (com.ghj.protocol.Msg.Pong) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 7;
+        onChanged();;
+        return pongBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4404,6 +4824,930 @@ public final class Msg {
 
   }
 
+  public interface PingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Ping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 pingTime = 1;</code>
+     */
+    long getPingTime();
+  }
+  /**
+   * Protobuf type {@code Ping}
+   */
+  public  static final class Ping extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Ping)
+      PingOrBuilder {
+    // Use Ping.newBuilder() to construct.
+    private Ping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Ping() {
+      pingTime_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Ping(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              pingTime_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ghj.protocol.Msg.internal_static_Ping_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ghj.protocol.Msg.internal_static_Ping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.ghj.protocol.Msg.Ping.class, com.ghj.protocol.Msg.Ping.Builder.class);
+    }
+
+    public static final int PINGTIME_FIELD_NUMBER = 1;
+    private long pingTime_;
+    /**
+     * <code>optional int64 pingTime = 1;</code>
+     */
+    public long getPingTime() {
+      return pingTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (pingTime_ != 0L) {
+        output.writeInt64(1, pingTime_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pingTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, pingTime_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.ghj.protocol.Msg.Ping)) {
+        return super.equals(obj);
+      }
+      com.ghj.protocol.Msg.Ping other = (com.ghj.protocol.Msg.Ping) obj;
+
+      boolean result = true;
+      result = result && (getPingTime()
+          == other.getPingTime());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + PINGTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPingTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ping parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ping parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ping parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.ghj.protocol.Msg.Ping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Ping}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Ping)
+        com.ghj.protocol.Msg.PingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_Ping_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_Ping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.Ping.class, com.ghj.protocol.Msg.Ping.Builder.class);
+      }
+
+      // Construct using com.ghj.protocol.Msg.Ping.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        pingTime_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ghj.protocol.Msg.internal_static_Ping_descriptor;
+      }
+
+      public com.ghj.protocol.Msg.Ping getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Ping.getDefaultInstance();
+      }
+
+      public com.ghj.protocol.Msg.Ping build() {
+        com.ghj.protocol.Msg.Ping result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.ghj.protocol.Msg.Ping buildPartial() {
+        com.ghj.protocol.Msg.Ping result = new com.ghj.protocol.Msg.Ping(this);
+        result.pingTime_ = pingTime_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ghj.protocol.Msg.Ping) {
+          return mergeFrom((com.ghj.protocol.Msg.Ping)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.ghj.protocol.Msg.Ping other) {
+        if (other == com.ghj.protocol.Msg.Ping.getDefaultInstance()) return this;
+        if (other.getPingTime() != 0L) {
+          setPingTime(other.getPingTime());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.ghj.protocol.Msg.Ping parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.ghj.protocol.Msg.Ping) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long pingTime_ ;
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public long getPingTime() {
+        return pingTime_;
+      }
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public Builder setPingTime(long value) {
+        
+        pingTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public Builder clearPingTime() {
+        
+        pingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Ping)
+    }
+
+    // @@protoc_insertion_point(class_scope:Ping)
+    private static final com.ghj.protocol.Msg.Ping DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Ping();
+    }
+
+    public static com.ghj.protocol.Msg.Ping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Ping>
+        PARSER = new com.google.protobuf.AbstractParser<Ping>() {
+      public Ping parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Ping(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Ping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ping> getParserForType() {
+      return PARSER;
+    }
+
+    public com.ghj.protocol.Msg.Ping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PongOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Pong)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 pingTime = 1;</code>
+     */
+    long getPingTime();
+
+    /**
+     * <code>optional int64 pongTime = 2;</code>
+     */
+    long getPongTime();
+  }
+  /**
+   * Protobuf type {@code Pong}
+   */
+  public  static final class Pong extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Pong)
+      PongOrBuilder {
+    // Use Pong.newBuilder() to construct.
+    private Pong(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Pong() {
+      pingTime_ = 0L;
+      pongTime_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Pong(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              pingTime_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              pongTime_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ghj.protocol.Msg.internal_static_Pong_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ghj.protocol.Msg.internal_static_Pong_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.ghj.protocol.Msg.Pong.class, com.ghj.protocol.Msg.Pong.Builder.class);
+    }
+
+    public static final int PINGTIME_FIELD_NUMBER = 1;
+    private long pingTime_;
+    /**
+     * <code>optional int64 pingTime = 1;</code>
+     */
+    public long getPingTime() {
+      return pingTime_;
+    }
+
+    public static final int PONGTIME_FIELD_NUMBER = 2;
+    private long pongTime_;
+    /**
+     * <code>optional int64 pongTime = 2;</code>
+     */
+    public long getPongTime() {
+      return pongTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (pingTime_ != 0L) {
+        output.writeInt64(1, pingTime_);
+      }
+      if (pongTime_ != 0L) {
+        output.writeInt64(2, pongTime_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pingTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, pingTime_);
+      }
+      if (pongTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, pongTime_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.ghj.protocol.Msg.Pong)) {
+        return super.equals(obj);
+      }
+      com.ghj.protocol.Msg.Pong other = (com.ghj.protocol.Msg.Pong) obj;
+
+      boolean result = true;
+      result = result && (getPingTime()
+          == other.getPingTime());
+      result = result && (getPongTime()
+          == other.getPongTime());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + PINGTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPingTime());
+      hash = (37 * hash) + PONGTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPongTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Pong parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Pong parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Pong parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.ghj.protocol.Msg.Pong prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Pong}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Pong)
+        com.ghj.protocol.Msg.PongOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_Pong_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_Pong_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.Pong.class, com.ghj.protocol.Msg.Pong.Builder.class);
+      }
+
+      // Construct using com.ghj.protocol.Msg.Pong.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        pingTime_ = 0L;
+
+        pongTime_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ghj.protocol.Msg.internal_static_Pong_descriptor;
+      }
+
+      public com.ghj.protocol.Msg.Pong getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Pong.getDefaultInstance();
+      }
+
+      public com.ghj.protocol.Msg.Pong build() {
+        com.ghj.protocol.Msg.Pong result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.ghj.protocol.Msg.Pong buildPartial() {
+        com.ghj.protocol.Msg.Pong result = new com.ghj.protocol.Msg.Pong(this);
+        result.pingTime_ = pingTime_;
+        result.pongTime_ = pongTime_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ghj.protocol.Msg.Pong) {
+          return mergeFrom((com.ghj.protocol.Msg.Pong)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.ghj.protocol.Msg.Pong other) {
+        if (other == com.ghj.protocol.Msg.Pong.getDefaultInstance()) return this;
+        if (other.getPingTime() != 0L) {
+          setPingTime(other.getPingTime());
+        }
+        if (other.getPongTime() != 0L) {
+          setPongTime(other.getPongTime());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.ghj.protocol.Msg.Pong parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.ghj.protocol.Msg.Pong) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long pingTime_ ;
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public long getPingTime() {
+        return pingTime_;
+      }
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public Builder setPingTime(long value) {
+        
+        pingTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 pingTime = 1;</code>
+       */
+      public Builder clearPingTime() {
+        
+        pingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long pongTime_ ;
+      /**
+       * <code>optional int64 pongTime = 2;</code>
+       */
+      public long getPongTime() {
+        return pongTime_;
+      }
+      /**
+       * <code>optional int64 pongTime = 2;</code>
+       */
+      public Builder setPongTime(long value) {
+        
+        pongTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 pongTime = 2;</code>
+       */
+      public Builder clearPongTime() {
+        
+        pongTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Pong)
+    }
+
+    // @@protoc_insertion_point(class_scope:Pong)
+    private static final com.ghj.protocol.Msg.Pong DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Pong();
+    }
+
+    public static com.ghj.protocol.Msg.Pong getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Pong>
+        PARSER = new com.google.protobuf.AbstractParser<Pong>() {
+      public Pong parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Pong(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Pong> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Pong> getParserForType() {
+      return PARSER;
+    }
+
+    public com.ghj.protocol.Msg.Pong getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Data_descriptor;
   private static final 
@@ -4429,6 +5773,16 @@ public final class Msg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Ack_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Ping_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Ping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Pong_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Pong_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4438,23 +5792,27 @@ public final class Msg {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rmessage.proto\"\312\001\n\004Data\022 \n\010dataType\030\001 \001" +
+      "\n\rmessage.proto\"\214\002\n\004Data\022 \n\010dataType\030\001 \001" +
       "(\0162\016.Data.DataType\022\025\n\004chat\030\002 \001(\0132\005.ChatH" +
       "\000\022\027\n\005login\030\003 \001(\0132\006.LoginH\000\022\031\n\006logout\030\004 \001" +
-      "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\"4\n\010Da" +
-      "taType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022" +
-      "\007\n\003Ack\020\003B\n\n\010dataBody\"\235\001\n\004Chat\022\n\n\002id\030\001 \001(" +
-      "\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\014\n\004type\030\004 \001(" +
-      "\005\022 \n\010chatType\030\005 \001(\0162\016.Chat.ChatType\022\017\n\007c" +
-      "ontent\030\006 \001(\t\022\013\n\003ext\030\007 \001(\t\"!\n\010ChatType\022\n\n" +
-      "\006Single\020\000\022\t\n\005Group\020\001\"!\n\005Login\022\n\n\002id\030\001 \001(",
-      "\003\022\014\n\004form\030\002 \001(\003\"\"\n\006Logout\022\n\n\002id\030\001 \001(\003\022\014\n" +
-      "\004form\030\002 \001(\003\"\264\001\n\003Ack\022\r\n\005msgId\030\001 \001(\003\022\014\n\004fr" +
-      "om\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\033\n\006status\030\004 \001(\0162\013.A" +
-      "ck.Status\"g\n\006Status\022\013\n\007Receive\020\000\022\n\n\006Acce" +
-      "pt\020\001\022\010\n\004Read\020\002\022\014\n\010LoginSuc\020\003\022\r\n\tLogoutSu" +
-      "c\020\004\022\r\n\tLoginFail\020\005\022\016\n\nLogoutFail\020\006B\027\n\020co" +
-      "m.ghj.protocolB\003Msgb\006proto3"
+      "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\022\025\n\004pi" +
+      "ng\030\006 \001(\0132\005.PingH\000\022\025\n\004pong\030\007 \001(\0132\005.PongH\000" +
+      "\"H\n\010DataType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Log" +
+      "out\020\002\022\007\n\003Ack\020\003\022\010\n\004Ping\020\004\022\010\n\004Pong\020\005B\n\n\010da" +
+      "taBody\"\235\001\n\004Chat\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(" +
+      "\003\022\n\n\002to\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022 \n\010chatType\030" +
+      "\005 \001(\0162\016.Chat.ChatType\022\017\n\007content\030\006 \001(\t\022\013",
+      "\n\003ext\030\007 \001(\t\"!\n\010ChatType\022\n\n\006Single\020\000\022\t\n\005G" +
+      "roup\020\001\"!\n\005Login\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(" +
+      "\003\"\"\n\006Logout\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\264\001" +
+      "\n\003Ack\022\r\n\005msgId\030\001 \001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to" +
+      "\030\003 \001(\003\022\033\n\006status\030\004 \001(\0162\013.Ack.Status\"g\n\006S" +
+      "tatus\022\013\n\007Receive\020\000\022\n\n\006Accept\020\001\022\010\n\004Read\020\002" +
+      "\022\014\n\010LoginSuc\020\003\022\r\n\tLogoutSuc\020\004\022\r\n\tLoginFa" +
+      "il\020\005\022\016\n\nLogoutFail\020\006\"\030\n\004Ping\022\020\n\010pingTime" +
+      "\030\001 \001(\003\"*\n\004Pong\022\020\n\010pingTime\030\001 \001(\003\022\020\n\010pong" +
+      "Time\030\002 \001(\003B\027\n\020com.ghj.protocolB\003Msgb\006pro",
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4473,7 +5831,7 @@ public final class Msg {
     internal_static_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Data_descriptor,
-        new java.lang.String[] { "DataType", "Chat", "Login", "Logout", "Ack", "DataBody", });
+        new java.lang.String[] { "DataType", "Chat", "Login", "Logout", "Ack", "Ping", "Pong", "DataBody", });
     internal_static_Chat_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Chat_fieldAccessorTable = new
@@ -4498,6 +5856,18 @@ public final class Msg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Ack_descriptor,
         new java.lang.String[] { "MsgId", "From", "To", "Status", });
+    internal_static_Ping_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_Ping_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Ping_descriptor,
+        new java.lang.String[] { "PingTime", });
+    internal_static_Pong_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_Pong_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Pong_descriptor,
+        new java.lang.String[] { "PingTime", "PongTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
