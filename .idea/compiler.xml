@@ -40,6 +40,8 @@
       <module name="huichat-upms" target="1.8" />
       <module name="huichat-userver" target="1.8" />
       <module name="huichat-uservice" target="1.8" />
+      <module name="registry-outer" target="1.8" />
+      <module name="registry-service" target="1.8" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -61,6 +63,8 @@
       <module name="huichat-upms" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
       <module name="huichat-uservice" options="-parameters" />
+      <module name="registry-outer" options="-parameters" />
+      <module name="registry-service" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
   </component>

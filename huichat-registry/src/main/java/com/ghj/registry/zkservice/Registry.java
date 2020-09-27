@@ -1,7 +1,7 @@
-package com.ghj.access.keep;
+package com.ghj.registry.zkservice;
 
-import com.ghj.access.config.Config;
 import com.ghj.protocol.Msg;
+import com.ghj.registry.config.Config;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 
 @Component
 @Slf4j
-public class Keeper {
+public class Registry {
     /**
      * 创建bootstrap
      */
@@ -40,7 +40,7 @@ public class Keeper {
      * 通道适配器
      */
     @Resource
-    private KeepHandler keepHandler;
+    private RegistryHandler keepHandler;
     /**
      * NETT服务器配置类
      */
@@ -53,12 +53,7 @@ public class Keeper {
      */
     @PostConstruct
     public void start() {
-        startServer();
-        startClient();
-    }
-
-    private void startServer() {
-        int port = config.getKeepServerPort();
+        int port = config.getRegistryServerPort();
         serverBootstrap.group(boss, work)
                 .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 100)
@@ -81,19 +76,6 @@ public class Keeper {
             work.shutdownGracefully();
         }
     }
-
-    private void startClient() {
-        int port = config.getRegistryServerPort();
-        String host = config.getRegistryServerHost();
-        //连接注册中心
-        KeepClient keepClient = new KeepClient(host, port);
-        //获取router列表
-
-        //遍历列表获取router配置
-
-        //连接
-    }
-
     /**
      * 关闭服务器方法
      */

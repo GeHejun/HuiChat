@@ -23,41 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_spring_spring_context_support_1_0_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_dubbo_dubbo_2_7_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_dubbo_dubbo_spring_boot_autoconfigure_2_7_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_dubbo_dubbo_spring_boot_autoconfigure_compatible_2_7_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_dubbo_dubbo_spring_boot_starter_2_7_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-uservice/huichat-uservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-uservice/src/main/java/com/ghj/uservice/HuiChatUServiceStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice/Registry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice/RegistryHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/huichat-access.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/huichat-access.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/HuiChatAccessStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/HuiChatAccessStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keeper/KeepHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keeper/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-common/huichat-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/huichat-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/HSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/HSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/StringUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-msgserver/huichat-msgserver.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-msgserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-uservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-upms/huichat-upms.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-upms/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-userver/huichat-userver.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-userver/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/im.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-registry/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,14 +79,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/huichat-auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/huichat-registry" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice" />
+      <recent name="$PROJECT_DIR$/huichat-registry" />
+      <recent name="$PROJECT_DIR$/huichat-registry/registry-service/src/main" />
       <recent name="$PROJECT_DIR$/huichat-auth" />
     </key>
   </component>
@@ -120,15 +104,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,7 +155,8 @@
       <workItem from="1600777468855" duration="128000" />
       <workItem from="1600825076417" duration="5539000" />
       <workItem from="1601000371756" duration="15696000" />
-      <workItem from="1601085706527" duration="10966000" />
+      <workItem from="1601085706527" duration="10990000" />
+      <workItem from="1601171855716" duration="4446000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -308,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601087385977</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="架构">
+      <created>1601136917786</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1601136917786</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,41 +336,43 @@
     </state>
     <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1601034253318" />
     <state x="340" y="95" key="#Project_Structure/0.23.1920.963@0.23.1920.963" timestamp="1600967297330" />
-    <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1601136838302">
-      <screen x="0" y="23" width="1792" height="1017" />
+    <state x="642" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1601183958598">
+      <screen x="0" y="23" width="1792" height="1013" />
     </state>
+    <state x="642" y="230" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1013@0.23.1792.1013" timestamp="1601183958598" />
     <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1601136838302" />
     <state x="453" y="189" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1601116617073">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="453" y="189" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601116617073" />
-    <state x="336" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601033972984">
-      <screen x="0" y="23" width="1792" height="1017" />
+    <state x="336" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601184357690">
+      <screen x="0" y="23" width="1792" height="1013" />
     </state>
+    <state x="336" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1013@0.23.1792.1013" timestamp="1601184357690" />
     <state x="336" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601033972984" />
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601129890927">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601129890927" />
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601135985467">
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601136932441">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1601135985467" />
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.bottom/0.23.1920.963@0.23.1920.963" timestamp="1600967347358" />
-    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601135985466">
+    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601136932441">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1601135985466" />
+    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.center/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601135985466">
+    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601136932440">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1601135985466" />
+    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932440" />
     <state width="1599" height="252" key="GridCell.Tab.0.left/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601135985466">
+    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601136932441">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1601135985466" />
+    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.right/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
     <state x="467" y="286" key="MultipleFileMergeDialog" timestamp="1601000619104">
       <screen x="0" y="23" width="1792" height="1017" />
@@ -394,10 +386,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601087392772">
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601136922103">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601087392772" />
+    <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />
     <state x="460" y="245" key="Vcs.Push.Dialog.v2/0.23.1920.963@0.23.1920.963" timestamp="1600966781344" />
     <state x="627" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601000586241">
       <screen x="0" y="23" width="1792" height="1017" />
@@ -419,9 +411,10 @@
       <screen x="0" y="23" width="1920" height="963" />
     </state>
     <state x="1360" y="339" key="git4idea.merge.GitPullDialog/0.23.1920.963@0.23.1920.963" timestamp="1600958974443" />
-    <state x="197" y="180" key="new project wizard" timestamp="1601108635130">
-      <screen x="0" y="23" width="1792" height="1017" />
+    <state x="197" y="179" key="new project wizard" timestamp="1601182582048">
+      <screen x="0" y="23" width="1792" height="1013" />
     </state>
+    <state x="197" y="179" key="new project wizard/0.23.1792.1013@0.23.1792.1013" timestamp="1601182582048" />
     <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1601108635130" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1601011108598">
       <screen x="0" y="23" width="1792" height="1017" />

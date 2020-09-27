@@ -6,11 +6,25 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Config {
 
-    @Value("${netty.port}")
-    private int port;
+    @Value("${keep.server.port}")
+    private int keepServerPort;
 
-    public int getPort() {
-        return port;
+    @Value("${registry.server.port}")
+    private int registryServerPort;
+
+    @Value("${registry.server.url}")
+    private String registryServerHost;
+
+
+    public int getKeepServerPort() {
+        return keepServerPort;
     }
 
+    public int getRegistryServerPort() {
+        return registryServerPort;
+    }
+
+    public String getRegistryServerHost() {
+        return registryServerHost;
+    }
 }

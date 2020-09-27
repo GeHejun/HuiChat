@@ -23,6 +23,8 @@
         <module>huichat-registry</module>
         <module>huichat-msgbox</module>
         <module>huichat-uservice</module>
+        <module>huichat-registry/registry-outer</module>
+        <module>registry-service</module>
     </modules>
 
 

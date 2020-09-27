@@ -10,6 +10,8 @@
       <set>
         <option value="$PROJECT_DIR$/huichat-auth/pom.xml" />
         <option value="$PROJECT_DIR$/huichat-msgserver/pom.xml" />
+        <option value="$PROJECT_DIR$/huichat-registry/registry-outer/pom.xml" />
+        <option value="$PROJECT_DIR$/huichat-registry/registry-service/pom.xml" />
         <option value="$PROJECT_DIR$/huichat-upms/pom.xml" />
         <option value="$PROJECT_DIR$/huichat-userver/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
