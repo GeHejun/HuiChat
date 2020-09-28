@@ -23,11 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
-      <change afterPath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/DesEncryptDecrypt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-common/src/main/java/com/ghj/common/util/RoutingStrategy.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
