@@ -1,6 +1,7 @@
 package com.ghj.access.umps;
 
 import com.alibaba.fastjson.JSON;
+import com.ghj.access.umps.dto.UserDTO;
 import com.ghj.common.HSStatusEnum;
 import com.ghj.common.HSession;
 import com.ghj.protocol.Msg;

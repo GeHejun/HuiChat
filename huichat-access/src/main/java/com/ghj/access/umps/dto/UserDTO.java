@@ -1,4 +1,4 @@
-package com.ghj.access.umps;
+package com.ghj.access.umps.dto;
 
 import lombok.Data;
 

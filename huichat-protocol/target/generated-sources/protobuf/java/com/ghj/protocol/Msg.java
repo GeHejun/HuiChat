@@ -265,6 +265,18 @@ public final class Msg {
        * <code>Pong = 5;</code>
        */
       Pong(5),
+      /**
+       * <code>Register = 6;</code>
+       */
+      Register(6),
+      /**
+       * <code>Routing = 7;</code>
+       */
+      Routing(7),
+      /**
+       * <code>Route = 8;</code>
+       */
+      Route(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -292,6 +304,18 @@ public final class Msg {
        * <code>Pong = 5;</code>
        */
       public static final int Pong_VALUE = 5;
+      /**
+       * <code>Register = 6;</code>
+       */
+      public static final int Register_VALUE = 6;
+      /**
+       * <code>Routing = 7;</code>
+       */
+      public static final int Routing_VALUE = 7;
+      /**
+       * <code>Route = 8;</code>
+       */
+      public static final int Route_VALUE = 8;
 
 
       public final int getNumber() {
@@ -318,6 +342,9 @@ public final class Msg {
           case 3: return Ack;
           case 4: return Ping;
           case 5: return Pong;
+          case 6: return Register;
+          case 7: return Routing;
+          case 8: return Route;
           default: return null;
         }
       }
@@ -3955,54 +3982,38 @@ public final class Msg {
 
   }
 
-  public interface AckOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Ack)
+  public interface RegisterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Register)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     *关联的消息ID
-     * </pre>
-     *
-     * <code>optional int64 msgId = 1;</code>
+     * <code>optional int32 port = 1;</code>
      */
-    long getMsgId();
+    int getPort();
 
     /**
-     * <code>optional int64 from = 2;</code>
+     * <code>optional .Register.Source source = 2;</code>
      */
-    long getFrom();
-
+    int getSourceValue();
     /**
-     * <code>optional int64 to = 3;</code>
+     * <code>optional .Register.Source source = 2;</code>
      */
-    long getTo();
-
-    /**
-     * <code>optional .Ack.Status status = 4;</code>
-     */
-    int getStatusValue();
-    /**
-     * <code>optional .Ack.Status status = 4;</code>
-     */
-    com.ghj.protocol.Msg.Ack.Status getStatus();
+    com.ghj.protocol.Msg.Register.Source getSource();
   }
   /**
-   * Protobuf type {@code Ack}
+   * Protobuf type {@code Register}
    */
-  public  static final class Ack extends
+  public  static final class Register extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Ack)
-      AckOrBuilder {
-    // Use Ack.newBuilder() to construct.
-    private Ack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:Register)
+      RegisterOrBuilder {
+    // Use Register.newBuilder() to construct.
+    private Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Ack() {
-      msgId_ = 0L;
-      from_ = 0L;
-      to_ = 0L;
-      status_ = 0;
+    private Register() {
+      port_ = 0;
+      source_ = 0;
     }
 
     @java.lang.Override
@@ -4010,7 +4021,7 @@ public final class Msg {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private Ack(
+    private Register(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4032,23 +4043,13 @@ public final class Msg {
             }
             case 8: {
 
-              msgId_ = input.readInt64();
+              port_ = input.readInt32();
               break;
             }
             case 16: {
-
-              from_ = input.readInt64();
-              break;
-            }
-            case 24: {
-
-              to_ = input.readInt64();
-              break;
-            }
-            case 32: {
               int rawValue = input.readEnum();
 
-              status_ = rawValue;
+              source_ = rawValue;
               break;
             }
           }
@@ -4064,136 +4065,64 @@ public final class Msg {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+      return com.ghj.protocol.Msg.internal_static_Register_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
+      return com.ghj.protocol.Msg.internal_static_Register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
+              com.ghj.protocol.Msg.Register.class, com.ghj.protocol.Msg.Register.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code Ack.Status}
+     * Protobuf enum {@code Register.Source}
      */
-    public enum Status
+    public enum Source
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <pre>
-       *服务器接收到客户端消息一般用receive
-       * </pre>
-       *
-       * <code>Receive = 0;</code>
+       * <code>Registry = 0;</code>
        */
-      Receive(0),
+      Registry(0),
       /**
-       * <pre>
-       *客户端接收到服务端的消息一般用accept
-       * </pre>
-       *
-       * <code>Accept = 1;</code>
+       * <code>Router = 1;</code>
        */
-      Accept(1),
+      Router(1),
       /**
-       * <pre>
-       *客户端读取服务端的消息一般用Read
-       * </pre>
-       *
-       * <code>Read = 2;</code>
+       * <code>Proxy = 3;</code>
        */
-      Read(2),
+      Proxy(3),
       /**
-       * <pre>
-       *登陆成功
-       * </pre>
-       *
-       * <code>LoginSuc = 3;</code>
+       * <code>Chat = 4;</code>
        */
-      LoginSuc(3),
+      Chat(4),
       /**
-       * <pre>
-       *登出成功
-       * </pre>
-       *
-       * <code>LogoutSuc = 4;</code>
+       * <code>GChat = 5;</code>
        */
-      LogoutSuc(4),
-      /**
-       * <pre>
-       *登陆失败
-       * </pre>
-       *
-       * <code>LoginFail = 5;</code>
-       */
-      LoginFail(5),
-      /**
-       * <pre>
-       *登出失败
-       * </pre>
-       *
-       * <code>LogoutFail = 6;</code>
-       */
-      LogoutFail(6),
+      GChat(5),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <pre>
-       *服务器接收到客户端消息一般用receive
-       * </pre>
-       *
-       * <code>Receive = 0;</code>
+       * <code>Registry = 0;</code>
        */
-      public static final int Receive_VALUE = 0;
+      public static final int Registry_VALUE = 0;
       /**
-       * <pre>
-       *客户端接收到服务端的消息一般用accept
-       * </pre>
-       *
-       * <code>Accept = 1;</code>
+       * <code>Router = 1;</code>
        */
-      public static final int Accept_VALUE = 1;
+      public static final int Router_VALUE = 1;
       /**
-       * <pre>
-       *客户端读取服务端的消息一般用Read
-       * </pre>
-       *
-       * <code>Read = 2;</code>
+       * <code>Proxy = 3;</code>
        */
-      public static final int Read_VALUE = 2;
+      public static final int Proxy_VALUE = 3;
       /**
-       * <pre>
-       *登陆成功
-       * </pre>
-       *
-       * <code>LoginSuc = 3;</code>
+       * <code>Chat = 4;</code>
        */
-      public static final int LoginSuc_VALUE = 3;
+      public static final int Chat_VALUE = 4;
       /**
-       * <pre>
-       *登出成功
-       * </pre>
-       *
-       * <code>LogoutSuc = 4;</code>
+       * <code>GChat = 5;</code>
        */
-      public static final int LogoutSuc_VALUE = 4;
-      /**
-       * <pre>
-       *登陆失败
-       * </pre>
-       *
-       * <code>LoginFail = 5;</code>
-       */
-      public static final int LoginFail_VALUE = 5;
-      /**
-       * <pre>
-       *登出失败
-       * </pre>
-       *
-       * <code>LogoutFail = 6;</code>
-       */
-      public static final int LogoutFail_VALUE = 6;
+      public static final int GChat_VALUE = 5;
 
 
       public final int getNumber() {
@@ -4208,32 +4137,30 @@ public final class Msg {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static Status valueOf(int value) {
+      public static Source valueOf(int value) {
         return forNumber(value);
       }
 
-      public static Status forNumber(int value) {
+      public static Source forNumber(int value) {
         switch (value) {
-          case 0: return Receive;
-          case 1: return Accept;
-          case 2: return Read;
-          case 3: return LoginSuc;
-          case 4: return LogoutSuc;
-          case 5: return LoginFail;
-          case 6: return LogoutFail;
+          case 0: return Registry;
+          case 1: return Router;
+          case 3: return Proxy;
+          case 4: return Chat;
+          case 5: return GChat;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+      public static com.google.protobuf.Internal.EnumLiteMap<Source>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          Status> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-              public Status findValueByNumber(int number) {
-                return Status.forNumber(number);
+          Source> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+              public Source findValueByNumber(int number) {
+                return Source.forNumber(number);
               }
             };
 
@@ -4247,12 +4174,12 @@ public final class Msg {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.ghj.protocol.Msg.Ack.getDescriptor().getEnumTypes().get(0);
+        return com.ghj.protocol.Msg.Register.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final Status[] VALUES = values();
+      private static final Source[] VALUES = values();
 
-      public static Status valueOf(
+      public static Source valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -4266,58 +4193,36 @@ public final class Msg {
 
       private final int value;
 
-      private Status(int value) {
+      private Source(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Ack.Status)
+      // @@protoc_insertion_point(enum_scope:Register.Source)
     }
 
-    public static final int MSGID_FIELD_NUMBER = 1;
-    private long msgId_;
+    public static final int PORT_FIELD_NUMBER = 1;
+    private int port_;
     /**
-     * <pre>
-     *关联的消息ID
-     * </pre>
-     *
-     * <code>optional int64 msgId = 1;</code>
+     * <code>optional int32 port = 1;</code>
      */
-    public long getMsgId() {
-      return msgId_;
+    public int getPort() {
+      return port_;
     }
 
-    public static final int FROM_FIELD_NUMBER = 2;
-    private long from_;
+    public static final int SOURCE_FIELD_NUMBER = 2;
+    private int source_;
     /**
-     * <code>optional int64 from = 2;</code>
+     * <code>optional .Register.Source source = 2;</code>
      */
-    public long getFrom() {
-      return from_;
-    }
-
-    public static final int TO_FIELD_NUMBER = 3;
-    private long to_;
-    /**
-     * <code>optional int64 to = 3;</code>
-     */
-    public long getTo() {
-      return to_;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 4;
-    private int status_;
-    /**
-     * <code>optional .Ack.Status status = 4;</code>
-     */
-    public int getStatusValue() {
-      return status_;
+    public int getSourceValue() {
+      return source_;
     }
     /**
-     * <code>optional .Ack.Status status = 4;</code>
+     * <code>optional .Register.Source source = 2;</code>
      */
-    public com.ghj.protocol.Msg.Ack.Status getStatus() {
-      com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
-      return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
+    public com.ghj.protocol.Msg.Register.Source getSource() {
+      com.ghj.protocol.Msg.Register.Source result = com.ghj.protocol.Msg.Register.Source.valueOf(source_);
+      return result == null ? com.ghj.protocol.Msg.Register.Source.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4332,17 +4237,11 @@ public final class Msg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (msgId_ != 0L) {
-        output.writeInt64(1, msgId_);
+      if (port_ != 0) {
+        output.writeInt32(1, port_);
       }
-      if (from_ != 0L) {
-        output.writeInt64(2, from_);
-      }
-      if (to_ != 0L) {
-        output.writeInt64(3, to_);
-      }
-      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
-        output.writeEnum(4, status_);
+      if (source_ != com.ghj.protocol.Msg.Register.Source.Registry.getNumber()) {
+        output.writeEnum(2, source_);
       }
     }
 
@@ -4351,21 +4250,13 @@ public final class Msg {
       if (size != -1) return size;
 
       size = 0;
-      if (msgId_ != 0L) {
+      if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, msgId_);
+          .computeInt32Size(1, port_);
       }
-      if (from_ != 0L) {
+      if (source_ != com.ghj.protocol.Msg.Register.Source.Registry.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, from_);
-      }
-      if (to_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, to_);
-      }
-      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, status_);
+          .computeEnumSize(2, source_);
       }
       memoizedSize = size;
       return size;
@@ -4377,19 +4268,15 @@ public final class Msg {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.ghj.protocol.Msg.Ack)) {
+      if (!(obj instanceof com.ghj.protocol.Msg.Register)) {
         return super.equals(obj);
       }
-      com.ghj.protocol.Msg.Ack other = (com.ghj.protocol.Msg.Ack) obj;
+      com.ghj.protocol.Msg.Register other = (com.ghj.protocol.Msg.Register) obj;
 
       boolean result = true;
-      result = result && (getMsgId()
-          == other.getMsgId());
-      result = result && (getFrom()
-          == other.getFrom());
-      result = result && (getTo()
-          == other.getTo());
-      result = result && status_ == other.status_;
+      result = result && (getPort()
+          == other.getPort());
+      result = result && source_ == other.source_;
       return result;
     }
 
@@ -4400,74 +4287,67 @@ public final class Msg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + MSGID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMsgId());
-      hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFrom());
-      hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTo());
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + source_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(byte[] data)
+    public static com.ghj.protocol.Msg.Register parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Register parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(java.io.InputStream input)
+    public static com.ghj.protocol.Msg.Register parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(
+    public static com.ghj.protocol.Msg.Register parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.ghj.protocol.Msg.Ack parseFrom(
+    public static com.ghj.protocol.Msg.Register parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4479,7 +4359,7 @@ public final class Msg {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.ghj.protocol.Msg.Ack prototype) {
+    public static Builder newBuilder(com.ghj.protocol.Msg.Register prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4494,25 +4374,25 @@ public final class Msg {
       return builder;
     }
     /**
-     * Protobuf type {@code Ack}
+     * Protobuf type {@code Register}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Ack)
-        com.ghj.protocol.Msg.AckOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Register)
+        com.ghj.protocol.Msg.RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Register_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
+        return com.ghj.protocol.Msg.internal_static_Register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
+                com.ghj.protocol.Msg.Register.class, com.ghj.protocol.Msg.Register.Builder.class);
       }
 
-      // Construct using com.ghj.protocol.Msg.Ack.newBuilder()
+      // Construct using com.ghj.protocol.Msg.Register.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4529,40 +4409,34 @@ public final class Msg {
       }
       public Builder clear() {
         super.clear();
-        msgId_ = 0L;
+        port_ = 0;
 
-        from_ = 0L;
-
-        to_ = 0L;
-
-        status_ = 0;
+        source_ = 0;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+        return com.ghj.protocol.Msg.internal_static_Register_descriptor;
       }
 
-      public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
-        return com.ghj.protocol.Msg.Ack.getDefaultInstance();
+      public com.ghj.protocol.Msg.Register getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Register.getDefaultInstance();
       }
 
-      public com.ghj.protocol.Msg.Ack build() {
-        com.ghj.protocol.Msg.Ack result = buildPartial();
+      public com.ghj.protocol.Msg.Register build() {
+        com.ghj.protocol.Msg.Register result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.ghj.protocol.Msg.Ack buildPartial() {
-        com.ghj.protocol.Msg.Ack result = new com.ghj.protocol.Msg.Ack(this);
-        result.msgId_ = msgId_;
-        result.from_ = from_;
-        result.to_ = to_;
-        result.status_ = status_;
+      public com.ghj.protocol.Msg.Register buildPartial() {
+        com.ghj.protocol.Msg.Register result = new com.ghj.protocol.Msg.Register(this);
+        result.port_ = port_;
+        result.source_ = source_;
         onBuilt();
         return result;
       }
@@ -4594,27 +4468,21 @@ public final class Msg {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ghj.protocol.Msg.Ack) {
-          return mergeFrom((com.ghj.protocol.Msg.Ack)other);
+        if (other instanceof com.ghj.protocol.Msg.Register) {
+          return mergeFrom((com.ghj.protocol.Msg.Register)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.ghj.protocol.Msg.Ack other) {
-        if (other == com.ghj.protocol.Msg.Ack.getDefaultInstance()) return this;
-        if (other.getMsgId() != 0L) {
-          setMsgId(other.getMsgId());
+      public Builder mergeFrom(com.ghj.protocol.Msg.Register other) {
+        if (other == com.ghj.protocol.Msg.Register.getDefaultInstance()) return this;
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
         }
-        if (other.getFrom() != 0L) {
-          setFrom(other.getFrom());
-        }
-        if (other.getTo() != 0L) {
-          setTo(other.getTo());
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
+        if (other.source_ != 0) {
+          setSourceValue(other.getSourceValue());
         }
         onChanged();
         return this;
@@ -4628,11 +4496,11 @@ public final class Msg {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.ghj.protocol.Msg.Ack parsedMessage = null;
+        com.ghj.protocol.Msg.Register parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.ghj.protocol.Msg.Ack) e.getUnfinishedMessage();
+          parsedMessage = (com.ghj.protocol.Msg.Register) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4642,136 +4510,72 @@ public final class Msg {
         return this;
       }
 
-      private long msgId_ ;
+      private int port_ ;
       /**
-       * <pre>
-       *关联的消息ID
-       * </pre>
-       *
-       * <code>optional int64 msgId = 1;</code>
+       * <code>optional int32 port = 1;</code>
        */
-      public long getMsgId() {
-        return msgId_;
+      public int getPort() {
+        return port_;
       }
       /**
-       * <pre>
-       *关联的消息ID
-       * </pre>
-       *
-       * <code>optional int64 msgId = 1;</code>
+       * <code>optional int32 port = 1;</code>
        */
-      public Builder setMsgId(long value) {
+      public Builder setPort(int value) {
         
-        msgId_ = value;
+        port_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *关联的消息ID
-       * </pre>
-       *
-       * <code>optional int64 msgId = 1;</code>
+       * <code>optional int32 port = 1;</code>
        */
-      public Builder clearMsgId() {
+      public Builder clearPort() {
         
-        msgId_ = 0L;
+        port_ = 0;
         onChanged();
         return this;
       }
 
-      private long from_ ;
+      private int source_ = 0;
       /**
-       * <code>optional int64 from = 2;</code>
+       * <code>optional .Register.Source source = 2;</code>
        */
-      public long getFrom() {
-        return from_;
+      public int getSourceValue() {
+        return source_;
       }
       /**
-       * <code>optional int64 from = 2;</code>
+       * <code>optional .Register.Source source = 2;</code>
        */
-      public Builder setFrom(long value) {
-        
-        from_ = value;
+      public Builder setSourceValue(int value) {
+        source_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 from = 2;</code>
+       * <code>optional .Register.Source source = 2;</code>
        */
-      public Builder clearFrom() {
-        
-        from_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long to_ ;
-      /**
-       * <code>optional int64 to = 3;</code>
-       */
-      public long getTo() {
-        return to_;
+      public com.ghj.protocol.Msg.Register.Source getSource() {
+        com.ghj.protocol.Msg.Register.Source result = com.ghj.protocol.Msg.Register.Source.valueOf(source_);
+        return result == null ? com.ghj.protocol.Msg.Register.Source.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional int64 to = 3;</code>
+       * <code>optional .Register.Source source = 2;</code>
        */
-      public Builder setTo(long value) {
-        
-        to_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 to = 3;</code>
-       */
-      public Builder clearTo() {
-        
-        to_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <code>optional .Ack.Status status = 4;</code>
-       */
-      public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <code>optional .Ack.Status status = 4;</code>
-       */
-      public Builder setStatusValue(int value) {
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .Ack.Status status = 4;</code>
-       */
-      public com.ghj.protocol.Msg.Ack.Status getStatus() {
-        com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
-        return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .Ack.Status status = 4;</code>
-       */
-      public Builder setStatus(com.ghj.protocol.Msg.Ack.Status value) {
+      public Builder setSource(com.ghj.protocol.Msg.Register.Source value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        status_ = value.getNumber();
+        source_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>optional .Ack.Status status = 4;</code>
+       * <code>optional .Register.Source source = 2;</code>
        */
-      public Builder clearStatus() {
+      public Builder clearSource() {
         
-        status_ = 0;
+        source_ = 0;
         onChanged();
         return this;
       }
@@ -4786,39 +4590,1188 @@ public final class Msg {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Ack)
+      // @@protoc_insertion_point(builder_scope:Register)
     }
 
-    // @@protoc_insertion_point(class_scope:Ack)
-    private static final com.ghj.protocol.Msg.Ack DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Register)
+    private static final com.ghj.protocol.Msg.Register DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Ack();
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Register();
     }
 
-    public static com.ghj.protocol.Msg.Ack getDefaultInstance() {
+    public static com.ghj.protocol.Msg.Register getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Ack>
-        PARSER = new com.google.protobuf.AbstractParser<Ack>() {
-      public Ack parsePartialFrom(
+    private static final com.google.protobuf.Parser<Register>
+        PARSER = new com.google.protobuf.AbstractParser<Register>() {
+      public Register parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Ack(input, extensionRegistry);
+          return new Register(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Ack> parser() {
+    public static com.google.protobuf.Parser<Register> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Ack> getParserForType() {
+    public com.google.protobuf.Parser<Register> getParserForType() {
       return PARSER;
     }
 
-    public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
+    public com.ghj.protocol.Msg.Register getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoutingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Routing)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .Routing.Source source = 1;</code>
+     */
+    int getSourceValue();
+    /**
+     * <code>optional .Routing.Source source = 1;</code>
+     */
+    com.ghj.protocol.Msg.Routing.Source getSource();
+  }
+  /**
+   * Protobuf type {@code Routing}
+   */
+  public  static final class Routing extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Routing)
+      RoutingOrBuilder {
+    // Use Routing.newBuilder() to construct.
+    private Routing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Routing() {
+      source_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Routing(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              source_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ghj.protocol.Msg.internal_static_Routing_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ghj.protocol.Msg.internal_static_Routing_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.ghj.protocol.Msg.Routing.class, com.ghj.protocol.Msg.Routing.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code Routing.Source}
+     */
+    public enum Source
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>Registry = 0;</code>
+       */
+      Registry(0),
+      /**
+       * <code>Router = 1;</code>
+       */
+      Router(1),
+      /**
+       * <code>Proxy = 3;</code>
+       */
+      Proxy(3),
+      /**
+       * <code>Chat = 4;</code>
+       */
+      Chat(4),
+      /**
+       * <code>GChat = 5;</code>
+       */
+      GChat(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>Registry = 0;</code>
+       */
+      public static final int Registry_VALUE = 0;
+      /**
+       * <code>Router = 1;</code>
+       */
+      public static final int Router_VALUE = 1;
+      /**
+       * <code>Proxy = 3;</code>
+       */
+      public static final int Proxy_VALUE = 3;
+      /**
+       * <code>Chat = 4;</code>
+       */
+      public static final int Chat_VALUE = 4;
+      /**
+       * <code>GChat = 5;</code>
+       */
+      public static final int GChat_VALUE = 5;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Source valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Source forNumber(int value) {
+        switch (value) {
+          case 0: return Registry;
+          case 1: return Router;
+          case 3: return Proxy;
+          case 4: return Chat;
+          case 5: return GChat;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Source>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Source> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+              public Source findValueByNumber(int number) {
+                return Source.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.Routing.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Source[] VALUES = values();
+
+      public static Source valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Source(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:Routing.Source)
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 1;
+    private int source_;
+    /**
+     * <code>optional .Routing.Source source = 1;</code>
+     */
+    public int getSourceValue() {
+      return source_;
+    }
+    /**
+     * <code>optional .Routing.Source source = 1;</code>
+     */
+    public com.ghj.protocol.Msg.Routing.Source getSource() {
+      com.ghj.protocol.Msg.Routing.Source result = com.ghj.protocol.Msg.Routing.Source.valueOf(source_);
+      return result == null ? com.ghj.protocol.Msg.Routing.Source.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (source_ != com.ghj.protocol.Msg.Routing.Source.Registry.getNumber()) {
+        output.writeEnum(1, source_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (source_ != com.ghj.protocol.Msg.Routing.Source.Registry.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, source_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.ghj.protocol.Msg.Routing)) {
+        return super.equals(obj);
+      }
+      com.ghj.protocol.Msg.Routing other = (com.ghj.protocol.Msg.Routing) obj;
+
+      boolean result = true;
+      result = result && source_ == other.source_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + source_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Routing parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Routing parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Routing parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.ghj.protocol.Msg.Routing prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Routing}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Routing)
+        com.ghj.protocol.Msg.RoutingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_Routing_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_Routing_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.Routing.class, com.ghj.protocol.Msg.Routing.Builder.class);
+      }
+
+      // Construct using com.ghj.protocol.Msg.Routing.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        source_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ghj.protocol.Msg.internal_static_Routing_descriptor;
+      }
+
+      public com.ghj.protocol.Msg.Routing getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Routing.getDefaultInstance();
+      }
+
+      public com.ghj.protocol.Msg.Routing build() {
+        com.ghj.protocol.Msg.Routing result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.ghj.protocol.Msg.Routing buildPartial() {
+        com.ghj.protocol.Msg.Routing result = new com.ghj.protocol.Msg.Routing(this);
+        result.source_ = source_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ghj.protocol.Msg.Routing) {
+          return mergeFrom((com.ghj.protocol.Msg.Routing)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.ghj.protocol.Msg.Routing other) {
+        if (other == com.ghj.protocol.Msg.Routing.getDefaultInstance()) return this;
+        if (other.source_ != 0) {
+          setSourceValue(other.getSourceValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.ghj.protocol.Msg.Routing parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.ghj.protocol.Msg.Routing) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int source_ = 0;
+      /**
+       * <code>optional .Routing.Source source = 1;</code>
+       */
+      public int getSourceValue() {
+        return source_;
+      }
+      /**
+       * <code>optional .Routing.Source source = 1;</code>
+       */
+      public Builder setSourceValue(int value) {
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .Routing.Source source = 1;</code>
+       */
+      public com.ghj.protocol.Msg.Routing.Source getSource() {
+        com.ghj.protocol.Msg.Routing.Source result = com.ghj.protocol.Msg.Routing.Source.valueOf(source_);
+        return result == null ? com.ghj.protocol.Msg.Routing.Source.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .Routing.Source source = 1;</code>
+       */
+      public Builder setSource(com.ghj.protocol.Msg.Routing.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        source_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .Routing.Source source = 1;</code>
+       */
+      public Builder clearSource() {
+        
+        source_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Routing)
+    }
+
+    // @@protoc_insertion_point(class_scope:Routing)
+    private static final com.ghj.protocol.Msg.Routing DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Routing();
+    }
+
+    public static com.ghj.protocol.Msg.Routing getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Routing>
+        PARSER = new com.google.protobuf.AbstractParser<Routing>() {
+      public Routing parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Routing(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Routing> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Routing> getParserForType() {
+      return PARSER;
+    }
+
+    public com.ghj.protocol.Msg.Routing getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Route)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string ip = 1;</code>
+     */
+    java.lang.String getIp();
+    /**
+     * <code>optional string ip = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIpBytes();
+
+    /**
+     * <code>optional int32 port = 2;</code>
+     */
+    int getPort();
+  }
+  /**
+   * Protobuf type {@code Route}
+   */
+  public  static final class Route extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Route)
+      RouteOrBuilder {
+    // Use Route.newBuilder() to construct.
+    private Route(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Route() {
+      ip_ = "";
+      port_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Route(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ip_ = s;
+              break;
+            }
+            case 16: {
+
+              port_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ghj.protocol.Msg.internal_static_Route_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ghj.protocol.Msg.internal_static_Route_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.ghj.protocol.Msg.Route.class, com.ghj.protocol.Msg.Route.Builder.class);
+    }
+
+    public static final int IP_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ip_;
+    /**
+     * <code>optional string ip = 1;</code>
+     */
+    public java.lang.String getIp() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ip_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string ip = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIpBytes() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ip_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
+    /**
+     * <code>optional int32 port = 2;</code>
+     */
+    public int getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIpBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ip_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIpBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ip_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, port_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.ghj.protocol.Msg.Route)) {
+        return super.equals(obj);
+      }
+      com.ghj.protocol.Msg.Route other = (com.ghj.protocol.Msg.Route) obj;
+
+      boolean result = true;
+      result = result && getIp()
+          .equals(other.getIp());
+      result = result && (getPort()
+          == other.getPort());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + IP_FIELD_NUMBER;
+      hash = (53 * hash) + getIp().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Route parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Route parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Route parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.ghj.protocol.Msg.Route prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Route}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Route)
+        com.ghj.protocol.Msg.RouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_Route_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_Route_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.Route.class, com.ghj.protocol.Msg.Route.Builder.class);
+      }
+
+      // Construct using com.ghj.protocol.Msg.Route.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        ip_ = "";
+
+        port_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ghj.protocol.Msg.internal_static_Route_descriptor;
+      }
+
+      public com.ghj.protocol.Msg.Route getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Route.getDefaultInstance();
+      }
+
+      public com.ghj.protocol.Msg.Route build() {
+        com.ghj.protocol.Msg.Route result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.ghj.protocol.Msg.Route buildPartial() {
+        com.ghj.protocol.Msg.Route result = new com.ghj.protocol.Msg.Route(this);
+        result.ip_ = ip_;
+        result.port_ = port_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ghj.protocol.Msg.Route) {
+          return mergeFrom((com.ghj.protocol.Msg.Route)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.ghj.protocol.Msg.Route other) {
+        if (other == com.ghj.protocol.Msg.Route.getDefaultInstance()) return this;
+        if (!other.getIp().isEmpty()) {
+          ip_ = other.ip_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.ghj.protocol.Msg.Route parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.ghj.protocol.Msg.Route) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object ip_ = "";
+      /**
+       * <code>optional string ip = 1;</code>
+       */
+      public java.lang.String getIp() {
+        java.lang.Object ref = ip_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ip_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string ip = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIpBytes() {
+        java.lang.Object ref = ip_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ip_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string ip = 1;</code>
+       */
+      public Builder setIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ip_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ip = 1;</code>
+       */
+      public Builder clearIp() {
+        
+        ip_ = getDefaultInstance().getIp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ip = 1;</code>
+       */
+      public Builder setIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ip_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int port_ ;
+      /**
+       * <code>optional int32 port = 2;</code>
+       */
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <code>optional int32 port = 2;</code>
+       */
+      public Builder setPort(int value) {
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 port = 2;</code>
+       */
+      public Builder clearPort() {
+        
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Route)
+    }
+
+    // @@protoc_insertion_point(class_scope:Route)
+    private static final com.ghj.protocol.Msg.Route DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Route();
+    }
+
+    public static com.ghj.protocol.Msg.Route getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Route>
+        PARSER = new com.google.protobuf.AbstractParser<Route>() {
+      public Route parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Route(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Route> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Route> getParserForType() {
+      return PARSER;
+    }
+
+    public com.ghj.protocol.Msg.Route getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5748,6 +6701,875 @@ public final class Msg {
 
   }
 
+  public interface AckOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Ack)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *关联的消息ID
+     * </pre>
+     *
+     * <code>optional int64 msgId = 1;</code>
+     */
+    long getMsgId();
+
+    /**
+     * <code>optional int64 from = 2;</code>
+     */
+    long getFrom();
+
+    /**
+     * <code>optional int64 to = 3;</code>
+     */
+    long getTo();
+
+    /**
+     * <code>optional .Ack.Status status = 4;</code>
+     */
+    int getStatusValue();
+    /**
+     * <code>optional .Ack.Status status = 4;</code>
+     */
+    com.ghj.protocol.Msg.Ack.Status getStatus();
+  }
+  /**
+   * Protobuf type {@code Ack}
+   */
+  public  static final class Ack extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Ack)
+      AckOrBuilder {
+    // Use Ack.newBuilder() to construct.
+    private Ack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Ack() {
+      msgId_ = 0L;
+      from_ = 0L;
+      to_ = 0L;
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Ack(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              msgId_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              from_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              to_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code Ack.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       *服务器接收到客户端消息 或者客户端接收到服务器消息 一般用receive
+       * </pre>
+       *
+       * <code>Receive = 0;</code>
+       */
+      Receive(0),
+      /**
+       * <pre>
+       *客户端接收到另一客户端的消息一般用accept
+       * </pre>
+       *
+       * <code>Accept = 1;</code>
+       */
+      Accept(1),
+      /**
+       * <pre>
+       *客户端读取另一客户端的消息一般用Read
+       * </pre>
+       *
+       * <code>Read = 2;</code>
+       */
+      Read(2),
+      /**
+       * <pre>
+       *登陆成功
+       * </pre>
+       *
+       * <code>LoginSuc = 3;</code>
+       */
+      LoginSuc(3),
+      /**
+       * <pre>
+       *登出成功
+       * </pre>
+       *
+       * <code>LogoutSuc = 4;</code>
+       */
+      LogoutSuc(4),
+      /**
+       * <pre>
+       *登陆失败
+       * </pre>
+       *
+       * <code>LoginFail = 5;</code>
+       */
+      LoginFail(5),
+      /**
+       * <pre>
+       *登出失败
+       * </pre>
+       *
+       * <code>LogoutFail = 6;</code>
+       */
+      LogoutFail(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       *服务器接收到客户端消息 或者客户端接收到服务器消息 一般用receive
+       * </pre>
+       *
+       * <code>Receive = 0;</code>
+       */
+      public static final int Receive_VALUE = 0;
+      /**
+       * <pre>
+       *客户端接收到另一客户端的消息一般用accept
+       * </pre>
+       *
+       * <code>Accept = 1;</code>
+       */
+      public static final int Accept_VALUE = 1;
+      /**
+       * <pre>
+       *客户端读取另一客户端的消息一般用Read
+       * </pre>
+       *
+       * <code>Read = 2;</code>
+       */
+      public static final int Read_VALUE = 2;
+      /**
+       * <pre>
+       *登陆成功
+       * </pre>
+       *
+       * <code>LoginSuc = 3;</code>
+       */
+      public static final int LoginSuc_VALUE = 3;
+      /**
+       * <pre>
+       *登出成功
+       * </pre>
+       *
+       * <code>LogoutSuc = 4;</code>
+       */
+      public static final int LogoutSuc_VALUE = 4;
+      /**
+       * <pre>
+       *登陆失败
+       * </pre>
+       *
+       * <code>LoginFail = 5;</code>
+       */
+      public static final int LoginFail_VALUE = 5;
+      /**
+       * <pre>
+       *登出失败
+       * </pre>
+       *
+       * <code>LogoutFail = 6;</code>
+       */
+      public static final int LogoutFail_VALUE = 6;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return Receive;
+          case 1: return Accept;
+          case 2: return Read;
+          case 3: return LoginSuc;
+          case 4: return LogoutSuc;
+          case 5: return LoginFail;
+          case 6: return LogoutFail;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.Ack.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:Ack.Status)
+    }
+
+    public static final int MSGID_FIELD_NUMBER = 1;
+    private long msgId_;
+    /**
+     * <pre>
+     *关联的消息ID
+     * </pre>
+     *
+     * <code>optional int64 msgId = 1;</code>
+     */
+    public long getMsgId() {
+      return msgId_;
+    }
+
+    public static final int FROM_FIELD_NUMBER = 2;
+    private long from_;
+    /**
+     * <code>optional int64 from = 2;</code>
+     */
+    public long getFrom() {
+      return from_;
+    }
+
+    public static final int TO_FIELD_NUMBER = 3;
+    private long to_;
+    /**
+     * <code>optional int64 to = 3;</code>
+     */
+    public long getTo() {
+      return to_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private int status_;
+    /**
+     * <code>optional .Ack.Status status = 4;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>optional .Ack.Status status = 4;</code>
+     */
+    public com.ghj.protocol.Msg.Ack.Status getStatus() {
+      com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
+      return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (msgId_ != 0L) {
+        output.writeInt64(1, msgId_);
+      }
+      if (from_ != 0L) {
+        output.writeInt64(2, from_);
+      }
+      if (to_ != 0L) {
+        output.writeInt64(3, to_);
+      }
+      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
+        output.writeEnum(4, status_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (msgId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, msgId_);
+      }
+      if (from_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, from_);
+      }
+      if (to_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, to_);
+      }
+      if (status_ != com.ghj.protocol.Msg.Ack.Status.Receive.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, status_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.ghj.protocol.Msg.Ack)) {
+        return super.equals(obj);
+      }
+      com.ghj.protocol.Msg.Ack other = (com.ghj.protocol.Msg.Ack) obj;
+
+      boolean result = true;
+      result = result && (getMsgId()
+          == other.getMsgId());
+      result = result && (getFrom()
+          == other.getFrom());
+      result = result && (getTo()
+          == other.getTo());
+      result = result && status_ == other.status_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + MSGID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMsgId());
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFrom());
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTo());
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ack parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.ghj.protocol.Msg.Ack parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.ghj.protocol.Msg.Ack prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Ack}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Ack)
+        com.ghj.protocol.Msg.AckOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_Ack_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.Ack.class, com.ghj.protocol.Msg.Ack.Builder.class);
+      }
+
+      // Construct using com.ghj.protocol.Msg.Ack.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        msgId_ = 0L;
+
+        from_ = 0L;
+
+        to_ = 0L;
+
+        status_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ghj.protocol.Msg.internal_static_Ack_descriptor;
+      }
+
+      public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
+        return com.ghj.protocol.Msg.Ack.getDefaultInstance();
+      }
+
+      public com.ghj.protocol.Msg.Ack build() {
+        com.ghj.protocol.Msg.Ack result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.ghj.protocol.Msg.Ack buildPartial() {
+        com.ghj.protocol.Msg.Ack result = new com.ghj.protocol.Msg.Ack(this);
+        result.msgId_ = msgId_;
+        result.from_ = from_;
+        result.to_ = to_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ghj.protocol.Msg.Ack) {
+          return mergeFrom((com.ghj.protocol.Msg.Ack)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.ghj.protocol.Msg.Ack other) {
+        if (other == com.ghj.protocol.Msg.Ack.getDefaultInstance()) return this;
+        if (other.getMsgId() != 0L) {
+          setMsgId(other.getMsgId());
+        }
+        if (other.getFrom() != 0L) {
+          setFrom(other.getFrom());
+        }
+        if (other.getTo() != 0L) {
+          setTo(other.getTo());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.ghj.protocol.Msg.Ack parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.ghj.protocol.Msg.Ack) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long msgId_ ;
+      /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
+       * <code>optional int64 msgId = 1;</code>
+       */
+      public long getMsgId() {
+        return msgId_;
+      }
+      /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
+       * <code>optional int64 msgId = 1;</code>
+       */
+      public Builder setMsgId(long value) {
+        
+        msgId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *关联的消息ID
+       * </pre>
+       *
+       * <code>optional int64 msgId = 1;</code>
+       */
+      public Builder clearMsgId() {
+        
+        msgId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long from_ ;
+      /**
+       * <code>optional int64 from = 2;</code>
+       */
+      public long getFrom() {
+        return from_;
+      }
+      /**
+       * <code>optional int64 from = 2;</code>
+       */
+      public Builder setFrom(long value) {
+        
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 from = 2;</code>
+       */
+      public Builder clearFrom() {
+        
+        from_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long to_ ;
+      /**
+       * <code>optional int64 to = 3;</code>
+       */
+      public long getTo() {
+        return to_;
+      }
+      /**
+       * <code>optional int64 to = 3;</code>
+       */
+      public Builder setTo(long value) {
+        
+        to_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 to = 3;</code>
+       */
+      public Builder clearTo() {
+        
+        to_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>optional .Ack.Status status = 4;</code>
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>optional .Ack.Status status = 4;</code>
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .Ack.Status status = 4;</code>
+       */
+      public com.ghj.protocol.Msg.Ack.Status getStatus() {
+        com.ghj.protocol.Msg.Ack.Status result = com.ghj.protocol.Msg.Ack.Status.valueOf(status_);
+        return result == null ? com.ghj.protocol.Msg.Ack.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .Ack.Status status = 4;</code>
+       */
+      public Builder setStatus(com.ghj.protocol.Msg.Ack.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .Ack.Status status = 4;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Ack)
+    }
+
+    // @@protoc_insertion_point(class_scope:Ack)
+    private static final com.ghj.protocol.Msg.Ack DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.ghj.protocol.Msg.Ack();
+    }
+
+    public static com.ghj.protocol.Msg.Ack getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Ack>
+        PARSER = new com.google.protobuf.AbstractParser<Ack>() {
+      public Ack parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Ack(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Ack> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ack> getParserForType() {
+      return PARSER;
+    }
+
+    public com.ghj.protocol.Msg.Ack getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Data_descriptor;
   private static final 
@@ -5769,10 +7591,20 @@ public final class Msg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Logout_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Ack_descriptor;
+    internal_static_Register_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Ack_fieldAccessorTable;
+      internal_static_Register_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Routing_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Routing_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Route_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Route_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Ping_descriptor;
   private static final 
@@ -5783,6 +7615,11 @@ public final class Msg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Pong_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Ack_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Ack_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5792,27 +7629,34 @@ public final class Msg {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rmessage.proto\"\214\002\n\004Data\022 \n\010dataType\030\001 \001" +
+      "\n\rmessage.proto\"\262\002\n\004Data\022 \n\010dataType\030\001 \001" +
       "(\0162\016.Data.DataType\022\025\n\004chat\030\002 \001(\0132\005.ChatH" +
       "\000\022\027\n\005login\030\003 \001(\0132\006.LoginH\000\022\031\n\006logout\030\004 \001" +
       "(\0132\007.LogoutH\000\022\023\n\003ack\030\005 \001(\0132\004.AckH\000\022\025\n\004pi" +
       "ng\030\006 \001(\0132\005.PingH\000\022\025\n\004pong\030\007 \001(\0132\005.PongH\000" +
-      "\"H\n\010DataType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Log" +
-      "out\020\002\022\007\n\003Ack\020\003\022\010\n\004Ping\020\004\022\010\n\004Pong\020\005B\n\n\010da" +
-      "taBody\"\235\001\n\004Chat\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(" +
-      "\003\022\n\n\002to\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022 \n\010chatType\030" +
-      "\005 \001(\0162\016.Chat.ChatType\022\017\n\007content\030\006 \001(\t\022\013",
-      "\n\003ext\030\007 \001(\t\"!\n\010ChatType\022\n\n\006Single\020\000\022\t\n\005G" +
-      "roup\020\001\"!\n\005Login\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(" +
-      "\003\"\"\n\006Logout\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"\264\001" +
-      "\n\003Ack\022\r\n\005msgId\030\001 \001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to" +
-      "\030\003 \001(\003\022\033\n\006status\030\004 \001(\0162\013.Ack.Status\"g\n\006S" +
-      "tatus\022\013\n\007Receive\020\000\022\n\n\006Accept\020\001\022\010\n\004Read\020\002" +
-      "\022\014\n\010LoginSuc\020\003\022\r\n\tLogoutSuc\020\004\022\r\n\tLoginFa" +
-      "il\020\005\022\016\n\nLogoutFail\020\006\"\030\n\004Ping\022\020\n\010pingTime" +
-      "\030\001 \001(\003\"*\n\004Pong\022\020\n\010pingTime\030\001 \001(\003\022\020\n\010pong" +
-      "Time\030\002 \001(\003B\027\n\020com.ghj.protocolB\003Msgb\006pro",
-      "to3"
+      "\"n\n\010DataType\022\010\n\004Chat\020\000\022\t\n\005Login\020\001\022\n\n\006Log" +
+      "out\020\002\022\007\n\003Ack\020\003\022\010\n\004Ping\020\004\022\010\n\004Pong\020\005\022\014\n\010Re" +
+      "gister\020\006\022\013\n\007Routing\020\007\022\t\n\005Route\020\010B\n\n\010data" +
+      "Body\"\235\001\n\004Chat\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\022" +
+      "\n\n\002to\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022 \n\010chatType\030\005 ",
+      "\001(\0162\016.Chat.ChatType\022\017\n\007content\030\006 \001(\t\022\013\n\003" +
+      "ext\030\007 \001(\t\"!\n\010ChatType\022\n\n\006Single\020\000\022\t\n\005Gro" +
+      "up\020\001\"!\n\005Login\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"" +
+      "\"\n\006Logout\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\"~\n\010R" +
+      "egister\022\014\n\004port\030\001 \001(\005\022 \n\006source\030\002 \001(\0162\020." +
+      "Register.Source\"B\n\006Source\022\014\n\010Registry\020\000\022" +
+      "\n\n\006Router\020\001\022\t\n\005Proxy\020\003\022\010\n\004Chat\020\004\022\t\n\005GCha" +
+      "t\020\005\"n\n\007Routing\022\037\n\006source\030\001 \001(\0162\017.Routing" +
+      ".Source\"B\n\006Source\022\014\n\010Registry\020\000\022\n\n\006Route" +
+      "r\020\001\022\t\n\005Proxy\020\003\022\010\n\004Chat\020\004\022\t\n\005GChat\020\005\"!\n\005R",
+      "oute\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\"\030\n\004Ping\022\020" +
+      "\n\010pingTime\030\001 \001(\003\"*\n\004Pong\022\020\n\010pingTime\030\001 \001" +
+      "(\003\022\020\n\010pongTime\030\002 \001(\003\"\264\001\n\003Ack\022\r\n\005msgId\030\001 " +
+      "\001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\033\n\006status\030" +
+      "\004 \001(\0162\013.Ack.Status\"g\n\006Status\022\013\n\007Receive\020" +
+      "\000\022\n\n\006Accept\020\001\022\010\n\004Read\020\002\022\014\n\010LoginSuc\020\003\022\r\n" +
+      "\tLogoutSuc\020\004\022\r\n\tLoginFail\020\005\022\016\n\nLogoutFai" +
+      "l\020\006B\027\n\020com.ghj.protocolB\003Msgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5850,24 +7694,42 @@ public final class Msg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Logout_descriptor,
         new java.lang.String[] { "Id", "Form", });
-    internal_static_Ack_descriptor =
+    internal_static_Register_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Ack_fieldAccessorTable = new
+    internal_static_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Ack_descriptor,
-        new java.lang.String[] { "MsgId", "From", "To", "Status", });
-    internal_static_Ping_descriptor =
+        internal_static_Register_descriptor,
+        new java.lang.String[] { "Port", "Source", });
+    internal_static_Routing_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_Routing_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Routing_descriptor,
+        new java.lang.String[] { "Source", });
+    internal_static_Route_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_Route_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Route_descriptor,
+        new java.lang.String[] { "Ip", "Port", });
+    internal_static_Ping_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Ping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Ping_descriptor,
         new java.lang.String[] { "PingTime", });
     internal_static_Pong_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_Pong_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Pong_descriptor,
         new java.lang.String[] { "PingTime", "PongTime", });
+    internal_static_Ack_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_Ack_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Ack_descriptor,
+        new java.lang.String[] { "MsgId", "From", "To", "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

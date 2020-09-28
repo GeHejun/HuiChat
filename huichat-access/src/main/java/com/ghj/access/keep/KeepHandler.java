@@ -5,7 +5,10 @@ import com.ghj.protocol.Msg;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.util.AttributeKey;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -14,7 +17,14 @@ import java.net.InetSocketAddress;
 import static com.ghj.common.constant.Constant.CHANNEL_ID;
 //TODO 所有的消息发送必须加回调
 @Component
+@Slf4j
 public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
+
+    /**
+     * 心跳丢失次数
+     */
+    private int counter = 0;
+
 
     @Resource
     UserService userService;

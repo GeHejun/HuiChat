@@ -1,12 +1,10 @@
 package com.ghj.access.keep;
 
 import com.ghj.access.config.Config;
+import com.ghj.common.util.ThreadPoolManager;
 import com.ghj.protocol.Msg;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -54,7 +52,6 @@ public class Keeper {
     @PostConstruct
     public void start() {
         startServer();
-        startClient();
     }
 
     private void startServer() {
@@ -74,8 +71,14 @@ public class Keeper {
                             .addLast(keepHandler);
                 }
             });
-            ChannelFuture f = serverBootstrap.bind(port).sync();
-            f.channel().closeFuture().sync();
+            ChannelFuture feature = serverBootstrap.bind(port).sync();
+            feature.addListener((ChannelFutureListener) future -> {
+                //如果连接成功
+                if (future.isSuccess()) {
+                    startClient();
+                }
+            });
+            feature.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             boss.shutdownGracefully();
             work.shutdownGracefully();
@@ -87,8 +90,10 @@ public class Keeper {
         String host = config.getRegistryServerHost();
         //连接注册中心
         KeepClient keepClient = new KeepClient(host, port);
+        //注册信息
+        Msg.Register register = Msg.Register.newBuilder().setPort(port).build();
         //获取router列表
-
+        keepClient.sendRegisterMsgSync(register);
         //遍历列表获取router配置
 
         //连接

@@ -24,9 +24,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +70,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -93,7 +99,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HuiChatRestApplication">
+  <component name="RunManager" selected="Spring Boot.HuiChatEurekaApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -127,7 +133,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -146,7 +152,7 @@
       <workItem from="1600825076417" duration="5539000" />
       <workItem from="1601000371756" duration="15696000" />
       <workItem from="1601085706527" duration="10990000" />
-      <workItem from="1601171855716" duration="7936000" />
+      <workItem from="1601171855716" duration="13703000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -295,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601185027188</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="架构">
+      <created>1601206824714</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1601206824714</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,9 +346,10 @@
     </state>
     <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1601034253318" />
     <state x="340" y="95" key="#Project_Structure/0.23.1920.963@0.23.1920.963" timestamp="1600967297330" />
-    <state x="642" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1601183958598">
-      <screen x="0" y="23" width="1792" height="1013" />
+    <state x="642" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1601269670315">
+      <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state x="642" y="229" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1009@0.23.1792.1009" timestamp="1601269670315" />
     <state x="642" y="230" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1013@0.23.1792.1013" timestamp="1601183958598" />
     <state x="642" y="231" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1601136838302" />
     <state x="453" y="189" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1601116617073">
@@ -351,27 +365,31 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601129890927" />
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601206026554">
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601281463423">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463423" />
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026554" />
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.bottom/0.23.1920.963@0.23.1920.963" timestamp="1600967347358" />
-    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601206026553">
+    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601281463422">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.center/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601206026553">
+    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601281463422">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932440" />
     <state width="1599" height="252" key="GridCell.Tab.0.left/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601206026553">
+    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601281463422">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.right/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
@@ -383,16 +401,22 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="624" y="442" key="ReplaceDuplicatesPrompt/0.23.1792.1017@0.23.1792.1017" timestamp="1600665823513" />
-    <state x="330" y="156" key="SettingsEditor" timestamp="1601109761196">
-      <screen x="0" y="23" width="1792" height="1017" />
+    <state x="330" y="155" key="SettingsEditor" timestamp="1601261303963">
+      <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="256" key="Vcs.Push.Dialog.v2" timestamp="1601185035847">
-      <screen x="0" y="23" width="1792" height="1013" />
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601206830367">
+      <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601206830367" />
     <state x="429" y="256" key="Vcs.Push.Dialog.v2/0.23.1792.1013@0.23.1792.1013" timestamp="1601185035847" />
     <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />
     <state x="460" y="245" key="Vcs.Push.Dialog.v2/0.23.1920.963@0.23.1920.963" timestamp="1600966781344" />
+    <state x="550" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1601261249325">
+      <screen x="0" y="23" width="1792" height="1009" />
+    </state>
+    <state x="550" y="362" key="com.intellij.ide.util.TipDialog/0.23.1792.1009@0.23.1792.1009" timestamp="1601261249325" />
     <state x="627" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601000586241">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -418,9 +442,10 @@
     </state>
     <state x="197" y="179" key="new project wizard/0.23.1792.1013@0.23.1792.1013" timestamp="1601182582048" />
     <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1601108635130" />
-    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601194538765">
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601276747963">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601276747963" />
     <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009@0.23.1792.1009" timestamp="1601194538765" />
     <state x="494" y="243" width="670" height="674" key="search.everywhere.popup/0.23.1792.1013@0.23.1792.1013" timestamp="1601186449056" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1601011108598" />
