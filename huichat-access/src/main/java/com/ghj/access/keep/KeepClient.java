@@ -68,21 +68,23 @@ public class KeepClient implements Callable {
         return null;
     }
 
-    public synchronized void sendRegisterMsgSync(Msg.Register register) {
+    public synchronized void sendMsg(Msg.Data data) {
         synchronized (syncLock) {
             if (Objects.isNull(keepClientChannel)) {
                 log.error("keepClientChannel为空，请检查是否连接到Router");
             }
-            keepClientChannel.write(register);
+            switch (data.getDataType()) {
+                case REGISTER:
+                    keepClientChannel.writeAndFlush(data.getRegister());
+                    break;
+                case ROUTE:
+                    keepClientChannel.writeAndFlush(data.getRoute());
+                    break;
+            }
 
         }
     }
 
-    public void sendMsgAsync() {
-        synchronized (asyncLock) {
-
-        }
-    }
 
 
     /**

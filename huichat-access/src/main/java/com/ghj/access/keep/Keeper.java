@@ -91,9 +91,10 @@ public class Keeper {
         //连接注册中心
         KeepClient keepClient = new KeepClient(host, port);
         //注册信息
+        Msg.Data data = Msg.Data.newBuilder().setDataType(Msg.Data.DataType.REGISTER).build();
         Msg.Register register = Msg.Register.newBuilder().setPort(port).build();
         //获取router列表
-        keepClient.sendRegisterMsgSync(register);
+        keepClient.sendMsg(data);
         //遍历列表获取router配置
 
         //连接

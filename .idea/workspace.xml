@@ -23,13 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
+      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/ReceiveMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/target/generated-sources/protobuf/java/com/ghj/protocol/Msg.java" afterDir="false" />
     </list>
@@ -42,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -152,7 +150,7 @@
       <workItem from="1600825076417" duration="5539000" />
       <workItem from="1601000371756" duration="15696000" />
       <workItem from="1601085706527" duration="10990000" />
-      <workItem from="1601171855716" duration="13703000" />
+      <workItem from="1601171855716" duration="17943000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -308,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601206824714</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="架构">
+      <created>1601282665614</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1601282665614</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,31 +370,31 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601129890927" />
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601281463423">
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601286788668">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463423" />
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601286788668" />
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026554" />
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.bottom/0.23.1920.963@0.23.1920.963" timestamp="1600967347358" />
-    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601281463422">
+    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601286788667">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
+    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601286788667" />
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.center/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601281463422">
+    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601286788666">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
+    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601286788666" />
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932440" />
     <state width="1599" height="252" key="GridCell.Tab.0.left/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601281463422">
+    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601286788668">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601281463422" />
+    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601286788668" />
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009@0.23.1792.1009" timestamp="1601206026553" />
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.right/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
@@ -406,9 +411,10 @@
     </state>
     <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601206830367">
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601282673250">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601282673250" />
     <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601206830367" />
     <state x="429" y="256" key="Vcs.Push.Dialog.v2/0.23.1792.1013@0.23.1792.1013" timestamp="1601185035847" />
     <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />
@@ -442,10 +448,10 @@
     </state>
     <state x="197" y="179" key="new project wizard/0.23.1792.1013@0.23.1792.1013" timestamp="1601182582048" />
     <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1601108635130" />
-    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601276747963">
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601285417468">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601276747963" />
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601285417468" />
     <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009@0.23.1792.1009" timestamp="1601194538765" />
     <state x="494" y="243" width="670" height="674" key="search.everywhere.popup/0.23.1792.1013@0.23.1792.1013" timestamp="1601186449056" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1601011108598" />

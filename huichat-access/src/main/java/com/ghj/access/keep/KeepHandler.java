@@ -39,13 +39,13 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
     @Override
     protected void channelRead0(ChannelHandlerContext chc, Msg.Data data) {
         switch (data.getDataType()) {
-            case Login:
+            case LOGIN:
                 dealLoginMsg(chc.channel(), data.getLogin());
                 break;
-            case Logout:
+            case LOGOUT:
                 dealLogoutMsg(data.getLogout());
                 break;
-            case Chat:
+            case CHAT:
                 dealChatMsg(data.getChat());
                 break;
             default:
@@ -67,9 +67,9 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
         Boolean isLogin = userService.login(channelId, host, login);
         Msg.Ack.Status status;
         if (isLogin) {
-            status = Msg.Ack.Status.LoginSuc;
+            status = Msg.Ack.Status.LOGIN_SUC;
         } else {
-            status = Msg.Ack.Status.LoginFail;
+            status = Msg.Ack.Status.LOGIN_FAIL;
         }
         Msg.Ack ack = Msg.Ack.newBuilder()
                 .setStatus(status)

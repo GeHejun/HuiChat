@@ -8,30 +8,34 @@ option java_outer_classname = "Msg";
 message Data {
 
     enum DataType {
-        Chat = 0;
-        Login = 1;
-        Logout = 2;
-        Ack = 3;
-        Ping = 4;
-        Pong = 5;
-        Register = 6;
-        Routing = 7;
-        Route = 8;
+        CHAT = 0;
+        LOGIN = 1;
+        LOGOUT = 2;
+        ACK = 3;
+        PING = 4;
+        PONG = 5;
+        REGISTER = 6;
+        ROUTING = 7;
+        ROUTE = 8;
     }
 
     DataType dataType = 1;
 
-    oneof dataBody{
+    oneof dataBody {
         Chat chat = 2;
         Login login = 3;
         Logout logout = 4;
         Ack ack = 5;
         Ping ping = 6;
         Pong pong = 7;
+        Register register = 8;
+        Routing routing = 9;
+        RouteList routeList = 10;
     }
 
-}
 
+
+}
 message Chat {
     int64 id = 1;
     int64 form = 2;
@@ -71,12 +75,17 @@ message Register {
 message Routing {
     Source source = 1;
     enum Source {
-        Registry = 0;
-        Router = 1;
-        Proxy = 3;
-        Chat = 4;
-        GChat = 5;
+        REGISTRY = 0;
+        ROUTER = 1;
+        PROXY = 3;
+        CHAT = 4;
+        G_CHAT = 5;
     }
+}
+
+message RouteList {
+   repeated
+
 }
 
 message Route {
@@ -103,21 +112,26 @@ message Ack {
 
     enum Status {
         //服务器接收到客户端消息 或者客户端接收到服务器消息 一般用receive
-        Receive = 0;
+        RECEIVE = 0;
         //客户端接收到另一客户端的消息一般用accept
-        Accept = 1;
+        ACCEPT = 1;
         //客户端读取另一客户端的消息一般用Read
-        Read = 2;
+        READ = 2;
         //登陆成功
-        LoginSuc = 3;
+        LOGIN_SUC = 3;
         //登出成功
-        LogoutSuc = 4;
+        LOGOUT_SUC = 4;
         //登陆失败
-        LoginFail = 5;
+        LOGIN_FAIL = 5;
         //登出失败
-        LogoutFail = 6;
+        LOGOUT_FAIL = 6;
+        //注册成功
+        REGISTER_SUC = 7;
+        //注册失败
+        REGISTER_FAIL = 8;
     }
 }
+
 
 
 
