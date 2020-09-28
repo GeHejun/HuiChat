@@ -17,6 +17,7 @@ message Data {
         REGISTER = 6;
         ROUTING = 7;
         ROUTE = 8;
+        ROUTE_ALL = 9;
     }
 
     DataType dataType = 1;
@@ -30,7 +31,7 @@ message Data {
         Pong pong = 7;
         Register register = 8;
         Routing routing = 9;
-        RouteList routeList = 10;
+        RouteAll routeAll = 10;
     }
 
 
@@ -83,8 +84,8 @@ message Routing {
     }
 }
 
-message RouteList {
-   repeated
+message RouteAll {
+   repeated Route routeList = 1;
 
 }
 

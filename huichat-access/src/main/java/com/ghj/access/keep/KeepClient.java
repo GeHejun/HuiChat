@@ -6,12 +6,10 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Objects;
 import java.util.concurrent.Callable;
 
 @Slf4j
-public class KeepClient implements Callable {
+public class KeepClient implements Runnable {
 
     private final String host;
 
@@ -19,9 +17,7 @@ public class KeepClient implements Callable {
 
     private Channel keepClientChannel;
 
-    private final static Object syncLock = new Object();
-
-    private final static Object asyncLock = new Object();
+   KeepClientHandler keepClientHandler = new KeepClientHandler();
 
     EventLoopGroup group = new NioEventLoopGroup();
 
@@ -33,13 +29,13 @@ public class KeepClient implements Callable {
 
 
     @Override
-    public Object call() throws Exception {
+    public void run() {
         try {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.TCP_NODELAY, true)
-                    .handler(new KeepClientHandler());
+                    .handler(keepClientHandler);
             ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
             //注册连接事件
             channelFuture.addListener((ChannelFutureListener) future -> {
@@ -65,24 +61,10 @@ public class KeepClient implements Callable {
         } finally {
             group.shutdownGracefully();
         }
-        return null;
     }
 
-    public synchronized void sendMsg(Msg.Data data) {
-        synchronized (syncLock) {
-            if (Objects.isNull(keepClientChannel)) {
-                log.error("keepClientChannel为空，请检查是否连接到Router");
-            }
-            switch (data.getDataType()) {
-                case REGISTER:
-                    keepClientChannel.writeAndFlush(data.getRegister());
-                    break;
-                case ROUTE:
-                    keepClientChannel.writeAndFlush(data.getRoute());
-                    break;
-            }
+    public void sendMsg(Msg.Data data) {
 
-        }
     }
 
 
