@@ -42,8 +42,7 @@ public class CustomSystemUtil {
                 while (addrs.hasMoreElements())
                 {
                     ip = addrs.nextElement();
-                    if (ip != null
-                            && ip instanceof Inet4Address
+                    if (ip instanceof Inet4Address
                             && ip.isSiteLocalAddress()
                             && !ip.getHostAddress().equals(INTRANET_IP))
                     {
