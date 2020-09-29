@@ -23,6 +23,8 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg.Data data) throws Exception {
         switch (data.getDataType()) {
             case ACK:
+                break;
+
 
         }
     }

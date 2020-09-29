@@ -23,6 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息协议定义">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
     </list>
@@ -92,7 +94,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HuiChatEurekaApplication">
+  <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -100,27 +102,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuiChatEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="HuiChat-Eureka" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.eureka.HuiChatEurekaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuiChatRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="huichat-rest" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.rest.HuiChatRestApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuiChatWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="HuiChat-Web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ghj.web.HuiChatWebApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,7 +128,7 @@
       <workItem from="1601085706527" duration="10990000" />
       <workItem from="1601171855716" duration="19899000" />
       <workItem from="1601350198721" duration="5548000" />
-      <workItem from="1601371631442" duration="3931000" />
+      <workItem from="1601371631442" duration="4705000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -387,7 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601378632112</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="消息协议定义">
+      <created>1601379582300</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1601379582300</updated>
+    </task>
+    <task id="LOCAL-00036" summary="消息协议定义">
+      <created>1601379588058</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1601379588058</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +424,10 @@
     </state>
     <state x="317" y="99" key="#Project_Structure/0.23.1792.1017@0.23.1792.1017" timestamp="1601034253318" />
     <state x="340" y="95" key="#Project_Structure/0.23.1920.963@0.23.1920.963" timestamp="1600967297330" />
+    <state x="455" y="173" width="1071" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601379767516">
+      <screen x="0" y="23" width="1792" height="1009" />
+    </state>
+    <state x="455" y="173" width="1071" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1009@0.23.1792.1009" timestamp="1601379767516" />
     <state x="642" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1601287145187">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
@@ -449,32 +448,32 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="567" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1601129890927" />
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601290445675">
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom" timestamp="1601379540360">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601287072867" />
-    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009@0.23.1792.1009" timestamp="1601290445675" />
+    <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1009@0.23.1792.1009" timestamp="1601379540360" />
     <state width="1560" height="256" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.bottom/0.23.1920.963@0.23.1920.963" timestamp="1600967347358" />
-    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601290445675">
+    <state width="1560" height="256" key="GridCell.Tab.0.center" timestamp="1601379540359">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601287072866" />
-    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009@0.23.1792.1009" timestamp="1601290445675" />
+    <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1009@0.23.1792.1009" timestamp="1601379540359" />
     <state width="1560" height="256" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.center/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601290445674">
+    <state width="1560" height="256" key="GridCell.Tab.0.left" timestamp="1601379540359">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601287072866" />
-    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009@0.23.1792.1009" timestamp="1601290445674" />
+    <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1009@0.23.1792.1009" timestamp="1601379540359" />
     <state width="1560" height="256" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932440" />
     <state width="1599" height="252" key="GridCell.Tab.0.left/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
-    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601290445675">
+    <state width="1560" height="256" key="GridCell.Tab.0.right" timestamp="1601379540360">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601287072866" />
-    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009@0.23.1792.1009" timestamp="1601290445675" />
+    <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1009@0.23.1792.1009" timestamp="1601379540360" />
     <state width="1560" height="256" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1601136932441" />
     <state width="1599" height="252" key="GridCell.Tab.0.right/0.23.1920.963@0.23.1920.963" timestamp="1600967347357" />
     <state x="467" y="286" key="MultipleFileMergeDialog" timestamp="1601000619104">
@@ -494,11 +493,11 @@
     </state>
     <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601378639340">
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601379592507">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601351328166" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601378639340" />
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601379592507" />
     <state x="429" y="256" key="Vcs.Push.Dialog.v2/0.23.1792.1013@0.23.1792.1013" timestamp="1601185035847" />
     <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />
     <state x="460" y="245" key="Vcs.Push.Dialog.v2/0.23.1920.963@0.23.1920.963" timestamp="1600966781344" />

@@ -102,6 +102,7 @@ public class Keeper {
             String routerPort = s.split(":")[1];
             keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
         }
+        keepHandler.setKeepClients(keepClients);
         //连接
     }
 
