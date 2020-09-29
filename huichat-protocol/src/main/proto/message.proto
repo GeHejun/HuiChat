@@ -24,7 +24,7 @@ message Chat {
     ContentType contentType = 5;
     bytes content = 6;
     int64 createTime = 7;
-    string ext = 8;
+    string extra = 8;
     enum MsgType {
         SINGLE = 0;
         GROUP = 1;
