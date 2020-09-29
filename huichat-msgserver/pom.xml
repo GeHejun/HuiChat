@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>huichat-lservice</artifactId>
-
-
+    <artifactId>huichat-msgserver</artifactId>
 
 
 </project>
