@@ -1,9 +1,0 @@
-server:
-  port: 8080
-
-spring:
-  redis:
-    host:
-
-netty:
-  port: 8081

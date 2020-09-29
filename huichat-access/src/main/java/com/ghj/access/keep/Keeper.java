@@ -2,6 +2,7 @@ package com.ghj.access.keep;
 
 import com.ghj.access.config.Config;
 import com.ghj.protocol.Msg;
+import com.google.common.collect.Lists;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.util.List;
 
 @Component
 @Slf4j
@@ -89,13 +91,17 @@ public class Keeper {
         String host = config.getRegistryServerHost();
         //连接注册中心
         KeepClient keepClient = new KeepClient(host, port);
-        //注册信息
-        Msg.Data data = Msg.Data.newBuilder().setDataType(Msg.Data.DataType.REGISTER).build();
-        Msg.Register register = Msg.Register.newBuilder().setPort(port).build();
-        //获取router列表
-        keepClient.sendMsg(data);
-        //遍历列表获取router配置
 
+        String address = "";
+        String[] addresses = address.split(";");
+        int routerCount = addresses.length;
+        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
+        //遍历列表获取router配置
+        for (String s : addresses) {
+            String routerHost = s.split(":")[0];
+            String routerPort = s.split(":")[1];
+            keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
+        }
         //连接
     }
 

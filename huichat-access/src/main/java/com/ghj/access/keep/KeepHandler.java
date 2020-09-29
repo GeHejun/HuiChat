@@ -7,6 +7,8 @@ import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 import static com.ghj.common.constant.Constant.CHANNEL_ID;
 //TODO 所有的消息发送必须加回调
 @Component

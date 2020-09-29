@@ -20,10 +20,6 @@
         <module>huichat-gchat</module>
         <module>huichat-access</module>
         <module>huichat-registry</module>
-        <module>huichat-msgservice</module>
-        <module>huichat-uservice</module>
-        <module>huichat-msgservice</module>
-        <module>PushServer</module>
         <module>huichat-msgserver</module>
         <module>huichat-userver</module>
         <module>huichat-pushserver</module>

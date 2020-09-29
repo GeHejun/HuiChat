@@ -32,14 +32,6 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
             if (Objects.isNull(ctx)) {
                 log.error("keepClientChannel为空，请检查是否连接到Router");
             }
-            switch (data.getDataType()) {
-                case REGISTER:
-                    ctx.writeAndFlush(data.getRegister());
-                    break;
-                case ROUTE_ALL:
-                    ctx.writeAndFlush(data.getRouteAll());
-                    break;
-            }
 
         }
     }
