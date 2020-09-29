@@ -22,11 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="chat ack 消息协议定义">
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="模块划分">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-lservice/huichat-lservice.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-lservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PushServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,15 +93,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.HuiChatEurekaApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,7 +146,8 @@
       <workItem from="1601000371756" duration="15696000" />
       <workItem from="1601085706527" duration="10990000" />
       <workItem from="1601171855716" duration="19899000" />
-      <workItem from="1601350198721" duration="5397000" />
+      <workItem from="1601350198721" duration="5548000" />
+      <workItem from="1601371631442" duration="1438000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -362,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601358512488</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="模块划分">
+      <created>1601361496920</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1601361496920</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +394,8 @@
     <MESSAGE value="架构" />
     <MESSAGE value="接下来消息协议重新设计-整个系统重新架构" />
     <MESSAGE value="chat ack 消息协议定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat ack 消息协议定义" />
+    <MESSAGE value="模块划分" />
+    <option name="LAST_COMMIT_MESSAGE" value="模块划分" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
@@ -467,11 +472,11 @@
     </state>
     <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601358519064">
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601361502964">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601351328166" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601358519064" />
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601361502964" />
     <state x="429" y="256" key="Vcs.Push.Dialog.v2/0.23.1792.1013@0.23.1792.1013" timestamp="1601185035847" />
     <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />
     <state x="460" y="245" key="Vcs.Push.Dialog.v2/0.23.1920.963@0.23.1920.963" timestamp="1600966781344" />
@@ -499,10 +504,10 @@
       <screen x="0" y="23" width="1920" height="963" />
     </state>
     <state x="1360" y="339" key="git4idea.merge.GitPullDialog/0.23.1920.963@0.23.1920.963" timestamp="1600958974443" />
-    <state x="197" y="178" key="new project wizard" timestamp="1601361343990">
+    <state x="197" y="178" key="new project wizard" timestamp="1601361470317">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state x="197" y="178" key="new project wizard/0.23.1792.1009@0.23.1792.1009" timestamp="1601361343990" />
+    <state x="197" y="178" key="new project wizard/0.23.1792.1009@0.23.1792.1009" timestamp="1601361470317" />
     <state x="197" y="179" key="new project wizard/0.23.1792.1013@0.23.1792.1013" timestamp="1601182582048" />
     <state x="197" y="180" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1601108635130" />
     <state x="656" y="236" key="run.anything.popup" timestamp="1601358490272">
