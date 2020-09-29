@@ -20,7 +20,6 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private static Random random = new Random();
 
-
     List<KeepClient> keepClients;
 
     @Override
@@ -36,8 +35,15 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
             case CHAT:
                 dealChatMsg(data);
                 break;
+            case ACK:
+                dealAckMsg(data);
+                break;
             default:
         }
+    }
+
+    private void dealAckMsg(Msg.Data data) {
+
     }
 
     private void dealChatMsg(Msg.Data chat) {
