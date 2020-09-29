@@ -22,8 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="架构">
+    <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="接下来消息协议重新设计-整个系统重新架构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/umps/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-msgbox/huichat-msgbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-msgservice/huichat-msgservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-msgbox/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-msgservice/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +153,7 @@
       <workItem from="1601000371756" duration="15696000" />
       <workItem from="1601085706527" duration="10990000" />
       <workItem from="1601171855716" duration="19899000" />
-      <workItem from="1601350198721" duration="973000" />
+      <workItem from="1601350198721" duration="4048000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -339,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601308813036</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="接下来消息协议重新设计-整个系统重新架构">
+      <created>1601351322923</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1601351322923</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +377,8 @@
     <MESSAGE value="重新架构" />
     <MESSAGE value="消息队列" />
     <MESSAGE value="架构" />
-    <option name="LAST_COMMIT_MESSAGE" value="架构" />
+    <MESSAGE value="接下来消息协议重新设计-整个系统重新架构" />
+    <option name="LAST_COMMIT_MESSAGE" value="接下来消息协议重新设计-整个系统重新架构" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="203" key="#Inspections" timestamp="1600600798389">
@@ -433,15 +446,19 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="624" y="442" key="ReplaceDuplicatesPrompt/0.23.1792.1017@0.23.1792.1017" timestamp="1600665823513" />
+    <state x="724" y="221" key="RollbackChangesDialog" timestamp="1601351280348">
+      <screen x="0" y="23" width="1792" height="1009" />
+    </state>
+    <state x="724" y="221" key="RollbackChangesDialog/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601351280348" />
     <state x="330" y="155" key="SettingsEditor" timestamp="1601261303963">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601308817797">
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601351328166">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
-    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601282673250" />
+    <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601351328166" />
     <state x="429" y="255" key="Vcs.Push.Dialog.v2/0.23.1792.1009@0.23.1792.1009" timestamp="1601308817797" />
     <state x="429" y="256" key="Vcs.Push.Dialog.v2/0.23.1792.1013@0.23.1792.1013" timestamp="1601185035847" />
     <state x="429" y="257" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1601136922103" />

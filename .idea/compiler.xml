@@ -13,8 +13,8 @@
         <module name="huichat-common" />
         <module name="huichat-chat" />
         <module name="huichat-access" />
+        <module name="huichat-msgservice" />
         <module name="huichat-proxy" />
-        <module name="huichat-msgbox" />
         <module name="huichat-rest" />
         <module name="huichat-gchat" />
         <module name="huichat-lservice" />
@@ -32,6 +32,7 @@
       <module name="huichat-lservice" target="1.8" />
       <module name="huichat-msgbox" target="1.8" />
       <module name="huichat-msgserver" target="1.8" />
+      <module name="huichat-msgservice" target="1.8" />
       <module name="huichat-protocol" target="1.8" />
       <module name="huichat-proxy" target="1.8" />
       <module name="huichat-registry" target="1.8" />
@@ -55,6 +56,7 @@
       <module name="huichat-lservice" options="-parameters" />
       <module name="huichat-msgbox" options="-parameters" />
       <module name="huichat-msgserver" options="-parameters" />
+      <module name="huichat-msgservice" options="-parameters" />
       <module name="huichat-protocol" options="-parameters" />
       <module name="huichat-proxy" options="-parameters" />
       <module name="huichat-registry" options="-parameters" />

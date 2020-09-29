@@ -21,8 +21,9 @@
         <module>huichat-access</module>
         <module>huichat-lservice</module>
         <module>huichat-registry</module>
-        <module>huichat-msgbox</module>
+        <module>huichat-msgservice</module>
         <module>huichat-uservice</module>
+        <module>huichat-msgservice</module>
     </modules>
 
 

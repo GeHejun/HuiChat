@@ -6,133 +6,71 @@ option java_package = "com.ghj.protocol";
 option java_outer_classname = "Msg";
 
 message Data {
-
     enum DataType {
         CHAT = 0;
-        LOGIN = 1;
-        LOGOUT = 2;
-        ACK = 3;
-        PING = 4;
-        PONG = 5;
-        REGISTER = 6;
-        ROUTING = 7;
-        ROUTE = 8;
-        ROUTE_ALL = 9;
+        ACK = 1;
     }
-
     DataType dataType = 1;
-
     oneof dataBody {
         Chat chat = 2;
-        Login login = 3;
-        Logout logout = 4;
-        Ack ack = 5;
-        Ping ping = 6;
-        Pong pong = 7;
-        Register register = 8;
-        Routing routing = 9;
-        RouteAll routeAll = 10;
+        Ack ack = 3;
     }
-
-
-
 }
 message Chat {
     int64 id = 1;
     int64 form = 2;
     int64 to = 3;
-    int32 type = 4;
-    ChatType chatType = 5;
-    string content = 6;
-    string ext = 7;
+    ChatType chatType = 4;
+    MsgType msgType = 5;
+    bytes msgBody = 6;
+    int64 createTime = 7;
+    string ext = 8;
     enum ChatType {
-        Single = 0;
-        Group = 1;
+        SINGLE = 0;
+        GROUP = 1;
+    }
+    enum MsgType {
+        TEXT = 0;
+        FILE = 1;
+    }
+    message TextBody {
+        string text = 1;
+        //文字内容
+    }
+
+    message FileBody {
+        string fileId = 1;
+        //媒体文件上传到得到的KEY，用于生成下载URL。
+
+        int32 media_crc32 = 2;
+        //文件的 CRC32 校验码。
+
+        int32 fSize = 3;
+        //文件大小（字节数）
+
+        string fName = 4;
+        //文件名字
     }
 }
-
-message Login {
-    int64 id = 1;
-    int64 form = 2;
-}
-
-message Logout {
-    int64 id = 1;
-    int64 form = 2;
-}
-
-message Register {
-    int32 port = 1;
-    Source source = 2;
-    enum Source {
-        Registry = 0;
-        Router = 1;
-        Proxy = 3;
-        Chat = 4;
-        GChat = 5;
-    }
-}
-
-message Routing {
-    Source source = 1;
-    enum Source {
-        REGISTRY = 0;
-        ROUTER = 1;
-        PROXY = 3;
-        CHAT = 4;
-        G_CHAT = 5;
-    }
-}
-
-message RouteAll {
-   repeated Route routeList = 1;
-
-}
-
-message Route {
-    string ip = 1;
-    int32 port = 2;
-}
-
-message Ping {
-    int64 pingTime = 1;
-}
-
-message Pong {
-    int64 pingTime = 1;
-    int64 pongTime = 2;
-}
-
 message Ack {
     //关联的消息ID
-    int64 msgId = 1;
+    int64 id = 1;
     int64 from = 2;
     int64 to = 3;
-
-    Status status = 4;
+    int64 ackMsgId = 4;
+    Status status = 5;
+    AcKType ackType = 6;
 
     enum Status {
-        //服务器接收到客户端消息 或者客户端接收到服务器消息 一般用receive
         RECEIVE = 0;
-        //客户端接收到另一客户端的消息一般用accept
-        ACCEPT = 1;
-        //客户端读取另一客户端的消息一般用Read
-        READ = 2;
-        //登陆成功
-        LOGIN_SUC = 3;
-        //登出成功
-        LOGOUT_SUC = 4;
-        //登陆失败
-        LOGIN_FAIL = 5;
-        //登出失败
-        LOGOUT_FAIL = 6;
-        //注册成功
-        REGISTER_SUC = 7;
-        //注册失败
-        REGISTER_FAIL = 8;
+        READ = 1;
+    }
+
+    enum AcKType {
+        SINGLE = 0;
+        GROUP = 1;
     }
 }
-
 
 
 
