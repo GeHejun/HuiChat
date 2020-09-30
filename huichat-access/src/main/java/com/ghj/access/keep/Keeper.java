@@ -16,6 +16,8 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.common.protocol.types.Field;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -48,6 +50,7 @@ public class Keeper {
      */
     @Resource
     private Config config;
+
 
 
     /**
@@ -91,8 +94,10 @@ public class Keeper {
 
     private void startClient() {
         register();
+    }
 
-//        String address = "";
+    public void connectRouter() {
+        //        String address = "";
 //        String[] addresses = address.split(";");
 //        int routerCount = addresses.length;
 //        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
@@ -110,13 +115,14 @@ public class Keeper {
         int port = config.getRegistryServerPort();
         String host = config.getRegistryServerHost();
         KeepClient keepClient = new KeepClient(host, port);
+        Msg.SysMsg.Register register = Msg.SysMsg.Register.newBuilder().setPort(config.getKeepServerPort()).build();
         Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
-                .setBehaviorType(Msg.SysMsg.BehaviorType.REGISTER)
-                .setContent(String.valueOf(config.getKeepServerPort()))
+                .setMsgType(Msg.SysMsg.MsgType.REGISTER)
                 .setId(new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId())
                 .setFromM(Msg.SysMsg.Module.ACCESS)
                 .setToM(Msg.SysMsg.Module.REGISTRY)
                 .setTimestamp(System.currentTimeMillis())
+                .setRegister(register)
                 .build();
         Msg.Data data = Msg.Data.newBuilder().setDataType(Msg.Data.DataType.SYS_MSG).setSysMsg(sysMsg).build();
         keepClient.sendMsg(data);

@@ -6905,23 +6905,23 @@ public final class Msg {
       com.ghj.protocol.Msg.SysMsg.Module getSource();
 
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
       java.util.List<java.lang.String>
-          getAddressesList();
+          getAddressList();
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
-      int getAddressesCount();
+      int getAddressCount();
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
-      java.lang.String getAddresses(int index);
+      java.lang.String getAddress(int index);
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
       com.google.protobuf.ByteString
-          getAddressesBytes(int index);
+          getAddressBytes(int index);
     }
     /**
      * Protobuf type {@code SysMsg.Routing}
@@ -6936,7 +6936,7 @@ public final class Msg {
       }
       private Routing() {
         source_ = 0;
-        addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
 
       @java.lang.Override
@@ -6973,10 +6973,10 @@ public final class Msg {
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
                 if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  addresses_ = new com.google.protobuf.LazyStringArrayList();
+                  address_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000002;
                 }
-                addresses_.add(s);
+                address_.add(s);
                 break;
               }
             }
@@ -6988,7 +6988,7 @@ public final class Msg {
               e).setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-            addresses_ = addresses_.getUnmodifiableView();
+            address_ = address_.getUnmodifiableView();
           }
           makeExtensionsImmutable();
         }
@@ -7022,33 +7022,33 @@ public final class Msg {
         return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
       }
 
-      public static final int ADDRESSES_FIELD_NUMBER = 2;
-      private com.google.protobuf.LazyStringList addresses_;
+      public static final int ADDRESS_FIELD_NUMBER = 2;
+      private com.google.protobuf.LazyStringList address_;
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
-          getAddressesList() {
-        return addresses_;
+          getAddressList() {
+        return address_;
       }
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
-      public int getAddressesCount() {
-        return addresses_.size();
+      public int getAddressCount() {
+        return address_.size();
       }
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
-      public java.lang.String getAddresses(int index) {
-        return addresses_.get(index);
+      public java.lang.String getAddress(int index) {
+        return address_.get(index);
       }
       /**
-       * <code>repeated string addresses = 2;</code>
+       * <code>repeated string address = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getAddressesBytes(int index) {
-        return addresses_.getByteString(index);
+          getAddressBytes(int index) {
+        return address_.getByteString(index);
       }
 
       private byte memoizedIsInitialized = -1;
@@ -7066,8 +7066,8 @@ public final class Msg {
         if (source_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
           output.writeEnum(1, source_);
         }
-        for (int i = 0; i < addresses_.size(); i++) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, addresses_.getRaw(i));
+        for (int i = 0; i < address_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_.getRaw(i));
         }
       }
 
@@ -7082,11 +7082,11 @@ public final class Msg {
         }
         {
           int dataSize = 0;
-          for (int i = 0; i < addresses_.size(); i++) {
-            dataSize += computeStringSizeNoTag(addresses_.getRaw(i));
+          for (int i = 0; i < address_.size(); i++) {
+            dataSize += computeStringSizeNoTag(address_.getRaw(i));
           }
           size += dataSize;
-          size += 1 * getAddressesList().size();
+          size += 1 * getAddressList().size();
         }
         memoizedSize = size;
         return size;
@@ -7105,8 +7105,8 @@ public final class Msg {
 
         boolean result = true;
         result = result && source_ == other.source_;
-        result = result && getAddressesList()
-            .equals(other.getAddressesList());
+        result = result && getAddressList()
+            .equals(other.getAddressList());
         return result;
       }
 
@@ -7119,9 +7119,9 @@ public final class Msg {
         hash = (19 * hash) + getDescriptorForType().hashCode();
         hash = (37 * hash) + SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + source_;
-        if (getAddressesCount() > 0) {
-          hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
-          hash = (53 * hash) + getAddressesList().hashCode();
+        if (getAddressCount() > 0) {
+          hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+          hash = (53 * hash) + getAddressList().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -7243,7 +7243,7 @@ public final class Msg {
           super.clear();
           source_ = 0;
 
-          addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
@@ -7271,10 +7271,10 @@ public final class Msg {
           int to_bitField0_ = 0;
           result.source_ = source_;
           if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            addresses_ = addresses_.getUnmodifiableView();
+            address_ = address_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.addresses_ = addresses_;
+          result.address_ = address_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -7320,13 +7320,13 @@ public final class Msg {
           if (other.source_ != 0) {
             setSourceValue(other.getSourceValue());
           }
-          if (!other.addresses_.isEmpty()) {
-            if (addresses_.isEmpty()) {
-              addresses_ = other.addresses_;
+          if (!other.address_.isEmpty()) {
+            if (address_.isEmpty()) {
+              address_ = other.address_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureAddressesIsMutable();
-              addresses_.addAll(other.addresses_);
+              ensureAddressIsMutable();
+              address_.addAll(other.address_);
             }
             onChanged();
           }
@@ -7401,96 +7401,96 @@ public final class Msg {
           return this;
         }
 
-        private com.google.protobuf.LazyStringList addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        private void ensureAddressesIsMutable() {
+        private com.google.protobuf.LazyStringList address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureAddressIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
+            address_ = new com.google.protobuf.LazyStringArrayList(address_);
             bitField0_ |= 0x00000002;
            }
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
         public com.google.protobuf.ProtocolStringList
-            getAddressesList() {
-          return addresses_.getUnmodifiableView();
+            getAddressList() {
+          return address_.getUnmodifiableView();
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public int getAddressesCount() {
-          return addresses_.size();
+        public int getAddressCount() {
+          return address_.size();
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public java.lang.String getAddresses(int index) {
-          return addresses_.get(index);
+        public java.lang.String getAddress(int index) {
+          return address_.get(index);
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
         public com.google.protobuf.ByteString
-            getAddressesBytes(int index) {
-          return addresses_.getByteString(index);
+            getAddressBytes(int index) {
+          return address_.getByteString(index);
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public Builder setAddresses(
+        public Builder setAddress(
             int index, java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  ensureAddressesIsMutable();
-          addresses_.set(index, value);
+  ensureAddressIsMutable();
+          address_.set(index, value);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public Builder addAddresses(
+        public Builder addAddress(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  ensureAddressesIsMutable();
-          addresses_.add(value);
+  ensureAddressIsMutable();
+          address_.add(value);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public Builder addAllAddresses(
+        public Builder addAllAddress(
             java.lang.Iterable<java.lang.String> values) {
-          ensureAddressesIsMutable();
+          ensureAddressIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, addresses_);
+              values, address_);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public Builder clearAddresses() {
-          addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        public Builder clearAddress() {
+          address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string addresses = 2;</code>
+         * <code>repeated string address = 2;</code>
          */
-        public Builder addAddressesBytes(
+        public Builder addAddressBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-          ensureAddressesIsMutable();
-          addresses_.add(value);
+          ensureAddressIsMutable();
+          address_.add(value);
           onChanged();
           return this;
         }
@@ -9035,7 +9035,7 @@ public final class Msg {
       "!\n\007msgType\030\006 \001(\0162\020.Receipt.MsgType\022\021\n\tti" +
       "mestamp\030\007 \001(\003\"!\n\010MsgState\022\013\n\007RECEIVE\020\000\022\010" +
       "\n\004READ\020\001\" \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GROUP" +
-      "\020\001\"\335\004\n\006SysMsg\022\n\n\002id\030\001 \001(\003\022\035\n\005fromM\030\002 \001(\016",
+      "\020\001\"\333\004\n\006SysMsg\022\n\n\002id\030\001 \001(\003\022\035\n\005fromM\030\002 \001(\016",
       "2\016.SysMsg.Module\022\033\n\003toM\030\003 \001(\0162\016.SysMsg.M" +
       "odule\022\021\n\ttimestamp\030\004 \001(\003\022 \n\007msgType\030\005 \001(" +
       "\0162\017.SysMsg.MsgType\022\032\n\003ack\030\006 \001(\0132\013.SysMsg" +
@@ -9044,14 +9044,14 @@ public final class Msg {
       "routing\030\t \001(\0132\017.SysMsg.RoutingH\000\0326\n\003Ack\022" +
       "\020\n\010ackMsgId\030\001 \001(\003\022\014\n\004code\030\002 \001(\005\022\017\n\007messa" +
       "ge\030\003 \001(\t\032\024\n\005Greet\022\013\n\003uId\030\001 \001(\003\032\030\n\010Regist" +
-      "er\022\014\n\004port\030\001 \001(\005\032<\n\007Routing\022\036\n\006source\030\001 " +
-      "\001(\0162\016.SysMsg.Module\022\021\n\taddresses\030\002 \003(\t\"8",
-      "\n\007MsgType\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007RO" +
-      "UTING\020\002\022\007\n\003ACK\020\003\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n" +
-      "\n\006ROUTER\020\001\022\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHA" +
-      "T\020\004\022\010\n\004PUSH\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007B" +
-      "\t\n\007msgBodyB\027\n\020com.ghj.protocolB\003Msgb\006pro" +
-      "to3"
+      "er\022\014\n\004port\030\001 \001(\005\032:\n\007Routing\022\036\n\006source\030\001 " +
+      "\001(\0162\016.SysMsg.Module\022\017\n\007address\030\002 \003(\t\"8\n\007",
+      "MsgType\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007ROUT" +
+      "ING\020\002\022\007\n\003ACK\020\003\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n\n\006" +
+      "ROUTER\020\001\022\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHAT\020" +
+      "\004\022\010\n\004PUSH\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007B\t\n" +
+      "\007msgBodyB\027\n\020com.ghj.protocolB\003Msgb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9124,7 +9124,7 @@ public final class Msg {
     internal_static_SysMsg_Routing_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SysMsg_Routing_descriptor,
-        new java.lang.String[] { "Source", "Addresses", });
+        new java.lang.String[] { "Source", "Address", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

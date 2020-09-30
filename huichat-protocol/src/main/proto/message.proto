@@ -105,7 +105,7 @@ message SysMsg {
 
     message Routing {
         Module source = 1;
-        repeated string addresses = 2;
+        repeated string address = 2;
     }
 
     enum Module {

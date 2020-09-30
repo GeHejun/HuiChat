@@ -1,6 +1,5 @@
 package com.ghj.access.keep;
 
-import com.alibaba.fastjson.JSON;
 import com.ghj.protocol.Msg;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -34,8 +33,7 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
             case CHAT:
                 dealChatMsg(data);
                 break;
-
-
+            default:
         }
     }
 
@@ -45,6 +43,7 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
             case ROUTING:
                 Msg.SysMsg.Routing routing = sysMsg.getRouting();
             case ACK:
+
 
         }
 
