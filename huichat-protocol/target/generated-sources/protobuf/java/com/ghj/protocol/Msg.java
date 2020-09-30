@@ -6040,6 +6040,29 @@ public final class Msg {
        * <code>optional int64 uId = 1;</code>
        */
       long getUId();
+
+      /**
+       * <code>optional int64 timestamp = 2;</code>
+       */
+      long getTimestamp();
+
+      /**
+       * <pre>
+       *        string uName = 4;
+       * </pre>
+       *
+       * <code>optional string location = 3;</code>
+       */
+      java.lang.String getLocation();
+      /**
+       * <pre>
+       *        string uName = 4;
+       * </pre>
+       *
+       * <code>optional string location = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getLocationBytes();
     }
     /**
      * Protobuf type {@code SysMsg.Greet}
@@ -6054,6 +6077,8 @@ public final class Msg {
       }
       private Greet() {
         uId_ = 0L;
+        timestamp_ = 0L;
+        location_ = "";
       }
 
       @java.lang.Override
@@ -6084,6 +6109,17 @@ public final class Msg {
               case 8: {
 
                 uId_ = input.readInt64();
+                break;
+              }
+              case 16: {
+
+                timestamp_ = input.readInt64();
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                location_ = s;
                 break;
               }
             }
@@ -6118,6 +6154,57 @@ public final class Msg {
         return uId_;
       }
 
+      public static final int TIMESTAMP_FIELD_NUMBER = 2;
+      private long timestamp_;
+      /**
+       * <code>optional int64 timestamp = 2;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+
+      public static final int LOCATION_FIELD_NUMBER = 3;
+      private volatile java.lang.Object location_;
+      /**
+       * <pre>
+       *        string uName = 4;
+       * </pre>
+       *
+       * <code>optional string location = 3;</code>
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       *        string uName = 4;
+       * </pre>
+       *
+       * <code>optional string location = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -6133,6 +6220,12 @@ public final class Msg {
         if (uId_ != 0L) {
           output.writeInt64(1, uId_);
         }
+        if (timestamp_ != 0L) {
+          output.writeInt64(2, timestamp_);
+        }
+        if (!getLocationBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, location_);
+        }
       }
 
       public int getSerializedSize() {
@@ -6143,6 +6236,13 @@ public final class Msg {
         if (uId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt64Size(1, uId_);
+        }
+        if (timestamp_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(2, timestamp_);
+        }
+        if (!getLocationBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, location_);
         }
         memoizedSize = size;
         return size;
@@ -6162,6 +6262,10 @@ public final class Msg {
         boolean result = true;
         result = result && (getUId()
             == other.getUId());
+        result = result && (getTimestamp()
+            == other.getTimestamp());
+        result = result && getLocation()
+            .equals(other.getLocation());
         return result;
       }
 
@@ -6175,6 +6279,11 @@ public final class Msg {
         hash = (37 * hash) + UID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getUId());
+        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTimestamp());
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -6295,6 +6404,10 @@ public final class Msg {
           super.clear();
           uId_ = 0L;
 
+          timestamp_ = 0L;
+
+          location_ = "";
+
           return this;
         }
 
@@ -6318,6 +6431,8 @@ public final class Msg {
         public com.ghj.protocol.Msg.SysMsg.Greet buildPartial() {
           com.ghj.protocol.Msg.SysMsg.Greet result = new com.ghj.protocol.Msg.SysMsg.Greet(this);
           result.uId_ = uId_;
+          result.timestamp_ = timestamp_;
+          result.location_ = location_;
           onBuilt();
           return result;
         }
@@ -6361,6 +6476,13 @@ public final class Msg {
           if (other == com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance()) return this;
           if (other.getUId() != 0L) {
             setUId(other.getUId());
+          }
+          if (other.getTimestamp() != 0L) {
+            setTimestamp(other.getTimestamp());
+          }
+          if (!other.getLocation().isEmpty()) {
+            location_ = other.location_;
+            onChanged();
           }
           onChanged();
           return this;
@@ -6410,6 +6532,121 @@ public final class Msg {
         public Builder clearUId() {
           
           uId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long timestamp_ ;
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public long getTimestamp() {
+          return timestamp_;
+        }
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public Builder setTimestamp(long value) {
+          
+          timestamp_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public Builder clearTimestamp() {
+          
+          timestamp_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object location_ = "";
+        /**
+         * <pre>
+         *        string uName = 4;
+         * </pre>
+         *
+         * <code>optional string location = 3;</code>
+         */
+        public java.lang.String getLocation() {
+          java.lang.Object ref = location_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            location_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         *        string uName = 4;
+         * </pre>
+         *
+         * <code>optional string location = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getLocationBytes() {
+          java.lang.Object ref = location_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            location_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         *        string uName = 4;
+         * </pre>
+         *
+         * <code>optional string location = 3;</code>
+         */
+        public Builder setLocation(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          location_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         *        string uName = 4;
+         * </pre>
+         *
+         * <code>optional string location = 3;</code>
+         */
+        public Builder clearLocation() {
+          
+          location_ = getDefaultInstance().getLocation();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         *        string uName = 4;
+         * </pre>
+         *
+         * <code>optional string location = 3;</code>
+         */
+        public Builder setLocationBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          location_ = value;
           onChanged();
           return this;
         }
@@ -6470,6 +6707,11 @@ public final class Msg {
        * <code>optional int32 port = 1;</code>
        */
       int getPort();
+
+      /**
+       * <code>optional int64 timestamp = 2;</code>
+       */
+      long getTimestamp();
     }
     /**
      * Protobuf type {@code SysMsg.Register}
@@ -6484,6 +6726,7 @@ public final class Msg {
       }
       private Register() {
         port_ = 0;
+        timestamp_ = 0L;
       }
 
       @java.lang.Override
@@ -6514,6 +6757,11 @@ public final class Msg {
               case 8: {
 
                 port_ = input.readInt32();
+                break;
+              }
+              case 16: {
+
+                timestamp_ = input.readInt64();
                 break;
               }
             }
@@ -6548,6 +6796,15 @@ public final class Msg {
         return port_;
       }
 
+      public static final int TIMESTAMP_FIELD_NUMBER = 2;
+      private long timestamp_;
+      /**
+       * <code>optional int64 timestamp = 2;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -6563,6 +6820,9 @@ public final class Msg {
         if (port_ != 0) {
           output.writeInt32(1, port_);
         }
+        if (timestamp_ != 0L) {
+          output.writeInt64(2, timestamp_);
+        }
       }
 
       public int getSerializedSize() {
@@ -6573,6 +6833,10 @@ public final class Msg {
         if (port_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(1, port_);
+        }
+        if (timestamp_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(2, timestamp_);
         }
         memoizedSize = size;
         return size;
@@ -6592,6 +6856,8 @@ public final class Msg {
         boolean result = true;
         result = result && (getPort()
             == other.getPort());
+        result = result && (getTimestamp()
+            == other.getTimestamp());
         return result;
       }
 
@@ -6604,6 +6870,9 @@ public final class Msg {
         hash = (19 * hash) + getDescriptorForType().hashCode();
         hash = (37 * hash) + PORT_FIELD_NUMBER;
         hash = (53 * hash) + getPort();
+        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTimestamp());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -6724,6 +6993,8 @@ public final class Msg {
           super.clear();
           port_ = 0;
 
+          timestamp_ = 0L;
+
           return this;
         }
 
@@ -6747,6 +7018,7 @@ public final class Msg {
         public com.ghj.protocol.Msg.SysMsg.Register buildPartial() {
           com.ghj.protocol.Msg.SysMsg.Register result = new com.ghj.protocol.Msg.SysMsg.Register(this);
           result.port_ = port_;
+          result.timestamp_ = timestamp_;
           onBuilt();
           return result;
         }
@@ -6790,6 +7062,9 @@ public final class Msg {
           if (other == com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance()) return this;
           if (other.getPort() != 0) {
             setPort(other.getPort());
+          }
+          if (other.getTimestamp() != 0L) {
+            setTimestamp(other.getTimestamp());
           }
           onChanged();
           return this;
@@ -6839,6 +7114,32 @@ public final class Msg {
         public Builder clearPort() {
           
           port_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long timestamp_ ;
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public long getTimestamp() {
+          return timestamp_;
+        }
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public Builder setTimestamp(long value) {
+          
+          timestamp_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 timestamp = 2;</code>
+         */
+        public Builder clearTimestamp() {
+          
+          timestamp_ = 0L;
           onChanged();
           return this;
         }
@@ -6922,6 +7223,11 @@ public final class Msg {
        */
       com.google.protobuf.ByteString
           getAddressBytes(int index);
+
+      /**
+       * <code>optional int64 timestamp = 3;</code>
+       */
+      long getTimestamp();
     }
     /**
      * Protobuf type {@code SysMsg.Routing}
@@ -6937,6 +7243,7 @@ public final class Msg {
       private Routing() {
         source_ = 0;
         address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        timestamp_ = 0L;
       }
 
       @java.lang.Override
@@ -6977,6 +7284,11 @@ public final class Msg {
                   mutable_bitField0_ |= 0x00000002;
                 }
                 address_.add(s);
+                break;
+              }
+              case 24: {
+
+                timestamp_ = input.readInt64();
                 break;
               }
             }
@@ -7051,6 +7363,15 @@ public final class Msg {
         return address_.getByteString(index);
       }
 
+      public static final int TIMESTAMP_FIELD_NUMBER = 3;
+      private long timestamp_;
+      /**
+       * <code>optional int64 timestamp = 3;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -7068,6 +7389,9 @@ public final class Msg {
         }
         for (int i = 0; i < address_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_.getRaw(i));
+        }
+        if (timestamp_ != 0L) {
+          output.writeInt64(3, timestamp_);
         }
       }
 
@@ -7088,6 +7412,10 @@ public final class Msg {
           size += dataSize;
           size += 1 * getAddressList().size();
         }
+        if (timestamp_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(3, timestamp_);
+        }
         memoizedSize = size;
         return size;
       }
@@ -7107,6 +7435,8 @@ public final class Msg {
         result = result && source_ == other.source_;
         result = result && getAddressList()
             .equals(other.getAddressList());
+        result = result && (getTimestamp()
+            == other.getTimestamp());
         return result;
       }
 
@@ -7123,6 +7453,9 @@ public final class Msg {
           hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
           hash = (53 * hash) + getAddressList().hashCode();
         }
+        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTimestamp());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7245,6 +7578,8 @@ public final class Msg {
 
           address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000002);
+          timestamp_ = 0L;
+
           return this;
         }
 
@@ -7275,6 +7610,7 @@ public final class Msg {
             bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.address_ = address_;
+          result.timestamp_ = timestamp_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -7329,6 +7665,9 @@ public final class Msg {
               address_.addAll(other.address_);
             }
             onChanged();
+          }
+          if (other.getTimestamp() != 0L) {
+            setTimestamp(other.getTimestamp());
           }
           onChanged();
           return this;
@@ -7491,6 +7830,32 @@ public final class Msg {
   checkByteStringIsUtf8(value);
           ensureAddressIsMutable();
           address_.add(value);
+          onChanged();
+          return this;
+        }
+
+        private long timestamp_ ;
+        /**
+         * <code>optional int64 timestamp = 3;</code>
+         */
+        public long getTimestamp() {
+          return timestamp_;
+        }
+        /**
+         * <code>optional int64 timestamp = 3;</code>
+         */
+        public Builder setTimestamp(long value) {
+          
+          timestamp_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 timestamp = 3;</code>
+         */
+        public Builder clearTimestamp() {
+          
+          timestamp_ = 0L;
           onChanged();
           return this;
         }
@@ -9035,7 +9400,7 @@ public final class Msg {
       "!\n\007msgType\030\006 \001(\0162\020.Receipt.MsgType\022\021\n\tti" +
       "mestamp\030\007 \001(\003\"!\n\010MsgState\022\013\n\007RECEIVE\020\000\022\010" +
       "\n\004READ\020\001\" \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GROUP" +
-      "\020\001\"\333\004\n\006SysMsg\022\n\n\002id\030\001 \001(\003\022\035\n\005fromM\030\002 \001(\016",
+      "\020\001\"\246\005\n\006SysMsg\022\n\n\002id\030\001 \001(\003\022\035\n\005fromM\030\002 \001(\016",
       "2\016.SysMsg.Module\022\033\n\003toM\030\003 \001(\0162\016.SysMsg.M" +
       "odule\022\021\n\ttimestamp\030\004 \001(\003\022 \n\007msgType\030\005 \001(" +
       "\0162\017.SysMsg.MsgType\022\032\n\003ack\030\006 \001(\0132\013.SysMsg" +
@@ -9043,15 +9408,16 @@ public final class Msg {
       "\n\010register\030\010 \001(\0132\020.SysMsg.RegisterH\000\022\"\n\007" +
       "routing\030\t \001(\0132\017.SysMsg.RoutingH\000\0326\n\003Ack\022" +
       "\020\n\010ackMsgId\030\001 \001(\003\022\014\n\004code\030\002 \001(\005\022\017\n\007messa" +
-      "ge\030\003 \001(\t\032\024\n\005Greet\022\013\n\003uId\030\001 \001(\003\032\030\n\010Regist" +
-      "er\022\014\n\004port\030\001 \001(\005\032:\n\007Routing\022\036\n\006source\030\001 " +
-      "\001(\0162\016.SysMsg.Module\022\017\n\007address\030\002 \003(\t\"8\n\007",
-      "MsgType\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007ROUT" +
-      "ING\020\002\022\007\n\003ACK\020\003\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n\n\006" +
-      "ROUTER\020\001\022\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHAT\020" +
-      "\004\022\010\n\004PUSH\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007B\t\n" +
-      "\007msgBodyB\027\n\020com.ghj.protocolB\003Msgb\006proto" +
-      "3"
+      "ge\030\003 \001(\t\0329\n\005Greet\022\013\n\003uId\030\001 \001(\003\022\021\n\ttimest" +
+      "amp\030\002 \001(\003\022\020\n\010location\030\003 \001(\t\032+\n\010Register\022" +
+      "\014\n\004port\030\001 \001(\005\022\021\n\ttimestamp\030\002 \001(\003\032M\n\007Rout",
+      "ing\022\036\n\006source\030\001 \001(\0162\016.SysMsg.Module\022\017\n\007a" +
+      "ddress\030\002 \003(\t\022\021\n\ttimestamp\030\003 \001(\003\"8\n\007MsgTy" +
+      "pe\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007ROUTING\020\002" +
+      "\022\007\n\003ACK\020\003\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n\n\006ROUTE" +
+      "R\020\001\022\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHAT\020\004\022\010\n\004" +
+      "PUSH\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007B\t\n\007msgB" +
+      "odyB\027\n\020com.ghj.protocolB\003Msgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9112,19 +9478,19 @@ public final class Msg {
     internal_static_SysMsg_Greet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SysMsg_Greet_descriptor,
-        new java.lang.String[] { "UId", });
+        new java.lang.String[] { "UId", "Timestamp", "Location", });
     internal_static_SysMsg_Register_descriptor =
       internal_static_SysMsg_descriptor.getNestedTypes().get(2);
     internal_static_SysMsg_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SysMsg_Register_descriptor,
-        new java.lang.String[] { "Port", });
+        new java.lang.String[] { "Port", "Timestamp", });
     internal_static_SysMsg_Routing_descriptor =
       internal_static_SysMsg_descriptor.getNestedTypes().get(3);
     internal_static_SysMsg_Routing_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SysMsg_Routing_descriptor,
-        new java.lang.String[] { "Source", "Address", });
+        new java.lang.String[] { "Source", "Address", "Timestamp", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
