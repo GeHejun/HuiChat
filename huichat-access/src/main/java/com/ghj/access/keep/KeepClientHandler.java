@@ -22,11 +22,17 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg.Data data) throws Exception {
         switch (data.getDataType()) {
-            case ACK:
+            case CHAT:
+                dealChatMsg(data);
                 break;
 
 
         }
+    }
+
+    private void dealChatMsg(Msg.Data data) {
+        Msg.Chat chat = data.getChat();
+
     }
 
     public synchronized void sendMsg(Msg.Data data) {

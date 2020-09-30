@@ -1,4 +1,4 @@
-package com.ghj.common;
+package com.ghj.access.keep;
 
 public enum HSStatusEnum {
     ON_LINE(1, "在线"),

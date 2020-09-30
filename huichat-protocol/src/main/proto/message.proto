@@ -8,7 +8,7 @@ option java_outer_classname = "Msg";
 message Data {
     enum DataType {
         CHAT = 0;
-        ACK = 1;
+        RECEIPT = 1;
     }
     DataType dataType = 1;
     oneof dataBody {
@@ -23,7 +23,7 @@ message Chat {
     MsgType msgType = 4;
     ContentType contentType = 5;
     bytes content = 6;
-    int64 createTime = 7;
+    int64 timestamp = 7;
     string extra = 8;
     enum MsgType {
         SINGLE = 0;
@@ -54,6 +54,7 @@ message Receipt {
     int64 receiptMsgId = 4;
     MsgState state = 5;
     MsgType msgType = 6;
+    int64 timestamp = 7;
     enum MsgState {
         RECEIVE = 0;
         READ = 1;

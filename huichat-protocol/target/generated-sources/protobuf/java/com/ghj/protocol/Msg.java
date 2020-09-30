@@ -154,9 +154,9 @@ public final class Msg {
        */
       CHAT(0),
       /**
-       * <code>ACK = 1;</code>
+       * <code>RECEIPT = 1;</code>
        */
-      ACK(1),
+      RECEIPT(1),
       UNRECOGNIZED(-1),
       ;
 
@@ -165,9 +165,9 @@ public final class Msg {
        */
       public static final int CHAT_VALUE = 0;
       /**
-       * <code>ACK = 1;</code>
+       * <code>RECEIPT = 1;</code>
        */
-      public static final int ACK_VALUE = 1;
+      public static final int RECEIPT_VALUE = 1;
 
 
       public final int getNumber() {
@@ -189,7 +189,7 @@ public final class Msg {
       public static DataType forNumber(int value) {
         switch (value) {
           case 0: return CHAT;
-          case 1: return ACK;
+          case 1: return RECEIPT;
           default: return null;
         }
       }
@@ -1085,9 +1085,9 @@ public final class Msg {
     com.google.protobuf.ByteString getContent();
 
     /**
-     * <code>optional int64 createTime = 7;</code>
+     * <code>optional int64 timestamp = 7;</code>
      */
-    long getCreateTime();
+    long getTimestamp();
 
     /**
      * <code>optional string extra = 8;</code>
@@ -1117,7 +1117,7 @@ public final class Msg {
       msgType_ = 0;
       contentType_ = 0;
       content_ = com.google.protobuf.ByteString.EMPTY;
-      createTime_ = 0L;
+      timestamp_ = 0L;
       extra_ = "";
     }
 
@@ -1180,7 +1180,7 @@ public final class Msg {
             }
             case 56: {
 
-              createTime_ = input.readInt64();
+              timestamp_ = input.readInt64();
               break;
             }
             case 66: {
@@ -2857,13 +2857,13 @@ public final class Msg {
       return content_;
     }
 
-    public static final int CREATETIME_FIELD_NUMBER = 7;
-    private long createTime_;
+    public static final int TIMESTAMP_FIELD_NUMBER = 7;
+    private long timestamp_;
     /**
-     * <code>optional int64 createTime = 7;</code>
+     * <code>optional int64 timestamp = 7;</code>
      */
-    public long getCreateTime() {
-      return createTime_;
+    public long getTimestamp() {
+      return timestamp_;
     }
 
     public static final int EXTRA_FIELD_NUMBER = 8;
@@ -2930,8 +2930,8 @@ public final class Msg {
       if (!content_.isEmpty()) {
         output.writeBytes(6, content_);
       }
-      if (createTime_ != 0L) {
-        output.writeInt64(7, createTime_);
+      if (timestamp_ != 0L) {
+        output.writeInt64(7, timestamp_);
       }
       if (!getExtraBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, extra_);
@@ -2967,9 +2967,9 @@ public final class Msg {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, content_);
       }
-      if (createTime_ != 0L) {
+      if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, createTime_);
+          .computeInt64Size(7, timestamp_);
       }
       if (!getExtraBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, extra_);
@@ -3000,8 +3000,8 @@ public final class Msg {
       result = result && contentType_ == other.contentType_;
       result = result && getContent()
           .equals(other.getContent());
-      result = result && (getCreateTime()
-          == other.getCreateTime());
+      result = result && (getTimestamp()
+          == other.getTimestamp());
       result = result && getExtra()
           .equals(other.getExtra());
       return result;
@@ -3029,9 +3029,9 @@ public final class Msg {
       hash = (53 * hash) + contentType_;
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
-      hash = (37 * hash) + CREATETIME_FIELD_NUMBER;
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreateTime());
+          getTimestamp());
       hash = (37 * hash) + EXTRA_FIELD_NUMBER;
       hash = (53 * hash) + getExtra().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3164,7 +3164,7 @@ public final class Msg {
 
         content_ = com.google.protobuf.ByteString.EMPTY;
 
-        createTime_ = 0L;
+        timestamp_ = 0L;
 
         extra_ = "";
 
@@ -3196,7 +3196,7 @@ public final class Msg {
         result.msgType_ = msgType_;
         result.contentType_ = contentType_;
         result.content_ = content_;
-        result.createTime_ = createTime_;
+        result.timestamp_ = timestamp_;
         result.extra_ = extra_;
         onBuilt();
         return result;
@@ -3257,8 +3257,8 @@ public final class Msg {
         if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
           setContent(other.getContent());
         }
-        if (other.getCreateTime() != 0L) {
-          setCreateTime(other.getCreateTime());
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         if (!other.getExtra().isEmpty()) {
           extra_ = other.extra_;
@@ -3485,28 +3485,28 @@ public final class Msg {
         return this;
       }
 
-      private long createTime_ ;
+      private long timestamp_ ;
       /**
-       * <code>optional int64 createTime = 7;</code>
+       * <code>optional int64 timestamp = 7;</code>
        */
-      public long getCreateTime() {
-        return createTime_;
+      public long getTimestamp() {
+        return timestamp_;
       }
       /**
-       * <code>optional int64 createTime = 7;</code>
+       * <code>optional int64 timestamp = 7;</code>
        */
-      public Builder setCreateTime(long value) {
+      public Builder setTimestamp(long value) {
         
-        createTime_ = value;
+        timestamp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 createTime = 7;</code>
+       * <code>optional int64 timestamp = 7;</code>
        */
-      public Builder clearCreateTime() {
+      public Builder clearTimestamp() {
         
-        createTime_ = 0L;
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -3669,6 +3669,11 @@ public final class Msg {
      * <code>optional .Receipt.MsgType msgType = 6;</code>
      */
     com.ghj.protocol.Msg.Receipt.MsgType getMsgType();
+
+    /**
+     * <code>optional int64 timestamp = 7;</code>
+     */
+    long getTimestamp();
   }
   /**
    * Protobuf type {@code Receipt}
@@ -3688,6 +3693,7 @@ public final class Msg {
       receiptMsgId_ = 0L;
       state_ = 0;
       msgType_ = 0;
+      timestamp_ = 0L;
     }
 
     @java.lang.Override
@@ -3745,6 +3751,11 @@ public final class Msg {
               int rawValue = input.readEnum();
 
               msgType_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              timestamp_ = input.readInt64();
               break;
             }
           }
@@ -4034,6 +4045,15 @@ public final class Msg {
       return result == null ? com.ghj.protocol.Msg.Receipt.MsgType.UNRECOGNIZED : result;
     }
 
+    public static final int TIMESTAMP_FIELD_NUMBER = 7;
+    private long timestamp_;
+    /**
+     * <code>optional int64 timestamp = 7;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4063,6 +4083,9 @@ public final class Msg {
       }
       if (msgType_ != com.ghj.protocol.Msg.Receipt.MsgType.SINGLE.getNumber()) {
         output.writeEnum(6, msgType_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(7, timestamp_);
       }
     }
 
@@ -4095,6 +4118,10 @@ public final class Msg {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, msgType_);
       }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, timestamp_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -4121,6 +4148,8 @@ public final class Msg {
           == other.getReceiptMsgId());
       result = result && state_ == other.state_;
       result = result && msgType_ == other.msgType_;
+      result = result && (getTimestamp()
+          == other.getTimestamp());
       return result;
     }
 
@@ -4147,6 +4176,9 @@ public final class Msg {
       hash = (53 * hash) + state_;
       hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
       hash = (53 * hash) + msgType_;
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4277,6 +4309,8 @@ public final class Msg {
 
         msgType_ = 0;
 
+        timestamp_ = 0L;
+
         return this;
       }
 
@@ -4305,6 +4339,7 @@ public final class Msg {
         result.receiptMsgId_ = receiptMsgId_;
         result.state_ = state_;
         result.msgType_ = msgType_;
+        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -4363,6 +4398,9 @@ public final class Msg {
         }
         if (other.msgType_ != 0) {
           setMsgTypeValue(other.getMsgTypeValue());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         onChanged();
         return this;
@@ -4581,6 +4619,32 @@ public final class Msg {
         onChanged();
         return this;
       }
+
+      private long timestamp_ ;
+      /**
+       * <code>optional int64 timestamp = 7;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>optional int64 timestamp = 7;</code>
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 timestamp = 7;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -4664,25 +4728,25 @@ public final class Msg {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rmessage.proto\"\207\001\n\004Data\022 \n\010dataType\030\001 \001" +
+      "\n\rmessage.proto\"\213\001\n\004Data\022 \n\010dataType\030\001 \001" +
       "(\0162\016.Data.DataType\022\025\n\004chat\030\002 \001(\0132\005.ChatH" +
-      "\000\022\033\n\007receipt\030\003 \001(\0132\010.ReceiptH\000\"\035\n\010DataTy" +
-      "pe\022\010\n\004CHAT\020\000\022\007\n\003ACK\020\001B\n\n\010dataBody\"\316\002\n\004Ch" +
-      "at\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003 \001(\003" +
-      "\022\036\n\007msgType\030\004 \001(\0162\r.Chat.MsgType\022&\n\013cont" +
-      "entType\030\005 \001(\0162\021.Chat.ContentType\022\017\n\007cont" +
-      "ent\030\006 \001(\014\022\022\n\ncreateTime\030\007 \001(\003\022\r\n\005extra\030\010" +
-      " \001(\t\032\024\n\004Text\022\014\n\004text\030\001 \001(\t\032I\n\004File\022\016\n\006fi" +
-      "leId\030\001 \001(\t\022\023\n\013media_crc32\030\002 \001(\005\022\r\n\005fSize",
-      "\030\003 \001(\005\022\r\n\005fName\030\004 \001(\t\" \n\007MsgType\022\n\n\006SING" +
-      "LE\020\000\022\t\n\005GROUP\020\001\"!\n\013ContentType\022\010\n\004TEXT\020\000" +
-      "\022\010\n\004FILE\020\001\"\317\001\n\007Receipt\022\n\n\002id\030\001 \001(\003\022\014\n\004fr" +
-      "om\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\024\n\014receiptMsgId\030\004 \001" +
-      "(\003\022 \n\005state\030\005 \001(\0162\021.Receipt.MsgState\022!\n\007" +
-      "msgType\030\006 \001(\0162\020.Receipt.MsgType\"!\n\010MsgSt" +
-      "ate\022\013\n\007RECEIVE\020\000\022\010\n\004READ\020\001\" \n\007MsgType\022\n\n" +
-      "\006SINGLE\020\000\022\t\n\005GROUP\020\001B\027\n\020com.ghj.protocol" +
-      "B\003Msgb\006proto3"
+      "\000\022\033\n\007receipt\030\003 \001(\0132\010.ReceiptH\000\"!\n\010DataTy" +
+      "pe\022\010\n\004CHAT\020\000\022\013\n\007RECEIPT\020\001B\n\n\010dataBody\"\315\002" +
+      "\n\004Chat\022\n\n\002id\030\001 \001(\003\022\014\n\004form\030\002 \001(\003\022\n\n\002to\030\003" +
+      " \001(\003\022\036\n\007msgType\030\004 \001(\0162\r.Chat.MsgType\022&\n\013" +
+      "contentType\030\005 \001(\0162\021.Chat.ContentType\022\017\n\007" +
+      "content\030\006 \001(\014\022\021\n\ttimestamp\030\007 \001(\003\022\r\n\005extr" +
+      "a\030\010 \001(\t\032\024\n\004Text\022\014\n\004text\030\001 \001(\t\032I\n\004File\022\016\n" +
+      "\006fileId\030\001 \001(\t\022\023\n\013media_crc32\030\002 \001(\005\022\r\n\005fS",
+      "ize\030\003 \001(\005\022\r\n\005fName\030\004 \001(\t\" \n\007MsgType\022\n\n\006S" +
+      "INGLE\020\000\022\t\n\005GROUP\020\001\"!\n\013ContentType\022\010\n\004TEX" +
+      "T\020\000\022\010\n\004FILE\020\001\"\342\001\n\007Receipt\022\n\n\002id\030\001 \001(\003\022\014\n" +
+      "\004from\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\024\n\014receiptMsgId\030" +
+      "\004 \001(\003\022 \n\005state\030\005 \001(\0162\021.Receipt.MsgState\022" +
+      "!\n\007msgType\030\006 \001(\0162\020.Receipt.MsgType\022\021\n\tti" +
+      "mestamp\030\007 \001(\003\"!\n\010MsgState\022\013\n\007RECEIVE\020\000\022\010" +
+      "\n\004READ\020\001\" \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GROUP" +
+      "\020\001B\027\n\020com.ghj.protocolB\003Msgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4707,7 +4771,7 @@ public final class Msg {
     internal_static_Chat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Chat_descriptor,
-        new java.lang.String[] { "Id", "Form", "To", "MsgType", "ContentType", "Content", "CreateTime", "Extra", });
+        new java.lang.String[] { "Id", "Form", "To", "MsgType", "ContentType", "Content", "Timestamp", "Extra", });
     internal_static_Chat_Text_descriptor =
       internal_static_Chat_descriptor.getNestedTypes().get(0);
     internal_static_Chat_Text_fieldAccessorTable = new
@@ -4725,7 +4789,7 @@ public final class Msg {
     internal_static_Receipt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Receipt_descriptor,
-        new java.lang.String[] { "Id", "From", "To", "ReceiptMsgId", "State", "MsgType", });
+        new java.lang.String[] { "Id", "From", "To", "ReceiptMsgId", "State", "MsgType", "Timestamp", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

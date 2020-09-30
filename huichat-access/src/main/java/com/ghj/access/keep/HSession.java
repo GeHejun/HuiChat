@@ -1,5 +1,6 @@
-package com.ghj.common;
+package com.ghj.access.keep;
 
+import io.netty.channel.ChannelHandlerContext;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -9,10 +10,9 @@ import lombok.experimental.Accessors;
 public class HSession {
 
     /**
-     * channel的唯一ID
+     * channel
      */
-    private String channelId;
-
+    private ChannelHandlerContext ctx;
 
     /**
      * channel创建时间
