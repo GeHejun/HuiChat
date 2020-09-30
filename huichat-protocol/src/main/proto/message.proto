@@ -9,11 +9,13 @@ message Data {
     enum DataType {
         CHAT = 0;
         RECEIPT = 1;
+        SYS_MSG = 2;
     }
     DataType dataType = 1;
     oneof dataBody {
         Chat chat = 2;
         Receipt receipt = 3;
+        SysMsg sysMsg = 4;
     }
 }
 message Chat {
@@ -74,6 +76,13 @@ message SysMsg {
     string content = 7;
     enum Module {
         CLIENT = 0;
+        ROUTER = 1;
+        PROXY = 2;
+        CHAT = 3;
+        G_CHAT = 4;
+        PUSH = 5;
+        REGISTRY = 6;
+        ACCESS = 7;
     }
     enum BehaviorType{
         GREET = 0;

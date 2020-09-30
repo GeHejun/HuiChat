@@ -1,6 +1,9 @@
 package com.ghj.access.keep;
 
 import com.ghj.access.config.Config;
+import com.ghj.common.util.DataCenterIdGenerator;
+import com.ghj.common.util.SnowFlakeIdGenerator;
+import com.ghj.common.util.WorkIdGenerator;
 import com.ghj.protocol.Msg;
 import com.google.common.collect.Lists;
 import io.netty.bootstrap.ServerBootstrap;
@@ -87,23 +90,37 @@ public class Keeper {
     }
 
     private void startClient() {
+        register();
+
+//        String address = "";
+//        String[] addresses = address.split(";");
+//        int routerCount = addresses.length;
+//        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
+//        //遍历列表获取router配置
+//        for (String s : addresses) {
+//            String routerHost = s.split(":")[0];
+//            String routerPort = s.split(":")[1];
+//            keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
+//        }
+//        keepHandler.setKeepClients(keepClients);
+        //连接
+    }
+
+    public void register() {
         int port = config.getRegistryServerPort();
         String host = config.getRegistryServerHost();
         //连接注册中心
         KeepClient keepClient = new KeepClient(host, port);
-
-        String address = "";
-        String[] addresses = address.split(";");
-        int routerCount = addresses.length;
-        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
-        //遍历列表获取router配置
-        for (String s : addresses) {
-            String routerHost = s.split(":")[0];
-            String routerPort = s.split(":")[1];
-            keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
-        }
-        keepHandler.setKeepClients(keepClients);
-        //连接
+        Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
+                .setBehaviorType(Msg.SysMsg.BehaviorType.REGISTER)
+                .setContent(String.valueOf(config.getKeepServerPort()))
+                .setId(new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId())
+                .setFromM(Msg.SysMsg.Module.ACCESS)
+                .setToM(Msg.SysMsg.Module.REGISTRY)
+                .setTimestamp(System.currentTimeMillis())
+                .build();
+        Msg.Data data = Msg.Data.newBuilder().setDataType(Msg.Data.DataType.SYS_MSG).setSysMsg(sysMsg).build();
+        keepClient.sendMsg(data);
     }
 
     /**
