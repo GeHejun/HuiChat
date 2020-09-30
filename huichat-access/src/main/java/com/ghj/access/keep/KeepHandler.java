@@ -46,12 +46,12 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
         if (SYS_MSG == data.getDataType()) {
             buildContext(ctx, data.getSysMsg());
         } else {
-            sendToRouter(data);
+            sendChatMsgToRouter(data);
         }
 
     }
 
-    private void sendToRouter(Msg.Data data) {
+    private void sendChatMsgToRouter(Msg.Data data) {
         int index = random.nextInt(keepClients.size());
         KeepClient keepClient = keepClients.get(index);
         keepClient.sendMsg(data);
