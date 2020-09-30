@@ -16,7 +16,7 @@ import java.util.Random;
 @Slf4j
 public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
-    private static Random random = new Random();
+    private Random random = new Random();
 
     List<KeepClient> keepClients;
 

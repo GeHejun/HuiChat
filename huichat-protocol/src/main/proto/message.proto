@@ -65,3 +65,19 @@ message Receipt {
     }
 }
 
+message SysMsg {
+    int64 id = 2;
+    Module fromM = 3;
+    Module toM = 4;
+    int64 timestamp = 5;
+    BehaviorType behaviorType = 6;
+    string content = 7;
+    enum Module {
+        CLIENT = 0;
+    }
+    enum BehaviorType{
+        GREET = 0;
+        ACK = 1;
+    }
+}
+
