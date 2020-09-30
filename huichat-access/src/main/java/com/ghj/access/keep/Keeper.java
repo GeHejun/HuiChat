@@ -109,7 +109,6 @@ public class Keeper {
     public void register() {
         int port = config.getRegistryServerPort();
         String host = config.getRegistryServerHost();
-        //连接注册中心
         KeepClient keepClient = new KeepClient(host, port);
         Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
                 .setBehaviorType(Msg.SysMsg.BehaviorType.REGISTER)

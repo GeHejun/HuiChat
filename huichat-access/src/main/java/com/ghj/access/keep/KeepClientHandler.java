@@ -1,5 +1,6 @@
 package com.ghj.access.keep;
 
+import com.alibaba.fastjson.JSON;
 import com.ghj.protocol.Msg;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -21,13 +22,32 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg.Data data) throws Exception {
+        dealMsg(data);
+
+    }
+
+    private void dealMsg(Msg.Data data) {
         switch (data.getDataType()) {
+            case SYS_MSG:
+                dealSysMsg(data);
+                break;
             case CHAT:
                 dealChatMsg(data);
                 break;
 
 
         }
+    }
+
+    private void dealSysMsg(Msg.Data data) {
+        Msg.SysMsg sysMsg = data.getSysMsg();
+        switch (sysMsg.getMsgType()) {
+            case ROUTING:
+                Msg.SysMsg.Routing routing = sysMsg.getRouting();
+            case ACK:
+
+        }
+
     }
 
     private void dealChatMsg(Msg.Data data) {

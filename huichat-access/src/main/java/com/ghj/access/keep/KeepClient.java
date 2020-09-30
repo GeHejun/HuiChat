@@ -16,7 +16,7 @@ public class KeepClient implements Runnable {
 
     private Channel keepClientChannel;
 
-   KeepClientHandler keepClientHandler = new KeepClientHandler();
+    KeepClientHandler keepClientHandler = new KeepClientHandler();
 
     EventLoopGroup group = new NioEventLoopGroup();
 

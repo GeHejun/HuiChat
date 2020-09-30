@@ -4909,51 +4909,79 @@ public final class Msg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 id = 2;</code>
+     * <code>optional int64 id = 1;</code>
      */
     long getId();
 
     /**
-     * <code>optional .SysMsg.Module fromM = 3;</code>
+     * <code>optional .SysMsg.Module fromM = 2;</code>
      */
     int getFromMValue();
     /**
-     * <code>optional .SysMsg.Module fromM = 3;</code>
+     * <code>optional .SysMsg.Module fromM = 2;</code>
      */
     com.ghj.protocol.Msg.SysMsg.Module getFromM();
 
     /**
-     * <code>optional .SysMsg.Module toM = 4;</code>
+     * <code>optional .SysMsg.Module toM = 3;</code>
      */
     int getToMValue();
     /**
-     * <code>optional .SysMsg.Module toM = 4;</code>
+     * <code>optional .SysMsg.Module toM = 3;</code>
      */
     com.ghj.protocol.Msg.SysMsg.Module getToM();
 
     /**
-     * <code>optional int64 timestamp = 5;</code>
+     * <code>optional int64 timestamp = 4;</code>
      */
     long getTimestamp();
 
     /**
-     * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+     * <code>optional .SysMsg.MsgType msgType = 5;</code>
      */
-    int getBehaviorTypeValue();
+    int getMsgTypeValue();
     /**
-     * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+     * <code>optional .SysMsg.MsgType msgType = 5;</code>
      */
-    com.ghj.protocol.Msg.SysMsg.BehaviorType getBehaviorType();
+    com.ghj.protocol.Msg.SysMsg.MsgType getMsgType();
 
     /**
-     * <code>optional string content = 7;</code>
+     * <code>optional .SysMsg.Ack ack = 6;</code>
      */
-    java.lang.String getContent();
+    com.ghj.protocol.Msg.SysMsg.Ack getAck();
     /**
-     * <code>optional string content = 7;</code>
+     * <code>optional .SysMsg.Ack ack = 6;</code>
      */
-    com.google.protobuf.ByteString
-        getContentBytes();
+    com.ghj.protocol.Msg.SysMsg.AckOrBuilder getAckOrBuilder();
+
+    /**
+     * <code>optional .SysMsg.Greet greet = 7;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.Greet getGreet();
+    /**
+     * <code>optional .SysMsg.Greet greet = 7;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.GreetOrBuilder getGreetOrBuilder();
+
+    /**
+     * <code>optional .SysMsg.Register register = 8;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.Register getRegister();
+    /**
+     * <code>optional .SysMsg.Register register = 8;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder getRegisterOrBuilder();
+
+    /**
+     * <code>optional .SysMsg.Routing routing = 9;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.Routing getRouting();
+    /**
+     * <code>optional .SysMsg.Routing routing = 9;</code>
+     */
+    com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder getRoutingOrBuilder();
+
+    public com.ghj.protocol.Msg.SysMsg.MsgBodyCase getMsgBodyCase();
   }
   /**
    * Protobuf type {@code SysMsg}
@@ -4971,8 +4999,7 @@ public final class Msg {
       fromM_ = 0;
       toM_ = 0;
       timestamp_ = 0L;
-      behaviorType_ = 0;
-      content_ = "";
+      msgType_ = 0;
     }
 
     @java.lang.Override
@@ -5000,38 +5027,88 @@ public final class Msg {
               }
               break;
             }
-            case 16: {
+            case 8: {
 
               id_ = input.readInt64();
               break;
             }
-            case 24: {
+            case 16: {
               int rawValue = input.readEnum();
 
               fromM_ = rawValue;
               break;
             }
-            case 32: {
+            case 24: {
               int rawValue = input.readEnum();
 
               toM_ = rawValue;
               break;
             }
-            case 40: {
+            case 32: {
 
               timestamp_ = input.readInt64();
               break;
             }
-            case 48: {
+            case 40: {
               int rawValue = input.readEnum();
 
-              behaviorType_ = rawValue;
+              msgType_ = rawValue;
+              break;
+            }
+            case 50: {
+              com.ghj.protocol.Msg.SysMsg.Ack.Builder subBuilder = null;
+              if (msgBodyCase_ == 6) {
+                subBuilder = ((com.ghj.protocol.Msg.SysMsg.Ack) msgBody_).toBuilder();
+              }
+              msgBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.SysMsg.Ack.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.SysMsg.Ack) msgBody_);
+                msgBody_ = subBuilder.buildPartial();
+              }
+              msgBodyCase_ = 6;
               break;
             }
             case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              content_ = s;
+              com.ghj.protocol.Msg.SysMsg.Greet.Builder subBuilder = null;
+              if (msgBodyCase_ == 7) {
+                subBuilder = ((com.ghj.protocol.Msg.SysMsg.Greet) msgBody_).toBuilder();
+              }
+              msgBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.SysMsg.Greet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.SysMsg.Greet) msgBody_);
+                msgBody_ = subBuilder.buildPartial();
+              }
+              msgBodyCase_ = 7;
+              break;
+            }
+            case 66: {
+              com.ghj.protocol.Msg.SysMsg.Register.Builder subBuilder = null;
+              if (msgBodyCase_ == 8) {
+                subBuilder = ((com.ghj.protocol.Msg.SysMsg.Register) msgBody_).toBuilder();
+              }
+              msgBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.SysMsg.Register.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.SysMsg.Register) msgBody_);
+                msgBody_ = subBuilder.buildPartial();
+              }
+              msgBodyCase_ = 8;
+              break;
+            }
+            case 74: {
+              com.ghj.protocol.Msg.SysMsg.Routing.Builder subBuilder = null;
+              if (msgBodyCase_ == 9) {
+                subBuilder = ((com.ghj.protocol.Msg.SysMsg.Routing) msgBody_).toBuilder();
+              }
+              msgBody_ =
+                  input.readMessage(com.ghj.protocol.Msg.SysMsg.Routing.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.ghj.protocol.Msg.SysMsg.Routing) msgBody_);
+                msgBody_ = subBuilder.buildPartial();
+              }
+              msgBodyCase_ = 9;
               break;
             }
           }
@@ -5055,6 +5132,122 @@ public final class Msg {
       return com.ghj.protocol.Msg.internal_static_SysMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.ghj.protocol.Msg.SysMsg.class, com.ghj.protocol.Msg.SysMsg.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code SysMsg.MsgType}
+     */
+    public enum MsgType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GREET = 0;</code>
+       */
+      GREET(0),
+      /**
+       * <code>REGISTER = 1;</code>
+       */
+      REGISTER(1),
+      /**
+       * <code>ROUTING = 2;</code>
+       */
+      ROUTING(2),
+      /**
+       * <code>ACK = 3;</code>
+       */
+      ACK(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>GREET = 0;</code>
+       */
+      public static final int GREET_VALUE = 0;
+      /**
+       * <code>REGISTER = 1;</code>
+       */
+      public static final int REGISTER_VALUE = 1;
+      /**
+       * <code>ROUTING = 2;</code>
+       */
+      public static final int ROUTING_VALUE = 2;
+      /**
+       * <code>ACK = 3;</code>
+       */
+      public static final int ACK_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MsgType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static MsgType forNumber(int value) {
+        switch (value) {
+          case 0: return GREET;
+          case 1: return REGISTER;
+          case 2: return ROUTING;
+          case 3: return ACK;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MsgType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MsgType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MsgType>() {
+              public MsgType findValueByNumber(int number) {
+                return MsgType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.SysMsg.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MsgType[] VALUES = values();
+
+      public static MsgType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private MsgType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:SysMsg.MsgType)
     }
 
     /**
@@ -5183,7 +5376,7 @@ public final class Msg {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.ghj.protocol.Msg.SysMsg.getDescriptor().getEnumTypes().get(0);
+        return com.ghj.protocol.Msg.SysMsg.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final Module[] VALUES = values();
@@ -5209,220 +5402,2333 @@ public final class Msg {
       // @@protoc_insertion_point(enum_scope:SysMsg.Module)
     }
 
+    public interface AckOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:SysMsg.Ack)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional int64 ackMsgId = 1;</code>
+       */
+      long getAckMsgId();
+
+      /**
+       * <code>optional int32 code = 2;</code>
+       */
+      int getCode();
+
+      /**
+       * <code>optional string message = 3;</code>
+       */
+      java.lang.String getMessage();
+      /**
+       * <code>optional string message = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getMessageBytes();
+    }
     /**
-     * Protobuf enum {@code SysMsg.BehaviorType}
+     * Protobuf type {@code SysMsg.Ack}
      */
-    public enum BehaviorType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>GREET = 0;</code>
-       */
-      GREET(0),
-      /**
-       * <code>REGISTER = 1;</code>
-       */
-      REGISTER(1),
-      /**
-       * <code>ROUTING = 2;</code>
-       */
-      ROUTING(2),
-      /**
-       * <code>ACK = 3;</code>
-       */
-      ACK(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>GREET = 0;</code>
-       */
-      public static final int GREET_VALUE = 0;
-      /**
-       * <code>REGISTER = 1;</code>
-       */
-      public static final int REGISTER_VALUE = 1;
-      /**
-       * <code>ROUTING = 2;</code>
-       */
-      public static final int ROUTING_VALUE = 2;
-      /**
-       * <code>ACK = 3;</code>
-       */
-      public static final int ACK_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
+    public  static final class Ack extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:SysMsg.Ack)
+        AckOrBuilder {
+      // Use Ack.newBuilder() to construct.
+      private Ack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Ack() {
+        ackMsgId_ = 0L;
+        code_ = 0;
+        message_ = "";
       }
 
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Ack(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                ackMsgId_ = input.readInt64();
+                break;
+              }
+              case 16: {
+
+                code_ = input.readInt32();
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                message_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Ack_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Ack_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.SysMsg.Ack.class, com.ghj.protocol.Msg.SysMsg.Ack.Builder.class);
+      }
+
+      public static final int ACKMSGID_FIELD_NUMBER = 1;
+      private long ackMsgId_;
+      /**
+       * <code>optional int64 ackMsgId = 1;</code>
+       */
+      public long getAckMsgId() {
+        return ackMsgId_;
+      }
+
+      public static final int CODE_FIELD_NUMBER = 2;
+      private int code_;
+      /**
+       * <code>optional int32 code = 2;</code>
+       */
+      public int getCode() {
+        return code_;
+      }
+
+      public static final int MESSAGE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object message_;
+      /**
+       * <code>optional string message = 3;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string message = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (ackMsgId_ != 0L) {
+          output.writeInt64(1, ackMsgId_);
+        }
+        if (code_ != 0) {
+          output.writeInt32(2, code_);
+        }
+        if (!getMessageBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (ackMsgId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(1, ackMsgId_);
+        }
+        if (code_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, code_);
+        }
+        if (!getMessageBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.ghj.protocol.Msg.SysMsg.Ack)) {
+          return super.equals(obj);
+        }
+        com.ghj.protocol.Msg.SysMsg.Ack other = (com.ghj.protocol.Msg.SysMsg.Ack) obj;
+
+        boolean result = true;
+        result = result && (getAckMsgId()
+            == other.getAckMsgId());
+        result = result && (getCode()
+            == other.getCode());
+        result = result && getMessage()
+            .equals(other.getMessage());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + ACKMSGID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getAckMsgId());
+        hash = (37 * hash) + CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getCode();
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Ack parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.ghj.protocol.Msg.SysMsg.Ack prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code SysMsg.Ack}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:SysMsg.Ack)
+          com.ghj.protocol.Msg.SysMsg.AckOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Ack_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Ack_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.ghj.protocol.Msg.SysMsg.Ack.class, com.ghj.protocol.Msg.SysMsg.Ack.Builder.class);
+        }
+
+        // Construct using com.ghj.protocol.Msg.SysMsg.Ack.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          ackMsgId_ = 0L;
+
+          code_ = 0;
+
+          message_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Ack_descriptor;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Ack getDefaultInstanceForType() {
+          return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Ack build() {
+          com.ghj.protocol.Msg.SysMsg.Ack result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Ack buildPartial() {
+          com.ghj.protocol.Msg.SysMsg.Ack result = new com.ghj.protocol.Msg.SysMsg.Ack(this);
+          result.ackMsgId_ = ackMsgId_;
+          result.code_ = code_;
+          result.message_ = message_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.ghj.protocol.Msg.SysMsg.Ack) {
+            return mergeFrom((com.ghj.protocol.Msg.SysMsg.Ack)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.ghj.protocol.Msg.SysMsg.Ack other) {
+          if (other == com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance()) return this;
+          if (other.getAckMsgId() != 0L) {
+            setAckMsgId(other.getAckMsgId());
+          }
+          if (other.getCode() != 0) {
+            setCode(other.getCode());
+          }
+          if (!other.getMessage().isEmpty()) {
+            message_ = other.message_;
+            onChanged();
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.ghj.protocol.Msg.SysMsg.Ack parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.ghj.protocol.Msg.SysMsg.Ack) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long ackMsgId_ ;
+        /**
+         * <code>optional int64 ackMsgId = 1;</code>
+         */
+        public long getAckMsgId() {
+          return ackMsgId_;
+        }
+        /**
+         * <code>optional int64 ackMsgId = 1;</code>
+         */
+        public Builder setAckMsgId(long value) {
+          
+          ackMsgId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 ackMsgId = 1;</code>
+         */
+        public Builder clearAckMsgId() {
+          
+          ackMsgId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int code_ ;
+        /**
+         * <code>optional int32 code = 2;</code>
+         */
+        public int getCode() {
+          return code_;
+        }
+        /**
+         * <code>optional int32 code = 2;</code>
+         */
+        public Builder setCode(int value) {
+          
+          code_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 code = 2;</code>
+         */
+        public Builder clearCode() {
+          
+          code_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object message_ = "";
+        /**
+         * <code>optional string message = 3;</code>
+         */
+        public java.lang.String getMessage() {
+          java.lang.Object ref = message_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            message_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string message = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMessageBytes() {
+          java.lang.Object ref = message_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            message_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string message = 3;</code>
+         */
+        public Builder setMessage(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          message_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string message = 3;</code>
+         */
+        public Builder clearMessage() {
+          
+          message_ = getDefaultInstance().getMessage();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string message = 3;</code>
+         */
+        public Builder setMessageBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          message_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:SysMsg.Ack)
+      }
+
+      // @@protoc_insertion_point(class_scope:SysMsg.Ack)
+      private static final com.ghj.protocol.Msg.SysMsg.Ack DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.ghj.protocol.Msg.SysMsg.Ack();
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Ack getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Ack>
+          PARSER = new com.google.protobuf.AbstractParser<Ack>() {
+        public Ack parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Ack(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Ack> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Ack> getParserForType() {
+        return PARSER;
+      }
+
+      public com.ghj.protocol.Msg.SysMsg.Ack getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface GreetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:SysMsg.Greet)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional int64 uId = 1;</code>
+       */
+      long getUId();
+    }
+    /**
+     * Protobuf type {@code SysMsg.Greet}
+     */
+    public  static final class Greet extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:SysMsg.Greet)
+        GreetOrBuilder {
+      // Use Greet.newBuilder() to construct.
+      private Greet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Greet() {
+        uId_ = 0L;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Greet(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                uId_ = input.readInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Greet_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Greet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.SysMsg.Greet.class, com.ghj.protocol.Msg.SysMsg.Greet.Builder.class);
+      }
+
+      public static final int UID_FIELD_NUMBER = 1;
+      private long uId_;
+      /**
+       * <code>optional int64 uId = 1;</code>
+       */
+      public long getUId() {
+        return uId_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (uId_ != 0L) {
+          output.writeInt64(1, uId_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (uId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(1, uId_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.ghj.protocol.Msg.SysMsg.Greet)) {
+          return super.equals(obj);
+        }
+        com.ghj.protocol.Msg.SysMsg.Greet other = (com.ghj.protocol.Msg.SysMsg.Greet) obj;
+
+        boolean result = true;
+        result = result && (getUId()
+            == other.getUId());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Greet parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.ghj.protocol.Msg.SysMsg.Greet prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code SysMsg.Greet}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:SysMsg.Greet)
+          com.ghj.protocol.Msg.SysMsg.GreetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Greet_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Greet_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.ghj.protocol.Msg.SysMsg.Greet.class, com.ghj.protocol.Msg.SysMsg.Greet.Builder.class);
+        }
+
+        // Construct using com.ghj.protocol.Msg.SysMsg.Greet.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          uId_ = 0L;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Greet_descriptor;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Greet getDefaultInstanceForType() {
+          return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Greet build() {
+          com.ghj.protocol.Msg.SysMsg.Greet result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Greet buildPartial() {
+          com.ghj.protocol.Msg.SysMsg.Greet result = new com.ghj.protocol.Msg.SysMsg.Greet(this);
+          result.uId_ = uId_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.ghj.protocol.Msg.SysMsg.Greet) {
+            return mergeFrom((com.ghj.protocol.Msg.SysMsg.Greet)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.ghj.protocol.Msg.SysMsg.Greet other) {
+          if (other == com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance()) return this;
+          if (other.getUId() != 0L) {
+            setUId(other.getUId());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.ghj.protocol.Msg.SysMsg.Greet parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.ghj.protocol.Msg.SysMsg.Greet) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long uId_ ;
+        /**
+         * <code>optional int64 uId = 1;</code>
+         */
+        public long getUId() {
+          return uId_;
+        }
+        /**
+         * <code>optional int64 uId = 1;</code>
+         */
+        public Builder setUId(long value) {
+          
+          uId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 uId = 1;</code>
+         */
+        public Builder clearUId() {
+          
+          uId_ = 0L;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:SysMsg.Greet)
+      }
+
+      // @@protoc_insertion_point(class_scope:SysMsg.Greet)
+      private static final com.ghj.protocol.Msg.SysMsg.Greet DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.ghj.protocol.Msg.SysMsg.Greet();
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Greet getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Greet>
+          PARSER = new com.google.protobuf.AbstractParser<Greet>() {
+        public Greet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Greet(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Greet> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Greet> getParserForType() {
+        return PARSER;
+      }
+
+      public com.ghj.protocol.Msg.SysMsg.Greet getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface RegisterOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:SysMsg.Register)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional int32 port = 1;</code>
+       */
+      int getPort();
+    }
+    /**
+     * Protobuf type {@code SysMsg.Register}
+     */
+    public  static final class Register extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:SysMsg.Register)
+        RegisterOrBuilder {
+      // Use Register.newBuilder() to construct.
+      private Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Register() {
+        port_ = 0;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Register(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                port_ = input.readInt32();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Register_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Register_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.SysMsg.Register.class, com.ghj.protocol.Msg.SysMsg.Register.Builder.class);
+      }
+
+      public static final int PORT_FIELD_NUMBER = 1;
+      private int port_;
+      /**
+       * <code>optional int32 port = 1;</code>
+       */
+      public int getPort() {
+        return port_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (port_ != 0) {
+          output.writeInt32(1, port_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (port_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, port_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.ghj.protocol.Msg.SysMsg.Register)) {
+          return super.equals(obj);
+        }
+        com.ghj.protocol.Msg.SysMsg.Register other = (com.ghj.protocol.Msg.SysMsg.Register) obj;
+
+        boolean result = true;
+        result = result && (getPort()
+            == other.getPort());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + PORT_FIELD_NUMBER;
+        hash = (53 * hash) + getPort();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Register parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.ghj.protocol.Msg.SysMsg.Register prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code SysMsg.Register}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:SysMsg.Register)
+          com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Register_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Register_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.ghj.protocol.Msg.SysMsg.Register.class, com.ghj.protocol.Msg.SysMsg.Register.Builder.class);
+        }
+
+        // Construct using com.ghj.protocol.Msg.SysMsg.Register.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          port_ = 0;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Register_descriptor;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Register getDefaultInstanceForType() {
+          return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Register build() {
+          com.ghj.protocol.Msg.SysMsg.Register result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Register buildPartial() {
+          com.ghj.protocol.Msg.SysMsg.Register result = new com.ghj.protocol.Msg.SysMsg.Register(this);
+          result.port_ = port_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.ghj.protocol.Msg.SysMsg.Register) {
+            return mergeFrom((com.ghj.protocol.Msg.SysMsg.Register)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.ghj.protocol.Msg.SysMsg.Register other) {
+          if (other == com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance()) return this;
+          if (other.getPort() != 0) {
+            setPort(other.getPort());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.ghj.protocol.Msg.SysMsg.Register parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.ghj.protocol.Msg.SysMsg.Register) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int port_ ;
+        /**
+         * <code>optional int32 port = 1;</code>
+         */
+        public int getPort() {
+          return port_;
+        }
+        /**
+         * <code>optional int32 port = 1;</code>
+         */
+        public Builder setPort(int value) {
+          
+          port_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 port = 1;</code>
+         */
+        public Builder clearPort() {
+          
+          port_ = 0;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:SysMsg.Register)
+      }
+
+      // @@protoc_insertion_point(class_scope:SysMsg.Register)
+      private static final com.ghj.protocol.Msg.SysMsg.Register DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.ghj.protocol.Msg.SysMsg.Register();
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Register getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Register>
+          PARSER = new com.google.protobuf.AbstractParser<Register>() {
+        public Register parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Register(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Register> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Register> getParserForType() {
+        return PARSER;
+      }
+
+      public com.ghj.protocol.Msg.SysMsg.Register getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface RoutingOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:SysMsg.Routing)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .SysMsg.Module source = 1;</code>
+       */
+      int getSourceValue();
+      /**
+       * <code>optional .SysMsg.Module source = 1;</code>
+       */
+      com.ghj.protocol.Msg.SysMsg.Module getSource();
+
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      java.util.List<java.lang.String>
+          getAddressesList();
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      int getAddressesCount();
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      java.lang.String getAddresses(int index);
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getAddressesBytes(int index);
+    }
+    /**
+     * Protobuf type {@code SysMsg.Routing}
+     */
+    public  static final class Routing extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:SysMsg.Routing)
+        RoutingOrBuilder {
+      // Use Routing.newBuilder() to construct.
+      private Routing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Routing() {
+        source_ = 0;
+        addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Routing(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+
+                source_ = rawValue;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  addresses_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                addresses_.add(s);
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            addresses_ = addresses_.getUnmodifiableView();
+          }
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Routing_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ghj.protocol.Msg.internal_static_SysMsg_Routing_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.ghj.protocol.Msg.SysMsg.Routing.class, com.ghj.protocol.Msg.SysMsg.Routing.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int SOURCE_FIELD_NUMBER = 1;
+      private int source_;
+      /**
+       * <code>optional .SysMsg.Module source = 1;</code>
+       */
+      public int getSourceValue() {
+        return source_;
+      }
+      /**
+       * <code>optional .SysMsg.Module source = 1;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Module getSource() {
+        com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(source_);
+        return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
+      }
+
+      public static final int ADDRESSES_FIELD_NUMBER = 2;
+      private com.google.protobuf.LazyStringList addresses_;
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAddressesList() {
+        return addresses_;
+      }
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      public int getAddressesCount() {
+        return addresses_.size();
+      }
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      public java.lang.String getAddresses(int index) {
+        return addresses_.get(index);
+      }
+      /**
+       * <code>repeated string addresses = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAddressesBytes(int index) {
+        return addresses_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (source_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
+          output.writeEnum(1, source_);
+        }
+        for (int i = 0; i < addresses_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, addresses_.getRaw(i));
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (source_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, source_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < addresses_.size(); i++) {
+            dataSize += computeStringSizeNoTag(addresses_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getAddressesList().size();
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.ghj.protocol.Msg.SysMsg.Routing)) {
+          return super.equals(obj);
+        }
+        com.ghj.protocol.Msg.SysMsg.Routing other = (com.ghj.protocol.Msg.SysMsg.Routing) obj;
+
+        boolean result = true;
+        result = result && source_ == other.source_;
+        result = result && getAddressesList()
+            .equals(other.getAddressesList());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + source_;
+        if (getAddressesCount() > 0) {
+          hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
+          hash = (53 * hash) + getAddressesList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.ghj.protocol.Msg.SysMsg.Routing parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.ghj.protocol.Msg.SysMsg.Routing prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code SysMsg.Routing}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:SysMsg.Routing)
+          com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Routing_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Routing_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.ghj.protocol.Msg.SysMsg.Routing.class, com.ghj.protocol.Msg.SysMsg.Routing.Builder.class);
+        }
+
+        // Construct using com.ghj.protocol.Msg.SysMsg.Routing.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          source_ = 0;
+
+          addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.ghj.protocol.Msg.internal_static_SysMsg_Routing_descriptor;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Routing getDefaultInstanceForType() {
+          return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Routing build() {
+          com.ghj.protocol.Msg.SysMsg.Routing result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.ghj.protocol.Msg.SysMsg.Routing buildPartial() {
+          com.ghj.protocol.Msg.SysMsg.Routing result = new com.ghj.protocol.Msg.SysMsg.Routing(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          result.source_ = source_;
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            addresses_ = addresses_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.addresses_ = addresses_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.ghj.protocol.Msg.SysMsg.Routing) {
+            return mergeFrom((com.ghj.protocol.Msg.SysMsg.Routing)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.ghj.protocol.Msg.SysMsg.Routing other) {
+          if (other == com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance()) return this;
+          if (other.source_ != 0) {
+            setSourceValue(other.getSourceValue());
+          }
+          if (!other.addresses_.isEmpty()) {
+            if (addresses_.isEmpty()) {
+              addresses_ = other.addresses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureAddressesIsMutable();
+              addresses_.addAll(other.addresses_);
+            }
+            onChanged();
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.ghj.protocol.Msg.SysMsg.Routing parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.ghj.protocol.Msg.SysMsg.Routing) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private int source_ = 0;
+        /**
+         * <code>optional .SysMsg.Module source = 1;</code>
+         */
+        public int getSourceValue() {
+          return source_;
+        }
+        /**
+         * <code>optional .SysMsg.Module source = 1;</code>
+         */
+        public Builder setSourceValue(int value) {
+          source_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .SysMsg.Module source = 1;</code>
+         */
+        public com.ghj.protocol.Msg.SysMsg.Module getSource() {
+          com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(source_);
+          return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>optional .SysMsg.Module source = 1;</code>
+         */
+        public Builder setSource(com.ghj.protocol.Msg.SysMsg.Module value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          source_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .SysMsg.Module source = 1;</code>
+         */
+        public Builder clearSource() {
+          
+          source_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringList addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureAddressesIsMutable() {
+          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+            addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public com.google.protobuf.ProtocolStringList
+            getAddressesList() {
+          return addresses_.getUnmodifiableView();
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public int getAddressesCount() {
+          return addresses_.size();
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public java.lang.String getAddresses(int index) {
+          return addresses_.get(index);
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getAddressesBytes(int index) {
+          return addresses_.getByteString(index);
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public Builder setAddresses(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAddressesIsMutable();
+          addresses_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public Builder addAddresses(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAddressesIsMutable();
+          addresses_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public Builder addAllAddresses(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureAddressesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, addresses_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public Builder clearAddresses() {
+          addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string addresses = 2;</code>
+         */
+        public Builder addAddressesBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          ensureAddressesIsMutable();
+          addresses_.add(value);
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:SysMsg.Routing)
+      }
+
+      // @@protoc_insertion_point(class_scope:SysMsg.Routing)
+      private static final com.ghj.protocol.Msg.SysMsg.Routing DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.ghj.protocol.Msg.SysMsg.Routing();
+      }
+
+      public static com.ghj.protocol.Msg.SysMsg.Routing getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Routing>
+          PARSER = new com.google.protobuf.AbstractParser<Routing>() {
+        public Routing parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Routing(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Routing> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Routing> getParserForType() {
+        return PARSER;
+      }
+
+      public com.ghj.protocol.Msg.SysMsg.Routing getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int msgBodyCase_ = 0;
+    private java.lang.Object msgBody_;
+    public enum MsgBodyCase
+        implements com.google.protobuf.Internal.EnumLite {
+      ACK(6),
+      GREET(7),
+      REGISTER(8),
+      ROUTING(9),
+      MSGBODY_NOT_SET(0);
+      private final int value;
+      private MsgBodyCase(int value) {
+        this.value = value;
+      }
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static BehaviorType valueOf(int value) {
+      public static MsgBodyCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static BehaviorType forNumber(int value) {
+      public static MsgBodyCase forNumber(int value) {
         switch (value) {
-          case 0: return GREET;
-          case 1: return REGISTER;
-          case 2: return ROUTING;
-          case 3: return ACK;
+          case 6: return ACK;
+          case 7: return GREET;
+          case 8: return REGISTER;
+          case 9: return ROUTING;
+          case 0: return MSGBODY_NOT_SET;
           default: return null;
         }
       }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<BehaviorType>
-          internalGetValueMap() {
-        return internalValueMap;
+      public int getNumber() {
+        return this.value;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          BehaviorType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<BehaviorType>() {
-              public BehaviorType findValueByNumber(int number) {
-                return BehaviorType.forNumber(number);
-              }
-            };
+    };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.ghj.protocol.Msg.SysMsg.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final BehaviorType[] VALUES = values();
-
-      public static BehaviorType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private BehaviorType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:SysMsg.BehaviorType)
+    public MsgBodyCase
+    getMsgBodyCase() {
+      return MsgBodyCase.forNumber(
+          msgBodyCase_);
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional int64 id = 2;</code>
+     * <code>optional int64 id = 1;</code>
      */
     public long getId() {
       return id_;
     }
 
-    public static final int FROMM_FIELD_NUMBER = 3;
+    public static final int FROMM_FIELD_NUMBER = 2;
     private int fromM_;
     /**
-     * <code>optional .SysMsg.Module fromM = 3;</code>
+     * <code>optional .SysMsg.Module fromM = 2;</code>
      */
     public int getFromMValue() {
       return fromM_;
     }
     /**
-     * <code>optional .SysMsg.Module fromM = 3;</code>
+     * <code>optional .SysMsg.Module fromM = 2;</code>
      */
     public com.ghj.protocol.Msg.SysMsg.Module getFromM() {
       com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(fromM_);
       return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
     }
 
-    public static final int TOM_FIELD_NUMBER = 4;
+    public static final int TOM_FIELD_NUMBER = 3;
     private int toM_;
     /**
-     * <code>optional .SysMsg.Module toM = 4;</code>
+     * <code>optional .SysMsg.Module toM = 3;</code>
      */
     public int getToMValue() {
       return toM_;
     }
     /**
-     * <code>optional .SysMsg.Module toM = 4;</code>
+     * <code>optional .SysMsg.Module toM = 3;</code>
      */
     public com.ghj.protocol.Msg.SysMsg.Module getToM() {
       com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(toM_);
       return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>optional int64 timestamp = 5;</code>
+     * <code>optional int64 timestamp = 4;</code>
      */
     public long getTimestamp() {
       return timestamp_;
     }
 
-    public static final int BEHAVIORTYPE_FIELD_NUMBER = 6;
-    private int behaviorType_;
+    public static final int MSGTYPE_FIELD_NUMBER = 5;
+    private int msgType_;
     /**
-     * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+     * <code>optional .SysMsg.MsgType msgType = 5;</code>
      */
-    public int getBehaviorTypeValue() {
-      return behaviorType_;
+    public int getMsgTypeValue() {
+      return msgType_;
     }
     /**
-     * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+     * <code>optional .SysMsg.MsgType msgType = 5;</code>
      */
-    public com.ghj.protocol.Msg.SysMsg.BehaviorType getBehaviorType() {
-      com.ghj.protocol.Msg.SysMsg.BehaviorType result = com.ghj.protocol.Msg.SysMsg.BehaviorType.valueOf(behaviorType_);
-      return result == null ? com.ghj.protocol.Msg.SysMsg.BehaviorType.UNRECOGNIZED : result;
+    public com.ghj.protocol.Msg.SysMsg.MsgType getMsgType() {
+      com.ghj.protocol.Msg.SysMsg.MsgType result = com.ghj.protocol.Msg.SysMsg.MsgType.valueOf(msgType_);
+      return result == null ? com.ghj.protocol.Msg.SysMsg.MsgType.UNRECOGNIZED : result;
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 7;
-    private volatile java.lang.Object content_;
+    public static final int ACK_FIELD_NUMBER = 6;
     /**
-     * <code>optional string content = 7;</code>
+     * <code>optional .SysMsg.Ack ack = 6;</code>
      */
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        content_ = s;
-        return s;
+    public com.ghj.protocol.Msg.SysMsg.Ack getAck() {
+      if (msgBodyCase_ == 6) {
+         return (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_;
       }
+      return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
     }
     /**
-     * <code>optional string content = 7;</code>
+     * <code>optional .SysMsg.Ack ack = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        content_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public com.ghj.protocol.Msg.SysMsg.AckOrBuilder getAckOrBuilder() {
+      if (msgBodyCase_ == 6) {
+         return (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_;
       }
+      return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
+    }
+
+    public static final int GREET_FIELD_NUMBER = 7;
+    /**
+     * <code>optional .SysMsg.Greet greet = 7;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.Greet getGreet() {
+      if (msgBodyCase_ == 7) {
+         return (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SysMsg.Greet greet = 7;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.GreetOrBuilder getGreetOrBuilder() {
+      if (msgBodyCase_ == 7) {
+         return (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+    }
+
+    public static final int REGISTER_FIELD_NUMBER = 8;
+    /**
+     * <code>optional .SysMsg.Register register = 8;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.Register getRegister() {
+      if (msgBodyCase_ == 8) {
+         return (com.ghj.protocol.Msg.SysMsg.Register) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SysMsg.Register register = 8;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder getRegisterOrBuilder() {
+      if (msgBodyCase_ == 8) {
+         return (com.ghj.protocol.Msg.SysMsg.Register) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+    }
+
+    public static final int ROUTING_FIELD_NUMBER = 9;
+    /**
+     * <code>optional .SysMsg.Routing routing = 9;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.Routing getRouting() {
+      if (msgBodyCase_ == 9) {
+         return (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SysMsg.Routing routing = 9;</code>
+     */
+    public com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder getRoutingOrBuilder() {
+      if (msgBodyCase_ == 9) {
+         return (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_;
+      }
+      return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5438,22 +7744,31 @@ public final class Msg {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
-        output.writeInt64(2, id_);
+        output.writeInt64(1, id_);
       }
       if (fromM_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
-        output.writeEnum(3, fromM_);
+        output.writeEnum(2, fromM_);
       }
       if (toM_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
-        output.writeEnum(4, toM_);
+        output.writeEnum(3, toM_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(5, timestamp_);
+        output.writeInt64(4, timestamp_);
       }
-      if (behaviorType_ != com.ghj.protocol.Msg.SysMsg.BehaviorType.GREET.getNumber()) {
-        output.writeEnum(6, behaviorType_);
+      if (msgType_ != com.ghj.protocol.Msg.SysMsg.MsgType.GREET.getNumber()) {
+        output.writeEnum(5, msgType_);
       }
-      if (!getContentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, content_);
+      if (msgBodyCase_ == 6) {
+        output.writeMessage(6, (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_);
+      }
+      if (msgBodyCase_ == 7) {
+        output.writeMessage(7, (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_);
+      }
+      if (msgBodyCase_ == 8) {
+        output.writeMessage(8, (com.ghj.protocol.Msg.SysMsg.Register) msgBody_);
+      }
+      if (msgBodyCase_ == 9) {
+        output.writeMessage(9, (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_);
       }
     }
 
@@ -5464,26 +7779,39 @@ public final class Msg {
       size = 0;
       if (id_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, id_);
+          .computeInt64Size(1, id_);
       }
       if (fromM_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, fromM_);
+          .computeEnumSize(2, fromM_);
       }
       if (toM_ != com.ghj.protocol.Msg.SysMsg.Module.CLIENT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, toM_);
+          .computeEnumSize(3, toM_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, timestamp_);
+          .computeInt64Size(4, timestamp_);
       }
-      if (behaviorType_ != com.ghj.protocol.Msg.SysMsg.BehaviorType.GREET.getNumber()) {
+      if (msgType_ != com.ghj.protocol.Msg.SysMsg.MsgType.GREET.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, behaviorType_);
+          .computeEnumSize(5, msgType_);
       }
-      if (!getContentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, content_);
+      if (msgBodyCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_);
+      }
+      if (msgBodyCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_);
+      }
+      if (msgBodyCase_ == 8) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, (com.ghj.protocol.Msg.SysMsg.Register) msgBody_);
+      }
+      if (msgBodyCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_);
       }
       memoizedSize = size;
       return size;
@@ -5507,9 +7835,30 @@ public final class Msg {
       result = result && toM_ == other.toM_;
       result = result && (getTimestamp()
           == other.getTimestamp());
-      result = result && behaviorType_ == other.behaviorType_;
-      result = result && getContent()
-          .equals(other.getContent());
+      result = result && msgType_ == other.msgType_;
+      result = result && getMsgBodyCase().equals(
+          other.getMsgBodyCase());
+      if (!result) return false;
+      switch (msgBodyCase_) {
+        case 6:
+          result = result && getAck()
+              .equals(other.getAck());
+          break;
+        case 7:
+          result = result && getGreet()
+              .equals(other.getGreet());
+          break;
+        case 8:
+          result = result && getRegister()
+              .equals(other.getRegister());
+          break;
+        case 9:
+          result = result && getRouting()
+              .equals(other.getRouting());
+          break;
+        case 0:
+        default:
+      }
       return result;
     }
 
@@ -5530,10 +7879,28 @@ public final class Msg {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
-      hash = (37 * hash) + BEHAVIORTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + behaviorType_;
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + msgType_;
+      switch (msgBodyCase_) {
+        case 6:
+          hash = (37 * hash) + ACK_FIELD_NUMBER;
+          hash = (53 * hash) + getAck().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + GREET_FIELD_NUMBER;
+          hash = (53 * hash) + getGreet().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + REGISTER_FIELD_NUMBER;
+          hash = (53 * hash) + getRegister().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + ROUTING_FIELD_NUMBER;
+          hash = (53 * hash) + getRouting().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5660,10 +8027,10 @@ public final class Msg {
 
         timestamp_ = 0L;
 
-        behaviorType_ = 0;
+        msgType_ = 0;
 
-        content_ = "";
-
+        msgBodyCase_ = 0;
+        msgBody_ = null;
         return this;
       }
 
@@ -5690,8 +8057,36 @@ public final class Msg {
         result.fromM_ = fromM_;
         result.toM_ = toM_;
         result.timestamp_ = timestamp_;
-        result.behaviorType_ = behaviorType_;
-        result.content_ = content_;
+        result.msgType_ = msgType_;
+        if (msgBodyCase_ == 6) {
+          if (ackBuilder_ == null) {
+            result.msgBody_ = msgBody_;
+          } else {
+            result.msgBody_ = ackBuilder_.build();
+          }
+        }
+        if (msgBodyCase_ == 7) {
+          if (greetBuilder_ == null) {
+            result.msgBody_ = msgBody_;
+          } else {
+            result.msgBody_ = greetBuilder_.build();
+          }
+        }
+        if (msgBodyCase_ == 8) {
+          if (registerBuilder_ == null) {
+            result.msgBody_ = msgBody_;
+          } else {
+            result.msgBody_ = registerBuilder_.build();
+          }
+        }
+        if (msgBodyCase_ == 9) {
+          if (routingBuilder_ == null) {
+            result.msgBody_ = msgBody_;
+          } else {
+            result.msgBody_ = routingBuilder_.build();
+          }
+        }
+        result.msgBodyCase_ = msgBodyCase_;
         onBuilt();
         return result;
       }
@@ -5745,12 +8140,29 @@ public final class Msg {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.behaviorType_ != 0) {
-          setBehaviorTypeValue(other.getBehaviorTypeValue());
+        if (other.msgType_ != 0) {
+          setMsgTypeValue(other.getMsgTypeValue());
         }
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          onChanged();
+        switch (other.getMsgBodyCase()) {
+          case ACK: {
+            mergeAck(other.getAck());
+            break;
+          }
+          case GREET: {
+            mergeGreet(other.getGreet());
+            break;
+          }
+          case REGISTER: {
+            mergeRegister(other.getRegister());
+            break;
+          }
+          case ROUTING: {
+            mergeRouting(other.getRouting());
+            break;
+          }
+          case MSGBODY_NOT_SET: {
+            break;
+          }
         }
         onChanged();
         return this;
@@ -5777,16 +8189,31 @@ public final class Msg {
         }
         return this;
       }
+      private int msgBodyCase_ = 0;
+      private java.lang.Object msgBody_;
+      public MsgBodyCase
+          getMsgBodyCase() {
+        return MsgBodyCase.forNumber(
+            msgBodyCase_);
+      }
+
+      public Builder clearMsgBody() {
+        msgBodyCase_ = 0;
+        msgBody_ = null;
+        onChanged();
+        return this;
+      }
+
 
       private long id_ ;
       /**
-       * <code>optional int64 id = 2;</code>
+       * <code>optional int64 id = 1;</code>
        */
       public long getId() {
         return id_;
       }
       /**
-       * <code>optional int64 id = 2;</code>
+       * <code>optional int64 id = 1;</code>
        */
       public Builder setId(long value) {
         
@@ -5795,7 +8222,7 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional int64 id = 2;</code>
+       * <code>optional int64 id = 1;</code>
        */
       public Builder clearId() {
         
@@ -5806,13 +8233,13 @@ public final class Msg {
 
       private int fromM_ = 0;
       /**
-       * <code>optional .SysMsg.Module fromM = 3;</code>
+       * <code>optional .SysMsg.Module fromM = 2;</code>
        */
       public int getFromMValue() {
         return fromM_;
       }
       /**
-       * <code>optional .SysMsg.Module fromM = 3;</code>
+       * <code>optional .SysMsg.Module fromM = 2;</code>
        */
       public Builder setFromMValue(int value) {
         fromM_ = value;
@@ -5820,14 +8247,14 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional .SysMsg.Module fromM = 3;</code>
+       * <code>optional .SysMsg.Module fromM = 2;</code>
        */
       public com.ghj.protocol.Msg.SysMsg.Module getFromM() {
         com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(fromM_);
         return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .SysMsg.Module fromM = 3;</code>
+       * <code>optional .SysMsg.Module fromM = 2;</code>
        */
       public Builder setFromM(com.ghj.protocol.Msg.SysMsg.Module value) {
         if (value == null) {
@@ -5839,7 +8266,7 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional .SysMsg.Module fromM = 3;</code>
+       * <code>optional .SysMsg.Module fromM = 2;</code>
        */
       public Builder clearFromM() {
         
@@ -5850,13 +8277,13 @@ public final class Msg {
 
       private int toM_ = 0;
       /**
-       * <code>optional .SysMsg.Module toM = 4;</code>
+       * <code>optional .SysMsg.Module toM = 3;</code>
        */
       public int getToMValue() {
         return toM_;
       }
       /**
-       * <code>optional .SysMsg.Module toM = 4;</code>
+       * <code>optional .SysMsg.Module toM = 3;</code>
        */
       public Builder setToMValue(int value) {
         toM_ = value;
@@ -5864,14 +8291,14 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional .SysMsg.Module toM = 4;</code>
+       * <code>optional .SysMsg.Module toM = 3;</code>
        */
       public com.ghj.protocol.Msg.SysMsg.Module getToM() {
         com.ghj.protocol.Msg.SysMsg.Module result = com.ghj.protocol.Msg.SysMsg.Module.valueOf(toM_);
         return result == null ? com.ghj.protocol.Msg.SysMsg.Module.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .SysMsg.Module toM = 4;</code>
+       * <code>optional .SysMsg.Module toM = 3;</code>
        */
       public Builder setToM(com.ghj.protocol.Msg.SysMsg.Module value) {
         if (value == null) {
@@ -5883,7 +8310,7 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional .SysMsg.Module toM = 4;</code>
+       * <code>optional .SysMsg.Module toM = 3;</code>
        */
       public Builder clearToM() {
         
@@ -5894,13 +8321,13 @@ public final class Msg {
 
       private long timestamp_ ;
       /**
-       * <code>optional int64 timestamp = 5;</code>
+       * <code>optional int64 timestamp = 4;</code>
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>optional int64 timestamp = 5;</code>
+       * <code>optional int64 timestamp = 4;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -5909,7 +8336,7 @@ public final class Msg {
         return this;
       }
       /**
-       * <code>optional int64 timestamp = 5;</code>
+       * <code>optional int64 timestamp = 4;</code>
        */
       public Builder clearTimestamp() {
         
@@ -5918,117 +8345,568 @@ public final class Msg {
         return this;
       }
 
-      private int behaviorType_ = 0;
+      private int msgType_ = 0;
       /**
-       * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+       * <code>optional .SysMsg.MsgType msgType = 5;</code>
        */
-      public int getBehaviorTypeValue() {
-        return behaviorType_;
+      public int getMsgTypeValue() {
+        return msgType_;
       }
       /**
-       * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+       * <code>optional .SysMsg.MsgType msgType = 5;</code>
        */
-      public Builder setBehaviorTypeValue(int value) {
-        behaviorType_ = value;
+      public Builder setMsgTypeValue(int value) {
+        msgType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+       * <code>optional .SysMsg.MsgType msgType = 5;</code>
        */
-      public com.ghj.protocol.Msg.SysMsg.BehaviorType getBehaviorType() {
-        com.ghj.protocol.Msg.SysMsg.BehaviorType result = com.ghj.protocol.Msg.SysMsg.BehaviorType.valueOf(behaviorType_);
-        return result == null ? com.ghj.protocol.Msg.SysMsg.BehaviorType.UNRECOGNIZED : result;
+      public com.ghj.protocol.Msg.SysMsg.MsgType getMsgType() {
+        com.ghj.protocol.Msg.SysMsg.MsgType result = com.ghj.protocol.Msg.SysMsg.MsgType.valueOf(msgType_);
+        return result == null ? com.ghj.protocol.Msg.SysMsg.MsgType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+       * <code>optional .SysMsg.MsgType msgType = 5;</code>
        */
-      public Builder setBehaviorType(com.ghj.protocol.Msg.SysMsg.BehaviorType value) {
+      public Builder setMsgType(com.ghj.protocol.Msg.SysMsg.MsgType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        behaviorType_ = value.getNumber();
+        msgType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>optional .SysMsg.BehaviorType behaviorType = 6;</code>
+       * <code>optional .SysMsg.MsgType msgType = 5;</code>
        */
-      public Builder clearBehaviorType() {
+      public Builder clearMsgType() {
         
-        behaviorType_ = 0;
+        msgType_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object content_ = "";
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Ack, com.ghj.protocol.Msg.SysMsg.Ack.Builder, com.ghj.protocol.Msg.SysMsg.AckOrBuilder> ackBuilder_;
       /**
-       * <code>optional string content = 7;</code>
+       * <code>optional .SysMsg.Ack ack = 6;</code>
        */
-      public java.lang.String getContent() {
-        java.lang.Object ref = content_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          content_ = s;
-          return s;
+      public com.ghj.protocol.Msg.SysMsg.Ack getAck() {
+        if (ackBuilder_ == null) {
+          if (msgBodyCase_ == 6) {
+            return (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
         } else {
-          return (java.lang.String) ref;
+          if (msgBodyCase_ == 6) {
+            return ackBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
         }
       }
       /**
-       * <code>optional string content = 7;</code>
+       * <code>optional .SysMsg.Ack ack = 6;</code>
        */
-      public com.google.protobuf.ByteString
-          getContentBytes() {
-        java.lang.Object ref = content_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          content_ = b;
-          return b;
+      public Builder setAck(com.ghj.protocol.Msg.SysMsg.Ack value) {
+        if (ackBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msgBody_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          ackBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Ack ack = 6;</code>
+       */
+      public Builder setAck(
+          com.ghj.protocol.Msg.SysMsg.Ack.Builder builderForValue) {
+        if (ackBuilder_ == null) {
+          msgBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          ackBuilder_.setMessage(builderForValue.build());
+        }
+        msgBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Ack ack = 6;</code>
+       */
+      public Builder mergeAck(com.ghj.protocol.Msg.SysMsg.Ack value) {
+        if (ackBuilder_ == null) {
+          if (msgBodyCase_ == 6 &&
+              msgBody_ != com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance()) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Ack.newBuilder((com.ghj.protocol.Msg.SysMsg.Ack) msgBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            msgBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (msgBodyCase_ == 6) {
+            ackBuilder_.mergeFrom(value);
+          }
+          ackBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Ack ack = 6;</code>
+       */
+      public Builder clearAck() {
+        if (ackBuilder_ == null) {
+          if (msgBodyCase_ == 6) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (msgBodyCase_ == 6) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+          }
+          ackBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Ack ack = 6;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Ack.Builder getAckBuilder() {
+        return getAckFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SysMsg.Ack ack = 6;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.AckOrBuilder getAckOrBuilder() {
+        if ((msgBodyCase_ == 6) && (ackBuilder_ != null)) {
+          return ackBuilder_.getMessageOrBuilder();
+        } else {
+          if (msgBodyCase_ == 6) {
+            return (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
         }
       }
       /**
-       * <code>optional string content = 7;</code>
+       * <code>optional .SysMsg.Ack ack = 6;</code>
        */
-      public Builder setContent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        content_ = value;
-        onChanged();
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Ack, com.ghj.protocol.Msg.SysMsg.Ack.Builder, com.ghj.protocol.Msg.SysMsg.AckOrBuilder> 
+          getAckFieldBuilder() {
+        if (ackBuilder_ == null) {
+          if (!(msgBodyCase_ == 6)) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Ack.getDefaultInstance();
+          }
+          ackBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.SysMsg.Ack, com.ghj.protocol.Msg.SysMsg.Ack.Builder, com.ghj.protocol.Msg.SysMsg.AckOrBuilder>(
+                  (com.ghj.protocol.Msg.SysMsg.Ack) msgBody_,
+                  getParentForChildren(),
+                  isClean());
+          msgBody_ = null;
+        }
+        msgBodyCase_ = 6;
+        onChanged();;
+        return ackBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Greet, com.ghj.protocol.Msg.SysMsg.Greet.Builder, com.ghj.protocol.Msg.SysMsg.GreetOrBuilder> greetBuilder_;
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Greet getGreet() {
+        if (greetBuilder_ == null) {
+          if (msgBodyCase_ == 7) {
+            return (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+        } else {
+          if (msgBodyCase_ == 7) {
+            return greetBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      public Builder setGreet(com.ghj.protocol.Msg.SysMsg.Greet value) {
+        if (greetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msgBody_ = value;
+          onChanged();
+        } else {
+          greetBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 7;
         return this;
       }
       /**
-       * <code>optional string content = 7;</code>
+       * <code>optional .SysMsg.Greet greet = 7;</code>
        */
-      public Builder clearContent() {
-        
-        content_ = getDefaultInstance().getContent();
-        onChanged();
+      public Builder setGreet(
+          com.ghj.protocol.Msg.SysMsg.Greet.Builder builderForValue) {
+        if (greetBuilder_ == null) {
+          msgBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          greetBuilder_.setMessage(builderForValue.build());
+        }
+        msgBodyCase_ = 7;
         return this;
       }
       /**
-       * <code>optional string content = 7;</code>
+       * <code>optional .SysMsg.Greet greet = 7;</code>
        */
-      public Builder setContentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        content_ = value;
-        onChanged();
+      public Builder mergeGreet(com.ghj.protocol.Msg.SysMsg.Greet value) {
+        if (greetBuilder_ == null) {
+          if (msgBodyCase_ == 7 &&
+              msgBody_ != com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance()) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Greet.newBuilder((com.ghj.protocol.Msg.SysMsg.Greet) msgBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            msgBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (msgBodyCase_ == 7) {
+            greetBuilder_.mergeFrom(value);
+          }
+          greetBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 7;
         return this;
+      }
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      public Builder clearGreet() {
+        if (greetBuilder_ == null) {
+          if (msgBodyCase_ == 7) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (msgBodyCase_ == 7) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+          }
+          greetBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Greet.Builder getGreetBuilder() {
+        return getGreetFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.GreetOrBuilder getGreetOrBuilder() {
+        if ((msgBodyCase_ == 7) && (greetBuilder_ != null)) {
+          return greetBuilder_.getMessageOrBuilder();
+        } else {
+          if (msgBodyCase_ == 7) {
+            return (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Greet greet = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Greet, com.ghj.protocol.Msg.SysMsg.Greet.Builder, com.ghj.protocol.Msg.SysMsg.GreetOrBuilder> 
+          getGreetFieldBuilder() {
+        if (greetBuilder_ == null) {
+          if (!(msgBodyCase_ == 7)) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Greet.getDefaultInstance();
+          }
+          greetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.SysMsg.Greet, com.ghj.protocol.Msg.SysMsg.Greet.Builder, com.ghj.protocol.Msg.SysMsg.GreetOrBuilder>(
+                  (com.ghj.protocol.Msg.SysMsg.Greet) msgBody_,
+                  getParentForChildren(),
+                  isClean());
+          msgBody_ = null;
+        }
+        msgBodyCase_ = 7;
+        onChanged();;
+        return greetBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Register, com.ghj.protocol.Msg.SysMsg.Register.Builder, com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder> registerBuilder_;
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Register getRegister() {
+        if (registerBuilder_ == null) {
+          if (msgBodyCase_ == 8) {
+            return (com.ghj.protocol.Msg.SysMsg.Register) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+        } else {
+          if (msgBodyCase_ == 8) {
+            return registerBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public Builder setRegister(com.ghj.protocol.Msg.SysMsg.Register value) {
+        if (registerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msgBody_ = value;
+          onChanged();
+        } else {
+          registerBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public Builder setRegister(
+          com.ghj.protocol.Msg.SysMsg.Register.Builder builderForValue) {
+        if (registerBuilder_ == null) {
+          msgBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          registerBuilder_.setMessage(builderForValue.build());
+        }
+        msgBodyCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public Builder mergeRegister(com.ghj.protocol.Msg.SysMsg.Register value) {
+        if (registerBuilder_ == null) {
+          if (msgBodyCase_ == 8 &&
+              msgBody_ != com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance()) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Register.newBuilder((com.ghj.protocol.Msg.SysMsg.Register) msgBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            msgBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (msgBodyCase_ == 8) {
+            registerBuilder_.mergeFrom(value);
+          }
+          registerBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public Builder clearRegister() {
+        if (registerBuilder_ == null) {
+          if (msgBodyCase_ == 8) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (msgBodyCase_ == 8) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+          }
+          registerBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Register.Builder getRegisterBuilder() {
+        return getRegisterFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder getRegisterOrBuilder() {
+        if ((msgBodyCase_ == 8) && (registerBuilder_ != null)) {
+          return registerBuilder_.getMessageOrBuilder();
+        } else {
+          if (msgBodyCase_ == 8) {
+            return (com.ghj.protocol.Msg.SysMsg.Register) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Register register = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Register, com.ghj.protocol.Msg.SysMsg.Register.Builder, com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder> 
+          getRegisterFieldBuilder() {
+        if (registerBuilder_ == null) {
+          if (!(msgBodyCase_ == 8)) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Register.getDefaultInstance();
+          }
+          registerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.SysMsg.Register, com.ghj.protocol.Msg.SysMsg.Register.Builder, com.ghj.protocol.Msg.SysMsg.RegisterOrBuilder>(
+                  (com.ghj.protocol.Msg.SysMsg.Register) msgBody_,
+                  getParentForChildren(),
+                  isClean());
+          msgBody_ = null;
+        }
+        msgBodyCase_ = 8;
+        onChanged();;
+        return registerBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Routing, com.ghj.protocol.Msg.SysMsg.Routing.Builder, com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder> routingBuilder_;
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Routing getRouting() {
+        if (routingBuilder_ == null) {
+          if (msgBodyCase_ == 9) {
+            return (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+        } else {
+          if (msgBodyCase_ == 9) {
+            return routingBuilder_.getMessage();
+          }
+          return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public Builder setRouting(com.ghj.protocol.Msg.SysMsg.Routing value) {
+        if (routingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msgBody_ = value;
+          onChanged();
+        } else {
+          routingBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public Builder setRouting(
+          com.ghj.protocol.Msg.SysMsg.Routing.Builder builderForValue) {
+        if (routingBuilder_ == null) {
+          msgBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          routingBuilder_.setMessage(builderForValue.build());
+        }
+        msgBodyCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public Builder mergeRouting(com.ghj.protocol.Msg.SysMsg.Routing value) {
+        if (routingBuilder_ == null) {
+          if (msgBodyCase_ == 9 &&
+              msgBody_ != com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance()) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Routing.newBuilder((com.ghj.protocol.Msg.SysMsg.Routing) msgBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            msgBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (msgBodyCase_ == 9) {
+            routingBuilder_.mergeFrom(value);
+          }
+          routingBuilder_.setMessage(value);
+        }
+        msgBodyCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public Builder clearRouting() {
+        if (routingBuilder_ == null) {
+          if (msgBodyCase_ == 9) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (msgBodyCase_ == 9) {
+            msgBodyCase_ = 0;
+            msgBody_ = null;
+          }
+          routingBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.Routing.Builder getRoutingBuilder() {
+        return getRoutingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      public com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder getRoutingOrBuilder() {
+        if ((msgBodyCase_ == 9) && (routingBuilder_ != null)) {
+          return routingBuilder_.getMessageOrBuilder();
+        } else {
+          if (msgBodyCase_ == 9) {
+            return (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_;
+          }
+          return com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SysMsg.Routing routing = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.ghj.protocol.Msg.SysMsg.Routing, com.ghj.protocol.Msg.SysMsg.Routing.Builder, com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder> 
+          getRoutingFieldBuilder() {
+        if (routingBuilder_ == null) {
+          if (!(msgBodyCase_ == 9)) {
+            msgBody_ = com.ghj.protocol.Msg.SysMsg.Routing.getDefaultInstance();
+          }
+          routingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.ghj.protocol.Msg.SysMsg.Routing, com.ghj.protocol.Msg.SysMsg.Routing.Builder, com.ghj.protocol.Msg.SysMsg.RoutingOrBuilder>(
+                  (com.ghj.protocol.Msg.SysMsg.Routing) msgBody_,
+                  getParentForChildren(),
+                  isClean());
+          msgBody_ = null;
+        }
+        msgBodyCase_ = 9;
+        onChanged();;
+        return routingBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6109,6 +8987,26 @@ public final class Msg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SysMsg_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SysMsg_Ack_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SysMsg_Ack_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SysMsg_Greet_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SysMsg_Greet_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SysMsg_Register_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SysMsg_Register_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SysMsg_Routing_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SysMsg_Routing_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6137,16 +9035,23 @@ public final class Msg {
       "!\n\007msgType\030\006 \001(\0162\020.Receipt.MsgType\022\021\n\tti" +
       "mestamp\030\007 \001(\003\"!\n\010MsgState\022\013\n\007RECEIVE\020\000\022\010" +
       "\n\004READ\020\001\" \n\007MsgType\022\n\n\006SINGLE\020\000\022\t\n\005GROUP" +
-      "\020\001\"\306\002\n\006SysMsg\022\n\n\002id\030\002 \001(\003\022\035\n\005fromM\030\003 \001(\016",
-      "2\016.SysMsg.Module\022\033\n\003toM\030\004 \001(\0162\016.SysMsg.M" +
-      "odule\022\021\n\ttimestamp\030\005 \001(\003\022*\n\014behaviorType" +
-      "\030\006 \001(\0162\024.SysMsg.BehaviorType\022\017\n\007content\030" +
-      "\007 \001(\t\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n\n\006ROUTER\020\001\022" +
-      "\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHAT\020\004\022\010\n\004PUSH" +
-      "\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007\"=\n\014Behavior" +
-      "Type\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007ROUTING" +
-      "\020\002\022\007\n\003ACK\020\003B\027\n\020com.ghj.protocolB\003Msgb\006pr" +
-      "oto3"
+      "\020\001\"\335\004\n\006SysMsg\022\n\n\002id\030\001 \001(\003\022\035\n\005fromM\030\002 \001(\016",
+      "2\016.SysMsg.Module\022\033\n\003toM\030\003 \001(\0162\016.SysMsg.M" +
+      "odule\022\021\n\ttimestamp\030\004 \001(\003\022 \n\007msgType\030\005 \001(" +
+      "\0162\017.SysMsg.MsgType\022\032\n\003ack\030\006 \001(\0132\013.SysMsg" +
+      ".AckH\000\022\036\n\005greet\030\007 \001(\0132\r.SysMsg.GreetH\000\022$" +
+      "\n\010register\030\010 \001(\0132\020.SysMsg.RegisterH\000\022\"\n\007" +
+      "routing\030\t \001(\0132\017.SysMsg.RoutingH\000\0326\n\003Ack\022" +
+      "\020\n\010ackMsgId\030\001 \001(\003\022\014\n\004code\030\002 \001(\005\022\017\n\007messa" +
+      "ge\030\003 \001(\t\032\024\n\005Greet\022\013\n\003uId\030\001 \001(\003\032\030\n\010Regist" +
+      "er\022\014\n\004port\030\001 \001(\005\032<\n\007Routing\022\036\n\006source\030\001 " +
+      "\001(\0162\016.SysMsg.Module\022\021\n\taddresses\030\002 \003(\t\"8",
+      "\n\007MsgType\022\t\n\005GREET\020\000\022\014\n\010REGISTER\020\001\022\013\n\007RO" +
+      "UTING\020\002\022\007\n\003ACK\020\003\"e\n\006Module\022\n\n\006CLIENT\020\000\022\n" +
+      "\n\006ROUTER\020\001\022\t\n\005PROXY\020\002\022\010\n\004CHAT\020\003\022\n\n\006G_CHA" +
+      "T\020\004\022\010\n\004PUSH\020\005\022\014\n\010REGISTRY\020\006\022\n\n\006ACCESS\020\007B" +
+      "\t\n\007msgBodyB\027\n\020com.ghj.protocolB\003Msgb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6195,7 +9100,31 @@ public final class Msg {
     internal_static_SysMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SysMsg_descriptor,
-        new java.lang.String[] { "Id", "FromM", "ToM", "Timestamp", "BehaviorType", "Content", });
+        new java.lang.String[] { "Id", "FromM", "ToM", "Timestamp", "MsgType", "Ack", "Greet", "Register", "Routing", "MsgBody", });
+    internal_static_SysMsg_Ack_descriptor =
+      internal_static_SysMsg_descriptor.getNestedTypes().get(0);
+    internal_static_SysMsg_Ack_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SysMsg_Ack_descriptor,
+        new java.lang.String[] { "AckMsgId", "Code", "Message", });
+    internal_static_SysMsg_Greet_descriptor =
+      internal_static_SysMsg_descriptor.getNestedTypes().get(1);
+    internal_static_SysMsg_Greet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SysMsg_Greet_descriptor,
+        new java.lang.String[] { "UId", });
+    internal_static_SysMsg_Register_descriptor =
+      internal_static_SysMsg_descriptor.getNestedTypes().get(2);
+    internal_static_SysMsg_Register_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SysMsg_Register_descriptor,
+        new java.lang.String[] { "Port", });
+    internal_static_SysMsg_Routing_descriptor =
+      internal_static_SysMsg_descriptor.getNestedTypes().get(3);
+    internal_static_SysMsg_Routing_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SysMsg_Routing_descriptor,
+        new java.lang.String[] { "Source", "Addresses", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
