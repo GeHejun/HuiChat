@@ -24,11 +24,6 @@ public class HSession {
      * 用户ID
      */
     private Long uId;
-//
-//    /**
-//     * 用户名称
-//     */
-//    private String uName;
 
     /**
      * ip地址

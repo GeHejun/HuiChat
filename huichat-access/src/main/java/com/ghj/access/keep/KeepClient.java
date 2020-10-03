@@ -7,6 +7,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 @Slf4j
 public class KeepClient implements Runnable {
 
@@ -66,7 +68,10 @@ public class KeepClient implements Runnable {
         keepClientHandler.sendMsg(data);
     }
 
-
+    public void sendMsg(Msg.Data data, List<MsgCallBack> msgCallBacks) {
+        keepClientHandler.sendMsg(data);
+        keepClientHandler.setMsgCallBacks(msgCallBacks);
+    }
 
     /**
      * 客户端关闭

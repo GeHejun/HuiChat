@@ -96,36 +96,28 @@ public class Keeper {
         register();
     }
 
-    public void connectRouter() {
-        //        String address = "";
-//        String[] addresses = address.split(";");
-//        int routerCount = addresses.length;
-//        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
-//        //遍历列表获取router配置
-//        for (String s : addresses) {
-//            String routerHost = s.split(":")[0];
-//            String routerPort = s.split(":")[1];
-//            keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
-//        }
-//        keepHandler.setKeepClients(keepClients);
-        //连接
-    }
-
     public void register() {
         int port = config.getRegistryServerPort();
         String host = config.getRegistryServerHost();
         KeepClient keepClient = new KeepClient(host, port);
+        long msgId = new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId();
         Msg.SysMsg.Register register = Msg.SysMsg.Register.newBuilder().setPort(config.getKeepServerPort()).build();
         Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
                 .setMsgType(Msg.SysMsg.MsgType.REGISTER)
-                .setId(new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId())
+                .setId(msgId)
                 .setFromM(Msg.SysMsg.Module.ACCESS)
                 .setToM(Msg.SysMsg.Module.REGISTRY)
                 .setTimestamp(System.currentTimeMillis())
                 .setRegister(register)
                 .build();
-        Msg.Data data = Msg.Data.newBuilder().setDataType(Msg.Data.DataType.SYS_MSG).setSysMsg(sysMsg).build();
-        keepClient.sendMsg(data);
+        Msg.Data data = Msg.Data.newBuilder()
+                .setDataType(Msg.Data.DataType.SYS_MSG)
+                .setSysMsg(sysMsg)
+                .build();
+        RegisterMsgCallBack registerMsgCallBack = new RegisterMsgCallBack();
+        registerMsgCallBack.addNeedCallBackMsg(msgId);
+        List<MsgCallBack> msgCallBacks = Lists.newArrayList(registerMsgCallBack);
+        keepClient.sendMsg(data, msgCallBacks);
     }
 
     /**

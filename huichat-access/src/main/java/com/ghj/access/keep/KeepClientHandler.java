@@ -1,18 +1,30 @@
 package com.ghj.access.keep;
 
 import com.ghj.protocol.Msg;
+import com.google.common.collect.Lists;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.Objects;
+
+import static com.ghj.protocol.Msg.SysMsg.MsgType.ROUTING;
 
 @Slf4j
 public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private final static Object lock = new Object();
 
-    ChannelHandlerContext ctx;
+    private ChannelHandlerContext ctx;
+
+    private List<MsgCallBack> msgCallBacks;
+
+    KeepClient keepClient;
+
+    public void setMsgCallBacks(List<MsgCallBack> msgCallBacks) {
+        this.msgCallBacks = msgCallBacks;
+    }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -26,31 +38,43 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
     }
 
     private void dealMsg(Msg.Data data) {
+        msgCallBacks.forEach(msgCallBack -> msgCallBack.back(data));
         switch (data.getDataType()) {
-            case SYS_MSG:
-                dealSysMsg(data);
-                break;
             case CHAT:
                 dealChatMsg(data);
                 break;
+            case SYS_MSG:
+                dealSysMsg(data);
             default:
         }
     }
 
     private void dealSysMsg(Msg.Data data) {
         Msg.SysMsg sysMsg = data.getSysMsg();
-        switch (sysMsg.getMsgType()) {
-            case ROUTING:
-                Msg.SysMsg.Routing routing = sysMsg.getRouting();
-            case ACK:
-
-
+        if (ROUTING == sysMsg.getMsgType()) {
+            Msg.SysMsg.Routing routing = sysMsg.getRouting();
+            routing.getAddressList().forEach(this::connectRouter);
         }
+    }
 
+    public void connectRouter(String address) {
+        String[] addresses = address.split(";");
+        int routerCount = addresses.length;
+        List<KeepClient> keepClients = Lists.newArrayListWithCapacity(routerCount);
+        //遍历列表获取router配置
+        for (String s : addresses) {
+            String routerHost = s.split(":")[0];
+            String routerPort = s.split(":")[1];
+            keepClients.add(new KeepClient(routerHost, Integer.parseInt(routerPort)));
+        }
     }
 
     private void dealChatMsg(Msg.Data data) {
-        Msg.Chat chat = data.getChat();
+        if (KeepContext.checkServer()) {
+            Msg.Chat chat = data.getChat();
+        } else {
+
+        }
 
     }
 

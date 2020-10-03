@@ -5,9 +5,9 @@ public enum HSStatusEnum {
     AUTO_OFF_LINE(2, "自动下线"),
     FORCE_OFF_LINE(3, "被迫下线");
 
-    private Integer code;
+    private final Integer code;
 
-    private String name;
+    private final String name;
 
     HSStatusEnum(Integer code, String name) {
         this.code = code;
