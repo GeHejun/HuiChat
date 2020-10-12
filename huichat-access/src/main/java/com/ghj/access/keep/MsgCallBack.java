@@ -17,7 +17,7 @@ public abstract class MsgCallBack {
     }
 
     void back(Msg.Data data) {
-        //这里可以不用校验的，已经校验了一次了
+        //这里可以不用判断的，已经判断过一次了
         if (SYS_MSG == data.getDataType() && ACK == data.getSysMsg().getMsgType()) {
             long ackMsgId = data.getSysMsg().getAck().getAckMsgId();
             if (needCallBackMsgIds.contains(ackMsgId)) {

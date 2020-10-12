@@ -1,4 +1,4 @@
-package com.ghj.access.config;
+package com.ghj.access.keep;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class Config {
     public int getKeepServerPort() {
         return keepServerPort;
     }
-
+g
     public int getRegistryServerPort() {
         return registryServerPort;
     }

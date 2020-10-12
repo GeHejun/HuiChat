@@ -20,11 +20,10 @@ import static com.ghj.protocol.Msg.SysMsg.MsgType.GREET;
 
 //TODO 所有的消息发送必须加回调
 @Component
-@Data
 @Slf4j
 public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
     List<KeepClient> keepClients;
 
@@ -43,6 +42,7 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
 
     private void dealMsg(ChannelHandlerContext ctx, Msg.Data data) {
+        KeepContext.checkServer();
         if (SYS_MSG == data.getDataType()) {
             buildContext(ctx, data.getSysMsg());
         } else {

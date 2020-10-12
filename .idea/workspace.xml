@@ -23,18 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e10dd06-4964-4022-9d9c-70fa39fd480f" name="Default Changelist" comment="消息协议定义">
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/MsgCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/RegisterMsgCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/ServerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/huichat-router/src/main/java/com/ghj/router/Router.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/HSStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/HSStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/HSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/HSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/Keeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-protocol/src/main/proto/message.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/MsgCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/huichat-access/src/main/java/com/ghj/access/keep/MsgCallBack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,14 +82,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/huichat-registry" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/huichat-registry/src/main/java/com/ghj/registry/zkservice" />
       <recent name="$PROJECT_DIR$/huichat-registry" />
       <recent name="$PROJECT_DIR$/huichat-registry/registry-service/src/main" />
       <recent name="$PROJECT_DIR$/huichat-auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/huichat-registry" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,21 +98,6 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -144,7 +125,8 @@
       <workItem from="1601460040826" duration="24000" />
       <workItem from="1601618369561" duration="175000" />
       <workItem from="1601620675309" duration="5336000" />
-      <workItem from="1601662602137" duration="4196000" />
+      <workItem from="1601662602137" duration="6253000" />
+      <workItem from="1601900560138" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="proto">
       <created>1600415057506</created>
@@ -468,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601459952347</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="消息协议定义">
+      <created>1601699362331</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1601699362331</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,6 +569,10 @@
     </state>
     <state x="330" y="155" key="SettingsEditor/0.23.1792.1009@0.23.1792.1009" timestamp="1601261303963" />
     <state x="330" y="156" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1601109761196" />
+    <state x="842" y="432" key="VCS.ChangelistChooser" timestamp="1601900597558">
+      <screen x="0" y="23" width="1792" height="1009" />
+    </state>
+    <state x="842" y="432" key="VCS.ChangelistChooser/0.23.1792.1009@0.23.1792.1009" timestamp="1601900597558" />
     <state x="429" y="255" key="Vcs.Push.Dialog.v2" timestamp="1601459956012">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
@@ -627,11 +620,11 @@
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state x="656" y="236" width="670" height="675" key="run.anything.popup/0.23.1792.1009@0.23.1792.1009" timestamp="1601623634101" />
-    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601699095522">
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup" timestamp="1601901000020">
       <screen x="0" y="23" width="1792" height="1009" />
     </state>
     <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009/-1920.-85.1920.1057@0.23.1792.1009" timestamp="1601285417468" />
-    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009@0.23.1792.1009" timestamp="1601699095522" />
+    <state x="494" y="242" width="670" height="672" key="search.everywhere.popup/0.23.1792.1009@0.23.1792.1009" timestamp="1601901000020" />
     <state x="494" y="243" width="670" height="674" key="search.everywhere.popup/0.23.1792.1013@0.23.1792.1013" timestamp="1601186449056" />
     <state x="494" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1601011108598" />
   </component>

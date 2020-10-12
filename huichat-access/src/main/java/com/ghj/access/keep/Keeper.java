@@ -1,6 +1,5 @@
 package com.ghj.access.keep;
 
-import com.ghj.access.config.Config;
 import com.ghj.common.util.DataCenterIdGenerator;
 import com.ghj.common.util.SnowFlakeIdGenerator;
 import com.ghj.common.util.WorkIdGenerator;
@@ -16,8 +15,6 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.common.protocol.types.Field;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

@@ -20,8 +20,6 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private List<MsgCallBack> msgCallBacks;
 
-    KeepClient keepClient;
-
     public void setMsgCallBacks(List<MsgCallBack> msgCallBacks) {
         this.msgCallBacks = msgCallBacks;
     }

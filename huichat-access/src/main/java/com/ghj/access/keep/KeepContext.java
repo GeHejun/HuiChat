@@ -1,6 +1,5 @@
 package com.ghj.access.keep;
 
-import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ConcurrentHashMap;
