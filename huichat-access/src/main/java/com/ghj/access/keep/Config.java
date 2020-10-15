@@ -19,7 +19,7 @@ public class Config {
     public int getKeepServerPort() {
         return keepServerPort;
     }
-g
+
     public int getRegistryServerPort() {
         return registryServerPort;
     }
