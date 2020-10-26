@@ -87,6 +87,7 @@ public class Keeper {
             log.error("服务器启动失败", e);
             boss.shutdownGracefully();
             work.shutdownGracefully();
+            Thread.currentThread().interrupt();
         }
     }
 
