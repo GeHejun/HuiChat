@@ -79,6 +79,7 @@ public class Keeper {
             feature.addListener( future -> {
                 //如果连接成功
                 if (future.isSuccess()) {
+                    //TODO 注册以后抽出公共客户端放到registry模块中，别的模块调用API即可
                     register();
                 }
             });

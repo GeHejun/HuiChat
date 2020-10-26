@@ -21,10 +21,6 @@ import static com.ghj.protocol.Msg.SysMsg.MsgType.GREET;
 @Slf4j
 public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
-    private final Random random = new Random();
-
-    List<KeepClient> keepClients;
-
     @Resource
     StringRedisTemplate stringRedisTemplate;
 
@@ -50,8 +46,7 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
     }
 
     private void sendChatMsgToRouter(Msg.Data data) {
-        int index = random.nextInt(keepClients.size());
-        KeepClient keepClient = keepClients.get(index);
+        KeepClient keepClient = KeepClientContext.getBestKeepClint();
         keepClient.sendMsg(data);
     }
 
@@ -59,7 +54,7 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
         if (KeepContext.checkServer()) {
             if (GREET == sysMsg.getMsgType()) {
                 Msg.SysMsg.Greet greet = sysMsg.getGreet();
-                KeepContext.addHSession(new HSession().setCreateTime(greet.getTimestamp())
+                HSessionContext.addHSession(new HSession().setCreateTime(greet.getTimestamp())
                         .setCtx(ctx).setClientAddress(ctx.channel().remoteAddress().toString())
                         .setLocation(greet.getLocation()).setUId(greet.getUId()));
                 try {
@@ -69,7 +64,7 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
                 }
             }
         } else {
-
+            log.error("连接失败，服务器不可用");
         }
 
     }

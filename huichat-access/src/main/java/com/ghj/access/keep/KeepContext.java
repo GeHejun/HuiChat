@@ -7,23 +7,16 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class KeepContext {
 
-    private static volatile ServerState serverState = ServerState.NOT_ENABLE;
+    private KeepContext() {}
 
-    public static void enableServer() {
+    private static ServerState serverState = ServerState.NOT_ENABLE;
+
+    public static synchronized void enableServer() {
         serverState = ServerState.ENABLE;
     }
 
-    public static Boolean checkServer() {
+    public static synchronized Boolean checkServer() {
         return ServerState.ENABLE == serverState;
     }
 
-    private static final ConcurrentHashMap<Long, HSession> context = new ConcurrentHashMap<>();
-
-    public static void addHSession(HSession hSession) {
-        context.put(hSession.getUId(), hSession);
-    }
-
-    public static HSession getHSession(Long uId) {
-        return context.get(uId);
-    }
 }
