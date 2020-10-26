@@ -1,7 +1,5 @@
 package com.ghj.access.keep;
 
-import lombok.Data;
-
 /**
  *
  */

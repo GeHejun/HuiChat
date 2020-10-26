@@ -76,21 +76,18 @@ public class Keeper {
                 }
             });
             ChannelFuture feature = serverBootstrap.bind(port).sync();
-            feature.addListener((ChannelFutureListener) future -> {
+            feature.addListener( future -> {
                 //如果连接成功
                 if (future.isSuccess()) {
-                    startClient();
+                    register();
                 }
             });
             feature.channel().closeFuture().sync();
         } catch (InterruptedException e) {
+            log.error("服务器启动失败", e);
             boss.shutdownGracefully();
             work.shutdownGracefully();
         }
-    }
-
-    private void startClient() {
-        register();
     }
 
     public void register() {

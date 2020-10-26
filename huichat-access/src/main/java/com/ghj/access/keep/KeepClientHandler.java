@@ -20,10 +20,6 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private List<MsgCallBack> msgCallBacks;
 
-    public void setMsgCallBacks(List<MsgCallBack> msgCallBacks) {
-        this.msgCallBacks = msgCallBacks;
-    }
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         this.ctx = ctx;
@@ -43,6 +39,7 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
                 break;
             case SYS_MSG:
                 dealSysMsg(data);
+                break;
             default:
         }
     }
@@ -76,12 +73,12 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     }
 
-    public synchronized void sendMsg(Msg.Data data) {
+    public synchronized void sendMsg(Msg.Data data, List<MsgCallBack> msgCallBacks) {
         synchronized (lock) {
             if (Objects.isNull(ctx)) {
                 log.error("keepClientChannel为空，请检查是否连接到Router");
             }
-
+            this.msgCallBacks = msgCallBacks;
         }
     }
 

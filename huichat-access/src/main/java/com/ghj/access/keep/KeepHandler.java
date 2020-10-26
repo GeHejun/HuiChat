@@ -3,14 +3,12 @@ package com.ghj.access.keep;
 import com.ghj.protocol.Msg;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.net.Inet4Address;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Random;
@@ -61,12 +59,11 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
         if (KeepContext.checkServer()) {
             if (GREET == sysMsg.getMsgType()) {
                 Msg.SysMsg.Greet greet = sysMsg.getGreet();
-                HSession hSession = new HSession().setCreateTime(greet.getTimestamp())
+                KeepContext.addHSession(new HSession().setCreateTime(greet.getTimestamp())
                         .setCtx(ctx).setClientAddress(ctx.channel().remoteAddress().toString())
-                        .setLocation(greet.getLocation()).setUId(greet.getUId());
-                KeepContext.addHSession(hSession);
+                        .setLocation(greet.getLocation()).setUId(greet.getUId()));
                 try {
-                    stringRedisTemplate.opsForValue().setIfPresent(String.valueOf(greet.getUId()), Inet4Address.getLocalHost().getHostAddress());
+                    stringRedisTemplate.opsForValue().setIfPresent(String.valueOf(greet.getUId()), InetAddress.getLocalHost().getHostAddress());
                 } catch (UnknownHostException e) {
                     log.error("连接失败，服务器内部问题，无法获取本地服务地址:{}", e.toString());
                 }

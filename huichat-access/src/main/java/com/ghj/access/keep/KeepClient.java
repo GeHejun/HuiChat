@@ -7,6 +7,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -65,12 +66,11 @@ public class KeepClient implements Runnable {
     }
 
     public void sendMsg(Msg.Data data) {
-        keepClientHandler.sendMsg(data);
+        this.sendMsg(data, Collections.emptyList());
     }
 
     public void sendMsg(Msg.Data data, List<MsgCallBack> msgCallBacks) {
-        keepClientHandler.sendMsg(data);
-        keepClientHandler.setMsgCallBacks(msgCallBacks);
+        keepClientHandler.sendMsg(data, msgCallBacks);
     }
 
     /**
