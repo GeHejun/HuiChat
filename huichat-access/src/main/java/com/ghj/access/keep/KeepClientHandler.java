@@ -20,14 +20,13 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
     private List<MsgCallBack> msgCallBacks;
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) {
         this.ctx = ctx;
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg.Data data) throws Exception {
         dealMsg(data);
-
     }
 
     private void dealMsg(Msg.Data data) {

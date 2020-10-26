@@ -24,10 +24,6 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
     @Resource
     StringRedisTemplate stringRedisTemplate;
 
-    @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        super.channelActive(ctx);
-    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Msg.Data data) {
@@ -38,11 +34,10 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
     private void dealMsg(ChannelHandlerContext ctx, Msg.Data data) {
         KeepContext.checkServer();
         if (SYS_MSG == data.getDataType()) {
-            buildContext(ctx, data.getSysMsg());
+            dealSysMsg(ctx, data.getSysMsg());
         } else {
             sendChatMsgToRouter(data);
         }
-
     }
 
     private void sendChatMsgToRouter(Msg.Data data) {
@@ -50,23 +45,27 @@ public class KeepHandler extends SimpleChannelInboundHandler<Msg.Data> {
         keepClient.sendMsg(data);
     }
 
-    private void buildContext(ChannelHandlerContext ctx, Msg.SysMsg sysMsg) {
+    private void dealSysMsg(ChannelHandlerContext ctx, Msg.SysMsg sysMsg) {
         if (KeepContext.checkServer()) {
             if (GREET == sysMsg.getMsgType()) {
-                Msg.SysMsg.Greet greet = sysMsg.getGreet();
-                HSessionContext.addHSession(new HSession().setCreateTime(greet.getTimestamp())
-                        .setCtx(ctx).setClientAddress(ctx.channel().remoteAddress().toString())
-                        .setLocation(greet.getLocation()).setUId(greet.getUId()));
-                try {
-                    stringRedisTemplate.opsForValue().setIfPresent(String.valueOf(greet.getUId()), InetAddress.getLocalHost().getHostAddress());
-                } catch (UnknownHostException e) {
-                    log.error("连接失败，服务器内部问题，无法获取本地服务地址:{}", e.toString());
-                }
+                buildContext(ctx, sysMsg);
             }
         } else {
             log.error("连接失败，服务器不可用");
         }
+    }
 
+    private void buildContext(ChannelHandlerContext ctx, Msg.SysMsg sysMsg) {
+        Msg.SysMsg.Greet greet = sysMsg.getGreet();
+        HSessionContext.addHSession(new HSession()
+                .setCreateTime(greet.getTimestamp())
+                .setCtx(ctx).setClientAddress(ctx.channel().remoteAddress().toString())
+                .setLocation(greet.getLocation()).setUId(greet.getUId()));
+        try {
+            stringRedisTemplate.opsForValue().setIfPresent(String.valueOf(greet.getUId()), InetAddress.getLocalHost().getHostAddress());
+        } catch (UnknownHostException e) {
+            log.error("连接失败，服务器内部问题，无法获取本地服务地址:{}", e.toString());
+        }
     }
 
 
