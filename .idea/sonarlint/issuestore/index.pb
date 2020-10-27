@@ -229,3 +229,5 @@ q
 Ahuichat-access/src/main/java/com/ghj/access/keep/KeepHandler.java,e/a/eaf93449b75e3d9ffc39da5053c5a3803ae3a8d5
 ]
 -huichat-protocol/src/main/proto/message.proto,c/e/ce8861350033102b1f35b5d4b5cdf75a39b66de3
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
