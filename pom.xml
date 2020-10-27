@@ -18,7 +18,7 @@
         <module>huichat-router</module>
         <module>huichat-protocol</module>
         <module>huichat-gchat</module>
-        <module>huichat-access</module>
+        <module>huichat-keep</module>
         <module>huichat-registry</module>
         <module>huichat-msgserver</module>
         <module>huichat-userver</module>

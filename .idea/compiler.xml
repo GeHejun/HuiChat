@@ -8,21 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="huichat-pushserver" />
-        <module name="huichat-keep" />
         <module name="huichat-protocol" />
+        <module name="huichat-proxy" />
         <module name="huichat-msgserver" />
         <module name="huichat-chat" />
         <module name="huichat-router" />
         <module name="huichat-common" />
-        <module name="huichat-userver" />
+        <module name="huichat-keep" />
         <module name="huichat-registry" />
-        <module name="huichat-proxy" />
+        <module name="huichat-userver" />
         <module name="huichat-gchat" />
         <module name="huichat-rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="huichat" target="1.8" />
+      <module name="huichat-access" target="1.8" />
       <module name="huichat-chat" target="1.8" />
       <module name="huichat-common" target="1.8" />
       <module name="huichat-gchat" target="1.8" />
@@ -39,6 +40,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="huichat-access" options="-parameters" />
       <module name="huichat-chat" options="-parameters" />
       <module name="huichat-common" options="-parameters" />
       <module name="huichat-gchat" options="-parameters" />
