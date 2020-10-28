@@ -9,19 +9,21 @@
         <outputRelativeToContentRoot value="true" />
         <module name="huichat-pushserver" />
         <module name="huichat-protocol" />
-        <module name="huichat-proxy" />
         <module name="huichat-msgserver" />
         <module name="huichat-chat" />
+        <module name="server" />
         <module name="huichat-router" />
         <module name="huichat-common" />
         <module name="huichat-keep" />
-        <module name="huichat-registry" />
-        <module name="huichat-userver" />
+        <module name="huichat-proxy" />
         <module name="huichat-gchat" />
+        <module name="huichat-userver" />
+        <module name="client" />
         <module name="huichat-rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="client" target="1.8" />
       <module name="huichat" target="1.8" />
       <module name="huichat-access" target="1.8" />
       <module name="huichat-chat" target="1.8" />
@@ -36,10 +38,12 @@
       <module name="huichat-rest" target="1.8" />
       <module name="huichat-router" target="1.8" />
       <module name="huichat-userver" target="1.8" />
+      <module name="server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="client" options="-parameters" />
       <module name="huichat-access" options="-parameters" />
       <module name="huichat-chat" options="-parameters" />
       <module name="huichat-common" options="-parameters" />
@@ -53,6 +57,7 @@
       <module name="huichat-rest" options="-parameters" />
       <module name="huichat-router" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
+      <module name="server" options="-parameters" />
     </option>
   </component>
 </project>

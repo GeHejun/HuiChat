@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>huichat-registry</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>client</module>
+        <module>server</module>
+    </modules>
 
     <dependencies>
         <dependency>
