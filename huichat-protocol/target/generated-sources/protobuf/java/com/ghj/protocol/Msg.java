@@ -6047,18 +6047,10 @@ public final class Msg {
       long getTimestamp();
 
       /**
-       * <pre>
-       *        string uName = 4;
-       * </pre>
-       *
        * <code>optional string location = 3;</code>
        */
       java.lang.String getLocation();
       /**
-       * <pre>
-       *        string uName = 4;
-       * </pre>
-       *
        * <code>optional string location = 3;</code>
        */
       com.google.protobuf.ByteString
@@ -6166,10 +6158,6 @@ public final class Msg {
       public static final int LOCATION_FIELD_NUMBER = 3;
       private volatile java.lang.Object location_;
       /**
-       * <pre>
-       *        string uName = 4;
-       * </pre>
-       *
        * <code>optional string location = 3;</code>
        */
       public java.lang.String getLocation() {
@@ -6185,10 +6173,6 @@ public final class Msg {
         }
       }
       /**
-       * <pre>
-       *        string uName = 4;
-       * </pre>
-       *
        * <code>optional string location = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -6564,10 +6548,6 @@ public final class Msg {
 
         private java.lang.Object location_ = "";
         /**
-         * <pre>
-         *        string uName = 4;
-         * </pre>
-         *
          * <code>optional string location = 3;</code>
          */
         public java.lang.String getLocation() {
@@ -6583,10 +6563,6 @@ public final class Msg {
           }
         }
         /**
-         * <pre>
-         *        string uName = 4;
-         * </pre>
-         *
          * <code>optional string location = 3;</code>
          */
         public com.google.protobuf.ByteString
@@ -6603,10 +6579,6 @@ public final class Msg {
           }
         }
         /**
-         * <pre>
-         *        string uName = 4;
-         * </pre>
-         *
          * <code>optional string location = 3;</code>
          */
         public Builder setLocation(
@@ -6620,10 +6592,6 @@ public final class Msg {
           return this;
         }
         /**
-         * <pre>
-         *        string uName = 4;
-         * </pre>
-         *
          * <code>optional string location = 3;</code>
          */
         public Builder clearLocation() {
@@ -6633,10 +6601,6 @@ public final class Msg {
           return this;
         }
         /**
-         * <pre>
-         *        string uName = 4;
-         * </pre>
-         *
          * <code>optional string location = 3;</code>
          */
         public Builder setLocationBytes(

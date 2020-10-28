@@ -1,5 +1,10 @@
 package com.ghj.registry.client;
 
+import com.ghj.common.util.DataCenterIdGenerator;
+import com.ghj.common.util.SnowFlakeIdGenerator;
+import com.ghj.common.util.WorkIdGenerator;
+import com.ghj.protocol.Msg;
+import com.google.common.collect.Lists;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -9,6 +14,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 
 @Slf4j
 public class Register implements Runnable {
@@ -17,6 +24,8 @@ public class Register implements Runnable {
 
     private final int port;
 
+    private final int thisServerPort;
+
     private Channel registerChannel;
 
     RegisterHandler registerHandler;
@@ -24,9 +33,10 @@ public class Register implements Runnable {
     EventLoopGroup group = new NioEventLoopGroup();
 
 
-    public Register(String host, int port) {
+    public Register(String host, int port, int thisServerPort) {
         this.host = host;
         this.port = port;
+        this.thisServerPort = thisServerPort;
     }
 
 
@@ -57,12 +67,31 @@ public class Register implements Runnable {
                 close();
                 log.info("客户端[" + channelFuture.channel().localAddress().toString() + "]已断开...");
             });
+            sendRegisterMsg();
         } catch (InterruptedException e) {
             e.printStackTrace();
             Thread.currentThread().interrupt();
         } finally {
             group.shutdownGracefully();
         }
+    }
+
+    private void sendRegisterMsg() {
+        long msgId = new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId();
+        Msg.SysMsg.Register register = Msg.SysMsg.Register.newBuilder().setPort(thisServerPort).build();
+        Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
+                .setMsgType(Msg.SysMsg.MsgType.REGISTER)
+                .setId(msgId)
+                .setFromM(Msg.SysMsg.Module.ACCESS)
+                .setToM(Msg.SysMsg.Module.REGISTRY)
+                .setTimestamp(System.currentTimeMillis())
+                .setRegister(register)
+                .build();
+        Msg.Data data = Msg.Data.newBuilder()
+                .setDataType(Msg.Data.DataType.SYS_MSG)
+                .setSysMsg(sysMsg)
+                .build();
+//        registerHandler.sendMsg(data, msgCallBacks);
     }
 
 

@@ -12,8 +12,8 @@
     <artifactId>huichat-registry</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>client</module>
-        <module>server</module>
+        <module>huichat-registry-client</module>
+        <module>huichat-registry-server</module>
     </modules>
 
     <dependencies>

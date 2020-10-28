@@ -99,5 +99,6 @@
     <orderEntry type="library" name="Maven: com.alibaba.spring:spring-context-support:1.0.8" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.8.1" level="project" />
+    <orderEntry type="module" module-name="huichat-registry-client" />
   </component>
 </module>

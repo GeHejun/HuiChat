@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/huichat-registry/client/client.iml" filepath="$PROJECT_DIR$/huichat-registry/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/huichat.iml" filepath="$PROJECT_DIR$/.idea/huichat.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-chat/huichat-chat.iml" filepath="$PROJECT_DIR$/huichat-chat/huichat-chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-common/huichat-common.iml" filepath="$PROJECT_DIR$/huichat-common/huichat-common.iml" />
@@ -13,10 +12,11 @@
       <module fileurl="file://$PROJECT_DIR$/huichat-proxy/huichat-proxy.iml" filepath="$PROJECT_DIR$/huichat-proxy/huichat-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-pushserver/huichat-pushserver.iml" filepath="$PROJECT_DIR$/huichat-pushserver/huichat-pushserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-registry/huichat-registry.iml" filepath="$PROJECT_DIR$/huichat-registry/huichat-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-registry/huichat-registry-client/huichat-registry-client.iml" filepath="$PROJECT_DIR$/huichat-registry/huichat-registry-client/huichat-registry-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huichat-registry/huichat-registry-server/huichat-registry-server.iml" filepath="$PROJECT_DIR$/huichat-registry/huichat-registry-server/huichat-registry-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-rest/huichat-rest.iml" filepath="$PROJECT_DIR$/huichat-rest/huichat-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-router/huichat-router.iml" filepath="$PROJECT_DIR$/huichat-router/huichat-router.iml" />
       <module fileurl="file://$PROJECT_DIR$/huichat-userver/huichat-userver.iml" filepath="$PROJECT_DIR$/huichat-userver/huichat-userver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/huichat-registry/server/server.iml" filepath="$PROJECT_DIR$/huichat-registry/server/server.iml" />
     </modules>
   </component>
 </project>

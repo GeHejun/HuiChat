@@ -7,19 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="huichat-pushserver" />
-        <module name="huichat-protocol" />
-        <module name="huichat-msgserver" />
-        <module name="huichat-chat" />
-        <module name="server" />
-        <module name="huichat-router" />
-        <module name="huichat-common" />
-        <module name="huichat-keep" />
-        <module name="huichat-proxy" />
+        <module name="huichat-registry-client" />
         <module name="huichat-gchat" />
-        <module name="huichat-userver" />
-        <module name="client" />
+        <module name="huichat-proxy" />
+        <module name="huichat-registry-server" />
         <module name="huichat-rest" />
+        <module name="huichat-keep" />
+        <module name="huichat-msgserver" />
+        <module name="huichat-userver" />
+        <module name="huichat-protocol" />
+        <module name="huichat-common" />
+        <module name="huichat-pushserver" />
+        <module name="huichat-router" />
+        <module name="huichat-chat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +35,8 @@
       <module name="huichat-proxy" target="1.8" />
       <module name="huichat-pushserver" target="1.8" />
       <module name="huichat-registry" target="1.8" />
+      <module name="huichat-registry-client" target="1.8" />
+      <module name="huichat-registry-server" target="1.8" />
       <module name="huichat-rest" target="1.8" />
       <module name="huichat-router" target="1.8" />
       <module name="huichat-userver" target="1.8" />
@@ -54,6 +56,8 @@
       <module name="huichat-proxy" options="-parameters" />
       <module name="huichat-pushserver" options="-parameters" />
       <module name="huichat-registry" options="-parameters" />
+      <module name="huichat-registry-client" options="-parameters" />
+      <module name="huichat-registry-server" options="-parameters" />
       <module name="huichat-rest" options="-parameters" />
       <module name="huichat-router" options="-parameters" />
       <module name="huichat-userver" options="-parameters" />
