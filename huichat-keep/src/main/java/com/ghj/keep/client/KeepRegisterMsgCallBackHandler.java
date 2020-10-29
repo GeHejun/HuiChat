@@ -1,23 +1,19 @@
-package com.ghj.keep.keep;
+package com.ghj.keep.client;
 
 import com.ghj.keep.context.KeepContext;
 import com.ghj.protocol.Msg;
+import com.ghj.registry.client.RegisterMsgCallBackHandler;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.ghj.protocol.Msg.SysMsg.Module.REGISTRY;
-
 @Slf4j
-public class RegisterMsgCallBack extends MsgCallBack {
+public class KeepRegisterMsgCallBackHandler implements RegisterMsgCallBackHandler {
     @Override
-    void doBack(Msg.Data data) {
-        Msg.SysMsg sysMsg = data.getSysMsg();
-        if (REGISTRY == sysMsg.getFromM()) {
+    public void callBack(Msg.SysMsg sysMsg) {
             Msg.SysMsg.Ack ack = sysMsg.getAck();
             if (200 == ack.getCode()) {
                 KeepContext.enableServer();
             } else {
                 log.error("注册服务器异常:{}", ack.getMessage());
             }
-        }
     }
 }

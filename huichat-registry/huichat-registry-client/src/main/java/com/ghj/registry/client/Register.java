@@ -14,8 +14,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.List;
-
 
 @Slf4j
 public class Register implements Runnable {
@@ -28,7 +26,9 @@ public class Register implements Runnable {
 
     private Channel registerChannel;
 
-    RegisterHandler registerHandler;
+    private RegisterHandler registerHandler;
+
+    private RegisterMsgCallBackHandler registerMsgCallBackHandler;
 
     EventLoopGroup group = new NioEventLoopGroup();
 
@@ -91,7 +91,10 @@ public class Register implements Runnable {
                 .setDataType(Msg.Data.DataType.SYS_MSG)
                 .setSysMsg(sysMsg)
                 .build();
-//        registerHandler.sendMsg(data, msgCallBacks);
+        RegisterMsgCallBack registerMsgCallBack = new RegisterMsgCallBack();
+        registerMsgCallBack.setRegisterMsgCallBackHandler(registerMsgCallBackHandler);
+        registerMsgCallBack.addNeedCallBackMsg(sysMsg.getId());
+        registerHandler.sendMsg(data, Lists.newArrayList(registerMsgCallBack));
     }
 
 
@@ -111,5 +114,10 @@ public class Register implements Runnable {
 
     public void setRoutingMsgHandler(RoutingMsgHandler routingMsgHandler) {
         registerHandler = new RegisterHandler(routingMsgHandler);
+    }
+
+
+    public void setRegisterMsgCallBackHandler(RegisterMsgCallBackHandler registerMsgCallBackHandler) {
+        this.registerMsgCallBackHandler = registerMsgCallBackHandler;
     }
 }

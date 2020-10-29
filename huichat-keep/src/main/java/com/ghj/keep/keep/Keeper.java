@@ -1,12 +1,12 @@
 package com.ghj.keep.keep;
 
-import com.ghj.common.util.DataCenterIdGenerator;
-import com.ghj.common.util.SnowFlakeIdGenerator;
-import com.ghj.common.util.WorkIdGenerator;
-import com.ghj.keep.client.KeepClient;
+import com.ghj.keep.client.KeepRegisterMsgCallBackHandler;
+import com.ghj.keep.client.KeepRoutingMsgHandler;
 import com.ghj.keep.config.Config;
 import com.ghj.protocol.Msg;
-import com.google.common.collect.Lists;
+import com.ghj.registry.client.RegisterClient;
+import com.ghj.registry.client.RegisterMsgCallBackHandler;
+import com.ghj.registry.client.RoutingMsgHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
-import java.util.List;
 
 @Component
 @Slf4j
@@ -98,27 +97,12 @@ public class Keeper {
     }
 
     public void register() {
-        int port = config.getRegistryServerPort();
-        String host = config.getRegistryServerHost();
-        KeepClient keepClient = new KeepClient(host, port);
-        long msgId = new SnowFlakeIdGenerator(WorkIdGenerator.getWorkId(), DataCenterIdGenerator.getDataCenterId()).nextId();
-        Msg.SysMsg.Register register = Msg.SysMsg.Register.newBuilder().setPort(config.getKeepServerPort()).build();
-        Msg.SysMsg sysMsg = Msg.SysMsg.newBuilder()
-                .setMsgType(Msg.SysMsg.MsgType.REGISTER)
-                .setId(msgId)
-                .setFromM(Msg.SysMsg.Module.ACCESS)
-                .setToM(Msg.SysMsg.Module.REGISTRY)
-                .setTimestamp(System.currentTimeMillis())
-                .setRegister(register)
-                .build();
-        Msg.Data data = Msg.Data.newBuilder()
-                .setDataType(Msg.Data.DataType.SYS_MSG)
-                .setSysMsg(sysMsg)
-                .build();
-        RegisterMsgCallBack registerMsgCallBack = new RegisterMsgCallBack();
-        registerMsgCallBack.addNeedCallBackMsg(msgId);
-        List<MsgCallBack> msgCallBacks = Lists.newArrayList(registerMsgCallBack);
-        keepClient.sendMsg(data, msgCallBacks);
+        String registryServerHost = config.getRegistryServerHost();
+        int registryServerPort = config.getKeepServerPort();
+        int thisServerPort = config.getKeepServerPort();
+        RoutingMsgHandler routingMsgHandler = new KeepRoutingMsgHandler();
+        RegisterMsgCallBackHandler registerMsgCallBackHandler = new KeepRegisterMsgCallBackHandler();
+        RegisterClient.register(registryServerHost, registryServerPort, thisServerPort, routingMsgHandler, registerMsgCallBackHandler);
     }
 
     /**

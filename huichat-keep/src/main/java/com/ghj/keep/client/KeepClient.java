@@ -1,6 +1,5 @@
 package com.ghj.keep.client;
 
-import com.ghj.keep.keep.MsgCallBack;
 import com.ghj.protocol.Msg;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

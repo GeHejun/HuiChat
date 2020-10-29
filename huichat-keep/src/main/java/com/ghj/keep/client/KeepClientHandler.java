@@ -1,11 +1,11 @@
 package com.ghj.keep.client;
 
+import com.ghj.common.callback.MsgCallBack;
 import com.ghj.keep.context.HSession;
 import com.ghj.keep.context.HSessionContext;
-import com.ghj.keep.context.KeepClientContext;
 import com.ghj.keep.context.KeepContext;
-import com.ghj.keep.keep.MsgCallBack;
 import com.ghj.protocol.Msg;
+import com.google.common.collect.Lists;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -13,15 +13,13 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 import java.util.Objects;
 
-import static com.ghj.protocol.Msg.SysMsg.MsgType.ROUTING;
-
 @Slf4j
 public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
 
     private ChannelHandlerContext ctx;
 
-    private List<MsgCallBack> msgCallBacks;
+    private List<MsgCallBack> msgCallBacks = Lists.newArrayList();
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
@@ -48,14 +46,7 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private void dealSysMsg(Msg.Data data) {
         Msg.SysMsg sysMsg = data.getSysMsg();
-        if (ROUTING == sysMsg.getMsgType()) {
-            Msg.SysMsg.Routing routing = sysMsg.getRouting();
-            routing.getAddressList().forEach(this::connectRouter);
-        }
-    }
 
-    public void connectRouter(String address) {
-        KeepClientContext.adjustKeepClient(address);
     }
 
     private void dealChatMsg(Msg.Data data) {
@@ -74,7 +65,7 @@ public class KeepClientHandler extends SimpleChannelInboundHandler<Msg.Data> {
             log.error("keepClientChannel为空，请检查是否连接到Router");
             throw new RuntimeException("XXX");
         }
-        this.msgCallBacks = msgCallBacks;
+        this.msgCallBacks.addAll(msgCallBacks);
         ctx.writeAndFlush(data);
     }
 

@@ -12,7 +12,7 @@ public abstract class MsgCallBack {
 
     private final List<Long> needCallBackMsgIds = Lists.newArrayList();
 
-    void addNeedCallBackMsg(Long id) {
+    public void addNeedCallBackMsg(Long id) {
         needCallBackMsgIds.add(id);
     }
 

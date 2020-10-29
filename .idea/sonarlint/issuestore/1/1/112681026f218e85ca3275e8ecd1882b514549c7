@@ -1,0 +1,981 @@
+
+f
+java:S1192ÁI"JDefine a constant instead of duplicating this literal "Timestamp" 6 times.(à‡ÊÉøÿÿÿÿ
+†
+java:S1192Ï"oDefine a constant instead of duplicating this literal "Can't get the number of an unknown enum value." 7 times.(İÅÄÆ
+d
+java:S1192ÁI"HDefine a constant instead of duplicating this literal "MsgType" 3 times.(à‡ÊÉøÿÿÿÿ
+
+java:S1192„"jDefine a constant instead of duplicating this literal "EnumValueDescriptor is not for this type." 7 times.(ĞŒÛ„
+H
+java:S1199]"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+C
+java:S1199c"-Extract this nested code block into a method.(­Ó–Ô
+C
+java:S1199i"-Extract this nested code block into a method.(ò‘
+H
+java:S1199w"-Extract this nested code block into a method.(­ƒíéşÿÿÿÿ
+I
+java:S1199…"-Extract this nested code block into a method.(ì¼Â©ûÿÿÿÿ
+C
+java:S1199Ì"-Extract this nested code block into a method.(£ßÃH
+C
+java:S1199Ğ"-Extract this nested code block into a method.(Ğÿÿ)
+I
+java:S1199Ô"-Extract this nested code block into a method.(ı»­Õüÿÿÿÿ
+I
+java:S1199Ø"-Extract this nested code block into a method.(âÌûƒüÿÿÿÿ
+I
+java:S1199É
+"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199Ï
+"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199Ô
+"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199Ù
+"-Extract this nested code block into a method.(”¤óˆüÿÿÿÿ
+I
+java:S1199Ş
+"-Extract this nested code block into a method.(ÙšÖ­ùÿÿÿÿ
+I
+java:S1199ä
+"-Extract this nested code block into a method.(­™Üıÿÿÿÿ
+I
+java:S1199ê
+"-Extract this nested code block into a method.(ØİÄøÿÿÿÿ
+I
+java:S1199ï
+"-Extract this nested code block into a method.(üÅåÂøÿÿÿÿ
+I
+java:S1199ô
+"-Extract this nested code block into a method.(»âğÍıÿÿÿÿ
+I
+java:S1199…"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+I
+java:S1199‹"-Extract this nested code block into a method.(ê×Êüÿÿÿÿ
+I
+java:S1199«"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+I
+java:S1199±"-Extract this nested code block into a method.(ê×Êüÿÿÿÿ
+D
+java:S1199·"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199¼"-Extract this nested code block into a method.(”¤óˆüÿÿÿÿ
+I
+java:S1199Á"-Extract this nested code block into a method.(ì¼Â©ûÿÿÿÿ
+I
+java:S1199Ø"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199Ş"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199ã"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199è"-Extract this nested code block into a method.(”¤óˆüÿÿÿÿ
+I
+java:S1199í"-Extract this nested code block into a method.(ÙšÖ­ùÿÿÿÿ
+I
+java:S1199ò"-Extract this nested code block into a method.(­™Üıÿÿÿÿ
+D
+java:S1199ø"-Extract this nested code block into a method.(†èÚö
+I
+java:S1199ş"-Extract this nested code block into a method.(üÅåÂøÿÿÿÿ
+I
+java:S1199 '"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199¦'"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199«'"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199±'"-Extract this nested code block into a method.(”¤óˆüÿÿÿÿ
+I
+java:S1199·'"-Extract this nested code block into a method.(ÙšÖ­ùÿÿÿÿ
+I
+java:S1199¼'"-Extract this nested code block into a method.(­™Üıÿÿÿÿ
+I
+java:S1199Â'"-Extract this nested code block into a method.(ØİÄøÿÿÿÿ
+I
+java:S1199Ğ'"-Extract this nested code block into a method.(íÂ°Èüÿÿÿÿ
+I
+java:S1199Ş'"-Extract this nested code block into a method.(»âğÍıÿÿÿÿ
+D
+java:S1199ì'"-Extract this nested code block into a method.(êØ
+I
+java:S1199Ù*"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199ß*"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199ä*"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199é*"-Extract this nested code block into a method.(­ƒíéşÿÿÿÿ
+I
+java:S1199Ï/"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199Õ/"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199Ú/"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199ß/"-Extract this nested code block into a method.(­ƒíéşÿÿÿÿ
+I
+java:S1199»4"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199Á4"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199Æ4"-Extract this nested code block into a method.(İ…î½
+I
+java:S1199À8"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+D
+java:S1199Æ8"-Extract this nested code block into a method.(­Ó–Ô
+D
+java:S1199Ì8"-Extract this nested code block into a method.(ò‘
+I
+java:S1199Õ8"-Extract this nested code block into a method.(”¤óˆüÿÿÿÿ
+I
+java:S1199Ë9"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+I
+java:S1199œB"-Extract this nested code block into a method.(­‚ïÈıÿÿÿÿ
+D
+java:S1199 B"-Extract this nested code block into a method.(ô›ù¤
+I
+java:S1199¤B"-Extract this nested code block into a method.(ÿÃÿôúÿÿÿÿ
+I
+java:S1199¨B"-Extract this nested code block into a method.(³«Àºøÿÿÿÿ
+D
+java:S1199¬B"-Extract this nested code block into a method.(˜ú±Õ
+f	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117À
+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117Ï"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117—'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117Ğ*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117Æ/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117²4"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117·8"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+g	java:S117‘;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÓ¡€
+l	java:S117’;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¤¢öøÿÿÿÿ
+D
+java:S1604ë"(Make this anonymous inner class a lambda(ÅØÓ‚ÿÿÿÿÿ
+>
+java:S1604É"(Make this anonymous inner class a lambda(«€Å_
+D
+java:S1604«"(Make this anonymous inner class a lambda(¨ø”ÿÿÿÿÿÿ
+D
+java:S1604Ò"(Make this anonymous inner class a lambda(°Ô®şÿÿÿÿ
+>
+java:S1604´ "(Make this anonymous inner class a lambda(«€Å_
+>
+java:S1604Û("(Make this anonymous inner class a lambda(«€Å_
+D
+java:S1604ó)"(Make this anonymous inner class a lambda(ÖœŒ±úÿÿÿÿ
+?
+java:S1604«I"(Make this anonymous inner class a lambda(ş¦•Ã
+e
+java:S2259É"NA "NullPointerException" could be thrown; "getDataBodyCase()" can return null.(ÿà¯´
+c
+java:S2259›B"LA "NullPointerException" could be thrown; "getMsgBodyCase" is nullable here.(şœŒÔ
+d
+java:S2259è?"MA "NullPointerException" could be thrown; "getMsgBodyCase()" can return null.(êŠÏ
+i
+java:S2259Ë"MA "NullPointerException" could be thrown; "getDataBodyCase" is nullable here.(…À…­øÿÿÿÿ
+S
+java:S2589á?"7Remove this expression which always evaluates to "true"(ìÆè‘úÿÿÿÿ
+S
+java:S2589ù?"7Remove this expression which always evaluates to "true"(ıÈ†ìùÿÿÿÿ
+N
+java:S2589Î"7Remove this expression which always evaluates to "true"(ÙºĞ
+S
+java:S2589ƒ"7Remove this expression which always evaluates to "true"(ìÆè‘úÿÿÿÿ
+S
+java:S2589È"7Remove this expression which always evaluates to "true"(ª»µÒùÿÿÿÿ
+N
+java:S2589õ?"7Remove this expression which always evaluates to "true"(Ê°º¯
+N
+java:S2589ó"7Remove this expression which always evaluates to "true"(ˆ ÷Ä
+S
+java:S2589ñ+"7Remove this expression which always evaluates to "true"(ù¿¤ûÿÿÿÿ
+S
+java:S2589í?"7Remove this expression which always evaluates to "true"(¸€åâùÿÿÿÿ
+N
+java:S2589Ò"7Remove this expression which always evaluates to "true"(Í»§
+S
+java:S2589‰"7Remove this expression which always evaluates to "true"(úÏ©¥ùÿÿÿÿ
+N
+java:S2589ç0"7Remove this expression which always evaluates to "true"(¦Ûé
+S
+java:S2589ñ?"7Remove this expression which always evaluates to "true"(âƒ¸ıûÿÿÿÿ
+M
+java:S2589Ö"7Remove this expression which always evaluates to "true"(¿İºu
+S
+java:S2589ÿ!"7Remove this expression which always evaluates to "true"(ìÆè‘úÿÿÿÿ
+N
+java:S2589ç9"7Remove this expression which always evaluates to "true"(—Òûì
+S
+java:S2589¥5"7Remove this expression which always evaluates to "true"(½¹¾üûÿÿÿÿ
+u
+java:S1488Ç"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488Ğ"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488ò"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488ş"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488÷""_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488×,"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488Î1"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488‡6"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488Î:"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+u
+java:S1488ø@"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ°‡ıÿÿÿÿ
+J
+java:S1172	"/Remove this unused method parameter "registry".(•óÊõÿÿÿÿÿ
+t
+java:S4144Ú"XUpdate this method so that its implementation is not identical to "getChat" on line 337.(’ü¿óıÿÿÿÿ
+w
+java:S4144î"[Update this method so that its implementation is not identical to "getReceipt" on line 357.(ÃÕÄ‡ÿÿÿÿÿ
+q
+java:S4144‚"ZUpdate this method so that its implementation is not identical to "getSysMsg" on line 377.(•¸Í¢
+{
+java:S4144á	"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 1226.(œó±
+m	java:S116•"XRename this field "dataBodyCase_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôî„@
+i	java:S116–"TRename this field "dataBody_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àò»e
+o	java:S116¾"TRename this field "dataType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ˆ©çøÿÿÿÿ
+A
+java:S1948–"+Make "dataBody_" transient or serializable.(àò»e
+m
+java:S3776O"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(‰ªû€ÿÿÿÿÿ
+F
+java:S4524]"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+Q
+java:S1133Ø"5Do not forget to remove this deprecated code someday.(”õêşÿÿÿÿ
+C
+java:S1123Ø"'Add the missing @Deprecated annotation.(”õêşÿÿÿÿ
+L
+java:S1133¥"5Do not forget to remove this deprecated code someday.(ÃíË–
+>
+java:S1123¥"'Add the missing @Deprecated annotation.(ÃíË–
+8
+java:S1116µ"Remove this empty statement.(ôŸìúÿÿÿÿ
+E
+java:S1874É"/Remove this use of "valueOf"; it is deprecated.(ñšİ6
+V
+java:S1161“":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161£":Add the "@Override" annotation above this method signature(œè“
+m	java:S116õ"XRename this field "dataBodyCase_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôî„@
+i	java:S116ö"TRename this field "dataBody_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àò»e
+j	java:S116…"TRename this field "dataType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë‹†Ã
+m	java:S116²"WRename this field "chatBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨è×
+p	java:S116´"ZRename this field "receiptBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´è‹õ
+n	java:S116¶"YRename this field "sysMsgBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ç¸=
+?	java:S108é")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161ì":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975£"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905¤"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161¦":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905©"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161«":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905­"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161¯":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905±"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161³":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905¶"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161¸":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905»"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161½":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161ä":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+E
+java:S1874˜"/Remove this use of "valueOf"; it is deprecated.(ñšİ6
+E
+java:S1940¤")Use the opposite operator ("!=") instead.(²ùˆøøÿÿÿÿ
+u
+java:S2293§"YReplace the type specification in this constructor call with the diamond operator ("<>").(î½ç»ıÿÿÿÿ
+3
+java:S1116¯"Remove this empty statement.(‚åÍÈ
+?
+java:S1940¦")Use the opposite operator ("!=") instead.(Çáò1
+o
+java:S2293©"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÈòÑ8
+3
+java:S1116±"Remove this empty statement.(‚åÍÈ
+E
+java:S1940¨	")Use the opposite operator ("!=") instead.( ÕÑ‹ùÿÿÿÿ
+u
+java:S2293«	"YReplace the type specification in this constructor call with the diamond operator ("<>").(ø·­Åıÿÿÿÿ
+3
+java:S1116³	"Remove this empty statement.(‚åÍÈ
+Q
+java:S1161¶	":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161»	":Add the "@Override" annotation above this method signature(¥ªóÃ
+€
+java:S4144û"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 3812.(şƒğ¸øÿÿÿÿ
+n
+java:S3077ˆ"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(Â°ì‹
+i	java:S116»"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+f	java:S116Ä"PRename this field "form_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÈÃó
+d	java:S116Í"NRename this field "to_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç±€
+i	java:S116Ö"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ö´Ç
+m	java:S116æ"WRename this field "contentType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’›À“
+i	java:S116ö"SRename this field "content_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡—¢°
+k	java:S116ÿ"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+g	java:S116ˆ"QRename this field "extra_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â°ì‹
+?
+java:S1948ˆ"(Make "extra_" transient or serializable.(Â°ì‹
+T
+java:S1172½
+"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524É
+"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+Q
+java:S1133·"5Do not forget to remove this deprecated code someday.(™ùĞùÿÿÿÿ
+C
+java:S1123·"'Add the missing @Deprecated annotation.(™ùĞùÿÿÿÿ
+Q
+java:S1133™"5Do not forget to remove this deprecated code someday.(¾ÙàÙøÿÿÿÿ
+C
+java:S1123™"'Add the missing @Deprecated annotation.(¾ÙàÙøÿÿÿÿ
+€
+java:S4144Æ"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 2095.( ª±³ıÿÿÿÿ
+n
+java:S3077©"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(¥’Üï
+f	java:S116©"PRename this field "text_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥’Üï
+>
+java:S1948©"'Make "text_" transient or serializable.(¥’Üï
+T
+java:S1172ù"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524…"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+V
+java:S1161Ô":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Û":Add the "@Override" annotation above this method signature(œè“
+f	java:S116×"PRename this field "text_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ÷‘š
+?	java:S108ò")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161õ":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975”"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905•"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161—":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905š"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161œ":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161 ":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905¢"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161¤":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905§"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161©":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905¬"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161®":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161Å":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+Q
+java:S1161›":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161 ":Add the "@Override" annotation above this method signature(¥ªóÃ
+€
+java:S4144´"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 2973.(‡œ«øÿÿÿÿ
+n
+java:S3077ß"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ÉëõÚ
+s
+java:S3077£"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(â‘Éúÿÿÿÿ
+h	java:S116ß"RRename this field "fileId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉëõÚ
+q	java:S116‰"VRename this field "mediaCrc32_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Øò™ıÿÿÿÿ
+f	java:S116–"QRename this field "fSize_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¾¹!
+l	java:S116£"QRename this field "fName_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â‘Éúÿÿÿÿ
+@
+java:S1948ß")Make "fileId_" transient or serializable.(ÉëõÚ
+D
+java:S1948£"(Make "fName_" transient or serializable.(â‘Éúÿÿÿÿ
+T
+java:S1172Ÿ"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524«"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+V
+java:S1161Ö":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161æ":Add the "@Override" annotation above this method signature(œè“
+h	java:S116Œ"RRename this field "fileId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âˆ–
+q	java:S116å"VRename this field "mediaCrc32_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Øò™ıÿÿÿÿ
+f	java:S116‹"QRename this field "fSize_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¾¹!
+g	java:S116±"QRename this field "fName_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡É³¥
+?	java:S108”")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161—":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975¿"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905À"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161Â":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905Å"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161Ç":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905É"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161Ë":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905Í"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161Ï":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905Ò"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161Ô":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905×"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161Ù":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161ú":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+Q
+java:S1161‰":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161":Add the "@Override" annotation above this method signature(¥ªóÃ
+F
+java:S1874á"/Remove this use of "valueOf"; it is deprecated.(èßàû
+K
+java:S1874ñ"/Remove this use of "valueOf"; it is deprecated.(€¦Àøÿÿÿÿ
+V
+java:S1161³":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Ï":Add the "@Override" annotation above this method signature(œè“
+i	java:S116¯"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+f	java:S116É"PRename this field "form_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÈÃó
+d	java:S116ã"NRename this field "to_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç±€
+i	java:S116ı"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜŸá•
+m	java:S116©"WRename this field "contentType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…åŠ–
+n	java:S116Õ"SRename this field "content_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºğ•¹şÿÿÿÿ
+k	java:S116ò"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+g	java:S116Œ"QRename this field "extra_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¯·
+?	java:S108 ")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161£":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975×"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905Ø"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161Ú":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905İ"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161ß":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905á"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161ã":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905å"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161ç":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905ê"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161ì":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905ï"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161ñ":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+F
+java:S1874"/Remove this use of "valueOf"; it is deprecated.(èßàû
+K
+java:S1874¼"/Remove this use of "valueOf"; it is deprecated.(€¦Àøÿÿÿÿ
+Q
+java:S1161Ğ":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161Õ":Add the "@Override" annotation above this method signature(¥ªóÃ
+z
+java:S4144¥&"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 4878.(¢s
+i	java:S116ß "NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+k	java:S116è "PRename this field "from_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆííÙûÿÿÿÿ
+d	java:S116ñ "NRename this field "to_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç±€
+n	java:S116ú "XRename this field "receiptMsgId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ‰ø¢
+l	java:S116ƒ!"QRename this field "state_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¿•Úüÿÿÿÿ
+i	java:S116“!"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ö´Ç
+k	java:S116£!"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+T
+java:S1172Ì"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524Ø"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+Q
+java:S1133À"5Do not forget to remove this deprecated code someday.(‹İ‚¥øÿÿÿÿ
+C
+java:S1123À"'Add the missing @Deprecated annotation.(‹İ‚¥øÿÿÿÿ
+Q
+java:S1133¢ "5Do not forget to remove this deprecated code someday.(™ùĞùÿÿÿÿ
+C
+java:S1123¢ "'Add the missing @Deprecated annotation.(™ùĞùÿÿÿÿ
+F
+java:S1874!"/Remove this use of "valueOf"; it is deprecated.(¨ââÙ
+K
+java:S1874!"/Remove this use of "valueOf"; it is deprecated.(Ó£íºúÿÿÿÿ
+V
+java:S1161µ!":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Î!":Add the "@Override" annotation above this method signature(œè“
+i	java:S116¡$"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+k	java:S116»$"PRename this field "from_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆííÙûÿÿÿÿ
+d	java:S116Õ$"NRename this field "to_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç±€
+n	java:S116ï$"XRename this field "receiptMsgId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ‰ø¢
+g	java:S116‰%"QRename this field "state_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î×
+i	java:S116µ%"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜŸá•
+k	java:S116á%"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+?	java:S108™#")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161œ#":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975Í#"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905Î#"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161Ğ#":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905Ó#"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161Õ#":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905×#"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161Ù#":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905Û#"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161İ#":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905à#"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161â#":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905å#"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161ç#":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161$":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+F
+java:S1874œ%"/Remove this use of "valueOf"; it is deprecated.(¨ââÙ
+K
+java:S1874È%"/Remove this use of "valueOf"; it is deprecated.(Ó£íºúÿÿÿÿ
+Q
+java:S1161ú%":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161ÿ%":Add the "@Override" annotation above this method signature(¥ªóÃ
+t
+java:S4144¼>"XUpdate this method so that its implementation is not identical to "getAck" on line 7987.(íØ¹«úÿÿÿÿ
+q
+java:S4144Ğ>"ZUpdate this method so that its implementation is not identical to "getGreet" on line 8007.(Îõü
+t
+java:S4144ä>"]Update this method so that its implementation is not identical to "getRegister" on line 8027.(ÕÏ±ë
+x
+java:S4144ø>"\Update this method so that its implementation is not identical to "getRouting" on line 8047.(×Ş­ùÿÿÿÿ
+€
+java:S4144ÃH"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 9260.(ë° ãúÿÿÿÿ
+m	java:S116Ã="WRename this field "msgBodyCase_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜŸÁä
+n	java:S116Ä="SRename this field "msgBody_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áãöÙùÿÿÿÿ
+i	java:S116î="NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+l	java:S116÷="QRename this field "fromM_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…â¦ïùÿÿÿÿ
+e	java:S116‡>"ORename this field "toM_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í ÑÈ
+k	java:S116—>"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+i	java:S116 >"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ö´Ç
+F
+java:S1948Ä="*Make "msgBody_" transient or serializable.(áãöÙùÿÿÿÿ
+i
+java:S3776’'"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ïÃ¨¶
+G
+java:S4524 '"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+Q
+java:S1133Ç("5Do not forget to remove this deprecated code someday.(™ùĞùÿÿÿÿ
+C
+java:S1123Ç("'Add the missing @Deprecated annotation.(™ùĞùÿÿÿÿ
+Q
+java:S1133Û)"5Do not forget to remove this deprecated code someday.(ÓûºÖıÿÿÿÿ
+C
+java:S1123Û)"'Add the missing @Deprecated annotation.(ÓûºÖıÿÿÿÿ
+{
+java:S4144/"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 6006.(†õ§¾
+s
+java:S3077™+"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ÇŒÂŠúÿÿÿÿ
+j	java:S116‡+"TRename this field "ackMsgId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áåÖ
+k	java:S116+"PRename this field "code_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÚÊùÿÿÿÿ
+n	java:S116™+"SRename this field "message_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇŒÂŠúÿÿÿÿ
+F
+java:S1948™+"*Make "message_" transient or serializable.(ÇŒÂŠúÿÿÿÿ
+T
+java:S1172Í*"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524Ù*"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+V
+java:S1161Ä+":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Ñ+":Add the "@Override" annotation above this method signature(œè“
+j	java:S116ê-"TRename this field "ackMsgId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áåÖ
+k	java:S116„."PRename this field "code_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÚÊùÿÿÿÿ
+n	java:S116."SRename this field "message_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ«Ï‚úÿÿÿÿ
+?	java:S108ù,")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161ü,":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975¡-"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905¢-"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161¤-":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905§-"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161©-":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905«-"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161­-":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905¯-"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161±-":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905´-"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161¶-":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905¹-"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161»-":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161Ø-":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+Q
+java:S1161â.":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161ç.":Add the "@Override" annotation above this method signature(¥ªóÃ
+{
+java:S4144„4"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 6637.(Èƒ•ª
+s
+java:S30770"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ïÂ‰Ãúÿÿÿÿ
+e	java:S116ı/"ORename this field "uId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…²å…
+k	java:S116†0"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+o	java:S1160"TRename this field "location_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÂ‰Ãúÿÿÿÿ
+G
+java:S19480"+Make "location_" transient or serializable.(ïÂ‰Ãúÿÿÿÿ
+T
+java:S1172Ã/"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524Ï/"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+V
+java:S1161º0":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Ç0":Add the "@Override" annotation above this method signature(œè“
+e	java:S116á2"ORename this field "uId_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…²å…
+k	java:S116û2"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+o	java:S116•3"TRename this field "location_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ÁÛ¬ÿÿÿÿÿ
+?	java:S108ğ1")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161ó1":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975˜2"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905™2"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161›2":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S19052"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161 2":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905¢2"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161¤2":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905¦2"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161¨2":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905«2"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161­2":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905°2"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161²2":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161Ï2":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+Q
+java:S1161Ù3":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161Ş3":Add the "@Override" annotation above this method signature(¥ªóÃ
+{
+java:S4144ñ7"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 7130.(²ò‡
+f	java:S116ã4"PRename this field "port_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Å ¼
+k	java:S116ì4"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+T
+java:S1172¯4"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524»4"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+V
+java:S1161ş4":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161ˆ5":Add the "@Override" annotation above this method signature(œè“
+f	java:S116“7"PRename this field "port_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Å ¼
+k	java:S116­7"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+?	java:S108©6")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161¬6":Add the "@Override" annotation above this method signature(öË·š
+o
+java:S2975Î6"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905Ï6"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161Ñ6":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905Ô6"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161Ö6":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905Ø6"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161Ú6":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905Ü6"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161Ş6":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905á6"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161ã6":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905æ6"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161è6":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S11617":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+Q
+java:S1161Æ7":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161Ë7":Add the "@Override" annotation above this method signature(¥ªóÃ
+€
+java:S4144½="dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 7846.(æ¦Û¸şÿÿÿÿ
+k	java:S116ô8"URename this field "bitField0_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö»³Ä
+g	java:S116ö8"RRename this field "source_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÂÂg
+n	java:S116†9"SRename this field "address_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜªÜ ÿÿÿÿÿ
+k	java:S116£9"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+F
+java:S1948†9"*Make "address_" transient or serializable.(ÜªÜ ÿÿÿÿÿ
+T
+java:S1172´8"8Remove this unused method parameter "extensionRegistry".(“éÒÇúÿÿÿÿ
+G
+java:S4524À8"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+E
+java:S1940Î8")Use the opposite operator ("!=") instead.(ÿÍùÿÿÿÿ
+K
+java:S18749"/Remove this use of "valueOf"; it is deprecated.(µÈ‰ƒùÿÿÿÿ
+V
+java:S1161µ9":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161Â9":Add the "@Override" annotation above this method signature(œè“
+k	java:S116í;"URename this field "bitField0_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö»³Ä
+h	java:S116ï;"RRename this field "source_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀôÙ®
+h	java:S116›<"SRename this field "address_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Æâ
+k	java:S116ù<"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+?	java:S108ğ:")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161ó:":Add the "@Override" annotation above this method signature(öË·š
+Z
+java:S1854‘;"CRemove this useless assignment to local variable "from_bitField0_".(ÆÓ¡€
+o
+java:S2975Ÿ;"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905 ;"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161¢;":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905¥;"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161§;":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905©;"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161«;":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905­;"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161¯;":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905²;"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161´;":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905·;"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161¹;":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161Ü;":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+K
+java:S1874‚<"/Remove this use of "valueOf"; it is deprecated.(µÈ‰ƒùÿÿÿÿ
+@
+java:S1940<")Use the opposite operator ("!=") instead.(ùùôÙ
+Q
+java:S1161’=":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161—=":Add the "@Override" annotation above this method signature(¥ªóÃ
+L
+java:S1133Ô="5Do not forget to remove this deprecated code someday.(†Öå
+>
+java:S1123Ô="'Add the missing @Deprecated annotation.(†Öå
+8
+java:S1116å="Remove this empty statement.(ôŸìúÿÿÿÿ
+K
+java:S1874‚>"/Remove this use of "valueOf"; it is deprecated.(ÛÓÊ˜ÿÿÿÿÿ
+K
+java:S1874’>"/Remove this use of "valueOf"; it is deprecated.(ç‘À§şÿÿÿÿ
+K
+java:S1874«>"/Remove this use of "valueOf"; it is deprecated.(İùÀ¡ûÿÿÿÿ
+V
+java:S1161‰?":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+Q
+java:S1161¨?":Add the "@Override" annotation above this method signature(œè“
+m	java:S116ÉB"WRename this field "msgBodyCase_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜŸÁä
+n	java:S116ÊB"SRename this field "msgBody_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áãöÙùÿÿÿÿ
+i	java:S116ÙB"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¹±•ûÿÿÿÿ
+f	java:S116óB"QRename this field "fromM_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íâÙ
+e	java:S116ŸC"ORename this field "toM_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è¤„
+k	java:S116ËC"URename this field "timestamp_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¿º†
+i	java:S116åC"SRename this field "msgType_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜŸá•
+q	java:S116’D"VRename this field "ackBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÌá±üÿÿÿÿ
+s	java:S116”E"XRename this field "greetBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úìÈìøÿÿÿÿ
+p	java:S116–F"[Rename this field "registerBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”úÜ&
+o	java:S116˜G"ZRename this field "routingBuilder_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş“ë
+?	java:S108šA")Either remove or fill this block of code.(º„ç½
+Q
+java:S1161A":Add the "@Override" annotation above this method signature(öË·š
+n
+java:S3776¿A"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‚ºïıÿÿÿÿ
+o
+java:S2975çA"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+A
+java:S1905èA"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+V
+java:S1161êA":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+A
+java:S1905íA"*Remove this unnecessary cast to "Builder".(ê„£
+V
+java:S1161ïA":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+F
+java:S1905ñA"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+V
+java:S1161óA":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+A
+java:S1905õA"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Q
+java:S1161÷A":Add the "@Override" annotation above this method signature(§ß—¡
+F
+java:S1905úA"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Q
+java:S1161üA":Add the "@Override" annotation above this method signature(¿¸Ú©
+@
+java:S1905ÿA"*Remove this unnecessary cast to "Builder".(İ¤Â\
+Q
+java:S1161B":Add the "@Override" annotation above this method signature(”×Ñ¾
+V
+java:S1161¸B":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ
+K
+java:S1874†C"/Remove this use of "valueOf"; it is deprecated.(ÛÓÊ˜ÿÿÿÿÿ
+K
+java:S1874²C"/Remove this use of "valueOf"; it is deprecated.(ç‘À§şÿÿÿÿ
+K
+java:S1874øC"/Remove this use of "valueOf"; it is deprecated.(İùÀ¡ûÿÿÿÿ
+@
+java:S1940„E")Use the opposite operator ("!=") instead.(óªò
+u
+java:S2293‡E"YReplace the type specification in this constructor call with the diamond operator ("<>").(¾ğÊÕúÿÿÿÿ
+3
+java:S1116E"Remove this empty statement.(‚åÍÈ
+E
+java:S1940†F")Use the opposite operator ("!=") instead.(€ÿùıøÿÿÿÿ
+u
+java:S2293‰F"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰®üÿÿÿÿ
+3
+java:S1116‘F"Remove this empty statement.(‚åÍÈ
+E
+java:S1940ˆG")Use the opposite operator ("!=") instead.(–óœÎıÿÿÿÿ
+p
+java:S2293‹G"YReplace the type specification in this constructor call with the diamond operator ("<>").(Î³å 
+3
+java:S1116“G"Remove this empty statement.(‚åÍÈ
+E
+java:S1940ŠH")Use the opposite operator ("!=") instead.(ĞÂ×ßúÿÿÿÿ
+p
+java:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(áôÂê
+3
+java:S1116•H"Remove this empty statement.(‚åÍÈ
+Q
+java:S1161˜H":Add the "@Override" annotation above this method signature(´çÍê
+Q
+java:S1161H":Add the "@Override" annotation above this method signature(¥ªóÃ
+^
+java:S1874ªI"BRemove this use of "InternalDescriptorAssigner"; it is deprecated.(ƒ½™òùÿÿÿÿ
+\
+java:S1874³I"FRemove this use of "internalBuildGeneratedFileFrom"; it is deprecated.(Ñ÷Ëz
+M
+java:S1481T"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481À
+"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481ü"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481¢"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481Ï"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481—'"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481Ğ*"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481Æ/"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+N
+java:S1481²4"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+K
+java:S1481‘;"4Remove this unused "from_bitField0_" local variable.(ÆÓ¡€
+E
+java:S1068ô8".Remove this unused "bitField0_" private field.(ö»³Ä

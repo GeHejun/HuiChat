@@ -1,6 +1,8 @@
 package com.ghj.registry.client;
 
+import com.ghj.common.callback.MsgCallBack;
 import com.ghj.protocol.Msg;
+import com.google.common.collect.Lists;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -18,19 +20,19 @@ public class RegisterHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private RoutingMsgHandler routingMsgHandler;
 
-    private List<RegisterMsgCallBack> msgCallBacks;
+    private List<MsgCallBack> msgCallBacks = Lists.newArrayList();
 
     public RegisterHandler(RoutingMsgHandler routingMsgHandler) {
         this.routingMsgHandler = routingMsgHandler;
     }
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) {
         this.ctx = ctx;
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Msg.Data msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, Msg.Data msg) {
         dealMsg(msg);
     }
 
@@ -49,12 +51,12 @@ public class RegisterHandler extends SimpleChannelInboundHandler<Msg.Data> {
     }
 
 
-    public void sendMsg(Msg.Data data, List<RegisterMsgCallBack> msgCallBacks) {
+    public void sendMsg(Msg.Data data, List<MsgCallBack> callBacks) {
         if (Objects.isNull(ctx)) {
             log.error("keepClientChannel为空，请检查是否连接到Router");
             throw new RuntimeException("XXX");
         }
-        this.msgCallBacks = msgCallBacks;
+        msgCallBacks.addAll(callBacks);
         ctx.writeAndFlush(data);
     }
 
