@@ -18,7 +18,7 @@ public class RegisterHandler extends SimpleChannelInboundHandler<Msg.Data> {
 
     private ChannelHandlerContext ctx;
 
-    private RoutingMsgHandler routingMsgHandler;
+    private final RoutingMsgHandler routingMsgHandler;
 
     private List<MsgCallBack> msgCallBacks = Lists.newArrayList();
 

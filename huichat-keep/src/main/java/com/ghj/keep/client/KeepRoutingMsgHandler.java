@@ -8,9 +8,6 @@ import com.ghj.registry.client.RoutingMsgHandler;
 public class KeepRoutingMsgHandler implements RoutingMsgHandler {
     @Override
     public void dealRoutingMsg(Msg.SysMsg.Routing routing) {
-        routing.getAddressList().forEach(this::connectRouter);
-    }
-    public void connectRouter(String address) {
-        KeepClientContext.adjustKeepClient(address);
+        routing.getAddressList().forEach(KeepClientContext::adjustKeepClient);
     }
 }
